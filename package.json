@@ -1,0 +1,8 @@
+{
+  "name": "veille-ip-dla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.mjs"
+  }
+}
