@@ -4,22 +4,23 @@ const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", imp
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
 const domains = sources.map((source) => source.domain);
 
+const requiredText = { type: "string", minLength: 20 };
 const itemProperties = {
   type: { type: "string", enum: ["JURISPRUDENCE", "ACTUALITE"] },
-  category: { type: "string" },
-  title: { type: "string" },
-  court_reference: { type: "string" },
-  source: { type: "string" },
-  source_url: { type: "string" },
-  publication_date: { type: "string" },
-  summary: { type: "string" },
-  introduction: { type: "string" },
-  facts_and_procedure: { type: "string" },
-  parties_arguments: { type: "string" },
-  legal_question: { type: "string" },
-  reasoning: { type: "string" },
-  outcome: { type: "string" },
-  practical_relevance: { type: "string" }
+  category: { type: "string", minLength: 3 },
+  title: { type: "string", minLength: 10 },
+  court_reference: { type: "string", minLength: 3 },
+  source: { type: "string", minLength: 3 },
+  source_url: { type: "string", minLength: 10 },
+  publication_date: { type: "string", minLength: 8 },
+  summary: requiredText,
+  introduction: requiredText,
+  facts_and_procedure: requiredText,
+  parties_arguments: requiredText,
+  legal_question: requiredText,
+  reasoning: requiredText,
+  outcome: requiredText,
+  practical_relevance: requiredText
 };
 const schema = {
   type: "object",
@@ -46,10 +47,10 @@ const input = [
   "Tu es le rédacteur d'une veille hebdomadaire destinée à l'équipe Propriété intellectuelle d'un grand cabinet d'avocats international en France.",
   "",
   "MISSION",
-  "Recherche les développements des 7 derniers jours exclusivement dans les domaines autorisés et rédige une veille complète en français, directement exploitable par des avocats.",
+  "Recherche en priorité les développements des 7 derniers jours exclusivement dans les domaines autorisés et rédige une veille complète en français, directement exploitable par des avocats. Si la semaine est pauvre en publications, élargis progressivement la recherche aux 30 derniers jours afin de produire une sélection substantielle; indique alors clairement la date de chaque sujet.",
   "",
   "SÉLECTION",
-  "- Sélectionne exactement 5 ou 6 sujets: idéalement 4 jurisprudences et 1 ou 2 actualités.",
+  "- Sélectionne exactement 5 ou 6 sujets substantiels: idéalement 4 jurisprudences et 1 ou 2 actualités. En période de faible activité juridictionnelle, accepte 3 jurisprudences et 2 ou 3 actualités.",
   "- Recherche un équilibre entre marques, brevets, dessins et modèles, droit d'auteur et un sujet connexe pertinent (IA, numérique, médias ou concurrence déloyale).",
   "- Privilégie les décisions, textes, communiqués et dossiers législatifs provenant de sources primaires.",
   "- Ne retiens un sujet que si sa date, sa référence et son URL directe sont vérifiables.",
@@ -79,7 +80,8 @@ const input = [
   "",
   "CONTRÔLE QUALITÉ",
   "- Chaque URL doit mener directement au document primaire utilisé, pas à une page d'accueil.",
-  "- La date doit appartenir à la période examinée ou correspondre à une décision nouvellement publiée/commentée pendant cette période.",
+  "- Privilégie les 7 derniers jours. À défaut de matière suffisante, utilise des publications des 30 derniers jours, sans jamais masquer leur date réelle.",
+  "- Ne produis jamais de fiche vide, de chaîne vide ou de sujet fictif pour atteindre le nombre demandé.",
   "- Évite les doublons et les sujets trop faibles.",
   "- L'editorial_note doit signaler honnêtement toute limite de couverture ou d'accès.",
   "",
@@ -134,6 +136,13 @@ const output = raw.output?.flatMap((entry) => entry.content || []).find((entry) 
 if (!output) throw new Error("Sortie structurée absente");
 
 const report = JSON.parse(output);
+const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "summary", "introduction", "reasoning", "outcome", "practical_relevance"];
+const incompleteItems = report.items.filter((item) =>
+  mandatoryFields.some((field) => typeof item[field] !== "string" || item[field].trim().length < 3)
+);
+if (incompleteItems.length || report.items.length < 5) {
+  throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
+}
 report.generated_at = new Date().toISOString();
 report.status = "generated";
 const slug = new Date().toISOString().slice(0, 10);
