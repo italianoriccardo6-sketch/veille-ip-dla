@@ -86,30 +86,50 @@ const input = [
   "Domaines autorisés: " + domains.join(", ")
 ].join("\n");
 
-const response = await fetch("https://api.openai.com/v1/responses", {
-  method: "POST",
-  headers: {
-    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    model: process.env.OPENAI_MODEL || "gpt-5.6-sol",
-    reasoning: { effort: "high" },
-    tools: [{
-      type: "web_search",
-      filters: { allowed_domains: domains },
-      external_web_access: true,
-      return_token_budget: "unlimited"
-    }],
-    tool_choice: "required",
-    input,
-    max_output_tokens: 18000,
-    text: { format: { type: "json_schema", name: "veille_ip_editoriale", strict: true, schema } }
-  })
-});
+const requestBody = {
+  model: process.env.OPENAI_MODEL || "gpt-5.6-sol",
+  reasoning: { effort: "high" },
+  tools: [{
+    type: "web_search",
+    filters: { allowed_domains: domains },
+    external_web_access: true
+  }],
+  tool_choice: "required",
+  input,
+  max_output_tokens: 15000,
+  text: { format: { type: "json_schema", name: "veille_ip_editoriale", strict: true, schema } }
+};
 
-const raw = await response.json();
-if (!response.ok) throw new Error(JSON.stringify(raw));
+let response;
+let raw;
+const maxAttempts = 5;
+
+for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+  response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(requestBody)
+  });
+
+  raw = await response.json();
+  if (response.ok) break;
+
+  if (response.status !== 429 || attempt === maxAttempts) {
+    throw new Error(JSON.stringify(raw));
+  }
+
+  const message = raw?.error?.message || "";
+  const suggestedSeconds = Number(message.match(/try again in ([0-9.]+)s/i)?.[1] || 0);
+  const delayMs = Math.max(Math.ceil(suggestedSeconds * 1000) + 2000, 10000 * (2 ** (attempt - 1)));
+  console.warn(`Rate limit OpenAI: nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
+  await new Promise((resolve) => setTimeout(resolve, delayMs));
+}
+
+if (!response?.ok) throw new Error(JSON.stringify(raw));
+
 const output = raw.output?.flatMap((entry) => entry.content || []).find((entry) => entry.type === "output_text")?.text;
 if (!output) throw new Error("Sortie structurée absente");
 
