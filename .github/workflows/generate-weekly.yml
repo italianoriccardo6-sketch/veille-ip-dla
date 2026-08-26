@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Install document generator
+        run: npm install --no-audit --no-fund
       - name: Generate in-depth weekly legal report
         run: npm run generate
         env:
