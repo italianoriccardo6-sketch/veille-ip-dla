@@ -1,0 +1,62 @@
+[
+  {
+    "name": "EUIPO",
+    "domain": "euipo.europa.eu",
+    "themes": [
+      "marques",
+      "dessins et modèles"
+    ]
+  },
+  {
+    "name": "OMPI",
+    "domain": "wipo.int",
+    "themes": [
+      "international",
+      "brevets",
+      "marques"
+    ]
+  },
+  {
+    "name": "CJUE",
+    "domain": "curia.europa.eu",
+    "themes": [
+      "jurisprudence UE"
+    ]
+  },
+  {
+    "name": "Légifrance",
+    "domain": "legifrance.gouv.fr",
+    "themes": [
+      "lois",
+      "jurisprudence française"
+    ]
+  },
+  {
+    "name": "Cour de cassation",
+    "domain": "courdecassation.fr",
+    "themes": [
+      "jurisprudence"
+    ]
+  },
+  {
+    "name": "OEB",
+    "domain": "epo.org",
+    "themes": [
+      "brevets"
+    ]
+  },
+  {
+    "name": "CSPLA",
+    "domain": "culture.gouv.fr",
+    "themes": [
+      "droit d’auteur"
+    ]
+  },
+  {
+    "name": "Sénat",
+    "domain": "senat.fr",
+    "themes": [
+      "législation"
+    ]
+  }
+]
