@@ -3,6 +3,12 @@ on:
   schedule:
     - cron: "30 4 * * 1"
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/generate.mjs"
+      - "data/sources.json"
+      - ".github/workflows/generate-weekly.yml"
 permissions:
   contents: write
 jobs:
