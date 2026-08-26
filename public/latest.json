@@ -1,0 +1,49 @@
+{
+  "week": "22 juin 2026",
+  "generated_at": "2026-06-22T06:30:00+02:00",
+  "status": "demo",
+  "items": [
+    {
+      "category": "IA & responsabilité",
+      "title": "Responsabilité des aperçus générés par IA",
+      "source": "Tribunal régional de Munich",
+      "source_url": "#",
+      "summary": "Les synthèses générées peuvent constituer des contenus autonomes imputables à l’exploitant."
+    },
+    {
+      "category": "Marques",
+      "title": "Le motif figuratif d’une basket peut être distinctif",
+      "source": "CA Paris",
+      "source_url": "#",
+      "summary": "Une fonction décorative n’exclut pas nécessairement la fonction d’indication d’origine."
+    },
+    {
+      "category": "Droit d’auteur",
+      "title": "Protection d’une œuvre réalisée sans autorisation",
+      "source": "CA Douai",
+      "source_url": "#",
+      "summary": "La protection dépend de l’originalité, non de la régularité administrative de la réalisation."
+    },
+    {
+      "category": "Marques",
+      "title": "Comparaison des produits et réalités du marché",
+      "source": "CA Paris",
+      "source_url": "#",
+      "summary": "La similarité peut découler des usages, circuits et habitudes de consommation."
+    },
+    {
+      "category": "Édition",
+      "title": "Proposition de loi relative au contrat d’édition",
+      "source": "Sénat",
+      "source_url": "https://www.senat.fr",
+      "summary": "Le texte vise à renforcer les garanties et la transparence au bénéfice des auteurs."
+    },
+    {
+      "category": "Arts appliqués",
+      "title": "Nouvelle mission du CSPLA",
+      "source": "Ministère de la Culture",
+      "source_url": "https://www.culture.gouv.fr",
+      "summary": "La mission étudiera l’articulation entre droit d’auteur et dessins et modèles."
+    }
+  ]
+}
