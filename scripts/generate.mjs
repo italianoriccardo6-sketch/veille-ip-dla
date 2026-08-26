@@ -188,6 +188,6 @@ ${actualites.length ? `<h2 class="section">ACTUALITÉS</h2>${actualites.map(rend
 </body>
 </html>`;
 
-const slug = new Date().toISOString().slice(0, 10);
 await fs.writeFile(`public/reports/veille-${slug}.html`, html);
+await fs.writeFile("public/latest.json", JSON.stringify(report, null, 2) + "\n");
 console.log(`Generated ${jurisprudences.length} jurisprudences and ${actualites.length} actualités for ${report.week}`);
