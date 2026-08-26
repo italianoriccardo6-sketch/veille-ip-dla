@@ -116,8 +116,9 @@ if (!output) throw new Error("Sortie structurée absente");
 const report = JSON.parse(output);
 report.generated_at = new Date().toISOString();
 report.status = "generated";
+const slug = new Date().toISOString().slice(0, 10);
+report.report_url = `/public/reports/veille-${slug}.html`;
 await fs.mkdir("public/reports", { recursive: true });
-await fs.writeFile("public/latest.json", JSON.stringify(report, null, 2) + "\n");
 
 const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
