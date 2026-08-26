@@ -4,5 +4,8 @@
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.5.1"
   }
 }
