@@ -1,49 +1,85 @@
 {
-  "week": "22 juin 2026",
-  "generated_at": "2026-06-22T06:30:00+02:00",
-  "status": "demo",
+  "week": "Veille IP — période vérifiée du 19 au 26 août 2026. Sélection effectuée exclusivement à partir de sources primaires situées dans les domaines autorisés. Les dates de « mise en ligne » et de « décision » sont distinguées lorsqu’elles diffèrent.",
   "items": [
     {
-      "category": "IA & responsabilité",
-      "title": "Responsabilité des aperçus générés par IA",
-      "source": "Tribunal régional de Munich",
-      "source_url": "#",
-      "summary": "Les synthèses générées peuvent constituer des contenus autonomes imputables à l’exploitant."
-    },
-    {
       "category": "Marques",
-      "title": "Le motif figuratif d’une basket peut être distinctif",
-      "source": "CA Paris",
-      "source_url": "#",
-      "summary": "Une fonction décorative n’exclut pas nécessairement la fonction d’indication d’origine."
+      "title": "Système de Madrid : webinaire sur la classification des produits et services",
+      "source": "OMPI — Madrid System Webinar: Goods and Services Manager – Classification Made Easy (in Korean). ([wipo.int](https://www.wipo.int/meetings/en/details.jsp?meeting_id=93493))",
+      "source_url": "https://www.wipo.int/meetings/en/details.jsp?meeting_id=93493",
+      "publication_date": "21 août 2026",
+      "summary": "L’OMPI a tenu un webinaire consacré à son outil « Goods and Services Manager », dans le cadre du système de Madrid. Il s’agit d’un contenu opérationnel sur la classification des produits et services pour les enregistrements internationaux de marques.",
+      "facts": "Le contenu est référencé WIPO/WEBINAR/MADRID/2026/28, s’est tenu en ligne le 21 août 2026 et relève des webinaires du système de Madrid.",
+      "legal_question": "Comment sécuriser la désignation et la classification des produits et services dans une demande ou une gestion internationale de marque ?",
+      "solution": "Il ne s’agit pas d’une décision. L’OMPI propose un contenu pratique consacré à l’utilisation de son gestionnaire de produits et services ; aucune règle nouvelle ni solution contentieuse n’est annoncée.",
+      "practical_relevance": "À intégrer dans les contrôles pré-dépôt et post-dépôt : la cohérence de la liste des produits et services demeure déterminante pour l’étendue effective de la protection et la gestion ultérieure du portefeuille international.",
+      "confidence": 0.98
     },
     {
-      "category": "Droit d’auteur",
-      "title": "Protection d’une œuvre réalisée sans autorisation",
-      "source": "CA Douai",
-      "source_url": "#",
-      "summary": "La protection dépend de l’originalité, non de la régularité administrative de la réalisation."
+      "category": "Brevets",
+      "title": "OEB, T 0448/24 : révocation d’un brevet Pilot dans le litige l’opposant à BIC",
+      "source": "Office européen des brevets, Chambre de recours technique 3.2.05. ([epo.org](https://www.epo.org/en/boards-of-appeal/decisions/t240448eu1))",
+      "source_url": "https://www.epo.org/en/boards-of-appeal/decisions/t240448eu1",
+      "publication_date": "20 août 2026 — mise en ligne ; décision du 25 juin 2026",
+      "summary": "La chambre a annulé la décision de rejet de l’opposition et révoqué le brevet européen relatif à un corps de friction, un instrument d’écriture et un ensemble d’instrument d’écriture.",
+      "facts": "Le brevet était détenu par Pilot et opposé par Société BIC. La décision met en cause des modifications étendant l’objet au-delà du contenu de la demande telle que déposée, ainsi que la clarté des requêtes subsidiaires.",
+      "legal_question": "Les revendications modifiées respectaient-elles l’interdiction d’ajout de matière des articles 100 c) et 123(2) CBE, et les requêtes subsidiaires satisfaisaient-elles à l’exigence de clarté de l’article 84 CBE ?",
+      "solution": "La chambre a retenu l’extension au-delà du contenu de la demande initiale et l’absence de clarté des requêtes subsidiaires ; elle a révoqué le brevet.",
+      "practical_relevance": "Lors de la rédaction et de la défense d’un brevet, chaque combinaison de caractéristiques ajoutée doit disposer d’un fondement direct et non ambigu dans la demande initiale. Des requêtes subsidiaires nombreuses ne compensent pas des modifications insuffisamment supportées ou imprécises.",
+      "confidence": 0.99
     },
     {
-      "category": "Marques",
-      "title": "Comparaison des produits et réalités du marché",
-      "source": "CA Paris",
-      "source_url": "#",
-      "summary": "La similarité peut découler des usages, circuits et habitudes de consommation."
+      "category": "Brevets — procédure de recours",
+      "title": "OEB, T 0925/24 : rejet d’une modification tardive et révocation du brevet",
+      "source": "Office européen des brevets, Chambre de recours technique 3.2.05. ([epo.org](https://www.epo.org/en/boards-of-appeal/decisions/t240925eu1))",
+      "source_url": "https://www.epo.org/en/boards-of-appeal/decisions/t240925eu1",
+      "publication_date": "20 août 2026 — mise en ligne ; décision du 8 juillet 2026",
+      "summary": "Dans un second recours opposant Pilot à BIC, relatif à l’utilisation d’un corps de friction pour obtenir un effet thermochromique, la chambre a révoqué le brevet.",
+      "facts": "La décision relève un défaut de clarté de la requête principale. Elle indique également qu’une modification produite après la citation à la procédure orale n’a pas été admise, faute de circonstances exceptionnelles.",
+      "legal_question": "Une partie peut-elle remédier, après la citation à la procédure orale, à une difficulté de clarté par une modification tardive des revendications ?",
+      "solution": "La chambre n’a pas admis la modification tardive au regard de l’article 13(1) et (2) RPCR 2020, a annulé la décision attaquée et a révoqué le brevet.",
+      "practical_relevance": "Les titulaires doivent stabiliser et tester la clarté de leurs jeux de revendications et de leurs positions de repli avant la citation. En recours, l’argument de dernière minute suppose de démontrer des circonstances exceptionnelles convaincantes.",
+      "confidence": 0.99
     },
     {
-      "category": "Édition",
-      "title": "Proposition de loi relative au contrat d’édition",
-      "source": "Sénat",
-      "source_url": "https://www.senat.fr",
-      "summary": "Le texte vise à renforcer les garanties et la transparence au bénéfice des auteurs."
+      "category": "Dessins et modèles",
+      "title": "Système de La Haye : recherche avancée et gestion de portefeuille des dessins et modèles internationaux",
+      "source": "OMPI — Get More from the Hague System: Advanced Search and Portfolio Management Essentials. ([wipo.int](https://www.wipo.int/meetings/es/details.jsp?meeting_id=93429&utm_source=openai))",
+      "source_url": "https://www.wipo.int/meetings/es/details.jsp?meeting_id=93429",
+      "publication_date": "19 août 2026 — date du webinaire ; page publiée la semaine précédente",
+      "summary": "L’OMPI a organisé un webinaire portant sur les évolutions de la recherche avancée dans le Bulletin des dessins et modèles internationaux et sur les outils de gestion du portefeuille La Haye.",
+      "facts": "Le contenu annonce des démonstrations sur les requêtes de recherche, les droits d’accès, le partage d’enregistrements et de transactions, ainsi que le nouveau dispositif de notifications dans l’environnement de gestion du portefeuille.",
+      "legal_question": "Comment organiser l’accès, la surveillance et les actes de gestion d’un portefeuille international de dessins et modèles tout en conservant une traçabilité appropriée ?",
+      "solution": "Il ne s’agit pas d’une décision. L’OMPI présente les fonctionnalités de recherche et de gestion disponibles dans le système de La Haye, notamment pour l’administration des accès et des notifications.",
+      "practical_relevance": "Les titulaires et conseils devraient revoir les habilitations des collaborateurs, les circuits de réception des notifications et les requêtes de veille dans le Bulletin international afin de limiter les omissions de renouvellement, d’inscription ou de suivi des titres.",
+      "confidence": 0.97
     },
     {
-      "category": "Arts appliqués",
-      "title": "Nouvelle mission du CSPLA",
-      "source": "Ministère de la Culture",
-      "source_url": "https://www.culture.gouv.fr",
-      "summary": "La mission étudiera l’articulation entre droit d’auteur et dessins et modèles."
+      "category": "Droit d’auteur — gestion multi-droits",
+      "title": "L’OMPI lance IP Diagnostics pour le secteur de la mode",
+      "source": "OMPI — WIPO Launches New IP Diagnostics Tool for the Fashion Industry. ([wipo.int](https://www.wipo.int/en/web/business/w/news/2026/wipo-launches-new-ip-diagnostics-tool-for-the-fashion-industry))",
+      "source_url": "https://www.wipo.int/en/web/business/w/news/2026/wipo-launches-new-ip-diagnostics-tool-for-the-fashion-industry",
+      "publication_date": "21 août 2026",
+      "summary": "L’OMPI annonce une version sectorielle de son outil d’autodiagnostic IP à destination des PME, créateurs, designers et prestataires du secteur de la mode.",
+      "facts": "L’outil interroge notamment les utilisateurs sur la créativité et l’innovation, le branding, les collaborations avec des prestataires créatifs ou innovants et le développement de l’activité. Il génère ensuite un rapport individualisé identifiant des actifs IP potentiels, ainsi que des risques et opportunités.",
+      "legal_question": "Comment repérer et organiser les droits susceptibles de naître des créations, contenus visuels, signes distinctifs et collaborations dans un secteur où les protections peuvent se cumuler ?",
+      "solution": "Il ne s’agit pas d’une solution juridictionnelle. L’outil fournit une première cartographie des actifs et risques IP ; il ne remplace pas l’analyse de l’originalité, de la titularité, des contrats de commande ou de cession, ni celle des droits de dessin ou de marque.",
+      "practical_relevance": "Pour les acteurs de la mode, le lancement incite à formaliser la chaîne de droits : identification des auteurs et contributeurs, clauses de cession ou de licence, conservation des preuves de création et articulation entre droit d’auteur, dessins et modèles et marques.",
+      "confidence": 0.98
+    },
+    {
+      "category": "Sujet connexe — traités et stratégie internationale",
+      "title": "Bahamas : entrée en vigueur du PCT",
+      "source": "OMPI Lex — Patent Cooperation Treaty, Bahamas. ([wipo.int](https://www.wipo.int/wipolex/en/treaties/parties/remarks/BS/6))",
+      "source_url": "https://www.wipo.int/wipolex/en/treaties/parties/remarks/BS/6",
+      "publication_date": "19 août 2026 — entrée en vigueur",
+      "summary": "L’adhésion des Bahamas au Traité de coopération en matière de brevets est entrée en vigueur le 19 août 2026.",
+      "facts": "La page OMPI Lex indique une accession le 19 mai 2026 et une entrée en vigueur le 19 août 2026. Elle mentionne également une déclaration formulée au titre de l’article 64(5) PCT.",
+      "legal_question": "Quelle est l’incidence de l’entrée en vigueur du PCT dans un nouvel État contractant sur la stratégie de dépôt international et la couverture territoriale envisagée ?",
+      "solution": "À compter du 19 août 2026, les Bahamas sont indiquées comme partie contractante au PCT. La déclaration associée à l’article 64(5) doit être vérifiée dans la notification PCT référencée par l’OMPI avant toute décision de dépôt ou de contentieux.",
+      "practical_relevance": "Les équipes brevets doivent mettre à jour leurs matrices de pays et vérifier, pour les dossiers concernés, l’intérêt de la voie PCT incluant les Bahamas, ainsi que les effets pratiques de la déclaration enregistrée par cet État.",
+      "confidence": 0.99
     }
-  ]
+  ],
+  "generated_at": "2026-08-26T10:11:24.107Z",
+  "status": "generated"
 }
