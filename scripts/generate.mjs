@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { AlignmentType, Document, ExternalHyperlink, Footer, HeadingLevel, Packer, PageNumber, Paragraph, TextRun } from "docx";
 
 const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", import.meta.url), "utf8"));
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
@@ -146,77 +147,161 @@ if (incompleteItems.length || report.items.length < 5) {
 report.generated_at = new Date().toISOString();
 report.status = "generated";
 const slug = new Date().toISOString().slice(0, 10);
-report.report_url = `/public/reports/veille-${slug}.html`;
+report.report_url = `/public/reports/veille-${slug}.docx`;
+report.docx_url = report.report_url;
 await fs.mkdir("public/reports", { recursive: true });
-
-const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (character) => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-}[character]));
-const paragraphs = (value) => String(value || "").split(/\n\s*\n/).filter(Boolean).map((paragraph) => `<p>${esc(paragraph)}</p>`).join("");
 
 const jurisprudences = report.items.filter((item) => item.type === "JURISPRUDENCE");
 const actualites = report.items.filter((item) => item.type === "ACTUALITE");
+const textParagraphs = (value) => String(value || "")
+  .split(/\n\s*\n/)
+  .map((paragraph) => paragraph.trim())
+  .filter(Boolean)
+  .map((text) => new Paragraph({
+    alignment: AlignmentType.JUSTIFIED,
+    spacing: { after: 180, line: 300 },
+    children: [new TextRun({ text })]
+  }));
 
-const renderJurisprudence = (item) => `
-  <article class="item jurisprudence">
-    <h2>${esc(item.category)} – ${esc(item.title)}</h2>
-    <p class="reference"><a href="${esc(item.source_url)}">${esc(item.court_reference || item.source)}, ${esc(item.publication_date)}</a></p>
-    ${paragraphs(item.introduction)}
-    ${paragraphs(item.facts_and_procedure)}
-    ${paragraphs(item.parties_arguments)}
-    ${paragraphs(item.legal_question)}
-    ${paragraphs(item.reasoning)}
-    ${paragraphs(item.outcome)}
-    <p class="portee"><strong>Portée pratique.</strong> ${esc(item.practical_relevance)}</p>
-  </article>`;
+const sourceParagraph = (item) => new Paragraph({
+  spacing: { after: 240 },
+  children: [
+    new ExternalHyperlink({
+      link: item.source_url,
+      children: [new TextRun({
+        text: `${item.court_reference || item.source}, ${item.publication_date}`,
+        color: "507D82",
+        underline: {}
+      })]
+    })
+  ]
+});
 
-const renderActualite = (item) => `
-  <article class="item actualite">
-    <h2>${esc(item.title)}</h2>
-    ${paragraphs(item.introduction)}
-    ${paragraphs(item.facts_and_procedure)}
-    ${paragraphs(item.parties_arguments)}
-    ${paragraphs(item.legal_question)}
-    ${paragraphs(item.reasoning)}
-    ${paragraphs(item.outcome)}
-    <p class="portee"><strong>Portée pratique.</strong> ${esc(item.practical_relevance)}</p>
-    <p class="reference"><a href="${esc(item.source_url)}">Voir la source</a></p>
-  </article>`;
+const practicalParagraph = (item) => new Paragraph({
+  alignment: AlignmentType.JUSTIFIED,
+  spacing: { before: 80, after: 260 },
+  border: { left: { color: "507D82", size: 10, space: 8, style: "single" } },
+  indent: { left: 180 },
+  children: [
+    new TextRun({ text: "Portée pratique. ", bold: true }),
+    new TextRun({ text: item.practical_relevance })
+  ]
+});
 
-const html = `<!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Veille Propriété intellectuelle – ${esc(report.week)}</title>
-<style>
-  @page { size: A4; margin: 18mm 18mm 16mm; }
-  * { box-sizing: border-box; }
-  body { max-width: 820px; margin: 42px auto; padding: 0 28px; color: #171717; font: 13.5px/1.58 Arial, Helvetica, sans-serif; }
-  header { text-align: center; margin-bottom: 34px; }
-  h1 { margin: 0; font: 700 22px Georgia, "Times New Roman", serif; }
-  .week { margin-top: 7px; font-size: 13px; }
-  .section { margin: 34px 0 15px; font-size: 14px; letter-spacing: .02em; border-bottom: 1px solid #222; padding-bottom: 5px; }
-  .item { margin: 0 0 38px; break-inside: auto; }
-  .item h2 { margin: 0 0 10px; font-size: 14px; line-height: 1.35; text-decoration: underline; text-underline-offset: 3px; }
-  .reference { margin: 0 0 17px; }
-  .reference a { color: #507d82; text-decoration: underline; }
-  p { margin: 0 0 13px; text-align: justify; }
-  .portee { border-left: 2px solid #507d82; padding-left: 12px; }
-  .editorial { margin-top: 30px; color: #666; font-size: 11px; }
-  footer { text-align: right; color: #777; font-size: 10px; margin-top: 25px; }
-  @media print { body { margin: 0; padding: 0; max-width: none; } a { color: #333 !important; } }
-</style>
-</head>
-<body>
-<header><h1>Veille Propriété intellectuelle</h1><p class="week">${esc(report.week)}</p></header>
-${jurisprudences.length ? `<h2 class="section">JURISPRUDENCES</h2>${jurisprudences.map(renderJurisprudence).join("")}` : ""}
-${actualites.length ? `<h2 class="section">ACTUALITÉS</h2>${actualites.map(renderActualite).join("")}` : ""}
-<p class="editorial">${esc(report.editorial_note)}</p>
-<footer>Veille générée le ${esc(new Date(report.generated_at).toLocaleDateString("fr-FR"))} · Sources primaires accessibles par les liens ci-dessus</footer>
-</body>
-</html>`;
+const renderItem = (item) => [
+  new Paragraph({
+    heading: HeadingLevel.HEADING_2,
+    keepNext: true,
+    spacing: { before: 180, after: 100 },
+    children: [new TextRun({
+      text: item.type === "JURISPRUDENCE" ? `${item.category} – ${item.title}` : item.title,
+      bold: true,
+      underline: {}
+    })]
+  }),
+  sourceParagraph(item),
+  ...textParagraphs(item.introduction),
+  ...textParagraphs(item.facts_and_procedure),
+  ...textParagraphs(item.parties_arguments),
+  ...textParagraphs(item.legal_question),
+  ...textParagraphs(item.reasoning),
+  ...textParagraphs(item.outcome),
+  practicalParagraph(item)
+];
 
-await fs.writeFile(`public/reports/veille-${slug}.html`, html);
+const children = [
+  new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 100 },
+    children: [new TextRun({ text: "Veille Propriété intellectuelle", bold: true, size: 32, font: "Arial" })]
+  }),
+  new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 420 },
+    children: [new TextRun({ text: report.week, size: 22, font: "Arial" })]
+  })
+];
+
+if (jurisprudences.length) {
+  children.push(new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 240, after: 180 },
+    border: { bottom: { color: "222222", size: 6, space: 6, style: "single" } },
+    children: [new TextRun({ text: "JURISPRUDENCES", bold: true })]
+  }));
+  jurisprudences.forEach((item) => children.push(...renderItem(item)));
+}
+
+if (actualites.length) {
+  children.push(new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 300, after: 180 },
+    border: { bottom: { color: "222222", size: 6, space: 6, style: "single" } },
+    children: [new TextRun({ text: "ACTUALITÉS", bold: true })]
+  }));
+  actualites.forEach((item) => children.push(...renderItem(item)));
+}
+
+children.push(
+  new Paragraph({
+    spacing: { before: 260, after: 140 },
+    children: [new TextRun({ text: report.editorial_note, color: "666666", size: 18, italics: true })]
+  })
+);
+
+const document = new Document({
+  creator: "Veille IP DLA",
+  title: `Veille Propriété intellectuelle – ${report.week}`,
+  description: "Veille hebdomadaire de propriété intellectuelle",
+  styles: {
+    default: {
+      document: {
+        run: { font: "Arial", size: 22, color: "171717" },
+        paragraph: { spacing: { after: 160, line: 300 } }
+      }
+    },
+    paragraphStyles: [
+      {
+        id: "Heading1",
+        name: "Heading 1",
+        basedOn: "Normal",
+        next: "Normal",
+        quickFormat: true,
+        run: { font: "Arial", size: 24, bold: true, color: "171717" }
+      },
+      {
+        id: "Heading2",
+        name: "Heading 2",
+        basedOn: "Normal",
+        next: "Normal",
+        quickFormat: true,
+        run: { font: "Arial", size: 22, bold: true, color: "171717" }
+      }
+    ]
+  },
+  sections: [{
+    properties: {
+      page: {
+        size: { width: 11906, height: 16838 },
+        margin: { top: 1020, right: 1020, bottom: 900, left: 1020 }
+      }
+    },
+    footers: {
+      default: new Footer({
+        children: [new Paragraph({
+          alignment: AlignmentType.RIGHT,
+          children: [
+            new TextRun({ text: "Veille IP · " }),
+            new TextRun({ children: [PageNumber.CURRENT] })
+          ]
+        })]
+      })
+    },
+    children
+  }]
+});
+
+const buffer = await Packer.toBuffer(document);
+await fs.writeFile(`public/reports/veille-${slug}.docx`, buffer);
 await fs.writeFile("public/latest.json", JSON.stringify(report, null, 2) + "\n");
-console.log(`Generated ${jurisprudences.length} jurisprudences and ${actualites.length} actualités for ${report.week}`);
+console.log(`Generated Word report with ${jurisprudences.length} jurisprudences and ${actualites.length} actualités for ${report.week}`);
