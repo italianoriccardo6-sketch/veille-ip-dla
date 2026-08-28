@@ -5,6 +5,106 @@ const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", imp
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
 const domains = sources.map((source) => source.domain);
 
+const callOpenAI = async (body, label) => {
+  const maxAttempts = 5;
+  let response;
+  let raw;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    });
+    raw = await response.json();
+    if (response.ok) return raw;
+    if (response.status !== 429 || attempt === maxAttempts) {
+      throw new Error(`${label}: ${JSON.stringify(raw)}`);
+    }
+    const message = raw?.error?.message || "";
+    const suggestedSeconds = Number(message.match(/try again in ([0-9.]+)s/i)?.[1] || 0);
+    const delayMs = Math.max(Math.ceil(suggestedSeconds * 1000) + 2000, 10000 * (2 ** (attempt - 1)));
+    console.warn(`${label}: limite OpenAI, nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+  throw new Error(`${label}: échec inattendu`);
+};
+
+const extractOutputText = (raw, label) => {
+  const text = raw.output?.flatMap((entry) => entry.content || [])
+    .find((entry) => entry.type === "output_text")?.text;
+  if (!text) throw new Error(`${label}: sortie structurée absente`);
+  return text;
+};
+
+// Une recherche distincte et obligatoire est exécutée pour chaque source. Cette
+// étape empêche le modèle éditorial de se concentrer uniquement sur les domaines
+// qui remontent le plus facilement dans une recherche globale.
+const discoverySchema = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    source_name: { type: "string" },
+    domain: { type: "string" },
+    searched: { type: "boolean" },
+    search_note: { type: "string" },
+    candidates: {
+      type: "array",
+      maxItems: 4,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          title: { type: "string" },
+          url: { type: "string" },
+          publication_date: { type: "string" },
+          content_type: { type: "string" },
+          relevance: { type: "string" }
+        },
+        required: ["title", "url", "publication_date", "content_type", "relevance"]
+      }
+    }
+  },
+  required: ["source_name", "domain", "searched", "search_note", "candidates"]
+};
+
+const sourceCoverage = [];
+for (const source of sources) {
+  console.log(`Analyse obligatoire: ${source.name} (${source.domain})`);
+  const discoveryRaw = await callOpenAI({
+    model: process.env.OPENAI_MODEL || "gpt-5.6-sol",
+    reasoning: { effort: "low" },
+    tools: [{
+      type: "web_search",
+      filters: { allowed_domains: [source.domain] },
+      external_web_access: true
+    }],
+    tool_choice: "required",
+    input: [
+      `Analyse obligatoirement la source ${source.name} (${source.domain}).`,
+      `Thèmes attendus: ${source.themes.join(", ")}.`,
+      "Recherche d'abord toutes les publications pertinentes des 7 derniers jours, puis élargis aux 30 derniers jours.",
+      "Repère jusqu'à quatre décisions, textes, rapports ou actualités substantiels en propriété intellectuelle.",
+      "Chaque résultat doit avoir une date vérifiable et une URL directe. N'invente rien.",
+      "Même si aucun résultat pertinent n'est trouvé, confirme que la source a été analysée, laisse candidates vide et explique brièvement pourquoi dans search_note."
+    ].join("\n"),
+    max_output_tokens: 2500,
+    text: { format: { type: "json_schema", name: "analyse_source_ip", strict: true, schema: discoverySchema } }
+  }, `Analyse ${source.name}`);
+  const discovery = JSON.parse(extractOutputText(discoveryRaw, `Analyse ${source.name}`));
+  discovery.source_name = source.name;
+  discovery.domain = source.domain;
+  discovery.searched = true;
+  sourceCoverage.push(discovery);
+}
+
+if (sourceCoverage.length !== sources.length || sourceCoverage.some((entry) => !entry.searched)) {
+  throw new Error("Veille refusée: toutes les sources obligatoires n'ont pas été analysées.");
+}
+
 const requiredText = { type: "string", minLength: 20 };
 const itemProperties = {
   type: { type: "string", enum: ["JURISPRUDENCE", "ACTUALITE"] },
@@ -29,6 +129,23 @@ const schema = {
   properties: {
     week: { type: "string" },
     editorial_note: { type: "string" },
+    source_coverage: {
+      type: "array",
+      minItems: 8,
+      maxItems: 8,
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          source_name: { type: "string" },
+          domain: { type: "string" },
+          searched: { type: "boolean" },
+          candidate_count: { type: "integer" },
+          search_note: { type: "string" }
+        },
+        required: ["source_name", "domain", "searched", "candidate_count", "search_note"]
+      }
+    },
     items: {
       type: "array",
       minItems: 5,
@@ -41,14 +158,17 @@ const schema = {
       }
     }
   },
-  required: ["week", "editorial_note", "items"]
+  required: ["week", "editorial_note", "source_coverage", "items"]
 };
 
 const input = [
   "Tu es le rédacteur d'une veille hebdomadaire destinée à l'équipe Propriété intellectuelle d'un grand cabinet d'avocats international en France.",
   "",
   "MISSION",
-  "Recherche en priorité les développements des 7 derniers jours exclusivement dans les domaines autorisés et rédige une veille complète en français, directement exploitable par des avocats. Si la semaine est pauvre en publications, élargis progressivement la recherche aux 30 derniers jours afin de produire une sélection substantielle; indique alors clairement la date de chaque sujet.",
+  "Les huit sources autorisées ont déjà fait l'objet d'une recherche séparée et obligatoire. Analyse la totalité des résultats de couverture ci-dessous avant de rédiger une veille complète en français, directement exploitable par des avocats. Tu peux ouvrir à nouveau les documents primaires pour approfondir les sujets sélectionnés.",
+  "",
+  "COUVERTURE OBLIGATOIRE DES HUIT SOURCES",
+  JSON.stringify(sourceCoverage, null, 2),
   "",
   "SÉLECTION",
   "- Sélectionne exactement 5 ou 6 sujets substantiels: idéalement 4 jurisprudences et 1 ou 2 actualités. En période de faible activité juridictionnelle, accepte 3 jurisprudences et 2 ou 3 actualités.",
@@ -85,6 +205,7 @@ const input = [
   "- Ne produis jamais de fiche vide, de chaîne vide ou de sujet fictif pour atteindre le nombre demandé.",
   "- Évite les doublons et les sujets trop faibles.",
   "- L'editorial_note doit signaler honnêtement toute limite de couverture ou d'accès.",
+  "- Reproduis source_coverage avec exactement les huit sources analysées, searched=true, le nombre réel de candidats et la note de recherche correspondante.",
   "",
   "Domaines autorisés: " + domains.join(", ")
 ].join("\n");
@@ -103,38 +224,8 @@ const requestBody = {
   text: { format: { type: "json_schema", name: "veille_ip_editoriale", strict: true, schema } }
 };
 
-let response;
-let raw;
-const maxAttempts = 5;
-
-for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-  response = await fetch("https://api.openai.com/v1/responses", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(requestBody)
-  });
-
-  raw = await response.json();
-  if (response.ok) break;
-
-  if (response.status !== 429 || attempt === maxAttempts) {
-    throw new Error(JSON.stringify(raw));
-  }
-
-  const message = raw?.error?.message || "";
-  const suggestedSeconds = Number(message.match(/try again in ([0-9.]+)s/i)?.[1] || 0);
-  const delayMs = Math.max(Math.ceil(suggestedSeconds * 1000) + 2000, 10000 * (2 ** (attempt - 1)));
-  console.warn(`Rate limit OpenAI: nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
-  await new Promise((resolve) => setTimeout(resolve, delayMs));
-}
-
-if (!response?.ok) throw new Error(JSON.stringify(raw));
-
-const output = raw.output?.flatMap((entry) => entry.content || []).find((entry) => entry.type === "output_text")?.text;
-if (!output) throw new Error("Sortie structurée absente");
+const raw = await callOpenAI(requestBody, "Rédaction finale");
+const output = extractOutputText(raw, "Rédaction finale");
 
 const report = JSON.parse(output);
 const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "summary", "introduction", "reasoning", "outcome", "practical_relevance"];
@@ -143,6 +234,11 @@ const incompleteItems = report.items.filter((item) =>
 );
 if (incompleteItems.length || report.items.length < 5) {
   throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
+}
+const expectedDomains = new Set(domains);
+const coveredDomains = new Set(report.source_coverage.filter((entry) => entry.searched).map((entry) => entry.domain));
+if (coveredDomains.size !== expectedDomains.size || [...expectedDomains].some((domain) => !coveredDomains.has(domain))) {
+  throw new Error("Veille refusée: le rapport final ne confirme pas l'analyse des huit sources.");
 }
 report.generated_at = new Date().toISOString();
 report.status = "generated";
