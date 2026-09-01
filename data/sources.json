@@ -58,5 +58,20 @@
     "themes": [
       "législation"
     ]
+  },
+  {
+    "name": "Dreyfus & Associés – Newsletter IP",
+    "domain": "linkedin.com",
+    "reference_url": "https://www.linkedin.com/pulse/newsletter-august-2026-dreyfus-associes-topne",
+    "source_kind": "secondary_analysis",
+    "themes": [
+      "propriété intellectuelle",
+      "marques",
+      "dessins et modèles",
+      "brevets",
+      "droit d’auteur",
+      "noms de domaine",
+      "économie numérique"
+    ]
   }
 ]
