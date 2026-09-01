@@ -15,6 +15,7 @@ const callOpenAI = async (body, label) => {
   const maxAttempts = 5;
   let response;
   let raw;
+  let incompleteRetries = 0;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     response = await fetch(responsesEndpoint, {
@@ -28,6 +29,12 @@ const callOpenAI = async (body, label) => {
     raw = await response.json();
     if (response.ok) {
       if (raw.status === "incomplete") {
+        if (raw.incomplete_details?.reason === "max_output_tokens" && incompleteRetries < 1) {
+          incompleteRetries += 1;
+          body.max_output_tokens = Math.min((body.max_output_tokens || 4000) * 2, 12000);
+          console.warn(`${label}: sortie tronquée, nouvel essai limité à cette étape avec ${body.max_output_tokens} tokens.`);
+          continue;
+        }
         throw new Error(`${label}: réponse incomplète (${raw.incomplete_details?.reason || "raison inconnue"})`);
       }
       usageTotals.requests += 1;
