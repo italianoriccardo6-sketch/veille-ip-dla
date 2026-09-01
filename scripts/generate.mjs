@@ -248,6 +248,19 @@ const selectionProperties = {
   source_url: { type: "string", minLength: 10 },
   publication_date: { type: "string", minLength: 8 }
 };
+
+const frenchEditorialRules = [
+  "Rédige systématiquement dans un français soutenu, précis, élégant et juridiquement rigoureux, conforme aux standards rédactionnels d'un cabinet d'avocats.",
+  "Respecte irréprochablement la grammaire, l'orthographe, la syntaxe et la ponctuation françaises.",
+  "N'utilise jamais les caractères « – » ou « — ». Reformule la phrase ou emploie une ponctuation française appropriée."
+].join(" ");
+
+const normalizeFrenchTypography = (value) => String(value || "")
+  .replace(/\s+[–—]\s+/g, ", ")
+  .replace(/[–—]/g, ",")
+  .replace(/\s+,/g, ",")
+  .replace(/,{2,}/g, ",")
+  .trim();
 const selectionSchema = {
   type: "object",
   additionalProperties: false,
@@ -279,6 +292,7 @@ const selectionRaw = await callOpenAI({
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
     "Les résultats Google Alerts ci-dessous constituent uniquement des pistes de veille. Ne retiens un sujet que si l'article paraît juridiquement substantiel et si son URL originale est vérifiable.",
     "N'invente ni référence ni URL. Écarte les doublons et les sujets insuffisamment vérifiables.",
+    frenchEditorialRules,
     `SOURCES OBLIGATOIRES: ${JSON.stringify(sourceCoverage)}`,
     `GOOGLE ALERTS FILTRÉS: ${JSON.stringify(googleAlertCandidates)}`
   ].join("\n"),
@@ -290,6 +304,8 @@ const selection = JSON.parse(extractOutputText(selectionRaw, "Sélection éditor
 const requiredText = { type: "string", minLength: 20 };
 const itemProperties = {
   ...selectionProperties,
+  source_access: { type: "string", enum: ["COMPLET", "RESTREINT"] },
+  access_warning: { type: "string" },
   summary: requiredText,
   introduction: requiredText,
   facts_and_procedure: requiredText,
@@ -323,21 +339,36 @@ for (const [index, selected] of selection.selected_items.entries()) {
       `Sujet sélectionné: ${JSON.stringify(selected)}`,
       "Ouvre et analyse le document primaire. L'URL finale doit mener directement à la décision, au texte ou au document institutionnel utilisé.",
       "Rédige en français juridique, sobre, impersonnel, précis et approfondi, exclusivement à partir d'informations vérifiables.",
+      frenchEditorialRules,
       "Pour une jurisprudence, rédige 650 à 900 mots au total: litige, faits, procédure, arguments, question de droit explicitement formulée, raisonnement détaillé, solution et portée pratique.",
       "Pour une actualité, rédige 250 à 450 mots: contexte, contenu précis, conséquences pratiques et prochaines étapes.",
       "Le résumé destiné à la dashboard doit faire 35 à 55 mots. Les autres champs doivent être des paragraphes continus, sans listes.",
       "N'invente jamais une référence, une citation, un argument ou une étape procédurale. Si un élément manque, indique qu'il n'est pas précisé.",
-      "N'utilise des guillemets que pour une citation réellement présente dans la source."
+      "N'utilise des guillemets que pour une citation réellement présente dans la source.",
+      "Évalue explicitement l'accès à la source. Si le document primaire a pu être consulté intégralement, indique source_access: COMPLET et laisse access_warning vide.",
+      "Si l'accès est incomplet, limité, payant ou restreint, indique source_access: RESTREINT et inscris exactement dans access_warning: Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
+      "Même lorsque l'accès est restreint, produis le résumé le plus complet et le plus rigoureux possible à partir des seules informations effectivement accessibles. N'extrapole jamais et ne présente pas comme certain un élément qui n'a pas pu être vérifié."
     ].join("\n"),
     max_output_tokens: 6000,
     text: { format: { type: "json_schema", name: "fiche_veille_ip", strict: true, schema: itemSchema } }
   }, `Rédaction fiche ${index + 1}`);
-  items.push(JSON.parse(extractOutputText(itemRaw, `Rédaction fiche ${index + 1}`)));
+  const item = JSON.parse(extractOutputText(itemRaw, `Rédaction fiche ${index + 1}`));
+  for (const field of Object.keys(itemProperties)) {
+    if (field !== "source_url" && typeof item[field] === "string") {
+      item[field] = normalizeFrenchTypography(item[field]);
+    }
+  }
+  if (item.source_access === "RESTREINT") {
+    item.access_warning = "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.";
+  } else {
+    item.access_warning = "";
+  }
+  items.push(item);
 }
 
 const report = {
-  week: selection.week,
-  editorial_note: selection.editorial_note,
+  week: normalizeFrenchTypography(selection.week),
+  editorial_note: normalizeFrenchTypography(selection.editorial_note),
   source_coverage: sourceCoverage.map((entry) => ({
     source_name: entry.source_name,
     domain: entry.domain,
@@ -351,9 +382,10 @@ const report = {
   },
   items
 };
-const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "summary", "introduction", "reasoning", "outcome", "practical_relevance"];
+const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "source_access", "summary", "introduction", "reasoning", "outcome", "practical_relevance"];
 const incompleteItems = report.items.filter((item) =>
   mandatoryFields.some((field) => typeof item[field] !== "string" || item[field].trim().length < 3)
+  || (item.source_access === "RESTREINT" && item.access_warning.length < 20)
 );
 if (incompleteItems.length || report.items.length < 5) {
   throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
@@ -391,6 +423,19 @@ const sourceParagraph = (item) => new Paragraph({
   ]
 });
 
+const accessWarningParagraph = (item) => item.source_access === "RESTREINT"
+  ? new Paragraph({
+      alignment: AlignmentType.JUSTIFIED,
+      spacing: { after: 220 },
+      children: [new TextRun({
+        text: item.access_warning,
+        color: "C55A11",
+        bold: true,
+        italics: true
+      })]
+    })
+  : null;
+
 const practicalParagraph = (item) => new Paragraph({
   alignment: AlignmentType.JUSTIFIED,
   spacing: { before: 80, after: 260 },
@@ -408,12 +453,13 @@ const renderItem = (item) => [
     keepNext: true,
     spacing: { before: 180, after: 100 },
     children: [new TextRun({
-      text: item.type === "JURISPRUDENCE" ? `${item.category} – ${item.title}` : item.title,
+      text: item.type === "JURISPRUDENCE" ? `${item.category} : ${item.title}` : item.title,
       bold: true,
       underline: {}
     })]
   }),
   sourceParagraph(item),
+  ...(accessWarningParagraph(item) ? [accessWarningParagraph(item)] : []),
   ...textParagraphs(item.introduction),
   ...textParagraphs(item.facts_and_procedure),
   ...textParagraphs(item.parties_arguments),
@@ -465,7 +511,7 @@ children.push(
 
 const document = new Document({
   creator: "Veille IP DLA",
-  title: `Veille Propriété intellectuelle – ${report.week}`,
+  title: `Veille Propriété intellectuelle : ${report.week}`,
   description: "Veille hebdomadaire de propriété intellectuelle",
   styles: {
     default: {
