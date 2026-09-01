@@ -4,6 +4,7 @@ import { AlignmentType, Document, ExternalHyperlink, Footer, HeadingLevel, Packe
 const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", import.meta.url), "utf8"));
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
 const domains = sources.map((source) => source.domain);
+const sourceCount = sources.length;
 
 const callOpenAI = async (body, label) => {
   const maxAttempts = 5;
@@ -85,6 +86,7 @@ for (const source of sources) {
     tool_choice: "required",
     input: [
       `Analyse obligatoirement la source ${source.name} (${source.domain}).`,
+      ...(source.reference_url ? [`URL de référence prioritaire: ${source.reference_url}.`] : []),
       `Thèmes attendus: ${source.themes.join(", ")}.`,
       "Recherche d'abord toutes les publications pertinentes des 7 derniers jours, puis élargis aux 30 derniers jours.",
       "Repère jusqu'à quatre décisions, textes, rapports ou actualités substantiels en propriété intellectuelle.",
@@ -101,7 +103,7 @@ for (const source of sources) {
   sourceCoverage.push(discovery);
 }
 
-if (sourceCoverage.length !== sources.length || sourceCoverage.some((entry) => !entry.searched)) {
+if (sourceCoverage.length !== sourceCount || sourceCoverage.some((entry) => !entry.searched)) {
   throw new Error("Veille refusée: toutes les sources obligatoires n'ont pas été analysées.");
 }
 
@@ -131,8 +133,8 @@ const schema = {
     editorial_note: { type: "string" },
     source_coverage: {
       type: "array",
-      minItems: 8,
-      maxItems: 8,
+      minItems: sourceCount,
+      maxItems: sourceCount,
       items: {
         type: "object",
         additionalProperties: false,
@@ -165,15 +167,16 @@ const input = [
   "Tu es le rédacteur d'une veille hebdomadaire destinée à l'équipe Propriété intellectuelle d'un grand cabinet d'avocats international en France.",
   "",
   "MISSION",
-  "Les huit sources autorisées ont déjà fait l'objet d'une recherche séparée et obligatoire. Analyse la totalité des résultats de couverture ci-dessous avant de rédiger une veille complète en français, directement exploitable par des avocats. Tu peux ouvrir à nouveau les documents primaires pour approfondir les sujets sélectionnés.",
+  `Les ${sourceCount} sources autorisées ont déjà fait l'objet d'une recherche séparée et obligatoire. Analyse la totalité des résultats de couverture ci-dessous avant de rédiger une veille complète en français, directement exploitable par des avocats. Tu peux ouvrir à nouveau les documents primaires pour approfondir les sujets sélectionnés.`,
   "",
-  "COUVERTURE OBLIGATOIRE DES HUIT SOURCES",
+  `COUVERTURE OBLIGATOIRE DES ${sourceCount} SOURCES`,
   JSON.stringify(sourceCoverage, null, 2),
   "",
   "SÉLECTION",
   "- Sélectionne exactement 5 ou 6 sujets substantiels: idéalement 4 jurisprudences et 1 ou 2 actualités. En période de faible activité juridictionnelle, accepte 3 jurisprudences et 2 ou 3 actualités.",
   "- Recherche un équilibre entre marques, brevets, dessins et modèles, droit d'auteur et un sujet connexe pertinent (IA, numérique, médias ou concurrence déloyale).",
   "- Privilégie les décisions, textes, communiqués et dossiers législatifs provenant de sources primaires.",
+  "- Une source secondaire peut servir à détecter ou contextualiser un sujet, mais la fiche finale doit autant que possible être fondée sur la décision, le texte ou le document institutionnel primaire correspondant.",
   "- Ne retiens un sujet que si sa date, sa référence et son URL directe sont vérifiables.",
   "- N'invente jamais un numéro de décision, une juridiction, une citation, un fait, une position de partie ou une étape procédurale.",
   "- Si une information manque dans la source, indique sobrement qu'elle n'est pas précisée au lieu de la compléter.",
@@ -205,7 +208,7 @@ const input = [
   "- Ne produis jamais de fiche vide, de chaîne vide ou de sujet fictif pour atteindre le nombre demandé.",
   "- Évite les doublons et les sujets trop faibles.",
   "- L'editorial_note doit signaler honnêtement toute limite de couverture ou d'accès.",
-  "- Reproduis source_coverage avec exactement les huit sources analysées, searched=true, le nombre réel de candidats et la note de recherche correspondante.",
+  `- Reproduis source_coverage avec exactement les ${sourceCount} sources analysées, searched=true, le nombre réel de candidats et la note de recherche correspondante.`,
   "",
   "Domaines autorisés: " + domains.join(", ")
 ].join("\n");
@@ -238,7 +241,7 @@ if (incompleteItems.length || report.items.length < 5) {
 const expectedDomains = new Set(domains);
 const coveredDomains = new Set(report.source_coverage.filter((entry) => entry.searched).map((entry) => entry.domain));
 if (coveredDomains.size !== expectedDomains.size || [...expectedDomains].some((domain) => !coveredDomains.has(domain))) {
-  throw new Error("Veille refusée: le rapport final ne confirme pas l'analyse des huit sources.");
+  throw new Error(`Veille refusée: le rapport final ne confirme pas l'analyse des ${sourceCount} sources.`);
 }
 report.generated_at = new Date().toISOString();
 report.status = "generated";
