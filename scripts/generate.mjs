@@ -67,6 +67,110 @@ const extractOutputText = (raw, label) => {
   return text;
 };
 
+const decodeXml = (value = "") => value
+  .replace(/&lt;/g, "<")
+  .replace(/&gt;/g, ">")
+  .replace(/&quot;/g, '"')
+  .replace(/&#39;|&apos;/g, "'")
+  .replace(/&amp;/g, "&")
+  .replace(/<[^>]+>/g, " ")
+  .replace(/\s+/g, " ")
+  .trim();
+
+const extractTag = (xml, tag) => decodeXml(xml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i"))?.[1] || "");
+
+const originalGoogleAlertUrl = (rawHref = "") => {
+  const decoded = decodeXml(rawHref);
+  try {
+    const url = new URL(decoded);
+    return url.hostname.includes("google.") && url.pathname === "/url"
+      ? url.searchParams.get("url") || decoded
+      : decoded;
+  } catch {
+    return decoded;
+  }
+};
+
+const ipSignals = [
+  /propri[eé]t[eé] intellectuelle/i,
+  /droits? d['’]auteur/i,
+  /droits? voisins?/i,
+  /copyright/i,
+  /contrefa[cç]on/i,
+  /\bbrevets?\b/i,
+  /\bmarques?\b/i,
+  /dessins? et mod[eè]les?/i,
+  /risque de confusion/i,
+  /secret des affaires/i,
+  /\b(?:EUIPO|INPI|OEB|EPO|OMPI|WIPO|CSPLA)\b/i,
+  /originalit[eé].{0,30}(?:œuvre|oeuvre)/i
+];
+
+const googleAlertFeedUrls = [...new Set((process.env.GOOGLE_ALERT_RSS_URLS || "")
+  .split(/[\s,;]+/)
+  .map((url) => url.trim())
+  .filter(Boolean))];
+
+const loadGoogleAlertCandidates = async () => {
+  if (!googleAlertFeedUrls.length) {
+    console.log("Google Alerts: aucun flux configuré.");
+    return [];
+  }
+
+  const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  const settled = await Promise.all(googleAlertFeedUrls.map(async (feedUrl) => {
+    try {
+      const response = await fetch(feedUrl, { signal: AbortSignal.timeout(15000) });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const xml = await response.text();
+      const alertTitle = extractTag(xml, "title");
+      return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/gi)].map((match) => {
+        const entry = match[1];
+        const rawHref = entry.match(/<link[^>]+href="([^"]+)"/i)?.[1] || "";
+        const title = extractTag(entry, "title");
+        const summary = extractTag(entry, "content") || extractTag(entry, "summary");
+        const published = extractTag(entry, "published") || extractTag(entry, "updated");
+        const searchable = `${title} ${summary}`;
+        const titleScore = ipSignals.filter((signal) => signal.test(title)).length;
+        const totalScore = ipSignals.filter((signal) => signal.test(searchable)).length;
+        return {
+          alert_title: alertTitle,
+          title,
+          url: originalGoogleAlertUrl(rawHref),
+          publication_date: published,
+          summary: summary.slice(0, 500),
+          relevance_score: titleScore * 2 + totalScore
+        };
+      });
+    } catch (error) {
+      console.warn(`Google Alerts: flux ignoré (${error.message})`);
+      return [];
+    }
+  }));
+
+  const deduplicated = new Map();
+  for (const candidate of settled.flat()) {
+    const timestamp = Date.parse(candidate.publication_date);
+    if (!candidate.url || !candidate.title || !Number.isFinite(timestamp) || timestamp < cutoff || candidate.relevance_score < 2) continue;
+    let key;
+    try {
+      const url = new URL(candidate.url);
+      ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach((param) => url.searchParams.delete(param));
+      key = url.toString();
+    } catch {
+      key = candidate.title.toLowerCase();
+    }
+    const existing = deduplicated.get(key);
+    if (!existing || candidate.relevance_score > existing.relevance_score) deduplicated.set(key, candidate);
+  }
+
+  const candidates = [...deduplicated.values()]
+    .sort((a, b) => b.relevance_score - a.relevance_score || Date.parse(b.publication_date) - Date.parse(a.publication_date))
+    .slice(0, 30);
+  console.log(`Google Alerts: ${googleAlertFeedUrls.length} flux uniques, ${candidates.length} candidats IP après filtrage.`);
+  return candidates;
+};
+
 // Une recherche distincte et obligatoire est exécutée pour chaque source. Cette
 // étape empêche le modèle éditorial de se concentrer uniquement sur les domaines
 // qui remontent le plus facilement dans une recherche globale.
@@ -133,6 +237,8 @@ if (sourceCoverage.length !== sourceCount || sourceCoverage.some((entry) => !ent
   throw new Error("Veille refusée: toutes les sources obligatoires n'ont pas été analysées.");
 }
 
+const googleAlertCandidates = await loadGoogleAlertCandidates();
+
 const selectionProperties = {
   type: { type: "string", enum: ["JURISPRUDENCE", "ACTUALITE"] },
   category: { type: "string", minLength: 3 },
@@ -171,8 +277,10 @@ const selectionRaw = await callOpenAI({
     `Sélectionne 5 ou 6 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous.`,
     "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
+    "Les résultats Google Alerts ci-dessous constituent uniquement des pistes de veille. Ne retiens un sujet que si l'article paraît juridiquement substantiel et si son URL originale est vérifiable.",
     "N'invente ni référence ni URL. Écarte les doublons et les sujets insuffisamment vérifiables.",
-    JSON.stringify(sourceCoverage)
+    `SOURCES OBLIGATOIRES: ${JSON.stringify(sourceCoverage)}`,
+    `GOOGLE ALERTS FILTRÉS: ${JSON.stringify(googleAlertCandidates)}`
   ].join("\n"),
   max_output_tokens: 3000,
   text: { format: { type: "json_schema", name: "selection_veille_ip", strict: true, schema: selectionSchema } }
@@ -237,6 +345,10 @@ const report = {
     candidate_count: entry.candidates.length,
     search_note: entry.search_note
   })),
+  scouting_coverage: {
+    google_alert_feeds: googleAlertFeedUrls.length,
+    google_alert_candidates: googleAlertCandidates.length
+  },
   items
 };
 const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "summary", "introduction", "reasoning", "outcome", "practical_relevance"];
