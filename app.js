@@ -9,13 +9,15 @@ fetch("/public/latest.json")
   .then((data) => {
     current = data;
     document.querySelector("#week").textContent = "SEMAINE DU " + data.week.toUpperCase();
-    document.querySelector("#itemCount").textContent = data.items.length;
-    document.querySelector("#items").innerHTML = data.items.map((item, index) => `
+    const displayedItems = [...data.items, ...(data.briefs || [])];
+    document.querySelector("#itemCount").textContent = displayedItems.length;
+    document.querySelector("#items").innerHTML = displayedItems.map((item, index) => `
       <article class="item">
         <span class="number">${String(index + 1).padStart(2, "0")}</span>
         <div>
           <span class="tag">${esc(item.category)}</span>
           <h3>${esc(item.title)}</h3>
+          ${item.discovered_via_juliette_alert ? '<small class="alert-origin">Signalé par l’alerte de Juliette.</small>' : ''}
           <p>${esc(item.source)} · ${esc(item.summary)}</p>
         </div>
         <a href="${esc(item.source_url)}" target="_blank" rel="noopener">↗</a>
