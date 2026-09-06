@@ -10,6 +10,19 @@ const editorialModel = process.env.OPENAI_EDITORIAL_MODEL || "gpt-5.6-terra";
 const responsesEndpoint = process.env.OPENAI_RESPONSES_ENDPOINT || "https://api.openai.com/v1/responses";
 const usageTotals = { input_tokens: 0, output_tokens: 0, total_tokens: 0, requests: 0, web_search_calls: 0 };
 const usageByModel = {};
+const runStartedAt = new Date();
+const weekStart = new Date(runStartedAt);
+const daysSinceMonday = (runStartedAt.getUTCDay() + 6) % 7;
+weekStart.setUTCDate(runStartedAt.getUTCDate() - daysSinceMonday);
+weekStart.setUTCHours(0, 0, 0, 0);
+const weekStartIso = weekStart.toISOString().slice(0, 10);
+const weekEndIso = runStartedAt.toISOString().slice(0, 10);
+const currentWeekInstruction = `Ne retiens que les contenus publiés entre le ${weekStartIso} et le ${weekEndIso}, dates incluses. N'utilise aucun contenu antérieur, même pour compléter la sélection.`;
+const isCurrentWeekPublication = (value) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) return false;
+  const timestamp = Date.parse(`${value}T00:00:00.000Z`);
+  return Number.isFinite(timestamp) && timestamp >= weekStart.getTime() && timestamp <= runStartedAt.getTime();
+};
 
 const callOpenAI = async (body, label) => {
   const maxAttempts = 5;
@@ -117,7 +130,7 @@ const loadGoogleAlertCandidates = async () => {
     return [];
   }
 
-  const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  const cutoff = weekStart.getTime();
   const settled = await Promise.all(googleAlertFeedUrls.map(async (feedUrl) => {
     try {
       const response = await fetch(feedUrl, { signal: AbortSignal.timeout(15000) });
@@ -151,7 +164,7 @@ const loadGoogleAlertCandidates = async () => {
   const deduplicated = new Map();
   for (const candidate of settled.flat()) {
     const timestamp = Date.parse(candidate.publication_date);
-    if (!candidate.url || !candidate.title || !Number.isFinite(timestamp) || timestamp < cutoff || candidate.relevance_score < 2) continue;
+    if (!candidate.url || !candidate.title || !Number.isFinite(timestamp) || timestamp < cutoff || timestamp > runStartedAt.getTime() || candidate.relevance_score < 2) continue;
     let key;
     try {
       const url = new URL(candidate.url);
@@ -191,7 +204,7 @@ const discoverySchema = {
         properties: {
           title: { type: "string" },
           url: { type: "string" },
-          publication_date: { type: "string" },
+          publication_date: { type: "string", pattern: "^\\d{4}-\\d{2}-\\d{2}$" },
           content_type: { type: "string" },
           relevance: { type: "string" }
         },
@@ -218,7 +231,8 @@ for (const source of sources) {
       `Analyse obligatoirement la source ${source.name} (${source.domain}).`,
       ...(source.reference_url ? [`URL de référence prioritaire: ${source.reference_url}.`] : []),
       `Thèmes attendus: ${source.themes.join(", ")}.`,
-      "Recherche d'abord toutes les publications pertinentes des 7 derniers jours, puis élargis aux 30 derniers jours.",
+      currentWeekInstruction,
+      "La fraîcheur est impérative. Si la source n'a rien publié pendant cette semaine, laisse candidates vide au lieu de rechercher une publication plus ancienne.",
       "Repère jusqu'à trois décisions, textes, rapports ou actualités substantiels en propriété intellectuelle.",
       "Chaque résultat doit avoir une date vérifiable et une URL directe. N'invente rien.",
       "Même si aucun résultat pertinent n'est trouvé, confirme que la source a été analysée, laisse candidates vide et explique brièvement pourquoi dans search_note."
@@ -246,7 +260,7 @@ const selectionProperties = {
   court_reference: { type: "string", minLength: 3 },
   source: { type: "string", minLength: 3 },
   source_url: { type: "string", minLength: 10 },
-  publication_date: { type: "string", minLength: 8 }
+  publication_date: { type: "string", pattern: "^\\d{4}-\\d{2}-\\d{2}$" }
 };
 
 const frenchEditorialRules = [
@@ -291,6 +305,8 @@ const selectionRaw = await callOpenAI({
     "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
     "Les résultats Google Alerts ci-dessous constituent uniquement des pistes de veille. Ne retiens un sujet que si l'article paraît juridiquement substantiel et si son URL originale est vérifiable.",
+    currentWeekInstruction,
+    "La veille doit présenter exclusivement les nouveautés de la semaine en cours. Ne complète jamais la sélection avec un sujet plus ancien.",
     "N'invente ni référence ni URL. Écarte les doublons et les sujets insuffisamment vérifiables.",
     frenchEditorialRules,
     `SOURCES OBLIGATOIRES: ${JSON.stringify(sourceCoverage)}`,
@@ -300,6 +316,10 @@ const selectionRaw = await callOpenAI({
   text: { format: { type: "json_schema", name: "selection_veille_ip", strict: true, schema: selectionSchema } }
 }, "Sélection éditoriale");
 const selection = JSON.parse(extractOutputText(selectionRaw, "Sélection éditoriale"));
+const staleSelections = selection.selected_items.filter((item) => !isCurrentWeekPublication(item.publication_date));
+if (staleSelections.length) {
+  throw new Error(`Veille refusée avant rédaction: ${staleSelections.length} sujet(s) hors de la semaine du ${weekStartIso} au ${weekEndIso}.`);
+}
 
 const requiredText = { type: "string", minLength: 20 };
 const itemProperties = {
@@ -338,6 +358,7 @@ for (const [index, selected] of selection.selected_items.entries()) {
       "Tu rédiges une fiche pour la veille Propriété intellectuelle d'un grand cabinet d'avocats international en France.",
       `Sujet sélectionné: ${JSON.stringify(selected)}`,
       "Ouvre et analyse le document primaire. L'URL finale doit mener directement à la décision, au texte ou au document institutionnel utilisé.",
+      currentWeekInstruction,
       "Rédige en français juridique, sobre, impersonnel, précis et approfondi, exclusivement à partir d'informations vérifiables.",
       frenchEditorialRules,
       "Pour une jurisprudence, rédige 650 à 900 mots au total: litige, faits, procédure, arguments, question de droit explicitement formulée, raisonnement détaillé, solution et portée pratique.",
@@ -386,6 +407,7 @@ const mandatoryFields = ["category", "title", "source", "source_url", "publicati
 const incompleteItems = report.items.filter((item) =>
   mandatoryFields.some((field) => typeof item[field] !== "string" || item[field].trim().length < 3)
   || (item.source_access === "RESTREINT" && item.access_warning.length < 20)
+  || !isCurrentWeekPublication(item.publication_date)
 );
 if (incompleteItems.length || report.items.length < 5) {
   throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
