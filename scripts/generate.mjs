@@ -462,6 +462,30 @@ const makeItemSchema = (properties) => ({
   required: Object.keys(properties)
 });
 
+const finalizeEditorialItem = (draft, selected, resolution, properties) => {
+  const item = { ...draft };
+  item.type = selected.type;
+  item.category = selected.category;
+  item.title = selected.title;
+  item.court_reference = selected.court_reference;
+  item.source = resolution.primary_source_name;
+  item.source_url = resolution.primary_source_url;
+  item.publication_date = resolution.publication_date;
+  item.source_access = resolution.access_level;
+  item.retrieval_note = resolution.retrieval_note;
+  item.discovered_via_juliette_alert = selected.discovered_via_juliette_alert;
+  item.juliette_alert_id = selected.juliette_alert_id;
+  for (const field of Object.keys(properties)) {
+    if (field !== "source_url" && typeof item[field] === "string") {
+      item[field] = normalizeFrenchTypography(item[field]);
+    }
+  }
+  item.access_warning = item.source_access === "PARTIEL"
+    ? "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint."
+    : "";
+  return item;
+};
+
 const items = [];
 for (const [index, resolved] of substantiveSelections.entries()) {
   const { resolution, ...selected } = resolved;
@@ -504,29 +528,8 @@ for (const [index, resolved] of substantiveSelections.entries()) {
     max_output_tokens: 6000,
     text: { format: { type: "json_schema", name: isJurisprudence ? "fiche_jurisprudence" : "fiche_actualite", strict: true, schema: makeItemSchema(properties) } }
   }, `Rédaction fiche ${index + 1}`);
-  const item = JSON.parse(extractOutputText(itemRaw, `Rédaction fiche ${index + 1}`));
-  item.type = selected.type;
-  item.category = selected.category;
-  item.title = selected.title;
-  item.court_reference = selected.court_reference;
-  item.source = resolution.primary_source_name;
-  item.source_url = resolution.primary_source_url;
-  item.publication_date = resolution.publication_date;
-  item.source_access = resolution.access_level;
-  item.retrieval_note = resolution.retrieval_note;
-  item.discovered_via_juliette_alert = selected.discovered_via_juliette_alert;
-  item.juliette_alert_id = selected.juliette_alert_id;
-  for (const field of Object.keys(properties)) {
-    if (field !== "source_url" && typeof item[field] === "string") {
-      item[field] = normalizeFrenchTypography(item[field]);
-    }
-  }
-  if (item.source_access === "PARTIEL") {
-    item.access_warning = "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.";
-  } else {
-    item.access_warning = "";
-  }
-  items.push(item);
+  const draft = JSON.parse(extractOutputText(itemRaw, `Rédaction fiche ${index + 1}`));
+  items.push(finalizeEditorialItem(draft, selected, resolution, properties));
 }
 
 const limitWords = (value, maximum) => String(value || "").split(/\s+/).slice(0, maximum).join(" ");
@@ -552,16 +555,59 @@ const contentWordCount = (item) => {
   return fields.flatMap((field) => String(item[field] || "").split(/\s+/)).filter(Boolean).length;
 };
 const limitationCount = (item) => (JSON.stringify(item).match(/ne peut|n’est pas possible|ne permettent|ne précise|n’a pas pu/gi) || []).length;
-const qualityFailures = items.filter((item) => {
+const qualityReasons = (item) => {
+  const reasons = [];
   const words = contentWordCount(item);
-  if (!isCurrentWeekPublication(item.publication_date)) return true;
-  if (item.source_access === "COMPLET" && limitationCount(item) > 2) return true;
-  if (item.source_access === "PARTIEL" && limitationCount(item) > 6) return true;
-  if (item.type === "ACTUALITE") return words < 180 || words > 500;
-  return item.source_access === "COMPLET" ? words < 550 || words > 1000 : words < 250 || words > 600;
-});
+  const limitations = limitationCount(item);
+  if (!isCurrentWeekPublication(item.publication_date)) reasons.push(`date hors période: ${item.publication_date}`);
+  if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
+  if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
+  if (item.type === "ACTUALITE" && (words < 180 || words > 500)) reasons.push(`${words} mots, attendu entre 180 et 500`);
+  if (item.type === "JURISPRUDENCE") {
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [550, 1000] : [250, 600];
+    if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
+  }
+  return reasons;
+};
+
+let qualityFailures = items
+  .map((item, index) => ({ index, title: item.title, reasons: qualityReasons(item) }))
+  .filter((failure) => failure.reasons.length);
+
+for (const failure of qualityFailures) {
+  const { resolution, ...selected } = substantiveSelections[failure.index];
+  const isJurisprudence = selected.type === "JURISPRUDENCE";
+  const properties = isJurisprudence ? jurisprudenceProperties : actualiteProperties;
+  console.warn(`Contrôle éditorial: « ${failure.title} » refusée: ${failure.reasons.join("; ")}. Correction ciblée unique.`);
+  const correctedRaw = await callOpenAI({
+    model: editorialModel,
+    reasoning: { effort: "medium" },
+    input: [
+      "Tu corriges une fiche juridique déjà rédigée. Ne recommence aucune recherche et n'ajoute aucun fait nouveau.",
+      `Sujet vérifié: ${JSON.stringify(selected)}`,
+      `Résolution de la source: ${JSON.stringify(resolution)}`,
+      `Fiche à corriger: ${JSON.stringify(items[failure.index])}`,
+      `Motifs précis du refus: ${failure.reasons.join("; ")}.`,
+      "Corrige uniquement les défauts signalés tout en conservant chaque information vérifiée, la structure prescrite et le niveau de précision juridique.",
+      isJurisprudence
+        ? "La fiche doit conserver les faits, la procédure, les arguments, la question de droit, le raisonnement, la solution et la portée pratique."
+        : "L'actualité doit conserver le contexte, le fondement et le champ d'application, les principales dispositions, le calendrier de mise en œuvre et la portée pratique.",
+      "Une réserve factuellement nécessaire peut être conservée, mais ne répète jamais la même limite dans plusieurs rubriques.",
+      frenchEditorialRules
+    ].join("\n"),
+    max_output_tokens: 6000,
+    text: { format: { type: "json_schema", name: isJurisprudence ? "fiche_jurisprudence" : "fiche_actualite", strict: true, schema: makeItemSchema(properties) } }
+  }, `Correction ciblée: ${failure.title}`);
+  const correctedDraft = JSON.parse(extractOutputText(correctedRaw, `Correction ciblée: ${failure.title}`));
+  items[failure.index] = finalizeEditorialItem(correctedDraft, selected, resolution, properties);
+}
+
+qualityFailures = items
+  .map((item, index) => ({ index, title: item.title, reasons: qualityReasons(item) }))
+  .filter((failure) => failure.reasons.length);
 if (qualityFailures.length) {
-  throw new Error(`Veille refusée après contrôle éditorial: ${qualityFailures.length} fiche(s) ne respectent pas les seuils de qualité.`);
+  const details = qualityFailures.map((failure) => `« ${failure.title} »: ${failure.reasons.join("; ")}`).join(" | ");
+  throw new Error(`Veille refusée après correction ciblée: ${details}. Aucun document incomplet n’a été publié.`);
 }
 
 const report = {
