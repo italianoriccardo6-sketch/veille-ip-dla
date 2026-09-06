@@ -607,7 +607,7 @@ const qualityReasons = (item) => {
   if (titleLooksUntranslated(item)) reasons.push("titre non traduit intégralement en français");
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
   if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
-  if (item.type === "ACTUALITE" && (words < 180 || words > 350)) reasons.push(`${words} mots, attendu entre 180 et 350`);
+  if (item.type === "ACTUALITE" && (words < 180 || words > 370)) reasons.push(`${words} mots, objectif éditorial entre 180 et 350, tolérance technique maximale de 370`);
   if (item.type === "JURISPRUDENCE") {
     const [minimum, maximum] = item.source_access === "COMPLET" ? [600, 850] : [450, 650];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
