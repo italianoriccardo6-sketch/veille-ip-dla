@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { AlignmentType, Document, ExternalHyperlink, Footer, HeadingLevel, Packer, PageNumber, Paragraph, TextRun } from "docx";
+import { AlignmentType, BorderStyle, Document, ExternalHyperlink, Footer, HeadingLevel, Packer, PageNumber, Paragraph, Table, TableCell, TableRow, TextRun, WidthType } from "docx";
 
 const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", import.meta.url), "utf8"));
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
@@ -17,6 +17,14 @@ weekStart.setUTCDate(runStartedAt.getUTCDate() - daysSinceMonday);
 weekStart.setUTCHours(0, 0, 0, 0);
 const weekStartIso = weekStart.toISOString().slice(0, 10);
 const weekEndIso = runStartedAt.toISOString().slice(0, 10);
+const frenchMonths = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const frenchDate = (value) => {
+  const date = new Date(`${value}T00:00:00.000Z`);
+  return `${date.getUTCDate()} ${frenchMonths[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+};
+const weekLabel = weekStart.getUTCFullYear() === runStartedAt.getUTCFullYear()
+  ? `Du ${weekStart.getUTCDate()} ${frenchMonths[weekStart.getUTCMonth()]} au ${runStartedAt.getUTCDate()} ${frenchMonths[runStartedAt.getUTCMonth()]} ${runStartedAt.getUTCFullYear()}`
+  : `Du ${frenchDate(weekStartIso)} au ${frenchDate(weekEndIso)}`;
 const currentWeekInstruction = `Ne retiens que les contenus publiés entre le ${weekStartIso} et le ${weekEndIso}, dates incluses. N'utilise aucun contenu antérieur, même pour compléter la sélection.`;
 const isCurrentWeekPublication = (value) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ""))) return false;
@@ -288,8 +296,8 @@ const selectionSchema = {
     editorial_note: { type: "string", minLength: 20 },
     selected_items: {
       type: "array",
-      minItems: 5,
-      maxItems: 6,
+      minItems: 6,
+      maxItems: 10,
       items: {
         type: "object",
         additionalProperties: false,
@@ -321,8 +329,9 @@ const selectionRaw = await callOpenAI({
   reasoning: { effort: "medium" },
   input: [
     "Tu es le secrétaire de rédaction d'une veille française de propriété intellectuelle.",
-    `Présélectionne 5 ou 6 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Une phase distincte vérifiera ensuite l'accès au document primaire.`,
-    "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique.",
+    `Présélectionne entre 6 et 10 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les six meilleurs.`,
+    "La cible éditoriale est de quatre jurisprudences et deux actualités substantielles. Présélectionne suffisamment de candidats de chaque type pour atteindre cette composition après vérification.",
+    "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre réel entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique. N'annonce jamais un équilibre qui ne ressort pas des sujets effectivement sélectionnés.",
     "Ne retiens pas plus de deux sujets provenant de la même institution. Privilégie la diversité institutionnelle et thématique plutôt que plusieurs décisions proches rendues le même jour.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
     "Les résultats Google Alerts ci-dessous constituent des pistes de veille fournies par Juliette. Pour chaque sujet qui provient effectivement de ces résultats, indique discovered_via_juliette_alert=true et reporte son alert_id exact dans juliette_alert_id. Sinon, utilise false et une chaîne vide.",
@@ -351,6 +360,15 @@ const invalidAlertOrigins = selection.selected_items.filter((item) =>
 );
 if (invalidAlertOrigins.length) {
   throw new Error(`Veille refusée avant rédaction: ${invalidAlertOrigins.length} attribution(s) Google Alerts incohérente(s).`);
+}
+const alertDecisionIds = selection.alert_decisions.map((decision) => decision.alert_id);
+const invalidAlertDecisions = selection.alert_decisions.filter((decision) =>
+  !alertIds.has(decision.alert_id)
+  || (decision.selected && !selection.selected_items.some((item) => item.juliette_alert_id === decision.alert_id))
+  || (!decision.selected && selection.selected_items.some((item) => item.juliette_alert_id === decision.alert_id))
+);
+if (new Set(alertDecisionIds).size !== alertIds.size || invalidAlertDecisions.length) {
+  throw new Error("Veille refusée avant rédaction: la traçabilité entre les alertes de Juliette et les sujets sélectionnés est incomplète ou contradictoire.");
 }
 
 const selectionByInstitution = new Map();
@@ -416,17 +434,33 @@ for (const [index, selected] of selection.selected_items.entries()) {
     continue;
   }
   resolvedSelections.push({ ...selected, resolution });
+  const resolvedSubstantive = resolvedSelections.filter(({ resolution: current }) =>
+    current.access_level !== "MINIMAL" && current.verified_facts.length >= 4
+  );
+  if (
+    resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 4
+    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 2
+  ) {
+    console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
+    break;
+  }
 }
 
-const substantiveSelections = resolvedSelections.filter(({ resolution }) =>
+const verifiedSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level !== "MINIMAL" && resolution.verified_facts.length >= 4
-).slice(0, 6);
+);
+const verifiedJurisprudences = verifiedSelections.filter((item) => item.type === "JURISPRUDENCE");
+const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
+const substantiveSelections = [
+  ...verifiedJurisprudences.slice(0, 4),
+  ...verifiedActualites.slice(0, 2)
+];
 const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (substantiveSelections.length < 3) {
-  throw new Error(`Veille refusée avant rédaction approfondie: seulement ${substantiveSelections.length} sujet(s) suffisamment substantiel(s).`);
+if (verifiedJurisprudences.length < 4 || verifiedActualites.length < 2) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. La cible obligatoire est de quatre jurisprudences et deux actualités de la semaine courante.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -491,18 +525,26 @@ for (const [index, resolved] of substantiveSelections.entries()) {
   const { resolution, ...selected } = resolved;
   const isJurisprudence = selected.type === "JURISPRUDENCE";
   const properties = isJurisprudence ? jurisprudenceProperties : actualiteProperties;
+  const editorialDomains = [...new Set([
+    ...domains,
+    (() => {
+      try { return new URL(resolution.primary_source_url).hostname; } catch { return ""; }
+    })()
+  ].filter(Boolean))];
   const accessInstruction = resolution.access_level === "COMPLET"
     ? (isJurisprudence
-        ? "Rédige une fiche approfondie de 650 à 900 mots."
-        : "Rédige une actualité structurée de 250 à 450 mots.")
-    : "La source est partielle mais substantielle. Rédige une analyse resserrée de 300 à 500 mots, limitée aux éléments vérifiés.";
+        ? "Rédige une fiche approfondie de 600 à 850 mots."
+        : "Rédige une actualité structurée de 180 à 350 mots.")
+    : (isJurisprudence
+        ? "La source est partielle mais substantielle. Rédige une analyse resserrée de 450 à 650 mots, limitée aux éléments vérifiés."
+        : "La source est partielle mais substantielle. Rédige une actualité resserrée de 180 à 300 mots, limitée aux éléments vérifiés.");
   console.log(`Rédaction ${index + 1}/${substantiveSelections.length}: ${selected.title}`);
   const itemRaw = await callOpenAI({
     model: editorialModel,
     reasoning: { effort: "medium" },
     tools: [{
       type: "web_search",
-      filters: { allowed_domains: domains },
+      filters: { allowed_domains: editorialDomains },
       external_web_access: true
     }],
     tool_choice: "required",
@@ -519,6 +561,7 @@ for (const [index, resolved] of substantiveSelections.entries()) {
         ? "Structure la fiche autour du litige, des faits, de la procédure, des arguments, de la question de droit, du raisonnement, de la solution et de la portée pratique."
         : "Structure l'actualité autour du contexte, de son fondement et champ d'application, de ses principales dispositions, de son calendrier de mise en œuvre et de sa portée pratique. N'utilise jamais les rubriques contentieuses lorsqu'elles sont sans objet.",
       "Le résumé destiné à la dashboard doit faire 35 à 55 mots. Les autres champs doivent être des paragraphes continus, sans listes.",
+      "Rédige obligatoirement le titre en français, même lorsque le document primaire utilise un titre anglais. Conserve uniquement les noms propres, sigles et marques qui ne doivent pas être traduits.",
       "N'invente jamais une référence, une citation, un argument ou une étape procédurale. Si un élément manque, indique qu'il n'est pas précisé.",
       "N'utilise des guillemets que pour une citation réellement présente dans la source.",
       `Reproduis source_access avec la valeur ${resolution.access_level}.`,
@@ -555,16 +598,18 @@ const contentWordCount = (item) => {
   return fields.flatMap((field) => String(item[field] || "").split(/\s+/)).filter(Boolean).length;
 };
 const limitationCount = (item) => (JSON.stringify(item).match(/ne peut|n’est pas possible|ne permettent|ne précise|n’a pas pu/gi) || []).length;
+const titleLooksUntranslated = (item) => ((item.title.match(/\b(?:the|for|and|with|from|available|new|now)\b/gi) || []).length >= 2);
 const qualityReasons = (item) => {
   const reasons = [];
   const words = contentWordCount(item);
   const limitations = limitationCount(item);
   if (!isCurrentWeekPublication(item.publication_date)) reasons.push(`date hors période: ${item.publication_date}`);
+  if (titleLooksUntranslated(item)) reasons.push("titre non traduit intégralement en français");
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
   if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
-  if (item.type === "ACTUALITE" && (words < 180 || words > 500)) reasons.push(`${words} mots, attendu entre 180 et 500`);
+  if (item.type === "ACTUALITE" && (words < 180 || words > 350)) reasons.push(`${words} mots, attendu entre 180 et 350`);
   if (item.type === "JURISPRUDENCE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [550, 1000] : [250, 600];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [600, 850] : [450, 650];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
@@ -593,6 +638,7 @@ for (const failure of qualityFailures) {
         ? "La fiche doit conserver les faits, la procédure, les arguments, la question de droit, le raisonnement, la solution et la portée pratique."
         : "L'actualité doit conserver le contexte, le fondement et le champ d'application, les principales dispositions, le calendrier de mise en œuvre et la portée pratique.",
       "Une réserve factuellement nécessaire peut être conservée, mais ne répète jamais la même limite dans plusieurs rubriques.",
+      "Le titre doit être intégralement rédigé en français, à l’exception des noms propres, sigles et marques.",
       frenchEditorialRules
     ].join("\n"),
     max_output_tokens: 6000,
@@ -610,9 +656,34 @@ if (qualityFailures.length) {
   throw new Error(`Veille refusée après correction ciblée: ${details}. Aucun document incomplet n’a été publié.`);
 }
 
+const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE").length;
+const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
+const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
+const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
+if (items.length !== 6 || jurisprudenceCount !== 4 || actualiteCount !== 2) {
+  throw new Error(`Veille refusée: composition finale de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s), au lieu de quatre jurisprudences et deux actualités.`);
+}
+if (totalEditorialWords < 2800 || totalEditorialWords > 4100) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 2 800 et 4 100 mots.`);
+}
+if (editorialCategories.size < 4) {
+  throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
+}
+const selectedAlertCount = items.filter((item) => item.discovered_via_juliette_alert).length;
+const alertEditorialSentence = selectedAlertCount === 0
+  ? "Aucun des sujets retenus ne provient des alertes de Juliette."
+  : selectedAlertCount === 1
+    ? "Un sujet a été initialement signalé par les alertes de Juliette, puis vérifié sur sa source primaire."
+    : `${selectedAlertCount} sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.`;
+const editorialNote = [
+  `Cette édition réunit quatre jurisprudences et deux actualités publiées au cours de la semaine ${weekLabel.toLowerCase()}.`,
+  `Les six sujets ont été retenus après vérification de leur source primaire et représentent ${new Set(items.map((item) => item.category)).size} catégories éditoriales distinctes.`,
+  alertEditorialSentence
+].join(" ");
+
 const report = {
-  week: normalizeFrenchTypography(selection.week),
-  editorial_note: normalizeFrenchTypography(selection.editorial_note),
+  week: weekLabel,
+  editorial_note: normalizeFrenchTypography(editorialNote),
   source_coverage: sourceCoverage.map((entry) => ({
     source_name: entry.source_name,
     domain: entry.domain,
@@ -636,7 +707,7 @@ const report = {
     };
   }),
   items,
-  briefs
+  briefs: []
 };
 const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "source_access", "summary", "practical_relevance"];
 const incompleteItems = report.items.filter((item) =>
@@ -644,7 +715,7 @@ const incompleteItems = report.items.filter((item) =>
   || (item.source_access === "PARTIEL" && item.access_warning.length < 20)
   || !isCurrentWeekPublication(item.publication_date)
 );
-if (incompleteItems.length || report.items.length < 3) {
+if (incompleteItems.length || report.items.length !== 6) {
   throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
 }
 report.generated_at = new Date().toISOString();
@@ -663,14 +734,14 @@ const textParagraphs = (value) => String(value || "")
   .map((text) => new Paragraph({
     alignment: AlignmentType.JUSTIFIED,
     keepLines: true,
-    spacing: { after: 180, line: 300 },
+    spacing: { after: 130, line: 276 },
     children: [new TextRun({ text })]
   }));
 
 const labeledParagraph = (label, value) => new Paragraph({
   alignment: AlignmentType.JUSTIFIED,
   keepLines: true,
-  spacing: { after: 180, line: 300 },
+  spacing: { after: 130, line: 276 },
   children: [
     new TextRun({ text: `${label}. `, bold: true, color: "1F4E79" }),
     new TextRun({ text: String(value || "") })
@@ -684,7 +755,7 @@ const sourceParagraph = (item) => new Paragraph({
     new ExternalHyperlink({
       link: item.source_url,
       children: [new TextRun({
-        text: `${item.court_reference || item.source}, ${item.publication_date}`,
+        text: `${item.court_reference || item.source}, ${frenchDate(item.publication_date)}`,
         color: "507D82",
         underline: {}
       })]
@@ -748,8 +819,7 @@ const renderItem = (item) => {
         labeledParagraph("Principales dispositions", item.main_provisions),
         labeledParagraph("Mise en œuvre", item.implementation_timeline)
       ];
-  return [
-  new Paragraph({
+  const heading = new Paragraph({
     heading: HeadingLevel.HEADING_2,
     keepNext: true,
     spacing: { before: 180, after: 100 },
@@ -758,12 +828,46 @@ const renderItem = (item) => {
       bold: true,
       color: "1F4E79"
     })]
-  }),
-  sourceParagraph(item),
-  ...(alertOrigin ? [alertOrigin] : []),
-  ...(warning ? [warning] : []),
-  ...body,
-  practicalParagraph(item)
+  });
+  const content = [
+    sourceParagraph(item),
+    ...(alertOrigin ? [alertOrigin] : []),
+    ...(warning ? [warning] : []),
+    ...body,
+    practicalParagraph(item)
+  ];
+  if (item.type !== "JURISPRUDENCE") return [heading, ...content];
+  const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+  const boxBorder = { style: BorderStyle.SINGLE, size: 6, color: "7F7F7F" };
+  return [
+    heading,
+    new Table({
+      width: { size: 9866, type: WidthType.DXA },
+      columnWidths: [9866],
+      borders: {
+        top: noBorder,
+        bottom: noBorder,
+        left: noBorder,
+        right: noBorder,
+        insideHorizontal: noBorder,
+        insideVertical: noBorder
+      },
+      rows: content.map((paragraph, index) => new TableRow({
+        children: [new TableCell({
+          width: { size: 9866, type: WidthType.DXA },
+          margins: { top: index === 0 ? 120 : 20, bottom: index === content.length - 1 ? 120 : 20, left: 180, right: 180 },
+          borders: {
+            top: index === 0 ? boxBorder : noBorder,
+            bottom: index === content.length - 1 ? boxBorder : noBorder,
+            left: boxBorder,
+            right: boxBorder,
+            insideHorizontal: noBorder,
+            insideVertical: noBorder
+          },
+          children: [paragraph]
+        })]
+      }))
+    })
   ];
 };
 
@@ -816,16 +920,6 @@ if (actualites.length) {
   actualites.forEach((item) => children.push(...renderItem(item)));
 }
 
-if (report.briefs.length) {
-  children.push(new Paragraph({
-    heading: HeadingLevel.HEADING_1,
-    spacing: { before: 300, after: 180 },
-    border: { bottom: { color: "222222", size: 6, space: 6, style: "single" } },
-    children: [new TextRun({ text: "SIGNALEMENTS À VÉRIFIER", bold: true })]
-  }));
-  report.briefs.forEach((item) => children.push(...renderBrief(item)));
-}
-
 children.push(
   new Paragraph({
     spacing: { before: 260, after: 140 },
@@ -851,7 +945,7 @@ const document = new Document({
     default: {
       document: {
         run: { font: "Arial", size: 22, color: "171717" },
-        paragraph: { spacing: { after: 160, line: 300 } }
+        paragraph: { spacing: { after: 130, line: 276 } }
       }
     },
     paragraphStyles: [
