@@ -594,7 +594,9 @@ const finalizeEditorialItem = (draft, selected, resolution, properties) => {
   const item = { ...draft };
   item.type = selected.type;
   item.category = selected.category;
-  item.title = selected.title;
+  // Le titre rédigé peut être la traduction française du titre primaire.
+  // Ne pas le remplacer par le titre brut présélectionné, souvent en anglais.
+  item.title = draft.title || selected.title;
   item.court_reference = selected.court_reference;
   item.source = resolution.primary_source_name;
   item.source_url = resolution.primary_source_url;
