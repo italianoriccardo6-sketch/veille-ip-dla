@@ -898,3 +898,203 @@ const practicalParagraph = (item) => new Paragraph({
   children: [
     new TextRun({ text: "Portée pratique. ", bold: true }),
     new TextRun({ text: item.practical_relevance })
+  ]
+});
+
+const renderItem = (item) => {
+  const warning = accessWarningParagraph(item);
+  const alertOrigin = julietteAlertParagraph(item);
+  const body = item.type === "JURISPRUDENCE"
+    ? [
+        ...textParagraphs(item.introduction),
+        ...textParagraphs(item.facts_and_procedure),
+        ...textParagraphs(item.parties_arguments),
+        ...textParagraphs(item.legal_question),
+        ...textParagraphs(item.reasoning),
+        ...textParagraphs(item.outcome)
+      ]
+    : [
+        labeledParagraph("Contexte", item.context),
+        labeledParagraph("Fondement et champ d’application", item.legal_basis_and_scope),
+        labeledParagraph("Principales dispositions", item.main_provisions),
+        labeledParagraph("Mise en œuvre", item.implementation_timeline)
+      ];
+  const heading = new Paragraph({
+    heading: HeadingLevel.HEADING_2,
+    keepNext: true,
+    spacing: { before: 180, after: 100 },
+    children: [new TextRun({
+      text: item.type === "JURISPRUDENCE" ? `${item.category} : ${item.title}` : item.title,
+      bold: true,
+      color: "1F4E79"
+    })]
+  });
+  const content = [
+    sourceParagraph(item),
+    ...(alertOrigin ? [alertOrigin] : []),
+    ...(warning ? [warning] : []),
+    ...body,
+    practicalParagraph(item)
+  ];
+  if (item.type !== "JURISPRUDENCE") return [heading, ...content];
+  const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+  const boxBorder = { style: BorderStyle.SINGLE, size: 6, color: "7F7F7F" };
+  return [
+    heading,
+    new Table({
+      width: { size: 9866, type: WidthType.DXA },
+      columnWidths: [9866],
+      borders: {
+        top: noBorder,
+        bottom: noBorder,
+        left: noBorder,
+        right: noBorder,
+        insideHorizontal: noBorder,
+        insideVertical: noBorder
+      },
+      rows: content.map((paragraph, index) => new TableRow({
+        children: [new TableCell({
+          width: { size: 9866, type: WidthType.DXA },
+          margins: { top: index === 0 ? 120 : 20, bottom: index === content.length - 1 ? 120 : 20, left: 180, right: 180 },
+          borders: {
+            top: index === 0 ? boxBorder : noBorder,
+            bottom: index === content.length - 1 ? boxBorder : noBorder,
+            left: boxBorder,
+            right: boxBorder,
+            insideHorizontal: noBorder,
+            insideVertical: noBorder
+          },
+          children: [paragraph]
+        })]
+      }))
+    })
+  ];
+};
+
+const renderBrief = (item) => {
+  const alertOrigin = julietteAlertParagraph(item);
+  return [
+    new Paragraph({
+      heading: HeadingLevel.HEADING_2,
+      keepNext: true,
+      spacing: { before: 160, after: 90 },
+      children: [new TextRun({ text: `${item.category} : ${item.title}`, bold: true, color: "1F4E79" })]
+    }),
+    sourceParagraph(item),
+    ...(alertOrigin ? [alertOrigin] : []),
+    accessWarningParagraph(item),
+    ...textParagraphs(item.summary)
+  ];
+};
+
+const children = [
+  new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 100 },
+    children: [new TextRun({ text: "Veille Propriété intellectuelle", bold: true, size: 32, font: "Arial" })]
+  }),
+  new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 420 },
+    children: [new TextRun({ text: report.week, size: 22, font: "Arial" })]
+  })
+];
+
+if (jurisprudences.length) {
+  children.push(new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 240, after: 180 },
+    border: { bottom: { color: "222222", size: 6, space: 6, style: "single" } },
+    children: [new TextRun({ text: "JURISPRUDENCES", bold: true })]
+  }));
+  jurisprudences.forEach((item) => children.push(...renderItem(item)));
+}
+
+if (actualites.length) {
+  children.push(new Paragraph({
+    heading: HeadingLevel.HEADING_1,
+    spacing: { before: 300, after: 180 },
+    border: { bottom: { color: "222222", size: 6, space: 6, style: "single" } },
+    children: [new TextRun({ text: "ACTUALITÉS", bold: true })]
+  }));
+  actualites.forEach((item) => children.push(...renderItem(item)));
+}
+
+children.push(
+  new Paragraph({
+    spacing: { before: 260, after: 140 },
+    children: [new TextRun({ text: report.editorial_note, color: "666666", size: 18, italics: true })]
+  })
+);
+
+const createFooter = () => new Footer({
+  children: [new Paragraph({
+    alignment: AlignmentType.RIGHT,
+    children: [
+      new TextRun({ text: "Veille IP · " }),
+      new TextRun({ children: [PageNumber.CURRENT] })
+    ]
+  })]
+});
+
+const document = new Document({
+  creator: "Veille IP DLA",
+  title: `Veille Propriété intellectuelle : ${report.week}`,
+  description: "Veille hebdomadaire de propriété intellectuelle",
+  styles: {
+    default: {
+      document: {
+        run: { font: "Arial", size: 22, color: "171717" },
+        paragraph: { spacing: { after: 130, line: 276 } }
+      }
+    },
+    paragraphStyles: [
+      {
+        id: "Heading1",
+        name: "Heading 1",
+        basedOn: "Normal",
+        next: "Normal",
+        quickFormat: true,
+        run: { font: "Arial", size: 24, bold: true, color: "171717" }
+      },
+      {
+        id: "Heading2",
+        name: "Heading 2",
+        basedOn: "Normal",
+        next: "Normal",
+        quickFormat: true,
+        run: { font: "Arial", size: 22, bold: true, color: "171717" }
+      }
+    ]
+  },
+  sections: [{
+    properties: {
+      page: {
+        size: { width: 11906, height: 16838 },
+        margin: { top: 1020, right: 1020, bottom: 1020, left: 1020 }
+      }
+    },
+    footers: {
+      default: createFooter()
+    },
+    children
+  }]
+});
+
+const buffer = await Packer.toBuffer(document);
+await fs.writeFile(`public/reports/veille-${slug}.docx`, buffer);
+await fs.writeFile("public/latest.json", JSON.stringify(report, null, 2) + "\n");
+const tokenRates = {
+  "gpt-5.6-luna": { input: 0.20, output: 1.20 },
+  "gpt-5.6-terra": { input: 2.00, output: 12.00 },
+  "gpt-5.6-sol": { input: 4.00, output: 20.00 }
+};
+const estimatedTokenCost = Object.entries(usageByModel).reduce((total, [model, usage]) => {
+  const rate = tokenRates[model];
+  if (!rate) return total;
+  return total + (usage.input_tokens * rate.input + usage.output_tokens * rate.output) / 1_000_000;
+}, 0);
+const estimatedSearchCost = usageTotals.web_search_calls * 0.01;
+console.log(`Usage: ${usageTotals.requests} requêtes, ${usageTotals.input_tokens} tokens d'entrée, ${usageTotals.output_tokens} tokens de sortie, ${usageTotals.web_search_calls} recherches web.`);
+console.log(`Coût API estimé: $${(estimatedTokenCost + estimatedSearchCost).toFixed(3)} (hors éventuelle tarification long contexte/régionale).`);
+console.log(`Generated Word report with ${jurisprudences.length} jurisprudences and ${actualites.length} actualités for ${report.week}`);
