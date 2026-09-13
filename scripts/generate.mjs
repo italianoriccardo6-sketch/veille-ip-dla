@@ -347,6 +347,89 @@ const selectionRaw = await callOpenAI({
   text: { format: { type: "json_schema", name: "selection_veille_ip", strict: true, schema: selectionSchema } }
 }, "Sélection éditoriale");
 const selection = JSON.parse(extractOutputText(selectionRaw, "Sélection éditoriale"));
+
+// La sélection générale peut privilégier les actualités faciles à retrouver et
+// ne proposer qu'une décision. Dans ce cas, une seule recherche complémentaire,
+// ciblée et peu coûteuse, constitue une réserve suffisante avant la résolution
+// des sources. Cela évite de lancer la rédaction lorsqu'une composition complète
+// n'est pas encore atteignable.
+const reserveTargets = { jurisprudences: 6, actualites: 4 };
+const initialJurisprudences = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
+const initialActualites = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
+if (initialJurisprudences < reserveTargets.jurisprudences || initialActualites < reserveTargets.actualites) {
+  console.log(`Réserve éditoriale insuffisante: ${initialJurisprudences} jurisprudence(s) et ${initialActualites} actualité(s). Recherche complémentaire ciblée.`);
+  const reserveSchema = {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      jurisprudences: {
+        type: "array",
+        maxItems: 10,
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: selectionProperties,
+          required: Object.keys(selectionProperties)
+        }
+      },
+      actualites: {
+        type: "array",
+        maxItems: 8,
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: selectionProperties,
+          required: Object.keys(selectionProperties)
+        }
+      }
+    },
+    required: ["jurisprudences", "actualites"]
+  };
+  const reserveRaw = await callOpenAI({
+    model: discoveryModel,
+    reasoning: { effort: "medium" },
+    tools: [{
+      type: "web_search",
+      filters: { allowed_domains: domains },
+      external_web_access: true
+    }],
+    tool_choice: "required",
+    input: [
+      "Tu constitues une réserve de sujets pour une veille française de propriété intellectuelle.",
+      `Recherche en priorité ${reserveTargets.jurisprudences} décisions juridictionnelles ou administratives et ${reserveTargets.actualites} actualités substantielles publiées cette semaine.`,
+      "Une jurisprudence doit correspondre à une décision effectivement publiée par une juridiction, un office ou une chambre de recours. Une actualité ne doit jamais être classée comme jurisprudence.",
+      currentWeekInstruction,
+      "Utilise exclusivement une source primaire appartenant aux domaines autorisés. Donne une URL directe et une date vérifiable. N'invente aucun résultat.",
+      "Tous ces résultats sont issus de la recherche institutionnelle, donc discovered_via_juliette_alert doit valoir false et juliette_alert_id doit être une chaîne vide.",
+      "Écarte les doublons des sujets déjà présélectionnés.",
+      frenchEditorialRules,
+      `SUJETS DÉJÀ PRÉSÉLECTIONNÉS: ${JSON.stringify(selection.selected_items)}`
+    ].join("\n"),
+    max_output_tokens: 4000,
+    text: { format: { type: "json_schema", name: "reserve_veille_ip", strict: true, schema: reserveSchema } }
+  }, "Recherche complémentaire de jurisprudences et d'actualités");
+  const reserve = JSON.parse(extractOutputText(reserveRaw, "Recherche complémentaire de jurisprudences et d'actualités"));
+  const combined = [...selection.selected_items, ...reserve.jurisprudences, ...reserve.actualites];
+  const unique = new Map();
+  for (const item of combined) {
+    const key = `${item.source_url}`.trim().toLowerCase() || `${item.title}`.trim().toLowerCase();
+    if (!unique.has(key)) unique.set(key, item);
+  }
+  const uniqueItems = [...unique.values()];
+  selection.selected_items = [
+    ...uniqueItems.filter((item) => item.type === "JURISPRUDENCE").slice(0, reserveTargets.jurisprudences),
+    ...uniqueItems.filter((item) => item.type === "ACTUALITE").slice(0, reserveTargets.actualites)
+  ];
+  for (const decision of selection.alert_decisions) {
+    decision.selected = selection.selected_items.some((item) => item.juliette_alert_id === decision.alert_id);
+  }
+}
+
+const reserveJurisprudenceCount = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
+const reserveActualiteCount = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
+if (reserveJurisprudenceCount < 4 || reserveActualiteCount < 2) {
+  throw new Error(`Veille refusée avant résolution: réserve limitée à ${reserveJurisprudenceCount} jurisprudence(s) et ${reserveActualiteCount} actualité(s).`);
+}
 const staleSelections = selection.selected_items.filter((item) => !isCurrentWeekPublication(item.publication_date));
 if (staleSelections.length) {
   throw new Error(`Veille refusée avant rédaction: ${staleSelections.length} sujet(s) hors de la semaine du ${weekStartIso} au ${weekEndIso}.`);
