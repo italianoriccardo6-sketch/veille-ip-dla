@@ -296,8 +296,8 @@ const selectionSchema = {
     editorial_note: { type: "string", minLength: 20 },
     selected_items: {
       type: "array",
-      minItems: 6,
-      maxItems: 10,
+      minItems: 7,
+      maxItems: 8,
       items: {
         type: "object",
         additionalProperties: false,
@@ -329,8 +329,8 @@ const selectionRaw = await callOpenAI({
   reasoning: { effort: "medium" },
   input: [
     "Tu es le secrétaire de rédaction d'une veille française de propriété intellectuelle.",
-    `Présélectionne entre 6 et 10 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les six meilleurs.`,
-    "La cible éditoriale est de quatre jurisprudences et deux actualités substantielles. Présélectionne suffisamment de candidats de chaque type pour atteindre cette composition après vérification.",
+    `Présélectionne entre 7 et 8 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Il faut une réserve d'au moins un sujet, car une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les six meilleurs.`,
+    "La veille finale doit compter six sujets, avec autant de jurisprudences substantielles que la semaine permet réellement d'en vérifier, au moins une jurisprudence et au moins deux actualités. Dans la présélection, inclus au moins une jurisprudence et au moins trois actualités afin de préserver une réserve utile.",
     "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre réel entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique. N'annonce jamais un équilibre qui ne ressort pas des sujets effectivement sélectionnés.",
     "Ne retiens pas plus de deux sujets provenant de la même institution. Privilégie la diversité institutionnelle et thématique plutôt que plusieurs décisions proches rendues le même jour.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
@@ -356,7 +356,7 @@ const selection = JSON.parse(extractOutputText(selectionRaw, "Sélection éditor
 const reserveTargets = { jurisprudences: 6, actualites: 5 };
 const initialJurisprudences = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
 const initialActualites = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
-if (selection.selected_items.length < 6 || initialJurisprudences < 1 || initialActualites < 2) {
+if (selection.selected_items.length < 7 || initialJurisprudences < 1 || initialActualites < 3) {
   console.log(`Réserve éditoriale insuffisante: ${initialJurisprudences} jurisprudence(s) et ${initialActualites} actualité(s). Recherche complémentaire ciblée.`);
   const reserveSchema = {
     type: "object",
@@ -429,7 +429,7 @@ if (selection.selected_items.length < 6 || initialJurisprudences < 1 || initialA
 
 const reserveJurisprudenceCount = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
 const reserveActualiteCount = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
-if (selection.selected_items.length < 6 || reserveJurisprudenceCount < 1 || reserveActualiteCount < 2) {
+if (selection.selected_items.length < 7 || reserveJurisprudenceCount < 1 || reserveActualiteCount < 3) {
   throw new Error(`Veille refusée avant résolution: réserve limitée à ${reserveJurisprudenceCount} jurisprudence(s) et ${reserveActualiteCount} actualité(s).`);
 }
 const staleSelections = selection.selected_items.filter((item) => !isCurrentWeekPublication(item.publication_date));
