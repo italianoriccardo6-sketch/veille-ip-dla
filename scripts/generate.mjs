@@ -1099,4 +1099,6 @@ const estimatedTokenCost = Object.entries(usageByModel).reduce((total, [model, u
 const estimatedSearchCost = usageTotals.web_search_calls * 0.01;
 console.log(`Usage: ${usageTotals.requests} requêtes, ${usageTotals.input_tokens} tokens d'entrée, ${usageTotals.output_tokens} tokens de sortie, ${usageTotals.web_search_calls} recherches web.`);
 console.log(`Coût API estimé: $${(estimatedTokenCost + estimatedSearchCost).toFixed(3)} (hors éventuelle tarification long contexte/régionale).`);
+// Le workflow rebase le rapport généré avant publication afin d'intégrer les
+// éventuelles modifications non conflictuelles apportées par l'équipe.
 console.log(`Generated Word report with ${jurisprudences.length} jurisprudences and ${actualites.length} actualités for ${report.week}`);
