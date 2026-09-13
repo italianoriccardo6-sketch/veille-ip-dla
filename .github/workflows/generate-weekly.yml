@@ -1,5 +1,9 @@
 name: Generate weekly veille
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate.mjs"
   schedule:
     - cron: "0 18 * * 0"
   workflow_dispatch:
@@ -14,6 +18,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Validate generator syntax
+        run: node --check scripts/generate.mjs
       - name: Install document generator
         run: npm install --no-audit --no-fund
       - name: Generate in-depth weekly legal report
