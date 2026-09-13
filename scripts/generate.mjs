@@ -427,7 +427,7 @@ if (initialJurisprudences < reserveTargets.jurisprudences || initialActualites <
 
 const reserveJurisprudenceCount = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
 const reserveActualiteCount = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
-if (reserveJurisprudenceCount < 4 || reserveActualiteCount < 2) {
+if (selection.selected_items.length < 6 || reserveJurisprudenceCount < 2 || reserveActualiteCount < 2) {
   throw new Error(`Veille refusée avant résolution: réserve limitée à ${reserveJurisprudenceCount} jurisprudence(s) et ${reserveActualiteCount} actualité(s).`);
 }
 const staleSelections = selection.selected_items.filter((item) => !isCurrentWeekPublication(item.publication_date));
@@ -521,7 +521,8 @@ for (const [index, selected] of selection.selected_items.entries()) {
     current.access_level !== "MINIMAL" && current.verified_facts.length >= 4
   );
   if (
-    resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 4
+    resolvedSubstantive.length >= 6
+    && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 2
     && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 2
   ) {
     console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
@@ -534,16 +535,24 @@ const verifiedSelections = resolvedSelections.filter(({ resolution }) =>
 );
 const verifiedJurisprudences = verifiedSelections.filter((item) => item.type === "JURISPRUDENCE");
 const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
+let selectedJurisprudenceCount = Math.min(4, verifiedJurisprudences.length);
+let selectedActualiteCount = Math.min(verifiedActualites.length, 6 - selectedJurisprudenceCount);
+if (selectedJurisprudenceCount + selectedActualiteCount < 6) {
+  selectedJurisprudenceCount += Math.min(
+    verifiedJurisprudences.length - selectedJurisprudenceCount,
+    6 - selectedJurisprudenceCount - selectedActualiteCount
+  );
+}
 const substantiveSelections = [
-  ...verifiedJurisprudences.slice(0, 4),
-  ...verifiedActualites.slice(0, 2)
+  ...verifiedJurisprudences.slice(0, selectedJurisprudenceCount),
+  ...verifiedActualites.slice(0, selectedActualiteCount)
 ];
 const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (verifiedJurisprudences.length < 4 || verifiedActualites.length < 2) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. La cible obligatoire est de quatre jurisprudences et deux actualités de la semaine courante.`);
+if (substantiveSelections.length < 6 || selectedJurisprudenceCount < 2 || selectedActualiteCount < 2) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Six sujets, dont au moins deux de chaque type, sont requis.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -743,23 +752,26 @@ const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE")
 const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
-if (items.length !== 6 || jurisprudenceCount !== 4 || actualiteCount !== 2) {
-  throw new Error(`Veille refusée: composition finale de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s), au lieu de quatre jurisprudences et deux actualités.`);
+if (items.length !== 6 || jurisprudenceCount < 2 || actualiteCount < 2) {
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Six sujets, dont au moins deux de chaque type, sont requis.`);
 }
-if (totalEditorialWords < 2800 || totalEditorialWords > 4100) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 2 800 et 4 100 mots.`);
+if (totalEditorialWords < 1900 || totalEditorialWords > 4100) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 900 et 4 100 mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
 }
 const selectedAlertCount = items.filter((item) => item.discovered_via_juliette_alert).length;
+const frenchNumber = (value) => ["zéro", "une", "deux", "trois", "quatre", "cinq", "six"][value] || String(value);
+const jurisprudenceLabel = jurisprudenceCount === 1 ? "jurisprudence" : "jurisprudences";
+const actualiteLabel = actualiteCount === 1 ? "actualité" : "actualités";
 const alertEditorialSentence = selectedAlertCount === 0
   ? "Aucun des sujets retenus ne provient des alertes de Juliette."
   : selectedAlertCount === 1
     ? "Un sujet a été initialement signalé par les alertes de Juliette, puis vérifié sur sa source primaire."
     : `${selectedAlertCount} sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.`;
 const editorialNote = [
-  `Cette édition réunit quatre jurisprudences et deux actualités publiées au cours de la semaine ${weekLabel.toLowerCase()}.`,
+  `Cette édition réunit ${frenchNumber(jurisprudenceCount)} ${jurisprudenceLabel} et ${frenchNumber(actualiteCount)} ${actualiteLabel} publiées au cours de la semaine ${weekLabel.toLowerCase()}.`,
   `Les six sujets ont été retenus après vérification de leur source primaire et représentent ${new Set(items.map((item) => item.category)).size} catégories éditoriales distinctes.`,
   alertEditorialSentence
 ].join(" ");
