@@ -1,5 +1,9 @@
 name: Generate weekly veille
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate.mjs"
   schedule:
     - cron: "0 18 * * 0"
   workflow_dispatch:
@@ -31,4 +35,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add public/latest.json public/reports
           git diff --cached --quiet || git commit -m "Generate in-depth weekly IP watch"
+          git pull --rebase origin main
           git push
