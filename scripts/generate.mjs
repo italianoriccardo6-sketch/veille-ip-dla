@@ -353,7 +353,7 @@ const selection = JSON.parse(extractOutputText(selectionRaw, "Sélection éditor
 // ciblée et peu coûteuse, constitue une réserve suffisante avant la résolution
 // des sources. Cela évite de lancer la rédaction lorsqu'une composition complète
 // n'est pas encore atteignable.
-const reserveTargets = { jurisprudences: 6, actualites: 4 };
+const reserveTargets = { jurisprudences: 6, actualites: 5 };
 const initialJurisprudences = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
 const initialActualites = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
 if (initialJurisprudences < reserveTargets.jurisprudences || initialActualites < reserveTargets.actualites) {
@@ -416,9 +416,11 @@ if (initialJurisprudences < reserveTargets.jurisprudences || initialActualites <
     if (!unique.has(key)) unique.set(key, item);
   }
   const uniqueItems = [...unique.values()];
+  const reserveJurisprudences = uniqueItems.filter((item) => item.type === "JURISPRUDENCE").slice(0, reserveTargets.jurisprudences);
+  const availableActualiteSlots = Math.max(reserveTargets.actualites, 10 - reserveJurisprudences.length);
   selection.selected_items = [
-    ...uniqueItems.filter((item) => item.type === "JURISPRUDENCE").slice(0, reserveTargets.jurisprudences),
-    ...uniqueItems.filter((item) => item.type === "ACTUALITE").slice(0, reserveTargets.actualites)
+    ...reserveJurisprudences,
+    ...uniqueItems.filter((item) => item.type === "ACTUALITE").slice(0, availableActualiteSlots)
   ];
   for (const decision of selection.alert_decisions) {
     decision.selected = selection.selected_items.some((item) => item.juliette_alert_id === decision.alert_id);
@@ -427,7 +429,7 @@ if (initialJurisprudences < reserveTargets.jurisprudences || initialActualites <
 
 const reserveJurisprudenceCount = selection.selected_items.filter((item) => item.type === "JURISPRUDENCE").length;
 const reserveActualiteCount = selection.selected_items.filter((item) => item.type === "ACTUALITE").length;
-if (selection.selected_items.length < 6 || reserveJurisprudenceCount < 2 || reserveActualiteCount < 2) {
+if (selection.selected_items.length < 6 || reserveJurisprudenceCount < 1 || reserveActualiteCount < 2) {
   throw new Error(`Veille refusée avant résolution: réserve limitée à ${reserveJurisprudenceCount} jurisprudence(s) et ${reserveActualiteCount} actualité(s).`);
 }
 const staleSelections = selection.selected_items.filter((item) => !isCurrentWeekPublication(item.publication_date));
@@ -522,7 +524,7 @@ for (const [index, selected] of selection.selected_items.entries()) {
   );
   if (
     resolvedSubstantive.length >= 6
-    && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 2
+    && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 1
     && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 2
   ) {
     console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
@@ -551,8 +553,8 @@ const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (substantiveSelections.length < 6 || selectedJurisprudenceCount < 2 || selectedActualiteCount < 2) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Six sujets, dont au moins deux de chaque type, sont requis.`);
+if (substantiveSelections.length < 6 || selectedJurisprudenceCount < 1 || selectedActualiteCount < 2) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Six sujets frais, dont au moins une jurisprudence et deux actualités, sont requis.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -626,10 +628,10 @@ for (const [index, resolved] of substantiveSelections.entries()) {
   const accessInstruction = resolution.access_level === "COMPLET"
     ? (isJurisprudence
         ? "Rédige une fiche approfondie de 600 à 850 mots."
-        : "Rédige une actualité structurée de 180 à 350 mots.")
+        : "Rédige une actualité structurée de 250 à 450 mots.")
     : (isJurisprudence
         ? "La source est partielle mais substantielle. Rédige une analyse resserrée de 450 à 650 mots, limitée aux éléments vérifiés."
-        : "La source est partielle mais substantielle. Rédige une actualité resserrée de 180 à 300 mots, limitée aux éléments vérifiés.");
+        : "La source est partielle mais substantielle. Rédige une actualité resserrée de 220 à 380 mots, limitée aux éléments vérifiés.");
   console.log(`Rédaction ${index + 1}/${substantiveSelections.length}: ${selected.title}`);
   const itemRaw = await callOpenAI({
     model: editorialModel,
@@ -699,7 +701,10 @@ const qualityReasons = (item) => {
   if (titleLooksUntranslated(item)) reasons.push("titre non traduit intégralement en français");
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
   if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
-  if (item.type === "ACTUALITE" && (words < 180 || words > 370)) reasons.push(`${words} mots, objectif éditorial entre 180 et 350, tolérance technique maximale de 370`);
+  if (item.type === "ACTUALITE") {
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [250, 470] : [220, 400];
+    if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
+  }
   if (item.type === "JURISPRUDENCE") {
     const [minimum, maximum] = item.source_access === "COMPLET" ? [600, 850] : [450, 650];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
@@ -752,11 +757,11 @@ const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE")
 const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
-if (items.length !== 6 || jurisprudenceCount < 2 || actualiteCount < 2) {
-  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Six sujets, dont au moins deux de chaque type, sont requis.`);
+if (items.length !== 6 || jurisprudenceCount < 1 || actualiteCount < 2) {
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Six sujets frais, dont au moins une jurisprudence et deux actualités, sont requis.`);
 }
-if (totalEditorialWords < 1900 || totalEditorialWords > 4100) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 900 et 4 100 mots selon la composition de la semaine.`);
+if (totalEditorialWords < 1800 || totalEditorialWords > 4100) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 800 et 4 100 mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
