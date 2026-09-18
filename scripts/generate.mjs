@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { AlignmentType, BorderStyle, Document, ExternalHyperlink, Footer, HeadingLevel, Packer, PageNumber, Paragraph, Table, TableCell, TableRow, TextRun, WidthType } from "docx";
+import { AlignmentType, BorderStyle, Document, ExternalHyperlink, Footer, HeadingLevel, ImageRun, Packer, PageNumber, Paragraph, Table, TableCell, TableRow, TextRun, WidthType } from "docx";
 
 const sources = JSON.parse(await fs.readFile(new URL("../data/sources.json", import.meta.url), "utf8"));
 if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY manquante");
@@ -11,12 +11,16 @@ const responsesEndpoint = process.env.OPENAI_RESPONSES_ENDPOINT || "https://api.
 const usageTotals = { input_tokens: 0, output_tokens: 0, total_tokens: 0, requests: 0, web_search_calls: 0 };
 const usageByModel = {};
 const runStartedAt = new Date();
+const finalSubjectTarget = 5;
 const weekStart = new Date(runStartedAt);
 const daysSinceMonday = (runStartedAt.getUTCDay() + 6) % 7;
 weekStart.setUTCDate(runStartedAt.getUTCDate() - daysSinceMonday);
 weekStart.setUTCHours(0, 0, 0, 0);
 const weekStartIso = weekStart.toISOString().slice(0, 10);
 const weekEndIso = runStartedAt.toISOString().slice(0, 10);
+const editionDate = new Date(`${weekEndIso}T00:00:00.000Z`);
+editionDate.setUTCDate(editionDate.getUTCDate() + 1);
+const editionDateIso = editionDate.toISOString().slice(0, 10);
 const frenchMonths = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
 const frenchDate = (value) => {
   const date = new Date(`${value}T00:00:00.000Z`);
@@ -268,7 +272,7 @@ const selectionProperties = {
   type: { type: "string", enum: ["JURISPRUDENCE", "ACTUALITE"] },
   category: { type: "string", minLength: 3 },
   title: { type: "string", minLength: 10 },
-  court_reference: { type: "string", minLength: 3 },
+  court_reference: { type: "string" },
   source: { type: "string", minLength: 3 },
   source_url: { type: "string", minLength: 10 },
   publication_date: { type: "string", pattern: "^\\d{4}-\\d{2}-\\d{2}$" },
@@ -329,8 +333,8 @@ const selectionRaw = await callOpenAI({
   reasoning: { effort: "medium" },
   input: [
     "Tu es le secrétaire de rédaction d'une veille française de propriété intellectuelle.",
-    `Présélectionne entre 9 et 10 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Il faut une réserve de trois sujets au minimum, car une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les six meilleurs.`,
-    "La veille finale doit compter six sujets, avec autant de jurisprudences substantielles que la semaine permet réellement d'en vérifier, au moins une jurisprudence et au moins deux actualités. Dans la présélection, inclus au moins une jurisprudence et au moins cinq actualités afin de préserver une réserve utile.",
+    `Présélectionne entre 9 et 10 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les cinq meilleurs.`,
+    "La veille finale doit compter cinq sujets, dont au moins une jurisprudence et au moins trois actualités. Dans la présélection, inclus au moins une jurisprudence et au moins cinq actualités afin de préserver une réserve utile.",
     "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre réel entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique. N'annonce jamais un équilibre qui ne ressort pas des sujets effectivement sélectionnés.",
     "Ne retiens pas plus de deux sujets provenant de la même institution. Privilégie la diversité institutionnelle et thématique plutôt que plusieurs décisions proches rendues le même jour.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
@@ -477,6 +481,8 @@ const resolverSchema = {
     publication_date: { type: "string", pattern: "^\\d{4}-\\d{2}-\\d{2}$" },
     document_type: { type: "string", minLength: 3 },
     retrieval_note: { type: "string", minLength: 20 },
+    illustration_page_url: { type: "string" },
+    illustration_alt: { type: "string" },
     verified_facts: {
       type: "array",
       minItems: 1,
@@ -484,7 +490,7 @@ const resolverSchema = {
       items: { type: "string", minLength: 10 }
     }
   },
-  required: ["access_level", "full_text_confirmed", "primary_source_name", "primary_source_url", "publication_date", "document_type", "retrieval_note", "verified_facts"]
+  required: ["access_level", "full_text_confirmed", "primary_source_name", "primary_source_url", "publication_date", "document_type", "retrieval_note", "illustration_page_url", "illustration_alt", "verified_facts"]
 };
 
 const resolvedSelections = [];
@@ -503,6 +509,9 @@ for (const [index, selected] of selection.selected_items.entries()) {
       "Une page de sommaire ou une interface dynamique ne suffit pas si elle contient un lien vers un PDF ou vers une version intégrale. Recherche et ouvre ce document avant de qualifier l'accès.",
       "Utilise COMPLET uniquement si le texte intégral et son dispositif ou ses dispositions ont été effectivement consultés. Utilise PARTIEL si plusieurs éléments substantiels sont vérifiables mais qu'une partie du document manque. Utilise MINIMAL si seuls le titre, la date ou des métadonnées sont accessibles.",
       "primary_source_url doit mener directement au document utilisé, de préférence au PDF ou au texte intégral officiel, jamais à une page d'accueil lorsque le document direct existe.",
+      selected.type === "JURISPRUDENCE"
+        ? "Si une page officielle de la juridiction ou de l'institution comporte une illustration directement liée à cette décision, renseigne son URL dans illustration_page_url et décris brièvement l'image dans illustration_alt. Sinon, laisse ces deux champs vides. N'utilise jamais une banque d'images ou une illustration générique."
+        : "Pour une actualité, laisse illustration_page_url et illustration_alt vides.",
       "Énumère uniquement des faits effectivement vérifiés. N'extrapole rien.",
       frenchEditorialRules
     ].join("\n"),
@@ -523,26 +532,26 @@ for (const [index, selected] of selection.selected_items.entries()) {
     current.access_level !== "MINIMAL" && current.verified_facts.length >= 4
   );
   if (
-    resolvedSubstantive.length >= 6
+    resolvedSubstantive.length >= finalSubjectTarget
     && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 1
-    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 2
+    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 3
   ) {
     console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
     break;
   }
 }
 
-const verifiedSelections = resolvedSelections.filter(({ resolution }) =>
-  resolution.access_level !== "MINIMAL" && resolution.verified_facts.length >= 4
-);
+const verifiedSelections = resolvedSelections
+  .filter(({ resolution }) => resolution.access_level !== "MINIMAL" && resolution.verified_facts.length >= 4)
+  .sort((a, b) => Number(b.resolution.access_level === "COMPLET") - Number(a.resolution.access_level === "COMPLET"));
 const verifiedJurisprudences = verifiedSelections.filter((item) => item.type === "JURISPRUDENCE");
 const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
-let selectedJurisprudenceCount = Math.min(4, verifiedJurisprudences.length);
-let selectedActualiteCount = Math.min(verifiedActualites.length, 6 - selectedJurisprudenceCount);
-if (selectedJurisprudenceCount + selectedActualiteCount < 6) {
+let selectedJurisprudenceCount = Math.min(2, verifiedJurisprudences.length);
+let selectedActualiteCount = Math.min(verifiedActualites.length, finalSubjectTarget - selectedJurisprudenceCount);
+if (selectedJurisprudenceCount + selectedActualiteCount < finalSubjectTarget) {
   selectedJurisprudenceCount += Math.min(
     verifiedJurisprudences.length - selectedJurisprudenceCount,
-    6 - selectedJurisprudenceCount - selectedActualiteCount
+    finalSubjectTarget - selectedJurisprudenceCount - selectedActualiteCount
   );
 }
 const substantiveSelections = [
@@ -553,8 +562,8 @@ const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (substantiveSelections.length < 6 || selectedJurisprudenceCount < 1 || selectedActualiteCount < 2) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Six sujets frais, dont au moins une jurisprudence et deux actualités, sont requis.`);
+if (substantiveSelections.length < finalSubjectTarget || selectedJurisprudenceCount < 1 || selectedActualiteCount < 3) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais, dont au moins une jurisprudence et trois actualités, sont requis.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -562,11 +571,26 @@ const commonItemProperties = {
   ...selectionProperties,
   source_access: { type: "string", enum: ["COMPLET", "PARTIEL"] },
   access_warning: { type: "string" },
+  source_display_text: { type: "string", minLength: 5 },
   summary: requiredText,
   retrieval_note: requiredText
 };
 const jurisprudenceProperties = {
   ...commonItemProperties,
+  timeline: {
+    type: "array",
+    minItems: 3,
+    maxItems: 6,
+    items: {
+      type: "object",
+      additionalProperties: false,
+      properties: {
+        date: { type: "string", minLength: 3 },
+        event: { type: "string", minLength: 10 }
+      },
+      required: ["date", "event"]
+    }
+  },
   introduction: requiredText,
   facts_and_procedure: requiredText,
   parties_arguments: requiredText,
@@ -577,10 +601,14 @@ const jurisprudenceProperties = {
 };
 const actualiteProperties = {
   ...commonItemProperties,
-  context: requiredText,
-  legal_basis_and_scope: requiredText,
-  main_provisions: requiredText,
-  implementation_timeline: requiredText,
+  lead_label: { type: "string", enum: ["", "Contexte"] },
+  paragraphs: {
+    type: "array",
+    minItems: 2,
+    maxItems: 4,
+    items: { type: "string", minLength: 80 }
+  },
+  highlight_paragraph: { type: "string" },
   practical_relevance: requiredText
 };
 const makeItemSchema = (properties) => ({
@@ -603,12 +631,23 @@ const finalizeEditorialItem = (draft, selected, resolution, properties) => {
   item.publication_date = resolution.publication_date;
   item.source_access = resolution.access_level;
   item.retrieval_note = resolution.retrieval_note;
+  item.illustration_page_url = resolution.illustration_page_url;
+  item.illustration_alt = resolution.illustration_alt;
   item.discovered_via_juliette_alert = selected.discovered_via_juliette_alert;
   item.juliette_alert_id = selected.juliette_alert_id;
   for (const field of Object.keys(properties)) {
     if (field !== "source_url" && typeof item[field] === "string") {
       item[field] = normalizeFrenchTypography(item[field]);
     }
+  }
+  if (Array.isArray(item.timeline)) {
+    item.timeline = item.timeline.map((entry) => ({
+      date: normalizeFrenchTypography(entry.date),
+      event: normalizeFrenchTypography(entry.event)
+    }));
+  }
+  if (Array.isArray(item.paragraphs)) {
+    item.paragraphs = item.paragraphs.map(normalizeFrenchTypography);
   }
   item.access_warning = item.source_access === "PARTIEL"
     ? "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint."
@@ -629,33 +668,36 @@ for (const [index, resolved] of substantiveSelections.entries()) {
   ].filter(Boolean))];
   const accessInstruction = resolution.access_level === "COMPLET"
     ? (isJurisprudence
-        ? "Rédige une fiche approfondie de 600 à 850 mots."
-        : "Rédige une actualité structurée de 250 à 450 mots.")
+        ? "Rédige une fiche approfondie de 850 à 1 050 mots."
+        : "Rédige une actualité synthétique de 140 à 330 mots.")
     : (isJurisprudence
-        ? "La source est partielle mais substantielle. Rédige une analyse resserrée de 450 à 650 mots, limitée aux éléments vérifiés."
-        : "La source est partielle mais substantielle. Rédige une actualité resserrée de 220 à 380 mots, limitée aux éléments vérifiés.");
+        ? "La source est partielle mais substantielle. Rédige une analyse de 700 à 900 mots, strictement limitée aux éléments vérifiés."
+        : "La source est partielle mais substantielle. Rédige une actualité de 140 à 280 mots, strictement limitée aux éléments vérifiés.");
   console.log(`Rédaction ${index + 1}/${substantiveSelections.length}: ${selected.title}`);
   const itemRaw = await callOpenAI({
     model: editorialModel,
     reasoning: { effort: "medium" },
-    tools: [{
-      type: "web_search",
-      filters: { allowed_domains: editorialDomains },
-      external_web_access: true
-    }],
-    tool_choice: "required",
+    ...(isJurisprudence ? {
+      tools: [{
+        type: "web_search",
+        filters: { allowed_domains: editorialDomains },
+        external_web_access: true
+      }],
+      tool_choice: "required"
+    } : {}),
     input: [
       "Tu rédiges une fiche pour la veille Propriété intellectuelle d'un grand cabinet d'avocats international en France.",
       `Sujet sélectionné: ${JSON.stringify(selected)}`,
       `Résolution préalable de la source: ${JSON.stringify(resolution)}`,
       "Fonde la rédaction sur le document primaire résolu et sur les faits vérifiés. L'URL finale doit être exactement primary_source_url et la source exactement primary_source_name.",
+      `Dans source_display_text, indique la source utile et la date « ${frenchDate(resolution.publication_date)} » exactement une fois. N'ajoute jamais une seconde date identique.`,
       currentWeekInstruction,
       "Rédige en français juridique, sobre, impersonnel, précis et approfondi, exclusivement à partir d'informations vérifiables.",
       frenchEditorialRules,
       accessInstruction,
       isJurisprudence
-        ? "Structure la fiche autour du litige, des faits, de la procédure, des arguments, de la question de droit, du raisonnement, de la solution et de la portée pratique."
-        : "Structure l'actualité autour du contexte, de son fondement et champ d'application, de ses principales dispositions, de son calendrier de mise en œuvre et de sa portée pratique. N'utilise jamais les rubriques contentieuses lorsqu'elles sont sans objet.",
+        ? "Établis d'abord une chronologie de trois à six étapes, exclusivement à partir de dates vérifiées. Structure ensuite la fiche autour du litige, des faits, de la procédure, des arguments, de la question de droit, du raisonnement, de la solution et de la portée pratique."
+        : "Rédige deux à quatre paragraphes continus, organisés selon la logique propre du sujet. Utilise lead_label=Contexte seulement si cette mention améliore réellement l'entrée en matière, sinon laisse-le vide. Le champ highlight_paragraph peut contenir un enseignement pratique particulièrement important, sinon laisse-le vide. N'impose aucune rubrique contentieuse ou artificielle et n'écris jamais « Sans objet ».",
       "Le résumé destiné à la dashboard doit faire 35 à 55 mots. Les autres champs doivent être des paragraphes continus, sans listes.",
       "Rédige obligatoirement le titre en français, même lorsque le document primaire utilise un titre anglais. Conserve uniquement les noms propres, sigles et marques qui ne doivent pas être traduits.",
       "N'invente jamais une référence, une citation, un argument ou une étape procédurale. Si un élément manque, indique qu'il n'est pas précisé.",
@@ -664,7 +706,7 @@ for (const [index, resolved] of substantiveSelections.entries()) {
       "Si source_access vaut COMPLET, laisse access_warning vide. S'il vaut PARTIEL, inscris exactement: Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
       "La portée pratique doit découler directement du contenu vérifié. N'infère jamais un secteur, une solution ou une conséquence à partir du seul titre ou du nom des parties."
     ].join("\n"),
-    max_output_tokens: 6000,
+    max_output_tokens: isJurisprudence ? 6000 : 2600,
     text: { format: { type: "json_schema", name: isJurisprudence ? "fiche_jurisprudence" : "fiche_actualite", strict: true, schema: makeItemSchema(properties) } }
   }, `Rédaction fiche ${index + 1}`);
   const draft = JSON.parse(extractOutputText(itemRaw, `Rédaction fiche ${index + 1}`));
@@ -688,10 +730,19 @@ const briefs = minimalSelections.map(({ resolution, ...selected }) => ({
 }));
 
 const contentWordCount = (item) => {
-  const fields = item.type === "JURISPRUDENCE"
-    ? ["introduction", "facts_and_procedure", "parties_arguments", "legal_question", "reasoning", "outcome", "practical_relevance"]
-    : ["context", "legal_basis_and_scope", "main_provisions", "implementation_timeline", "practical_relevance"];
-  return fields.flatMap((field) => String(item[field] || "").split(/\s+/)).filter(Boolean).length;
+  const values = item.type === "JURISPRUDENCE"
+    ? [
+        ...(item.timeline || []).flatMap((entry) => [entry.date, entry.event]),
+        item.introduction,
+        item.facts_and_procedure,
+        item.parties_arguments,
+        item.legal_question,
+        item.reasoning,
+        item.outcome,
+        item.practical_relevance
+      ]
+    : [...(item.paragraphs || []), item.highlight_paragraph];
+  return values.flatMap((value) => String(value || "").split(/\s+/)).filter(Boolean).length;
 };
 const limitationCount = (item) => (JSON.stringify(item).match(/ne peut|n’est pas possible|ne permettent|ne précise|n’a pas pu/gi) || []).length;
 const titleLooksUntranslated = (item) => ((item.title.match(/\b(?:the|for|and|with|from|available|new|now)\b/gi) || []).length >= 2);
@@ -701,14 +752,18 @@ const qualityReasons = (item) => {
   const limitations = limitationCount(item);
   if (!isCurrentWeekPublication(item.publication_date)) reasons.push(`date hors période: ${item.publication_date}`);
   if (titleLooksUntranslated(item)) reasons.push("titre non traduit intégralement en français");
+  const expectedDate = frenchDate(item.publication_date);
+  const displayedDateCount = item.source_display_text.split(expectedDate).length - 1;
+  if (displayedDateCount !== 1) reasons.push(`la date française doit apparaître exactement une fois dans source_display_text, occurrences: ${displayedDateCount}`);
+  if (/sans objet/i.test(JSON.stringify(item))) reasons.push("présence de la formule interdite « Sans objet »");
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
   if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
   if (item.type === "ACTUALITE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [250, 470] : [220, 400];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [140, 330] : [140, 280];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   if (item.type === "JURISPRUDENCE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [600, 850] : [450, 650];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1050] : [700, 900];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
@@ -734,13 +789,13 @@ for (const failure of qualityFailures) {
       `Motifs précis du refus: ${failure.reasons.join("; ")}.`,
       "Corrige uniquement les défauts signalés tout en conservant chaque information vérifiée, la structure prescrite et le niveau de précision juridique.",
       isJurisprudence
-        ? "La fiche doit conserver les faits, la procédure, les arguments, la question de droit, le raisonnement, la solution et la portée pratique."
-        : "L'actualité doit conserver le contexte, le fondement et le champ d'application, les principales dispositions, le calendrier de mise en œuvre et la portée pratique.",
+        ? "La fiche doit conserver la chronologie, les faits, la procédure, les arguments, la question de droit, le raisonnement, la solution et la portée pratique."
+        : "L'actualité doit conserver une progression rédactionnelle naturelle en deux à quatre paragraphes et, s'il existe, son enseignement pratique mis en évidence.",
       "Une réserve factuellement nécessaire peut être conservée, mais ne répète jamais la même limite dans plusieurs rubriques.",
       "Le titre doit être intégralement rédigé en français, à l’exception des noms propres, sigles et marques.",
       frenchEditorialRules
     ].join("\n"),
-    max_output_tokens: 6000,
+    max_output_tokens: isJurisprudence ? 6000 : 2600,
     text: { format: { type: "json_schema", name: isJurisprudence ? "fiche_jurisprudence" : "fiche_actualite", strict: true, schema: makeItemSchema(properties) } }
   }, `Correction ciblée: ${failure.title}`);
   const correctedDraft = JSON.parse(extractOutputText(correctedRaw, `Correction ciblée: ${failure.title}`));
@@ -759,11 +814,11 @@ const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE")
 const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
-if (items.length !== 6 || jurisprudenceCount < 1 || actualiteCount < 2) {
-  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Six sujets frais, dont au moins une jurisprudence et deux actualités, sont requis.`);
+if (items.length !== finalSubjectTarget || jurisprudenceCount < 1 || actualiteCount < 3) {
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais, dont au moins une jurisprudence et trois actualités, sont requis.`);
 }
-if (totalEditorialWords < 1800 || totalEditorialWords > 4100) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 800 et 4 100 mots selon la composition de la semaine.`);
+if (totalEditorialWords < 1700 || totalEditorialWords > 2600) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 700 et 2 600 mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
@@ -779,12 +834,13 @@ const alertEditorialSentence = selectedAlertCount === 0
     : `${selectedAlertCount} sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.`;
 const editorialNote = [
   `Cette édition réunit ${frenchNumber(jurisprudenceCount)} ${jurisprudenceLabel} et ${frenchNumber(actualiteCount)} ${actualiteLabel} publiées au cours de la semaine ${weekLabel.toLowerCase()}.`,
-  `Les six sujets ont été retenus après vérification de leur source primaire et représentent ${new Set(items.map((item) => item.category)).size} catégories éditoriales distinctes.`,
+  `Les cinq sujets ont été retenus après vérification de leur source primaire et représentent ${new Set(items.map((item) => item.category)).size} catégories éditoriales distinctes.`,
   alertEditorialSentence
 ].join(" ");
 
 const report = {
   week: weekLabel,
+  edition_date: editionDateIso,
   editorial_note: normalizeFrenchTypography(editorialNote),
   source_coverage: sourceCoverage.map((entry) => ({
     source_name: entry.source_name,
@@ -811,24 +867,85 @@ const report = {
   items,
   briefs: []
 };
-const mandatoryFields = ["category", "title", "source", "source_url", "publication_date", "source_access", "summary", "practical_relevance"];
+const mandatoryFields = ["category", "title", "source", "source_url", "source_display_text", "publication_date", "source_access", "summary", "practical_relevance"];
 const incompleteItems = report.items.filter((item) =>
   mandatoryFields.some((field) => typeof item[field] !== "string" || item[field].trim().length < 3)
   || (item.source_access === "PARTIEL" && item.access_warning.length < 20)
   || !isCurrentWeekPublication(item.publication_date)
 );
-if (incompleteItems.length || report.items.length !== 6) {
+if (incompleteItems.length || report.items.length !== finalSubjectTarget) {
   throw new Error(`Veille refusée: ${incompleteItems.length} fiche(s) incomplète(s), ${report.items.length} sujet(s) au total.`);
 }
 report.generated_at = new Date().toISOString();
 report.status = "generated";
-const slug = new Date().toISOString().slice(0, 10);
+const slug = editionDateIso;
 report.report_url = `/public/reports/veille-${slug}.docx`;
 report.docx_url = report.report_url;
 await fs.mkdir("public/reports", { recursive: true });
 
 const jurisprudences = report.items.filter((item) => item.type === "JURISPRUDENCE");
 const actualites = report.items.filter((item) => item.type === "ACTUALITE");
+const hostIsEditoriallyAllowed = (hostname, item) => {
+  const normalized = hostname.replace(/^www\./, "").toLowerCase();
+  const allowed = [...domains, (() => {
+    try { return new URL(item.source_url).hostname; } catch { return ""; }
+  })()].filter(Boolean).map((domain) => String(domain).replace(/^www\./, "").toLowerCase());
+  return allowed.some((domain) => normalized === domain || normalized.endsWith(`.${domain}`));
+};
+
+const extractSocialImage = (html, baseUrl) => {
+  const tags = html.match(/<meta\b[^>]*>/gi) || [];
+  for (const tag of tags) {
+    if (!/(?:property|name)=["'](?:og:image|twitter:image)["']/i.test(tag)) continue;
+    const raw = tag.match(/content=["']([^"']+)["']/i)?.[1];
+    if (!raw) continue;
+    try {
+      return new URL(raw.replace(/&amp;/g, "&"), baseUrl).href;
+    } catch {}
+  }
+  return "";
+};
+
+const downloadJurisprudenceImage = async (item) => {
+  if (!item.illustration_page_url) return null;
+  try {
+    const pageUrl = new URL(item.illustration_page_url);
+    if (!hostIsEditoriallyAllowed(pageUrl.hostname, item)) return null;
+    const pageResponse = await fetch(pageUrl, {
+      headers: { "User-Agent": "Veille-IP-DLA/1.0" },
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!pageResponse.ok) return null;
+    const pageType = pageResponse.headers.get("content-type") || "";
+    let imageUrl = pageUrl.href;
+    if (!/^image\/(?:jpeg|png)/i.test(pageType)) {
+      const html = await pageResponse.text();
+      imageUrl = extractSocialImage(html, pageUrl.href);
+      if (!imageUrl) return null;
+    }
+    const parsedImageUrl = new URL(imageUrl);
+    if (!hostIsEditoriallyAllowed(parsedImageUrl.hostname, item)) return null;
+    const imageResponse = imageUrl === pageUrl.href ? pageResponse : await fetch(parsedImageUrl, {
+      headers: { "User-Agent": "Veille-IP-DLA/1.0" },
+      signal: AbortSignal.timeout(15000)
+    });
+    if (!imageResponse.ok) return null;
+    const imageType = imageResponse.headers.get("content-type") || "";
+    if (!/^image\/(?:jpeg|png)/i.test(imageType)) return null;
+    const data = Buffer.from(await imageResponse.arrayBuffer());
+    if (!data.length || data.length > 5_000_000) return null;
+    return { data, type: /png/i.test(imageType) ? "png" : "jpg" };
+  } catch (error) {
+    console.warn(`Illustration ignorée pour « ${item.title} »: ${error.message}`);
+    return null;
+  }
+};
+
+const jurisprudenceImages = new Map();
+for (const item of jurisprudences) {
+  const image = await downloadJurisprudenceImage(item);
+  if (image) jurisprudenceImages.set(item.source_url, image);
+}
 const textParagraphs = (value) => String(value || "")
   .split(/\n\s*\n/)
   .map((paragraph) => paragraph.trim())
@@ -857,7 +974,7 @@ const sourceParagraph = (item) => new Paragraph({
     new ExternalHyperlink({
       link: item.source_url,
       children: [new TextRun({
-        text: `${item.court_reference || item.source}, ${frenchDate(item.publication_date)}`,
+        text: item.source_display_text,
         color: "507D82",
         underline: {}
       })]
@@ -903,11 +1020,44 @@ const practicalParagraph = (item) => new Paragraph({
   ]
 });
 
+const highlightParagraph = (value) => new Paragraph({
+  alignment: AlignmentType.JUSTIFIED,
+  spacing: { before: 80, after: 260 },
+  border: { left: { color: "507D82", size: 10, space: 8, style: "single" } },
+  indent: { left: 180 },
+  children: [new TextRun({ text: value })]
+});
+
+const timelineParagraphs = (item) => (item.timeline || []).map((entry, index) => new Paragraph({
+  alignment: AlignmentType.LEFT,
+  keepNext: index < item.timeline.length - 1,
+  spacing: { after: 70, line: 252 },
+  children: [
+    new TextRun({ text: index === 0 ? `${entry.event} ` : `→ ${entry.event} ` }),
+    new TextRun({ text: `(${entry.date})`, italics: true, color: "666666" })
+  ]
+}));
+
+const jurisprudenceImageParagraph = (item) => {
+  const image = jurisprudenceImages.get(item.source_url);
+  if (!image) return null;
+  return new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { after: 180 },
+    children: [new ImageRun({
+      data: image.data,
+      type: image.type,
+      transformation: { width: 657, height: 370 }
+    })]
+  });
+};
+
 const renderItem = (item) => {
   const warning = accessWarningParagraph(item);
   const alertOrigin = julietteAlertParagraph(item);
   const body = item.type === "JURISPRUDENCE"
     ? [
+        ...timelineParagraphs(item),
         ...textParagraphs(item.introduction),
         ...textParagraphs(item.facts_and_procedure),
         ...textParagraphs(item.parties_arguments),
@@ -915,12 +1065,9 @@ const renderItem = (item) => {
         ...textParagraphs(item.reasoning),
         ...textParagraphs(item.outcome)
       ]
-    : [
-        labeledParagraph("Contexte", item.context),
-        labeledParagraph("Fondement et champ d’application", item.legal_basis_and_scope),
-        labeledParagraph("Principales dispositions", item.main_provisions),
-        labeledParagraph("Mise en œuvre", item.implementation_timeline)
-      ];
+    : (item.paragraphs || []).map((paragraph, index) => item.lead_label === "Contexte" && index === 0
+      ? labeledParagraph("Contexte", paragraph)
+      : textParagraphs(paragraph)[0]);
   const heading = new Paragraph({
     heading: HeadingLevel.HEADING_2,
     keepNext: true,
@@ -936,13 +1083,17 @@ const renderItem = (item) => {
     ...(alertOrigin ? [alertOrigin] : []),
     ...(warning ? [warning] : []),
     ...body,
-    practicalParagraph(item)
+    ...(item.type === "JURISPRUDENCE"
+      ? [practicalParagraph(item)]
+      : (item.highlight_paragraph ? [highlightParagraph(item.highlight_paragraph)] : []))
   ];
   if (item.type !== "JURISPRUDENCE") return [heading, ...content];
+  const illustration = jurisprudenceImageParagraph(item);
   const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
   const boxBorder = { style: BorderStyle.SINGLE, size: 6, color: "7F7F7F" };
   return [
     heading,
+    ...(illustration ? [illustration] : []),
     new Table({
       width: { size: 9866, type: WidthType.DXA },
       columnWidths: [9866],
@@ -998,7 +1149,7 @@ const children = [
   new Paragraph({
     alignment: AlignmentType.CENTER,
     spacing: { after: 420 },
-    children: [new TextRun({ text: report.week, size: 22, font: "Arial" })]
+    children: [new TextRun({ text: frenchDate(report.edition_date), size: 22, font: "Arial" })]
   })
 ];
 
@@ -1022,20 +1173,10 @@ if (actualites.length) {
   actualites.forEach((item) => children.push(...renderItem(item)));
 }
 
-children.push(
-  new Paragraph({
-    spacing: { before: 260, after: 140 },
-    children: [new TextRun({ text: report.editorial_note, color: "666666", size: 18, italics: true })]
-  })
-);
-
 const createFooter = () => new Footer({
   children: [new Paragraph({
     alignment: AlignmentType.RIGHT,
-    children: [
-      new TextRun({ text: "Veille IP · " }),
-      new TextRun({ children: [PageNumber.CURRENT] })
-    ]
+    children: [new TextRun({ children: [PageNumber.CURRENT] })]
   })]
 });
 
@@ -1072,8 +1213,8 @@ const document = new Document({
   sections: [{
     properties: {
       page: {
-        size: { width: 11906, height: 16838 },
-        margin: { top: 1020, right: 1020, bottom: 1020, left: 1020 }
+        size: { width: 12240, height: 15840 },
+        margin: { top: 1440, right: 820, bottom: 1450, left: 1440 }
       }
     },
     footers: {
