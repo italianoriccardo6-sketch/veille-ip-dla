@@ -562,8 +562,10 @@ const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (substantiveSelections.length < finalSubjectTarget || selectedJurisprudenceCount !== 1 || selectedActualiteCount < 4) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais, dont exactement une jurisprudence et quatre actualités, sont requis.`);
+const preferredComposition = selectedJurisprudenceCount === 1 && selectedActualiteCount === 4;
+const fallbackComposition = selectedJurisprudenceCount === 2 && selectedActualiteCount === 3 && verifiedActualites.length === 3;
+if (substantiveSelections.length < finalSubjectTarget || (!preferredComposition && !fallbackComposition)) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, ou deux jurisprudences et trois actualités lorsque la semaine ne fournit pas quatre actualités vérifiables.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -814,11 +816,14 @@ const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE")
 const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
-if (items.length !== finalSubjectTarget || jurisprudenceCount !== 1 || actualiteCount !== 4) {
-  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais, dont exactement une jurisprudence et quatre actualités, sont requis.`);
+const finalCompositionIsValid = (jurisprudenceCount === 1 && actualiteCount === 4)
+  || (jurisprudenceCount === 2 && actualiteCount === 3);
+if (items.length !== finalSubjectTarget || !finalCompositionIsValid) {
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, ou deux jurisprudences et trois actualités en cas de réserve hebdomadaire insuffisante.`);
 }
-if (totalEditorialWords < 1500 || totalEditorialWords > 2600) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 500 et 2 600 mots selon la composition de la semaine.`);
+const maximumEditorialWords = jurisprudenceCount === 2 ? 3300 : 2600;
+if (totalEditorialWords < 1500 || totalEditorialWords > maximumEditorialWords) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 500 et ${maximumEditorialWords.toLocaleString("fr-FR")} mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
