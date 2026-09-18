@@ -334,7 +334,7 @@ const selectionRaw = await callOpenAI({
   input: [
     "Tu es le secrétaire de rédaction d'une veille française de propriété intellectuelle.",
     `Présélectionne entre 9 et 10 sujets parmi les résultats issus des ${sourceCount} sources effectivement contrôlées ci-dessous. Une phase distincte vérifiera ensuite l'accès au document primaire et retiendra les cinq meilleurs.`,
-    "La veille finale doit compter cinq sujets, dont au moins une jurisprudence et au moins trois actualités. Dans la présélection, inclus au moins une jurisprudence et au moins cinq actualités afin de préserver une réserve utile.",
+    "La veille finale doit compter cinq sujets, dont exactement une jurisprudence et quatre actualités. Dans la présélection, inclus au moins une jurisprudence et au moins cinq actualités afin de préserver une réserve utile.",
     "Privilégie les sources primaires, la date récente, la substance juridique et un équilibre réel entre marques, brevets, dessins et modèles, droit d'auteur, IA et numérique. N'annonce jamais un équilibre qui ne ressort pas des sujets effectivement sélectionnés.",
     "Ne retiens pas plus de deux sujets provenant de la même institution. Privilégie la diversité institutionnelle et thématique plutôt que plusieurs décisions proches rendues le même jour.",
     "Une newsletter secondaire ne sert qu'à détecter un sujet; préfère l'URL primaire lorsqu'elle figure dans les résultats.",
@@ -534,7 +534,7 @@ for (const [index, selected] of selection.selected_items.entries()) {
   if (
     resolvedSubstantive.length >= finalSubjectTarget
     && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 1
-    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 3
+    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 4
   ) {
     console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
     break;
@@ -546,7 +546,7 @@ const verifiedSelections = resolvedSelections
   .sort((a, b) => Number(b.resolution.access_level === "COMPLET") - Number(a.resolution.access_level === "COMPLET"));
 const verifiedJurisprudences = verifiedSelections.filter((item) => item.type === "JURISPRUDENCE");
 const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
-let selectedJurisprudenceCount = Math.min(2, verifiedJurisprudences.length);
+let selectedJurisprudenceCount = Math.min(1, verifiedJurisprudences.length);
 let selectedActualiteCount = Math.min(verifiedActualites.length, finalSubjectTarget - selectedJurisprudenceCount);
 if (selectedJurisprudenceCount + selectedActualiteCount < finalSubjectTarget) {
   selectedJurisprudenceCount += Math.min(
@@ -562,8 +562,8 @@ const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-if (substantiveSelections.length < finalSubjectTarget || selectedJurisprudenceCount < 1 || selectedActualiteCount < 3) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais, dont au moins une jurisprudence et trois actualités, sont requis.`);
+if (substantiveSelections.length < finalSubjectTarget || selectedJurisprudenceCount !== 1 || selectedActualiteCount < 4) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais, dont exactement une jurisprudence et quatre actualités, sont requis.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -763,7 +763,7 @@ const qualityReasons = (item) => {
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   if (item.type === "JURISPRUDENCE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1050] : [700, 900];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1125] : [700, 950];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
@@ -814,11 +814,11 @@ const jurisprudenceCount = items.filter((item) => item.type === "JURISPRUDENCE")
 const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
-if (items.length !== finalSubjectTarget || jurisprudenceCount < 1 || actualiteCount < 3) {
-  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais, dont au moins une jurisprudence et trois actualités, sont requis.`);
+if (items.length !== finalSubjectTarget || jurisprudenceCount !== 1 || actualiteCount !== 4) {
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais, dont exactement une jurisprudence et quatre actualités, sont requis.`);
 }
-if (totalEditorialWords < 1700 || totalEditorialWords > 2600) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 700 et 2 600 mots selon la composition de la semaine.`);
+if (totalEditorialWords < 1500 || totalEditorialWords > 2600) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 500 et 2 600 mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
