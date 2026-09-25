@@ -1,322 +1,347 @@
 {
-  "week": "Du 14 septembre au 18 septembre 2026",
-  "edition_date": "2026-09-19",
-  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 14 septembre au 18 septembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Aucun des sujets retenus ne provient des alertes de Juliette.",
+  "week": "Du 21 septembre au 25 septembre 2026",
+  "edition_date": "2026-09-26",
+  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 21 septembre au 25 septembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. 3 sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.",
   "source_coverage": [
     {
       "source_name": "EUIPO",
       "domain": "euipo.europa.eu",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source EUIPO a été analysée pour les contenus relatifs aux marques ainsi qu’aux dessins et modèles publiés entre le 14 septembre 2026 et le 18 septembre 2026 inclus. Aucun contenu substantiel avec une date de publication vérifiable dans cette période n’a été identifié dans les résultats consultés. Les publications repérées étaient antérieures à cette période ou ne permettaient pas de vérifier une date de publication comprise dans l’intervalle demandé. Conformément à la consigne de fraîcheur, aucune publication plus ancienne n’a été retenue."
+      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus. Aucun contenu substantiel portant sur les marques, dessins ou modèles, avec une date de publication vérifiable dans cette période, n’a été identifié dans les résultats consultés. Les contenus datés du 1er, 9, 11 et 23 septembre 2026 n’ont pas été retenus lorsqu’ils ne constituaient pas des publications substantielles pertinentes ou lorsqu’ils ne permettaient pas de vérifier une publication correspondant aux thèmes demandés. Conformément à l’instruction de fraîcheur, aucune publication antérieure n’a été utilisée pour compléter la sélection."
     },
     {
       "source_name": "OMPI",
       "domain": "wipo.int",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "La source OMPI a été analysée en ciblant exclusivement les contenus publiés du 14 au 18 septembre 2026 inclus. Trois documents substantiels et directement liés aux brevets ou au système international des brevets ont été retenus. Aucun contenu spécifiquement consacré aux marques n'a été ajouté faute d'élément suffisamment substantiel et vérifiable dans cette période."
+      "candidate_count": 0,
+      "search_note": "La source OMPI a été analysée, notamment ses pages de publications, réunions et documents, en recherchant exclusivement des contenus datés du 21 au 25 septembre 2026 inclus et portant sur l’international, les brevets ou les marques. Aucun contenu substantiel dont la date de publication est vérifiable dans cette fenêtre exacte n’a été identifié. Conformément à la consigne de fraîcheur, aucun contenu antérieur ou non vérifiable n’a été retenu."
     },
     {
       "source_name": "CJUE",
       "domain": "curia.europa.eu",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source CURIA a été analysée pour la période strictement comprise entre le 14 septembre 2026 et le 18 septembre 2026, dates incluses. Plusieurs décisions du Tribunal en propriété intellectuelle ont été publiées le 16 septembre 2026 ; la sélection est limitée à cette période et ne recourt à aucun contenu antérieur. ([curia.europa.eu](https://curia.europa.eu/site/jcms/d2_5117/fr/calendrier-judiciaire?dateDebut=14%2F09%2F2026&dateFin=20%2F09%2F2026&utm_source=openai))"
+      "search_note": "La source CJUE a été analysée exclusivement pour la période du 21 au 25 septembre 2026, dates incluses. Trois éléments substantiels en propriété intellectuelle ont été repérés le 24 septembre 2026 : des conclusions dans l’affaire C-573/25 et des audiences dans les affaires T-581/24/T-53/25 et T-597/25 à T-599/25. Aucun contenu antérieur à cette période n’a été retenu."
     },
     {
       "source_name": "Légifrance",
       "domain": "legifrance.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 14 septembre 2026 et le 18 septembre 2026 inclus, sur les thèmes des lois et de la jurisprudence française en propriété intellectuelle. Aucun contenu substantiel comportant une date de publication vérifiable dans cette seule période n'a été identifié. Les résultats trouvés correspondent principalement à des versions en vigueur ou à des textes mis à jour antérieurement ; ils sont donc exclus conformément à la consigne de fraîcheur. Aucun contenu antérieur n'a été retenu."
+      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus, sur les thèmes de la propriété intellectuelle, des lois et de la jurisprudence française. Aucun contenu substantiel présentant une date de publication vérifiable dans cette période n’a été identifié. Les résultats repérés concernaient des dates antérieures ou des versions en vigueur, et ont donc été écartés conformément aux critères demandés."
     },
     {
       "source_name": "Cour de cassation",
       "domain": "courdecassation.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 14 septembre 2026 et le 18 septembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle relevant de la jurisprudence n’a été identifié avec une date de publication vérifiable pendant cette semaine. Les résultats trouvés concernaient notamment des audiences, des événements ou d’autres matières, et n’ont donc pas été retenus. Aucun contenu antérieur n’a été utilisé."
+      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus, sur le thème de la jurisprudence en propriété intellectuelle. Aucun contenu substantiel avec une date de publication vérifiable dans cette période n'a été identifié. Les résultats repérés concernaient notamment le 2 septembre 2026 ou des dates antérieures et ont donc été exclus."
     },
     {
       "source_name": "OEB",
       "domain": "epo.org",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "La source OEB a été analysée en limitant strictement la sélection aux contenus publiés du 14 au 18 septembre 2026 inclus. Trois contenus substantiels liés aux brevets et à la propriété intellectuelle ont été retenus. Aucun contenu antérieur n’a été utilisé pour compléter la sélection."
+      "candidate_count": 1,
+      "search_note": "La source OEB (epo.org) a été analysée pour la période strictement comprise entre le 2026-09-21 et le 2026-09-25 inclus. Un seul contenu substantiel pertinent en matière de brevets a été identifié et retenu ; aucun contenu antérieur n'a été utilisé pour compléter la sélection."
     },
     {
       "source_name": "CSPLA",
       "domain": "culture.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "Source CSPLA analysée sur culture.gouv.fr pour la période strictement comprise entre le 14 septembre 2026 et le 18 septembre 2026 inclus. Aucun contenu substantiel relatif au droit d’auteur, au format décision, texte, rapport ou actualité, n’a été identifié avec une date de publication vérifiable dans cette période. Les publications antérieures n’ont pas été retenues."
+      "search_note": "La source CSPLA a été analysée pour la période strictement comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus. Aucun contenu substantiel portant sur le droit d’auteur et publié pendant cette semaine n’a été identifié. Les résultats trouvés étaient antérieurs à cette période, notamment une publication datée du 7 septembre 2026 ; ils ont donc été exclus conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "Sénat",
       "domain": "senat.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Sénat (senat.fr) a été analysée pour la période strictement comprise entre le 14 septembre 2026 et le 18 septembre 2026 inclus, en ciblant la législation et la propriété intellectuelle. Aucun contenu substantiel pertinent — décision, texte, rapport ou actualité — en propriété intellectuelle n’a été identifié avec une date vérifiable dans cette période. Conformément à la consigne de fraîcheur, aucune publication antérieure n’a été retenue."
+      "search_note": "La source Sénat (senat.fr) a été analysée pour la période strictement comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus, sur le thème de la législation en propriété intellectuelle. Aucun contenu substantiel présentant une date de publication vérifiable dans cette période n’a été identifié. Conformément à la consigne de fraîcheur, aucun contenu antérieur n’est retenu."
     },
     {
       "source_name": "Dreyfus & Associés – Newsletter IP",
       "domain": "linkedin.com",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "La source de référence prioritaire a été analysée, ainsi que les publications LinkedIn directement rattachées à Dreyfus & Associés. Trois contenus substantiels, publiés entre le 2026-09-14 et le 2026-09-18 inclus, ont été retenus. Les dates sont vérifiables sur les pages LinkedIn consultées : 15 septembre 2026 (3 j.), 16 septembre 2026 (2 j.) et 17 septembre 2026 (1 j.), la date de référence étant le 18 septembre 2026. Aucun contenu antérieur à cette période n’a été utilisé pour compléter la sélection."
+      "candidate_count": 0,
+      "search_note": "La source prioritaire a été analysée : « Newsletter, August 2026 », publiée le 1er septembre 2026, donc hors de la période retenue du 21 au 25 septembre 2026. Les résultats LinkedIn consultés ne permettent pas d’identifier, avec une date absolue vérifiable et une URL directe, jusqu’à trois contenus substantiels de Dreyfus & Associés publiés entre le 21 et le 25 septembre 2026 inclus. Conformément à la consigne de fraîcheur, aucun contenu antérieur n’a été retenu ni utilisé pour compléter la sélection."
     }
   ],
   "scouting_coverage": {
     "google_alert_feeds": 30,
-    "google_alert_candidates": 12
+    "google_alert_candidates": 14
   },
   "alert_trace": [
     {
       "alert_id": "juliette-1",
-      "title": "INPI : les sanctions européennes contre la Russie impactent désormais les dépôts de marques",
-      "url": "https://www.mondaq.com/france/trademark/1843762/inpi-les-sanctions-europ%C3%A9ennes-contre-la-russie-impactent-d%C3%A9sormais-les-d%C3%A9p%C3%B4ts-de-marques",
-      "publication_date": "2026-09-17T09:12:10Z",
+      "title": "Le Vietnam intensifie la lutte contre la fraude commerciale et les atteintes à la propriété intellectuelle",
+      "url": "https://fr.vietnamplus.vn/le-vietnam-intensifie-la-lutte-contre-la-fraude-commerciale-et-les-atteintes-a-la-propriete-intellectuelle-post268967.vnp",
+      "publication_date": "2026-09-25T08:32:04Z",
       "selected": true,
-      "reason": "Sujet récent et juridiquement pertinent sur l’incidence des sanctions internationales sur l’examen des dépôts de marques en France."
+      "reason": "Actualité récente consacrée à la lutte contre la contrefaçon et aux atteintes aux droits de propriété industrielle, avec une source d’information identifiée."
     },
     {
       "alert_id": "juliette-2",
-      "title": "L&#39;image de marque, pilier essentiel des réseaux de franchise",
-      "url": "https://www.toute-la-franchise.com/video-limage-de-marque-pilier-essentiel-des-reseaux-de-franchise",
-      "publication_date": "2026-09-18T09:37:12Z",
-      "selected": false,
-      "reason": "Contenu principalement promotionnel et insuffisamment substantiel au regard des exigences de la veille juridique."
+      "title": "Oppenheimer réitère sa note sur Harmony Biosciences après une défense de brevet",
+      "url": "https://fr.investing.com/news/analyst-ratings/oppenheimer-reitere-sa-note-sur-harmony-biosciences-apres-une-defense-de-brevet-93CH-3607811",
+      "publication_date": "2026-09-24T15:32:09Z",
+      "selected": true,
+      "reason": "Sujet relatif à un contentieux de brevet pharmaceutique, retenu comme piste de jurisprudence ou de stratégie contentieuse sous réserve de vérification de la source primaire."
     },
     {
       "alert_id": "juliette-3",
-      "title": "Dénomination sociale usurpée : la compétence commerciale demeure sans marque en vigueur",
-      "url": "https://www.lemondedudroit.fr/pi-tic/278-propriete-intellectuelle-industrielle/105815-denomination-sociale-usurpee-la-competence-commerciale-demeure-sans-marque-en-vigueur.html",
-      "publication_date": "2026-09-18T07:06:58Z",
+      "title": "Renforcer la responsabilité en matière de protection des droits de propriété intellectuelle ...",
+      "url": "https://www.vietnam.vn/fr/tang-cuong-trach-nhiem-trong-bao-ve-quyen-so-huu-tri-tue-tren-khong-gian-mang",
+      "publication_date": "2026-09-24T09:01:05Z",
       "selected": false,
-      "reason": "Sujet jurisprudentiel détecté par une source secondaire, mais insuffisamment vérifiable en l’absence du document primaire dans les résultats fournis."
+      "reason": "Sujet pertinent en apparence, mais très proche des alertes relatives aux réformes vietnamiennes et présenté par une source secondaire sans document primaire identifié."
     },
     {
       "alert_id": "juliette-4",
-      "title": "Creative Medical dépose une demande de brevet pour sa plateforme Ultrasome",
-      "url": "https://fr.investing.com/news/company-news/creative-medical-depose-une-demande-de-brevet-pour-sa-plateforme-ultrasome-93CH-3600015",
-      "publication_date": "2026-09-17T23:49:18Z",
+      "title": "Les amendements à la loi sur la propriété intellectuelle devraient supprimer 18 procédures ...",
+      "url": "https://www.vietnam.vn/fr/sua-luat-so-huu-tri-tue-du-kien-bai-bo-18-thu-tuc-hanh-chinh",
+      "publication_date": "2026-09-25T03:47:14Z",
       "selected": true,
-      "reason": "Annonce récente relative à un dépôt de brevet, retenue comme signal de veille sous réserve de vérification ultérieure du document primaire."
+      "reason": "Projet de réforme comportant la suppression annoncée de procédures administratives en propriété intellectuelle, avec une portée normative identifiable."
     },
     {
       "alert_id": "juliette-5",
-      "title": "Action en revendication et qualité à agir du titulaire du brevet - Dalloz Actualité",
-      "url": "https://www.dalloz-actualite.fr/flash/action-en-revendication-et-qualite-agir-du-titulaire-du-brevet",
-      "publication_date": "2026-09-17T23:02:40Z",
+      "title": "Ha Tinh : De la protection des droits de propriété intellectuelle à l&#39;amélioration de la valeur ...",
+      "url": "https://www.vietnam.vn/fr/ha-tinh-tu-bao-ho-quyen-so-huu-tri-tue-den-nang-gia-tri-san-pham",
+      "publication_date": "2026-09-25T02:07:32Z",
       "selected": false,
-      "reason": "Sujet potentiellement jurisprudentiel, mais la source secondaire ne permet pas de vérifier suffisamment la décision primaire ni sa portée exacte."
+      "reason": "Actualité essentiellement territoriale et promotionnelle, dont la substance juridique en propriété intellectuelle apparaît insuffisante."
     },
     {
       "alert_id": "juliette-6",
-      "title": "EPO showcases patent intelligence at OECD Blue Sky Forum 2026",
-      "url": "https://www.epo.org/fr/news-events/news/epo-showcases-patent-intelligence-oecd-blue-sky-forum-2026",
-      "publication_date": "2026-09-17T18:40:26Z",
-      "selected": true,
-      "reason": "Actualité institutionnelle de l’OEB portant sur l’analyse des brevets par l’intelligence artificielle et directement vérifiable sur une source primaire."
+      "title": "Vilmanis complète la marque | LNH.com - NHL.com",
+      "url": "https://www.nhl.com/fr/video/sandis-vilmanis-with-a-but-vs-le-lightning-de-tampa-bay-6405598903112",
+      "publication_date": "2026-09-25T02:02:51Z",
+      "selected": false,
+      "reason": "Résultat sportif comportant une mention générique des droits réservés, sans sujet juridique autonome en droit d’auteur ou en marques."
     },
     {
       "alert_id": "juliette-7",
-      "title": "Phenomen unifie ses activités sous la marque Meetch | La Tribune de l&#39;Assurance",
-      "url": "https://tribune-assurance.optionfinance.fr/depeches/d/2026-09-18-phenomen-unifie-ses-activites-sous-la-marque-meetch.html",
-      "publication_date": "2026-09-18T09:23:48Z",
-      "selected": false,
-      "reason": "Annonce d’ordre commercial relative à un changement de marque, sans portée juridique suffisamment caractérisée."
+      "title": "Comment le Canada peut tirer plus de valeur de ses innovations",
+      "url": "https://www.edc.ca/fr/zone-commerce/canada-innovation-propriete-intellectuelle.html",
+      "publication_date": "2026-09-24T17:54:49Z",
+      "selected": true,
+      "reason": "Analyse consacrée à la valorisation économique des brevets, marques et autres actifs de propriété intellectuelle au Canada."
     },
     {
       "alert_id": "juliette-8",
-      "title": "JITEX 2026 encourage les créateurs à protéger la propriété intellectuelle pour pénétrer le ...",
-      "url": "https://voi.id/fr/economie/594611",
-      "publication_date": "2026-09-18T02:45:28Z",
+      "title": "Nouvelles marques , palourdes… Avec Ocealma, le Vendéen France Naissain mise sur la ...",
+      "url": "https://larochesuryon.maville.com/actu/actudet_-nouvelles-marques-palourdes-avec-ocealma-le-vendeen-france-naissain-mise-sur-la-diversification-pour-l-avenir_dep-7493942_actu.Htm",
+      "publication_date": "2026-09-24T17:08:03Z",
       "selected": false,
-      "reason": "Contenu général consacré à la sensibilisation à la propriété intellectuelle, dépourvu de substance juridique suffisante."
+      "reason": "Article principalement économique et commercial, sans apport juridique suffisamment caractérisé en droit des marques."
     },
     {
       "alert_id": "juliette-9",
-      "title": "Unilever se sépare de sa marque de soins pour bébés Zwitsal - La Libre",
-      "url": "https://www.lalibre.be/dernieres-depeches/2026/09/17/unilever-se-separe-de-sa-marque-de-soins-pour-bebes-zwitsal-ZZFKYWVTGFAIXJ4XFHD6WN3WIU/",
-      "publication_date": "2026-09-17T16:18:53Z",
+      "title": "Rugby - Nationale : un seul changement, Tabarot titulaire, retour de Timani, Marques absent ...",
+      "url": "https://www.lindependant.fr/2026/09/24/rugby-nationale-un-seul-changement-tabarot-titulaire-retour-de-timani-marques-absent-la-composition-de-lus-carcassonne-pour-le-choc-contre-massy-13567075.php",
+      "publication_date": "2026-09-24T16:50:18Z",
       "selected": false,
-      "reason": "Opération commerciale concernant la cession d’une marque, sans analyse juridique exploitable dans le cadre de cette veille."
+      "reason": "La mention de « Marques » renvoie au nom d’un joueur et non à une problématique de droit des marques."
     },
     {
       "alert_id": "juliette-10",
-      "title": "Creative Medical Technology Holdings élargit le portefeuille de propriété intellectuelle d ...",
-      "url": "https://www.zonebourse.com/actualite-bourse/creative-medical-technology-holdings-elargit-le-portefeuille-de-propriete-intellectuelle-d-ultrasome-ce785bd3df89f623",
-      "publication_date": "2026-09-17T14:42:25Z",
+      "title": "L&#39;Oréal et Nykaa soutiennent les marques indiennes de beauté et de soins à forte croissance",
+      "url": "https://www.optionfinance.fr/info-financiere-en-continu/d/2026-09-24-loreal-et-nykaa-soutiennent-les-marques-indiennes-de-beaute-et-de-soins-a-forte-croissance.html",
+      "publication_date": "2026-09-24T16:30:32Z",
       "selected": false,
-      "reason": "Doublon matériel avec l’alerte juliette-4 concernant le dépôt de brevet de Creative Medical."
+      "reason": "Opération commerciale relative au soutien de marques de beauté, sans contenu juridique ou réglementaire substantiel."
     },
     {
       "alert_id": "juliette-11",
-      "title": "Annonces légales - Le Monde",
-      "url": "https://www.lemonde.fr/annonces-legales/departement/nord/annonce/2e8d7c98-1a23-43ea-9e40-868a2478c0ee",
-      "publication_date": "2026-09-18T01:37:14Z",
+      "title": "Les petites marques indépendantes adorent les Geneva Watch Days - Entreprise Romande",
+      "url": "https://www.entrepriseromande.ch/web/er/w/les-petites-marques-ind%C3%A9pendantes-adorent-les-geneva-watch-days",
+      "publication_date": "2026-09-24T09:30:02Z",
       "selected": false,
-      "reason": "Annonce légale dépourvue de contenu juridique substantiel directement exploitable en propriété intellectuelle."
+      "reason": "Article consacré à un événement horloger et à la visibilité de marques, sans analyse juridique vérifiable."
     },
     {
       "alert_id": "juliette-12",
-      "title": "NanoXplore et VoltaXplore se qualifent à titre de fournisseurs dans le cadre du Marché ... - Le Devoir",
-      "url": "https://www.ledevoir.com/communiques-de-presse/1009730/nanoxplore-voltaxplore-qualifent-titre-fournisseurs-cadre-marche-initiative-canadienne-relative-drones-defense",
-      "publication_date": "2026-09-17T11:52:24Z",
+      "title": "Président de l&#39;Assemblée nationale : Transformer la propriété intellectuelle d&#39;un « bouclier protecteur",
+      "url": "https://www.vietnam.vn/fr/chu-tich-quoc-hoi-chuyen-so-huu-tri-tue-tu-la-chan-bao-ve-thanh-dong-luc-tang-truong",
+      "publication_date": "2026-09-24T06:16:24Z",
+      "selected": true,
+      "reason": "Actualité articulant propriété intellectuelle et intelligence artificielle, avec une dimension de politique publique et de réforme."
+    },
+    {
+      "alert_id": "juliette-13",
+      "title": "Une longueur d&#39;avance avec le PATC : le nouveau mécanisme du Canada pour l&#39;examen ...",
+      "url": "https://www.mondaq.com/canada/patent/1847032/une-longueur-davance-avec-le-patc-le-nouveau-m%C3%A9canisme-du-canada-pour-lexamen-acc%C3%A9l%C3%A9r%C3%A9-des-demandes-de-brevet",
+      "publication_date": "2026-09-24T21:11:20Z",
+      "selected": true,
+      "reason": "Présentation ciblée d’un mécanisme canadien d’examen accéléré des demandes de brevet, utile pour une veille procédurale comparée."
+    },
+    {
+      "alert_id": "juliette-14",
+      "title": "Briques compatibles LEGO : légales depuis 2010, c&#39;est officiel - SpiritGamer",
+      "url": "https://spiritgamer.fr/briques-compatibles-lego-legales/",
+      "publication_date": "2026-09-24T16:04:36Z",
       "selected": false,
-      "reason": "Communication commerciale mentionnant un portefeuille de brevets, sans nouveauté juridique suffisamment établie."
+      "reason": "Contenu secondaire et largement explicatif sur la protection de la brique LEGO, sans nouveauté juridique suffisamment vérifiable."
     }
   ],
   "items": [
     {
       "type": "JURISPRUDENCE",
-      "category": "Marques",
-      "title": "Le Tribunal confirme la nullité de la marque de l’Union européenne FITNESS pour des produits alimentaires et des boissons",
-      "court_reference": "Tribunal de l’Union européenne, T-509/25",
-      "source": "EUR-Lex, arrêt du Tribunal de l’Union européenne dans l’affaire T-509/25, ECLI:EU:T:2026:573",
-      "source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62025TJ0509",
-      "publication_date": "2026-09-16",
+      "category": "Propriété intellectuelle de l’Union européenne",
+      "title": "Frais d’avocat exposés devant l’EUIPO et procédure nationale en référé : proposition d’irrecevabilité et autonomie du régime applicable aux dessins ou modèles",
+      "court_reference": "CJUE, affaire C-573/25, conclusions de l’avocat général",
+      "source": "Cour de justice de l’Union européenne, conclusions de l’avocat général Manuel Campos Sánchez-Bordona dans l’affaire Suzhou Anri Child Products, C-573/25",
+      "source_url": "https://juris.curia.europa.eu/juris/document/document.jsf?cid=21231034&dir=&docid=315497&doclang=FR&mode=req&occ=first&pageIndex=0&part=1&text=",
+      "publication_date": "2026-09-24",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "EUR-Lex, arrêt du Tribunal de l’Union européenne dans l’affaire T-509/25, ECLI:EU:T:2026:573, 16 septembre 2026.",
-      "summary": "Le Tribunal rejette le recours de Société des produits Nestlé contre la décision validant la nullité de FITNESS. Il confirme l’admission, en recours administratif, de preuves tardives justifiées par la décision de première instance et retient le caractère descriptif du signe pour les produits concernés.",
-      "retrieval_note": "Le document officiel a été recherché à partir de la fiche InfoCuria, puis identifié par le numéro d’affaire T-509/25, le numéro CELEX 62025TJ0509 et l’ECLI EU:T:2026:573. Le texte intégral ainsi que le dispositif ont été consultés. Seuls des contenus publiés entre le 14 septembre 2026 et le 18 septembre 2026 ont été retenus.",
+      "source_display_text": "Cour de justice de l’Union européenne, conclusions de l’avocat général Manuel Campos Sánchez-Bordona dans l’affaire Suzhou Anri Child Products, C-573/25, 24 septembre 2026.",
+      "summary": "L’avocat général propose de déclarer irrecevables les questions portant sur le remboursement, dans une procédure nationale en référé, des frais d’avocat engagés dans une procédure en nullité pendante devant l’EUIPO. Subsidiairement, il qualifie le régime de frais prévu pour cette procédure d’exhaustif et autonome.",
+      "retrieval_note": "Le texte intégral en français a été directement consulté sur le site officiel de la Cour de justice de l’Union européenne. Le document comprend les motifs, l’analyse juridique et la conclusion proposée au point 94. Les éléments consultés relèvent de la période comprise entre le 21 septembre 2026 et le 25 septembre 2026 inclus. L’identifiant ECLI vérifié est ECLI:EU:C:2026:792.",
       "timeline": [
         {
-          "date": "26 mai 2025",
-          "event": "La cinquième chambre de recours de l’EUIPO adopte, dans l’affaire R 894/2020-5, la décision ultérieurement contestée devant le Tribunal."
+          "date": "8 septembre 2022 au 10 septembre 2022",
+          "event": "Suzhou présente et distribue son modèle de poussette « S63 » lors d’un salon organisé à Cologne."
         },
         {
-          "date": "28 juillet 2025",
-          "event": "Société des produits Nestlé introduit devant le Tribunal un recours en annulation contre la décision de la chambre de recours."
+          "date": "9 septembre 2022",
+          "event": "Le Landgericht Düsseldorf ordonne en référé l’interdiction de proposer, promouvoir, commercialiser, importer, exporter ou détenir le modèle « S63 » en Allemagne."
         },
         {
-          "date": "16 septembre 2026",
-          "event": "Le Tribunal, neuvième chambre, rejette le recours et statue sur les dépens."
+          "date": "17 novembre 2022",
+          "event": "Suzhou introduit devant l’EUIPO des demandes en nullité visant deux dessins ou modèles enregistrés par Cybex."
+        },
+        {
+          "date": "16 octobre 2023",
+          "event": "L’Oberlandesgericht Düsseldorf condamne Cybex aux dépens de la procédure en référé ; Suzhou sollicite ensuite la fixation des frais exposés dans cette procédure."
+        },
+        {
+          "date": "24 septembre 2026",
+          "event": "L’avocat général propose de déclarer irrecevables les septième, huitième et neuvième questions préjudicielles et, à titre subsidiaire, retient le caractère exhaustif du régime de frais devant l’EUIPO."
         }
       ],
-      "introduction": "Par cet arrêt, le Tribunal apporte une nouvelle illustration du contrôle exercé sur l’appréciation du caractère descriptif d’une marque de l’Union européenne, dans le contexte particulier de la marque verbale FITNESS. Le litige opposait Société des produits Nestlé SA à l’Office de l’Union européenne pour la propriété intellectuelle, European Food SA étant intervenue à la procédure. Il mettait également en cause les conditions dans lesquelles la chambre de recours peut tenir compte d’éléments de preuve produits tardivement. Le Tribunal confirme, d’une part, que la décision de la division d’annulation était susceptible de constituer un élément nouveau justifiant la production ultérieure de pièces et, d’autre part, que le terme FITNESS pouvait être immédiatement compris comme descriptif de certaines qualités ou finalités de produits alimentaires et de boissons, eu égard à la forme physique ou à l’état de santé.",
-      "facts_and_procedure": "La requérante était titulaire de la marque de l’Union européenne verbale FITNESS, enregistrée sous le numéro 2 470 326. Cette marque faisait l’objet d’une procédure de déclaration de nullité engagée devant l’EUIPO. Le différend concernait notamment l’aptitude du terme à désigner, pour les produits visés, des caractéristiques tenant à la forme physique, à l’alimentation adaptée à celle-ci ou à l’état de santé. À l’issue de la procédure administrative, la cinquième chambre de recours de l’EUIPO a rendu la décision attaquée dans l’affaire R 894/2020-5. Société des produits Nestlé a alors saisi le Tribunal d’un recours en annulation. Devant celui-ci, elle contestait notamment la prise en compte, par la chambre de recours, d’éléments de preuve produits pour la première fois à ce stade de la procédure. Le Tribunal était ainsi appelé à contrôler tant la régularité de l’exercice du pouvoir d’appréciation de la chambre de recours que le bien-fondé de l’appréciation du caractère descriptif du signe.",
-      "parties_arguments": "Société des produits Nestlé soutenait, en substance, que les éléments de preuve soumis tardivement devant la chambre de recours n’auraient pas dû être admis. Elle remettait dès lors en cause l’application de l’article 76, paragraphe 2, du règlement no 207/2009, disposition permettant à l’EUIPO de ne pas tenir compte de faits ou de preuves invoqués tardivement. La requérante contestait également l’appréciation selon laquelle FITNESS présentait un caractère descriptif pour les produits concernés. L’EUIPO défendait la décision de la chambre de recours. European Food SA, autre partie à la procédure devant cette chambre et intervenante devant le Tribunal, a participé à la défense de la décision attaquée. Les modalités précises des autres arguments développés par les parties ne sont pas précisées dans les éléments vérifiés retenus pour la présente fiche.",
-      "legal_question": "Le Tribunal devait déterminer si la chambre de recours avait pu, sans méconnaître l’article 76, paragraphe 2, du règlement no 207/2009 ni commettre d’erreur manifeste d’appréciation, accepter des preuves présentées pour la première fois devant elle. Il devait également apprécier si, pour les produits alimentaires et les boissons en cause, la marque verbale FITNESS pouvait être perçue par le public pertinent comme indiquant directement une caractéristique, une qualité ou une finalité des produits, de sorte que le signe relevait du motif de nullité tiré de son caractère descriptif.",
-      "reasoning": "S’agissant de l’administration de la preuve, le Tribunal relève que la décision de la division d’annulation pouvait constituer un élément nouveau dans le déroulement de la procédure. Cette circonstance était de nature à justifier que des preuves supplémentaires fussent produites au stade du recours administratif. Le Tribunal juge ainsi que la chambre de recours n’a pas commis d’erreur de droit en acceptant ces éléments tardifs. Il considère également qu’aucune erreur manifeste d’appréciation ne peut être reprochée à cette dernière dans l’exercice de son pouvoir d’appréciation. Cette solution ne revient pas à consacrer une faculté générale de compléter librement le dossier à tout stade de la procédure. Elle repose sur l’existence d’un élément procédural concret, tenant à la décision rendue par l’instance de première instance de l’EUIPO, susceptible d’expliquer la production ultérieure des pièces litigieuses.\n\nSur le fond, le Tribunal confirme l’analyse selon laquelle le mot FITNESS était apte à être compris comme renvoyant à la forme physique ou à l’état de santé. Dans le contexte des produits alimentaires et des boissons visés, ce terme pouvait dès lors décrire certaines de leurs qualités ou finalités. L’appréciation s’attache ainsi à la perception du signe en relation avec les produits désignés, et non à son éventuelle capacité à distinguer, dans l’abstrait, une origine commerciale. Dès lors que le terme était susceptible de transmettre au public pertinent une information descriptive relative aux produits concernés, la chambre de recours pouvait valablement retenir le motif de nullité invoqué. Le Tribunal ne constate aucune erreur justifiant l’annulation de la décision administrative.",
-      "outcome": "Le recours est rejeté dans son intégralité. Le Tribunal confirme donc la décision de la chambre de recours de l’EUIPO relative à la marque verbale FITNESS et valide tant l’admission des preuves tardivement présentées devant cette chambre que l’appréciation de son caractère descriptif pour les produits concernés. Chaque partie supporte ses propres dépens.",
-      "practical_relevance": "L’arrêt rappelle que la production d’éléments de preuve au stade du recours devant l’EUIPO demeure soumise au contrôle du pouvoir d’appréciation prévu par le règlement no 207/2009. Une décision de l’instance de première instance peut néanmoins constituer un élément nouveau justifiant utilement un complément probatoire devant la chambre de recours. Pour les titulaires comme pour les demandeurs en nullité, la décision souligne l’importance de rattacher précisément toute production tardive à l’évolution procédurale du litige. Sur le terrain du caractère descriptif, elle confirme qu’un terme évoquant la forme physique ou la santé peut être regardé comme descriptif lorsqu’il est appliqué à des produits alimentaires ou à des boissons et qu’il renseigne le public sur certaines qualités ou finalités de ces produits. L’analyse doit donc être conduite au regard de la perception du public pertinent et de la relation suffisamment directe entre le signe et les produits effectivement visés.",
+      "introduction": "Les conclusions examinent l’articulation entre, d’une part, le régime des frais applicable aux procédures nationales de protection des droits de propriété industrielle, notamment au titre de la directive 2004/48/CE, et, d’autre part, le régime spécial de répartition des frais des procédures en nullité de dessins ou modèles de l’Union européenne devant l’EUIPO. Le point de difficulté réside dans la tentative d’obtenir, au sein d’une procédure nationale de fixation des dépens afférents à un référé, le remboursement de frais d’avocat exposés dans des procédures administratives distinctes, alors pendantes devant l’EUIPO.",
+      "facts_and_procedure": "Cybex GmbH et Suzhou Anri Child Products Co. Ltd commercialisent des poussettes dans l’Union européenne. Estimant que le modèle « S63 » présenté par Suzhou portait atteinte à ses droits, Cybex a obtenu du Landgericht Düsseldorf une ordonnance de référé. Après opposition de Suzhou, cette mesure provisoire a été levée. Cybex a formé appel, avant de s’en désister ; elle a ensuite été condamnée aux dépens de la procédure en référé. Parallèlement, Suzhou avait engagé devant l’EUIPO deux procédures tendant à la nullité de dessins ou modèles enregistrés par Cybex. Ces procédures étaient toujours pendantes. Dans le cadre de la fixation des frais de la procédure nationale, Suzhou a demandé que soient inclus les honoraires engagés pour sa représentation devant l’EUIPO, pour un montant total allégué de 100 966,77 euros avec les frais relevant de la procédure en référé. Le Landgericht Düsseldorf a interrogé la Cour, les conclusions étant limitées aux septième, huitième et neuvième questions.",
+      "parties_arguments": "Suzhou soutenait que sa défense contre l’ordonnance de référé ne s’était pas limitée à l’opposition formée devant les juridictions allemandes, mais avait également nécessité l’introduction de procédures en nullité devant l’EUIPO. Elle estimait que les honoraires correspondants pouvaient constituer soit un dommage causé par la mesure provisoire, soit des frais récupérables au titre de l’article 14 de la directive 2004/48/CE. Elle invoquait le lien direct et étroit entre les deux volets de sa stratégie de défense, ainsi que le caractère insuffisant des plafonds prévus pour les frais de représentation devant l’EUIPO. La Commission considérait, au contraire, que les frais engagés dans les procédures en nullité relevaient d’une procédure distincte et indépendante de la procédure nationale en référé. Les conclusions ne précisent pas d’argument autonome développé par Cybex sur les questions examinées.",
+      "legal_question": "La juridiction de renvoi demandait, en substance, si les règlements nos 6/2002 et 2245/2002 organisent de manière exhaustive le remboursement des frais indispensables exposés dans une procédure en nullité devant l’EUIPO. Dans la négative, elle s’interrogeait sur la possibilité d’intégrer les frais d’avocat liés à cette procédure administrative dans les « autres frais » récupérables au titre de l’article 14 de la directive 2004/48/CE, dans le cadre d’une procédure nationale en référé, y compris au-delà des plafonds réglementaires applicables devant l’EUIPO.",
+      "reasoning": "L’avocat général retient d’abord l’irrecevabilité des questions soumises. Le régime de l’article 70 du règlement no 6/2002 présuppose l’existence d’une partie gagnante et d’une partie perdante dans la procédure en nullité devant l’EUIPO. Or, cette procédure n’était pas close. Toute interrogation relative à la répartition finale des frais y afférents était donc prématurée. En outre, le litige au principal concernait la fixation des frais d’une procédure nationale de référé, non les procédures en nullité devant l’EUIPO, pour lesquelles la juridiction nationale n’est pas compétente. Admettre l’inclusion anticipée de ces coûts conduirait à transférer aux juridictions nationales les contestations relatives aux frais d’une procédure administrative européenne et priverait d’effet utile le système institué par les règlements.\n\nÀ titre subsidiaire, l’avocat général analyse le fond. L’article 70 du règlement no 6/2002 et l’article 79 du règlement no 2245/2002 constitueraient une lex specialis complète : ils déterminent tant les frais récupérables que leurs plafonds, et attribuent leur fixation aux instances de l’EUIPO. Les procédures nationale en référé et administrative en nullité formeraient des cadres autonomes, chacun régi par son propre système de frais. Les honoraires d’avocat engagés devant l’EUIPO seraient des frais de justice, non des « autres frais », et ne pourraient être assimilés à un dommage résultant de l’exécution de la mesure provisoire. La saisine de l’EUIPO procède, selon l’analyse proposée, d’un choix procédural de Suzhou, laquelle pouvait en outre soulever l’exception de nullité dans la procédure nationale en référé.",
+      "outcome": "L’avocat général propose à la Cour de déclarer irrecevables les septième, huitième et neuvième questions préjudicielles. À titre subsidiaire, il propose de juger que l’article 70, paragraphes 1 et 6, du règlement no 6/2002 et l’article 79, paragraphe 7, du règlement no 2245/2002 instituent un régime exhaustif de répartition et de détermination des frais dans les procédures en nullité devant l’EUIPO. Le remboursement des honoraires d’avocat afférents à ces procédures ne relèverait pas de l’article 14 de la directive 2004/48/CE.",
+      "practical_relevance": "Ces conclusions intéressent directement les titulaires et contestataires de dessins ou modèles de l’Union européenne qui conduisent simultanément une procédure nationale en référé et une action en nullité devant l’EUIPO. Elles invitent à distinguer strictement les frais nés de chacun de ces contentieux. Selon la solution proposée, une partie ne pourrait obtenir devant le juge national, par la voie de la taxation des dépens ou de l’article 14 de la directive 2004/48/CE, une indemnisation complémentaire des honoraires exposés dans la procédure en nullité devant l’EUIPO. Cette demande devrait être tranchée exclusivement selon les règles propres à l’EUIPO, à l’issue de la procédure et en fonction de son résultat. La proposition souligne également l’importance de ne pas anticiper la qualité de partie gagnante dans une procédure administrative encore pendante, ni de contourner les plafonds de remboursement fixés par le droit de l’Union pour cette procédure.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Brevets et intelligence artificielle",
-      "title": "L’OMPI examine les options relatives à la brevetabilité et à la qualité d’inventeur en présence d’intelligence artificielle",
+      "category": "Brevets, données et veille technologique",
+      "title": "L’OEB renforce la Technology Intelligence Platform et facilite l’exploitation des données EPO PATSTAT",
       "court_reference": "",
-      "source": "OMPI, SCP/38/6, Report on the Expert Exchange on Legal and Policy Options in the Areas of Patentability Criteria and AI Inventorship (SCP/37), and Summary of the Policy Options Based on Relevant WIPO Documents",
-      "source_url": "https://www.wipo.int/edocs/mdocs/scp/en/scp_38/scp_38_6.pdf",
-      "publication_date": "2026-09-15",
+      "source": "Office européen des brevets, page d’actualité officielle",
+      "source_url": "https://www.epo.org/en/news-events/news/discover-power-epo-patstat-data-tip",
+      "publication_date": "2026-09-21",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "OMPI, SCP/38/6, Report on the Expert Exchange on Legal and Policy Options in the Areas of Patentability Criteria and AI Inventorship (SCP/37), and Summary of the Policy Options Based on Relevant WIPO Documents, 15 septembre 2026",
-      "summary": "Le Secrétariat de l’OMPI restitue les échanges d’experts consacrés aux critères de brevetabilité et à l’inventorship en présence d’intelligence artificielle. Le rapport recense les difficultés liées à l’activité inventive, à l’identification de l’inventeur et à une éventuelle transparence sur l’usage de l’IA.",
-      "retrieval_note": "Le document primaire a été recherché à partir de l’URL fournie, puis ouvert sous sa forme PDF directe. Le fichier officiel comporte 46 pages. Son texte intégral a été consulté, y compris les deux annexes, le résumé des options de politique publique et la clôture du document. Aucun numéro d’affaire, numéro de décision ou ECLI n’est applicable à ce document institutionnel.",
+      "source_display_text": "Office européen des brevets, page d’actualité officielle, 21 septembre 2026",
+      "summary": "L’Office européen des brevets présente les fonctionnalités renforcées de sa Technology Intelligence Platform, environnement en ligne donnant gratuitement accès aux données EPO PATSTAT. La plateforme propose notamment des notebooks Python destinés aux analyses de veille, aux cartographies de brevets et au suivi des activités concurrentielles.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’actualité officielle a été consulté. La page ne fait apparaître aucune pièce jointe PDF distincte ni aucune version linguistique alternative. La nature du document ne donne lieu à aucun numéro d’affaire, numéro de décision ou ECLI. L’actualité étant dépourvue de dispositif juridique, la qualification COMPLET se fonde sur la consultation intégrale du contenu publié.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "Préparé pour la trente-huitième session du Comité permanent du droit des brevets, le rapport SCP/38/6 rend compte de l’échange d’experts organisé le 5 novembre 2025 sur les options juridiques et politiques relatives aux critères de brevetabilité et à la qualité d’inventeur en présence d’intelligence artificielle. Les discussions, réunissant cinq experts sous la modération de Daryl Lim, portent tant sur les inventions relatives aux technologies d’intelligence artificielle que sur celles conçues avec son concours ou susceptibles d’être générées par elle.",
-        "Le document examine l’application des exigences de nouveauté, d’activité inventive et d’applicabilité industrielle aux inventions liées à l’intelligence artificielle, ainsi que les exclusions visant notamment les méthodes mathématiques, algorithmes et programmes d’ordinateur. Il souligne les difficultés particulières que peut susciter l’appréciation de l’activité inventive lorsque l’intelligence artificielle intervient dans le processus inventif, notamment pour définir la personne du métier et apprécier le caractère évident de la solution revendiquée.",
-        "S’agissant des inventions assistées par intelligence artificielle, la pratique recensée demeure fondée sur les critères ordinaires de détermination de l’inventeur et réserve cette qualité aux personnes physiques. Le rapport relève qu’aucune grande juridiction ayant examiné les demandes relatives au système DABUS ne l’a reconnu comme inventeur. Il expose néanmoins plusieurs voies de réflexion, incluant le maintien de cette approche, l’éventuelle désignation d’un système d’intelligence artificielle comme inventeur ou co-inventeur, la désignation d’un responsable humain ou moral, ou encore la création d’un régime sui generis. Il envisage également une obligation d’identifier ou de documenter l’usage de l’intelligence artificielle afin d’éclairer la contribution humaine et de renforcer la transparence du dossier."
+        "L’Office européen des brevets présente la Technology Intelligence Platform comme un environnement accessible depuis un navigateur, conçu pour le traitement, l’analyse et la visualisation avancés de données de brevets. La plateforme permet un accès gratuit aux données EPO PATSTAT et autorise leur combinaison avec des données commerciales et d’autres données statistiques.",
+        "Les fonctionnalités mises en avant comprennent des notebooks Python renforcés, permettant aux utilisateurs de concevoir leurs propres analyses de veille technologique. Chaque utilisateur dispose d’un environnement sécurisé, accessible par navigateur, dans lequel le code développé peut être synchronisé avec des plateformes de partage de code ainsi qu’avec d’autres applications collaboratives.",
+        "La plateforme recense déjà plus de cent notebooks Python et met à disposition des modules d’apprentissage en ligne, des guides de démarrage rapide et une documentation intégrée. Une nouvelle collection de notebooks avancés traite notamment des familles de brevets, des dates de dépôt et de publication, des événements juridiques, des citations, des stratégies de dépôt et des tendances technologiques.",
+        "L’OEB identifie parmi les applications possibles le suivi des tendances technologiques, l’élaboration de cartographies de brevets, l’identification d’opportunités commerciales et la surveillance de l’activité des concurrents."
       ],
-      "highlight_paragraph": "Le rapport confirme que la pratique actuellement recensée réserve la qualité d’inventeur aux personnes physiques, tout en plaçant au centre des débats l’identification de la contribution humaine lorsque l’intelligence artificielle participe au processus inventif.",
-      "practical_relevance": "Les déposants utilisant des outils d’intelligence artificielle dans la recherche ou la conception devraient pouvoir retracer la contribution des personnes physiques ayant participé à l’invention. Cette documentation est susceptible d’être utile pour étayer la désignation de l’inventeur et, le cas échéant, répondre aux interrogations relatives à l’activité inventive et à la transparence du processus inventif.",
+      "highlight_paragraph": "L’accès gratuit aux données EPO PATSTAT, associé à des notebooks Python et à un environnement sécurisé de traitement des données, fournit un outil directement mobilisable pour structurer et documenter les travaux de veille brevet.",
+      "practical_relevance": "Pour les équipes de propriété intellectuelle, la Technology Intelligence Platform offre un point d’accès opérationnel aux données EPO PATSTAT et à des ressources d’analyse réutilisables. Elle peut soutenir, dans le périmètre des fonctionnalités décrites par l’OEB, la préparation de cartographies de brevets, le suivi des tendances et l’analyse de l’activité concurrentielle.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Brevets européens",
-      "title": "Révision du programme PACE d’accélération de la procédure de délivrance",
+      "category": "Lutte contre la contrefaçon et propriété industrielle",
+      "title": "Le Vietnam renforce sa réponse administrative aux atteintes à la propriété intellectuelle",
       "court_reference": "",
-      "source": "Avis de l’Office européen des brevets daté du 11 septembre 2026 relatif au programme PACE d’accélération de la procédure de délivrance des brevets européens",
-      "source_url": "https://www.epo.org/en/legal/official-journal/notice-11-september-2026",
-      "publication_date": "2026-09-15",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
+      "source": "VietnamPlus, Agence Vietnamienne d’Information (VNA)",
+      "source_url": "https://fr.vietnamplus.vn/le-vietnam-intensifie-la-lutte-contre-la-fraude-commerciale-et-les-atteintes-a-la-propriete-intellectuelle-post268967.vnp",
+      "publication_date": "2026-09-25",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-1",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Avis de l’Office européen des brevets daté du 11 septembre 2026 relatif au programme PACE d’accélération de la procédure de délivrance des brevets européens, publication anticipée au Journal officiel de l’OEB, 15 septembre 2026.",
-      "summary": "L’OEB révise le programme PACE, désormais circonscrit à la phase d’examen. À compter du 1er octobre 2026, la demande ne pourra être formulée qu’une fois, après la compétence de la division d’examen, selon des modalités adaptées aux dépôts individuels ou groupés.",
-      "retrieval_note": "Le document primaire a été directement ouvert et son texte intégral, y compris les dispositions relatives aux demandes PACE, aux conditions de retrait ou de suspension du programme et à l’entrée en vigueur, a été effectivement consulté. La page officielle indique une publication anticipée le 15 septembre 2026 et précise que le texte destiné à être publié dans l’édition mensuelle du Journal officiel constitue la seule version authentique. Le document relève de la période comprise entre le 14 et le 18 septembre 2026, dates incluses. ([epo.org](https://www.epo.org/en/legal/official-journal/notice-11-september-2026))",
+      "source_display_text": "VietnamPlus, Agence Vietnamienne d’Information (VNA), 25 septembre 2026",
+      "summary": "Le Comité directeur national vietnamien compétent en matière de lutte contre la contrebande et la contrefaçon appelle les autorités à intensifier les contrôles relatifs aux atteintes à la propriété intellectuelle, notamment sur les plateformes numériques, et à développer un système interconnecté de traçabilité des marchandises.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’article, publié le 25 septembre 2026 à 11 h 02, a été effectivement consulté. L’article mentionne le document n° 197/CV-BCDQG du Comité directeur national, mais aucun PDF ni texte intégral distinct de ce document n’a été identifié dans les recherches effectuées. Les versions linguistiques alternatives du site ont été vérifiées sans qu’une version intégrale officielle du document administratif soit retrouvée. L’accès COMPLET concerne donc l’article de presse lui-même, dont l’intégralité du contenu a été consultée.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’Office européen des brevets publie un avis remplaçant celui du 16 décembre 2025 relatif au programme PACE d’accélération de la procédure de délivrance. Depuis le 1er février 2026, ce programme est limité à la phase d’examen. L’avis révisé entrera en vigueur le 1er octobre 2026 et s’appliquera aux demandes PACE déposées à compter de cette date.",
-        "La participation au programme demeure gratuite. La demande doit être présentée par écrit, une seule fois, et seulement après que la division d’examen est devenue compétente pour la demande concernée. Les requêtes individuelles peuvent être déposées au moyen du formulaire OEB 1005 ou de MyEPO. Les requêtes en nombre peuvent être introduites par la fonctionnalité dédiée de MyEPO.",
-        "L’OEB indique qu’il s’efforcera d’émettre sa prochaine notification dans un délai de trois mois à compter de l’événement procédural pertinent le plus tardif visé par l’avis. Les règles révisées concernant le retrait d’une demande du programme et la suspension de l’accélération s’appliqueront également aux demandes déjà en instance à la date d’entrée en vigueur du programme révisé."
+        "Le Comité directeur national de lutte contre la contrebande, la fraude commerciale et les contrefaçons a publié le document n° 197/CV-BCDQG, invitant les ministères, secteurs concernés et autorités locales à renforcer la prévention et la répression des atteintes aux droits de propriété intellectuelle, de la fraude commerciale et de la commercialisation de produits contrefaits. Cette démarche s’inscrit dans la mise en œuvre de la Résolution n° 397/NQ-CP, laquelle prévoit un plan d’action visant à faire reculer ces phénomènes d’ici à 2030.",
+        "Les contrôles annoncés doivent notamment porter sur la fabrication et la vente de marchandises contrefaites, les atteintes aux droits de propriété industrielle, la falsification de l’origine ou des indications géographiques, ainsi que la reproduction et la diffusion illicites de contenus numériques protégés par le droit d’auteur. Sont expressément visés les produits portant atteinte à la propriété intellectuelle proposés sur les plateformes de commerce électronique, les réseaux sociaux et les marchés traditionnels.",
+        "Les autorités compétentes sont également appelées à accélérer le déploiement d’un système de données interconnecté de traçabilité des marchandises, permettant le partage des informations. La police, les services de surveillance du marché, les douanes, les services fiscaux, les gardes-frontières et les services d’inspection doivent intensifier leur coordination. Les opérations de contrôle et de traitement des infractions devront être conduites publiquement, de manière transparente et conforme à la loi, sans entraver les activités licites de production et de commerce."
       ],
-      "highlight_paragraph": "La demande PACE ne peut désormais être déposée qu’une seule fois et après la saisine de la division d’examen. La détermination de ce moment procédural revêt donc une importance particulière pour les titulaires souhaitant solliciter l’accélération.",
-      "practical_relevance": "Les demandeurs devront articuler leur stratégie d’accélération avec le transfert de compétence à la division d’examen et veiller à utiliser l’unique faculté de dépôt prévue par le programme. Les dossiers déjà en instance devront également être appréciés au regard des règles révisées relatives au retrait et à la suspension de l’accélération.",
+      "highlight_paragraph": "L’inclusion expresse des plateformes de commerce électronique et des réseaux sociaux parmi les canaux de contrôle confirme que la lutte contre les atteintes à la propriété intellectuelle vise désormais, de façon opérationnelle, les circuits de commercialisation numériques comme les marchés physiques.",
+      "practical_relevance": "Les titulaires de droits opérant au Vietnam disposent d’un contexte institutionnel favorable à une coopération accrue avec les autorités compétentes, notamment pour le signalement de produits contrefaisants diffusés en ligne. La priorité donnée à la traçabilité et aux échanges interservices souligne l’intérêt de conserver une documentation précise sur l’origine des produits, les chaînes de distribution et les éléments d’identification des atteintes alléguées.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Dessins et modèles",
-      "title": "Réforme européenne des dessins et modèles : protection des interfaces, des animations et des modèles en trois dimensions",
+      "category": "Propriété intellectuelle et politique d’innovation",
+      "title": "Comment le Canada peut tirer davantage de valeur de ses innovations",
       "court_reference": "",
-      "source": "Dreyfus & Associés, publication LinkedIn renvoyant vers la Newsletter IP",
-      "source_url": "https://fr.linkedin.com/posts/dreyfus-%26-associes_propri%C3%A9t%C3%A9intellectuelle-dessinsetmod%C3%A8les-activity-7497933535425634306-1L2O",
-      "publication_date": "2026-09-15",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "PARTIEL",
-      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "Dreyfus & Associés, publication LinkedIn renvoyant vers la Newsletter IP, 15 septembre 2026",
-      "summary": "La deuxième phase de la réforme européenne des dessins et modèles, applicable depuis le 1er juillet 2026, ouvre le dépôt à dix vues statiques, aux fichiers en trois dimensions et aux animations. Le choix de la représentation devient ainsi déterminant pour circonscrire la protection recherchée.",
-      "retrieval_note": "La publication LinkedIn directe a été ouverte et son contenu substantiel a été consulté. Elle renvoie vers un lien abrégé qui n’a pas pu être ouvert en raison d’une restriction d’accès. Aucun fichier PDF, texte intégral de la newsletter, version linguistique alternative, numéro d’affaire, numéro de décision ou ECLI n’a été identifié dans les sources accessibles. Le texte intégral du document renvoyé n’est donc pas confirmé. ([fr.linkedin.com](https://fr.linkedin.com/posts/dreyfus-%26-associes_propri%C3%A9t%C3%A9intellectuelle-dessinsetmod%C3%A8les-activity-7497933535425634306-1L2O))",
+      "source": "Exportation et développement Canada",
+      "source_url": "https://www.edc.ca/fr/zone-commerce/canada-innovation-propriete-intellectuelle.html",
+      "publication_date": "2026-09-24",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-7",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Exportation et développement Canada, 24 septembre 2026",
+      "summary": "Exportation et développement Canada souligne que les actifs incorporels, dont la propriété intellectuelle, constituent un levier central de création de valeur. L’article appelle à améliorer la commercialisation et le passage à l’échelle des innovations afin de conserver davantage de retombées économiques au Canada.",
+      "retrieval_note": "L’URL directe a été ouverte. Le texte intégral de l’article, du titre jusqu’aux mentions finales, a été effectivement consulté. Aucun document PDF, numéro d’affaire, numéro de décision ou ECLI n’est pertinent pour cette actualité. La publication est datée du 24 septembre 2026, soit une date comprise entre le 21 et le 25 septembre 2026 inclusivement. ([edc.ca](https://www.edc.ca/fr/zone-commerce/canada-innovation-propriete-intellectuelle.html))",
       "lead_label": "Contexte",
       "paragraphs": [
-        "Selon la publication, la deuxième phase de la réforme européenne des dessins et modèles est applicable depuis le 1er juillet 2026. Elle modifie les modalités de représentation des créations lors du dépôt européen : un même dessin ou modèle peut désormais être représenté au moyen de dix vues statiques, mais également à l’aide de fichiers en trois dimensions et d’animations.",
-        "Cette évolution intéresse directement les actifs numériques et les créations dont l’apparence repose sur une dimension dynamique ou sur une visualisation volumétrique. La publication souligne que le format retenu ne relève pas d’un choix purement technique : il influe directement sur le périmètre de la protection revendiquée. La détermination des vues et fichiers produits doit donc être intégrée à la stratégie de dépôt.",
-        "La publication appelle également à une préparation structurée des dossiers de nullité, notamment quant aux antériorités invoquées, aux éléments établissant leur divulgation et à la comparaison visuelle. Elle recommande, plus largement, de sécuriser les dépôts, d’anticiper les extensions internationales et d’adapter la gouvernance des actifs numériques."
+        "Dans un article consacré à la valorisation de l’innovation canadienne, Exportation et développement Canada met en avant le poids croissant des actifs incorporels dans la création de valeur économique. Sont notamment visés les logiciels, les données, la recherche et développement, le savoir-faire organisationnel ainsi que les droits de propriété intellectuelle. L’auteur, Stuart Bergman, vice-président et économiste en chef de l’institution, relève que la propriété intellectuelle représente une composante significative de ce capital incorporel.",
+        "L’analyse vise notamment les brevets, les marques de commerce, les droits d’auteur, les dessins industriels et les secrets commerciaux. Elle soutient que le Canada doit accroître sa capacité à commercialiser ses innovations, à les développer à plus grande échelle et à préserver sur son territoire une part plus importante des retombées économiques résultant de leur exploitation. La protection juridique des actifs immatériels est ainsi présentée dans une perspective de compétitivité et de captation de valeur.",
+        "L’article est présenté à titre informatif et ne constitue pas un conseil financier, juridique, comptable ou fiscal."
       ],
-      "highlight_paragraph": "Le choix entre vues statiques, fichier en trois dimensions et animation influe directement sur le périmètre de la protection revendiquée ; il doit être arrêté en fonction de l’apparence dont la protection est recherchée.",
-      "practical_relevance": "Les titulaires et déposants sont invités à réexaminer leurs pratiques de représentation afin de tirer parti des nouveaux formats admis au dépôt européen. Une documentation cohérente des choix de dépôt, des divulgations pertinentes et des éléments de comparaison visuelle contribuera également à préparer la défense ou la contestation de la validité des droits.",
+      "highlight_paragraph": "La valorisation économique de l’innovation ne se limite pas à sa création : elle suppose la commercialisation, le développement à l’échelle et la conservation des retombées liées aux actifs incorporels, parmi lesquels les droits de propriété intellectuelle.",
+      "practical_relevance": "Cette publication rappelle l’intérêt, pour les entreprises innovantes, d’appréhender la propriété intellectuelle comme un actif de valorisation et non comme un seul instrument de protection. La maîtrise des droits portant sur les inventions, signes distinctifs, créations, dessins et informations confidentielles s’inscrit directement dans l’objectif de commercialisation et de conservation de la valeur issue de l’innovation.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Emballages, marques et propriété intellectuelle",
-      "title": "PPWR et commerce en ligne : la conformité des emballages comme condition d’accès au marché",
+      "category": "Brevets et contentieux pharmaceutique",
+      "title": "Harmony Biosciences engage une nouvelle action en contrefaçon relative à un procédé de fabrication du pitolisant",
       "court_reference": "",
-      "source": "Dreyfus Law Firm, publication LinkedIn",
-      "source_url": "https://www.linkedin.com/posts/dreyfus-%26-associes_ppwr-epr-trademarklaw-activity-7498356400620781568-lpy0",
-      "publication_date": "2026-09-17",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
+      "source": "Investing.com, article de presse en français",
+      "source_url": "https://fr.investing.com/news/analyst-ratings/oppenheimer-reitere-sa-note-sur-harmony-biosciences-apres-une-defense-de-brevet-93CH-3607811",
+      "publication_date": "2026-09-24",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-2",
       "source_access": "PARTIEL",
       "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "Dreyfus Law Firm, publication LinkedIn, 17 septembre 2026",
-      "summary": "La publication souligne que le PPWR place la conformité aux obligations de responsabilité élargie du producteur au cœur de l’accès aux plateformes de commerce en ligne. Les opérateurs actifs dans plusieurs États membres doivent apprécier leurs obligations par pays et anticiper les incidences des adaptations d’emballages sur leurs droits de propriété intellectuelle.",
-      "retrieval_note": "La publication LinkedIn est accessible et son texte principal a été consulté. Le lien externe associé renvoie vers une page dont le contenu intégral n’a pas pu être ouvert directement. La page correspondante du site de Dreyfus & Associés, publiée le 20 août 2026, n’a pas été retenue, conformément à la restriction imposant de ne conserver que les contenus publiés entre le 14 et le 18 septembre 2026 inclus. Aucun PDF, numéro d’affaire, numéro de décision ou ECLI pertinent n’a été identifié pour cette actualité.",
+      "source_display_text": "Investing.com, article de presse en français, 24 septembre 2026",
+      "summary": "Harmony Biosciences aurait introduit une nouvelle plainte en contrefaçon contre AET Pharma US, Inc., fondée sur le brevet américain n° 11,945,788 relatif à des procédés de fabrication du pitolisant. L’action serait distincte du contentieux ANDA déjà en cours entre les parties.",
+      "retrieval_note": "L’article directement accessible a été publié le 24 septembre 2026 et son texte intégral est consultable. Il décrit le dépôt d’une nouvelle plainte en contrefaçon visant AET Pharma US, Inc. et relative au brevet américain n° 11,945,788. En revanche, la plainte elle-même, son éventuelle pièce PDF, le docket officiel complet, une décision judiciaire ou un dispositif n’ont pas été directement consultés. Les recherches effectuées n’ont pas permis d’identifier une version officielle intégrale librement accessible ni un ECLI, lequel n’est pas applicable aux juridictions fédérales américaines. L’accès est donc qualifié de PARTIEL.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "La publication relève que le règlement relatif aux emballages et aux déchets d’emballages, ou PPWR, est susceptible de faire de la conformité aux obligations de responsabilité élargie du producteur un préalable à l’accès à certains canaux de vente en ligne. Son article 45 imposerait aux plateformes relevant de son champ de recueillir et d’évaluer, avant d’autoriser les vendeurs à accéder à leurs services, des informations relatives à leur enregistrement au titre de la responsabilité élargie du producteur ainsi que des autocertifications de conformité.",
-        "L’analyse appelle une vigilance particulière en matière de commerce électronique transfrontière. La publication précise qu’il n’existe pas de numéro unique d’enregistrement valable dans l’ensemble de l’Union européenne. L’appréciation des obligations doit donc être conduite pays par pays, en considération notamment du producteur concerné, du flux d’emballages et du marché de destination. En France, sont notamment évoqués l’identifiant unique applicable aux emballages, la représentation des opérateurs étrangers et la cohérence des informations figurant sur les comptes de marketplace, les documents contractuels et les registres de responsabilité élargie du producteur.",
-        "Enfin, les adaptations du graphisme ou du conditionnement rendues nécessaires par ces exigences réglementaires peuvent affecter les portefeuilles de marques, de dessins et modèles et de droits d’auteur. La conformité des emballages implique ainsi une coordination entre les fonctions réglementaires, commerciales et de propriété intellectuelle."
+        "Selon un article publié le 24 septembre 2026, Harmony Biosciences Holdings, Inc. a engagé une nouvelle action en contrefaçon de brevet contre AET Pharma US, Inc., présentée comme un concurrent dans le domaine des médicaments génériques. Cette action invoquerait le brevet américain n° 11,945,788, portant sur des procédés de fabrication du pitolisant.",
+        "L’article indique que la plainte allègue que la source de fabrication indienne d’AET Pharma US mettrait en œuvre des procédés couverts par ce brevet. Cette nouvelle procédure serait distincte du contentieux ANDA déjà en cours, ainsi que d’un brevet précédemment opposé dans ce cadre. Aucun élément relatif aux demandes précisément formulées, aux moyens de défense, à la juridiction saisie ou au calendrier procédural n’est précisé dans la source consultée.",
+        "L’information est rapportée dans le contexte de la réitération par Oppenheimer d’une recommandation de surperformance sur Harmony Biosciences, assortie d’un objectif de cours de 70 dollars. Cette appréciation financière ne préjuge toutefois ni du bien-fondé de l’action en contrefaçon alléguée ni de l’issue des procédures en cours."
       ],
-      "highlight_paragraph": "En l’absence de numéro d’enregistrement unique valable dans l’Union européenne, la conformité liée aux emballages doit être examinée par État membre pour les ventes transfrontières, y compris au regard de la cohérence des informations communiquées aux marketplaces.",
-      "practical_relevance": "Les opérateurs commercialisant des produits emballés par l’intermédiaire de plateformes doivent vérifier la disponibilité et la cohérence des informations requises au titre de la responsabilité élargie du producteur dans chaque marché de destination. Toute évolution du conditionnement ou de son graphisme devrait également être appréciée au regard des droits de propriété intellectuelle concernés.",
+      "highlight_paragraph": "La coexistence alléguée d’une action distincte du contentieux ANDA souligne l’intérêt d’identifier séparément les droits de brevet opposés, les procédés de fabrication visés et les fondements procéduraux propres à chaque instance.",
+      "practical_relevance": "Cette information appelle à suivre la portée effective du brevet n° 11,945,788 et les allégations relatives aux procédés de fabrication attribués à la source indienne d’AET Pharma US. En l’état des informations accessibles, aucune conclusion ne peut être tirée sur la recevabilité de l’action, la validité du brevet ou l’existence d’une contrefaçon.",
       "illustration_page_url": "",
       "illustration_alt": ""
     }
   ],
   "briefs": [],
-  "generated_at": "2026-09-18T11:54:50.974Z",
+  "generated_at": "2026-09-25T11:07:32.362Z",
   "status": "generated",
-  "report_url": "/public/reports/veille-2026-09-19.docx",
-  "docx_url": "/public/reports/veille-2026-09-19.docx"
+  "report_url": "/public/reports/veille-2026-09-26.docx",
+  "docx_url": "/public/reports/veille-2026-09-26.docx"
 }
