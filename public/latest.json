@@ -1,394 +1,286 @@
 {
-  "week": "Du 28 septembre au 2 octobre 2026",
-  "edition_date": "2026-10-03",
-  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 28 septembre au 2 octobre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 4 catégories éditoriales distinctes. Aucun des sujets retenus ne provient des alertes de Juliette.",
+  "week": "Du 28 septembre au 4 octobre 2026",
+  "edition_date": "2026-10-05",
+  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 28 septembre au 4 octobre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Aucun des sujets retenus ne provient des alertes de Juliette.",
   "source_coverage": [
     {
       "source_name": "EUIPO",
       "domain": "euipo.europa.eu",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus. Deux contenus substantiels portant sur les dessins et modèles et les marques ont été identifiés et retenus. Aucun contenu antérieur à cette période n’a été utilisé pour compléter la sélection."
+      "candidate_count": 1,
+      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus. Un seul contenu substantiel et directement pertinent pour les dessins et modèles a été identifié avec une date de publication vérifiable. Aucun contenu antérieur n’a été utilisé pour compléter la sélection."
     },
     {
       "source_name": "OMPI",
       "domain": "wipo.int",
       "searched": true,
-      "candidate_count": 2,
-      "search_note": "La source OMPI a été analysée pour la période strictement comprise entre le 2026-09-28 et le 2026-10-02 inclus. Deux actualités substantielles et directement liées à la protection internationale des marques ont été vérifiées. Aucun contenu substantiel portant principalement sur les brevets n’a été retenu dans cette période. Les contenus antérieurs ont été exclus."
+      "candidate_count": 0,
+      "search_note": "La source OMPI a été analysée, en ciblant les contenus internationaux relatifs aux brevets et aux marques publiés du 28 septembre 2026 au 4 octobre 2026 inclus. Les résultats consultés ne permettent pas de vérifier de manière fiable une date de publication située dans cette seule période; les contenus plus anciens ou dépourvus de date précise ont donc été exclus conformément aux critères."
     },
     {
       "source_name": "CJUE",
       "domain": "curia.europa.eu",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "La source CJUE (curia.europa.eu) a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus. Trois décisions substantielles en propriété intellectuelle ont été repérées, toutes datées du 30 septembre 2026. Aucun contenu antérieur à cette période n’a été retenu."
+      "candidate_count": 1,
+      "search_note": "La source CJUE a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus. Un seul contenu substantiel relevant de la propriété intellectuelle a été identifié dans cette période ; aucun contenu antérieur n’a été retenu. ([infocuria.curia.europa.eu](https://infocuria.curia.europa.eu/tabs/jurisprudence?doc-date-start=2026-01-18&lang=fr&sort=doc_date-desc&utm_source=openai))"
     },
     {
       "source_name": "Légifrance",
       "domain": "legifrance.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — loi, jurisprudence, rapport, texte ou actualité — présentant une date de publication vérifiable dans cette période n’a été identifié. Les résultats trouvés concernaient notamment des versions du Code de la propriété intellectuelle ou des contenus antérieurs, qui ont été écartés conformément à la consigne de fraîcheur."
+      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus, sur les thèmes de la propriété intellectuelle, des lois et de la jurisprudence française. Aucun contenu substantiel pertinent présentant une date de publication vérifiable dans cette seule période n’a été identifié. Les pages du Code de la propriété intellectuelle repérées indiquent une version en vigueur ou une mise à jour, mais ne constituent pas une publication nouvelle vérifiable pendant la semaine demandée. Conformément à l’instruction de fraîcheur, aucun contenu antérieur n’a été retenu."
     },
     {
       "source_name": "Cour de cassation",
       "domain": "courdecassation.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle, relevant de la jurisprudence, avec une date de publication vérifiable dans cette période n’a été identifié. Les résultats trouvés concernaient notamment une décision du 2 septembre 2026, antérieure à la période demandée, et ont donc été exclus."
+      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus, sur le thème de la jurisprudence en propriété intellectuelle. Aucun contenu substantiel correspondant, avec une date vérifiable dans cette période, n’a été identifié. Les résultats antérieurs, notamment une décision du 2 septembre 2026, ont été écartés conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "OEB",
       "domain": "epo.org",
       "searched": true,
-      "candidate_count": 1,
-      "search_note": "La source OEB a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus. Un contenu substantiel et directement lié aux brevets a été identifié le 29 septembre 2026. Aucun contenu antérieur n’a été retenu pour compléter la sélection."
+      "candidate_count": 2,
+      "search_note": "La source OEB (epo.org) a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026, dates incluses. Deux contenus substantiels en matière de brevets ont été retenus, tous deux publiés le 30 septembre 2026. Aucun contenu antérieur n'a été utilisé. Les résultats de recherche ne permettent pas d'identifier un troisième contenu suffisamment pertinent et vérifiable dans cette période."
     },
     {
       "source_name": "CSPLA",
       "domain": "culture.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source CSPLA du ministère de la Culture a été analysée. Aucun contenu substantiel en droit d’auteur ou en propriété intellectuelle dont la date de publication est vérifiable entre le 28 septembre 2026 et le 2 octobre 2026 inclus n’a été retenu. Les résultats apparaissant comme antérieurs à cette période ont été exclus conformément à la consigne de fraîcheur."
+      "search_note": "Source CSPLA analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus. Aucun contenu pertinent en droit d’auteur publié pendant cette semaine n’a été identifié. Les résultats repérés datent notamment du 7 septembre 2026 et ont donc été exclus conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "Sénat",
       "domain": "senat.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Sénat (senat.fr) a été analysée pour la période strictement comprise entre le 28 septembre 2026 et le 2 octobre 2026 inclus, sur le thème de la législation en propriété intellectuelle. Aucun contenu substantiel — décision, texte, rapport ou actualité — avec une date vérifiable dans cet intervalle n’a été identifié. Aucun contenu antérieur n’a été retenu pour compléter la sélection."
+      "search_note": "Source Sénat analysée pour la période strictement comprise entre le 28 septembre 2026 et le 4 octobre 2026 inclus. Aucun contenu substantiel relevant de la législation en propriété intellectuelle, avec une date de publication vérifiable et une URL directe, n’a été retenu. Les résultats trouvés mentionnant la propriété intellectuelle étaient soit de simples références incidentes dans des questions, soit antérieurs à la période demandée, soit sans lien suffisamment direct avec une décision, un texte, un rapport ou une actualité substantielle en propriété intellectuelle."
     },
     {
       "source_name": "Dreyfus & Associés – Newsletter IP",
       "domain": "linkedin.com",
       "searched": true,
       "candidate_count": 1,
-      "search_note": "La source prioritaire a été analysée. La publication de référence « Newsletter, August 2026 » est datée du 1er septembre 2026 et a donc été exclue, conformément à la période imposée. Une publication pertinente de la même source, datée du 29 septembre 2026, a été retenue. Aucun autre contenu direct de la source, avec une date vérifiable comprise entre le 28 septembre et le 2 octobre 2026 inclus, n’a été identifié dans les résultats disponibles."
+      "search_note": "Source analysée, notamment la publication prioritaire et la newsletter de septembre 2026. Une seule publication pertinente et vérifiable a été identifiée entre le 28 septembre et le 4 octobre 2026 inclus. La newsletter, publiée le 29 septembre 2026, traite notamment de l’innovation végétale et de la liberté d’exploitation, de la recherche d’antériorités en matière de marques, de la responsabilité des plateformes et algorithmes, ainsi que des nouveaux gTLD. Les publications antérieures, dont la newsletter d’août 2026 publiée le 1er septembre, ont été exclues conformément à la consigne."
     }
   ],
   "scouting_coverage": {
     "google_alert_feeds": 30,
-    "google_alert_candidates": 21
+    "google_alert_candidates": 6
   },
   "alert_trace": [
     {
       "alert_id": "juliette-1",
-      "title": "Apple condamné à verser 5,7 milliards de dollars pour contrefaçon de brevets",
-      "url": "https://www.decideurs-juridiques.com/affaires-juridiques/65337-apple-condamne-a-verser-5-7-milliards-de-dollars-pour-contrefacon-de-brevets.html",
-      "publication_date": "2026-10-01T14:41:11Z",
-      "selected": true,
-      "reason": "Sujet récent portant sur une condamnation significative en matière de contrefaçon de brevets, retenu à titre de réserve malgré une source secondaire."
+      "title": "Candidature pour un poste à l&#39;OMPI 04 octobre 2026 - YOP L-FRII",
+      "url": "https://yop.l-frii.com/candidature-pour-un-poste-a-lompi-04-octobre-2026/",
+      "publication_date": "2026-10-04T17:56:31Z",
+      "selected": false,
+      "reason": "Annonce de recrutement sans contenu juridique ou doctrinal suffisamment substantiel en propriété intellectuelle."
     },
     {
       "alert_id": "juliette-2",
-      "title": "Une intelligence brevets exploitable pour tout le monde | epo.org",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/actionable-patent-intelligence",
-      "publication_date": "2026-09-30T14:00:40Z",
-      "selected": false,
-      "reason": "Contenu institutionnel de l’OEB sur l’exploitation de l’intelligence brevets, moins directement juridique que les sujets retenus."
+      "title": "Protéger et accroître de manière proactive la valeur de la propriété intellectuelle .",
+      "url": "https://www.vietnam.vn/fr/chu-dong-bao-ho-gia-tang-gia-tri-tai-san-tri-tue",
+      "publication_date": "2026-10-04T17:05:58Z",
+      "selected": true,
+      "reason": "Sujet directement consacré à la protection et à la valorisation des actifs de propriété intellectuelle, sous réserve de vérification de la source primaire."
     },
     {
       "alert_id": "juliette-3",
-      "title": "Renforcement du réseau européen en matière de brevets | epo.org",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/european-patent-network",
-      "publication_date": "2026-09-30T14:00:37Z",
-      "selected": false,
-      "reason": "Présentation générale du réseau européen des brevets, dépourvue d’un apport juridique suffisamment individualisé."
+      "title": "Résoudre les problèmes liés à l&#39;évaluation de la propriété intellectuelle et à la ... - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/xu-ly-dut-diem-diem-nghen-dinh-gia-tai-san-tri-tue-va-thuong-mai-hoa-ket-qua-nghien-cuu",
+      "publication_date": "2026-10-04T16:01:53Z",
+      "selected": true,
+      "reason": "Actualité portant sur l’évaluation et la commercialisation des actifs intellectuels, avec une dimension institutionnelle identifiable."
     },
     {
       "alert_id": "juliette-4",
-      "title": "Opposition Matters 2026 | epo.org",
-      "url": "https://www.epo.org/fr/news-events/news/opposition-matters-2026",
-      "publication_date": "2026-10-01T17:57:20Z",
+      "title": "Coca vs les marques de distributeur : qui est le meilleur ? - La DH/Les Sports+ - DHnet",
+      "url": "https://www.dhnet.be/conso/consommation/2026/10/04/coca-vs-les-marques-de-distributeur-qui-est-le-meilleur-KTMTW2ZKSJEQRDQHAFESZIDIVE/",
+      "publication_date": "2026-10-04T14:32:39Z",
       "selected": true,
-      "reason": "Correspond au sujet primaire de l’OEB consacré aux évolutions de la procédure d’opposition en matière de brevets."
+      "reason": "Article consacré aux marques et à leur positionnement commercial, retenu comme piste de réserve malgré une portée juridique limitée."
     },
     {
       "alert_id": "juliette-5",
-      "title": "Violation de brevets sur la vibration : Apple condamné à payer 5,2 milliards de dollars",
-      "url": "https://www.courrierinternational.com/article/tech-violation-de-brevets-sur-la-vibration-apple-condamne-a-payer-5-2-milliards-de-dollars_275432",
-      "publication_date": "2026-10-01T15:30:51Z",
+      "title": "banque de propriété intellectuelle (*) » culturelle Cham. - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/can-dau-tu-cho-ngan-hang-ip-van-hoa-cham",
+      "publication_date": "2026-10-04T00:23:57Z",
       "selected": false,
-      "reason": "Doublon thématique avec l’alerte juliette-1 et source secondaire."
+      "reason": "Sujet potentiellement lié à la valorisation culturelle de la propriété intellectuelle, mais moins directement documenté et redondant avec d’autres alertes issues de la même source."
     },
     {
       "alert_id": "juliette-6",
-      "title": "Le Vietnam veut renforcer sa coopération avec l&#39;OMPI",
-      "url": "https://lecourrier.vn/le-vietnam-veut-renforcer-sa-cooperation-avec-lompi/1356537.html",
-      "publication_date": "2026-10-01T14:59:06Z",
-      "selected": false,
-      "reason": "Actualité institutionnelle générale, sans contenu juridique suffisamment substantiel en propriété intellectuelle."
-    },
-    {
-      "alert_id": "juliette-7",
-      "title": "Procédure de délivrance de brevets entièrement numérique à compter du 1er avril 2027",
-      "url": "https://www.epo.org/fr/applying/fully-digital-patent-granting-process-1-april-2027-what-you-need-know-and-do",
-      "publication_date": "2026-10-01T10:40:09Z",
+      "title": "Hanoï en tête de l&#39;indice provincial d&#39;innovation 2026 - Le Courrier du VietNam",
+      "url": "https://lecourrier.vn/hanoi-en-tete-de-lindice-provincial-dinnovation-2026/1356681.html",
+      "publication_date": "2026-10-04T12:16:38Z",
       "selected": true,
-      "reason": "Sujet primaire de l’OEB relatif à la dématérialisation complète de la procédure de délivrance des brevets."
-    },
-    {
-      "alert_id": "juliette-8",
-      "title": "L&#39; OEB publie les premières modalités d&#39;application relatives à la procédure de délivrance ... - EPO",
-      "url": "https://www.epo.org/fr/news-events/news/loeb-publie-les-premieres-modalites-dapplication-relatives-la-procedure-de",
-      "publication_date": "2026-10-01T06:49:53Z",
-      "selected": false,
-      "reason": "Annonce complémentaire relative à la même réforme numérique que l’alerte juliette-7."
-    },
-    {
-      "alert_id": "juliette-9",
-      "title": "Qu&#39;est-ce qui change le 1er avril 2027 ? | epo.org",
-      "url": "https://www.epo.org/fr/applying/fully-digital-patent-granting-process-1-april-2027/what-changes-april-2027",
-      "publication_date": "2026-10-01T05:02:22Z",
-      "selected": false,
-      "reason": "Doublon avec les autres contenus de l’OEB sur l’entrée en vigueur de la procédure entièrement numérique."
-    },
-    {
-      "alert_id": "juliette-10",
-      "title": "Prendre en compte les commentaires des utilisateurs | epo.org",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/user-feedback",
-      "publication_date": "2026-09-30T23:43:59Z",
-      "selected": false,
-      "reason": "Contenu de gouvernance et de consultation, moins directement exploitable pour une veille juridique."
-    },
-    {
-      "alert_id": "juliette-11",
-      "title": "​​L&#39; OEB à l&#39;édition 2026 de la Longue nuit des musées de Munich | epo.org",
-      "url": "https://www.epo.org/fr/news-events/events/loeb-ledition-2026-de-la-longue-nuit-des-musees-de-munich",
-      "publication_date": "2026-09-30T14:49:06Z",
-      "selected": false,
-      "reason": "Événement de communication institutionnelle sans apport substantiel en droit de la propriété intellectuelle."
-    },
-    {
-      "alert_id": "juliette-12",
-      "title": "Une utilisation responsable de l&#39;IA | epo.org",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/responsible-use-of-ai",
-      "publication_date": "2026-09-30T14:00:37Z",
-      "selected": false,
-      "reason": "Présentation générale de l’utilisation responsable de l’intelligence artificielle par l’OEB, sans évolution normative individualisée."
-    },
-    {
-      "alert_id": "juliette-13",
-      "title": "Mauritanie : démantèlement d&#39;un réseau de contrefaçon et saisie de 248 000 euros - Cridem",
-      "url": "http://www.cridem.org/C_Info.php?article=796991",
-      "publication_date": "2026-10-01T20:56:15Z",
-      "selected": false,
-      "reason": "Information de lutte contre la contrefaçon insuffisamment vérifiable et éloignée du périmètre prioritaire de la veille."
-    },
-    {
-      "alert_id": "juliette-14",
-      "title": "Le Vietnam s&#39;efforce de garantir au maximum le respect des droits de propriété intellectuelle",
-      "url": "https://fr.laodong.vn/thoi-su/viet-nam-no-luc-dam-bao-cao-nhat-viec-tuan-thu-quyen-so-huu-tri-tue-1776048.ldo",
-      "publication_date": "2026-10-01T16:56:30Z",
-      "selected": false,
-      "reason": "Article de presse généraliste sur la politique vietnamienne de propriété intellectuelle, sans mesure juridique précisément identifiée."
-    },
-    {
-      "alert_id": "juliette-15",
-      "title": "L&#39;ANSTS examine la propriété intellectuelle des savoirs traditionnels africains - Leral.net",
-      "url": "https://www.leral.net/L-ANSTS-examine-la-propriete-intellectuelle-des-savoirs-traditionnels-africains_a407095.html",
-      "publication_date": "2026-10-01T15:59:10Z",
-      "selected": false,
-      "reason": "Sujet consacré aux savoirs traditionnels africains, intéressant mais insuffisamment documenté dans le résultat fourni."
-    },
-    {
-      "alert_id": "juliette-16",
-      "title": "Répondre aux exigences les plus élevées en matière de sécurité informatique et de données - EPO",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/it-security-and-data-protection-standards",
-      "publication_date": "2026-10-01T01:57:12Z",
-      "selected": false,
-      "reason": "Présentation technique des exigences de sécurité et de protection des données de l’OEB, sans apport juridique autonome suffisant."
-    },
-    {
-      "alert_id": "juliette-17",
-      "title": "Selon une source, Mattel susciterait l&#39;intérêt d&#39;Authentic Brands Group en vue d&#39;un rachat",
-      "url": "https://www.boursorama.com/bourse/actualites/selon-une-source-mattel-susciterait-l-interet-d-authentic-brands-group-en-vue-d-un-rachat-2d904f5552c469820e3a212012b2eef0",
-      "publication_date": "2026-10-01T20:46:38Z",
-      "selected": false,
-      "reason": "Information économique relative à une éventuelle opération capitalistique, sans nouveauté juridique de propriété intellectuelle suffisamment établie."
-    },
-    {
-      "alert_id": "juliette-18",
-      "title": "L&#39;automobile, championne de l&#39;innovation - Renault Group",
-      "url": "https://www.renaultgroup.com/magazine/technologie/lautomobile-championne-de-linnovation/",
-      "publication_date": "2026-10-01T19:38:21Z",
-      "selected": false,
-      "reason": "Article de communication sectorielle sur l’innovation automobile, sans contenu juridique propre."
-    },
-    {
-      "alert_id": "juliette-19",
-      "title": "Innovation et fossé entre l&#39;exportation et la propriété . - Vietnam.vn",
-      "url": "https://www.vietnam.vn/fr/doi-moi-sang-tao-va-khoang-cach-tu-xuat-khau-den-so-huu",
-      "publication_date": "2026-10-01T18:39:31Z",
-      "selected": false,
-      "reason": "Commentaire économique sur l’innovation et l’indice mondial de l’innovation, sans apport juridique suffisamment précis."
-    },
-    {
-      "alert_id": "juliette-20",
-      "title": "MyEPO : suivi de l&#39;état d&#39;avancement des demandes, requêtes PACE groupées et autres ...",
-      "url": "https://www.epo.org/fr/news-events/news/myepo-suivi-de-letat-davancement-des-demandes-requetes-pace-groupees-et-autres",
-      "publication_date": "2026-09-30T14:49:07Z",
-      "selected": false,
-      "reason": "Doublon avec les contenus de l’OEB relatifs à la transformation numérique des services MyEPO."
-    },
-    {
-      "alert_id": "juliette-21",
-      "title": "Les services MyEPO : le point d&#39;accès des utilisateurs et utilisatrices à notre procédure de ...",
-      "url": "https://www.epo.org/fr/about-us/office/leading-digital-transformation-european-patent-system/myepo-services-users-gateway-our-fully-digital-pgp",
-      "publication_date": "2026-09-30T14:00:36Z",
-      "selected": false,
-      "reason": "Présentation générale des services MyEPO, redondante avec le sujet retenu sur la procédure de délivrance entièrement numérique."
+      "reason": "Actualité relative à un indice d’innovation comportant des indicateurs liés aux brevets et aux actifs de propriété intellectuelle."
     }
   ],
   "items": [
     {
       "type": "JURISPRUDENCE",
-      "category": "Marques de l’Union européenne",
-      "title": "Le Tribunal confirme le risque de confusion entre T-HEAD et les marques antérieures HEAD",
-      "court_reference": "Tribunal de l’Union européenne, T-477/25, ECLI:EU:T:2026:616",
-      "source": "EUR-Lex, arrêt du Tribunal de l’Union européenne dans l’affaire T-477/25",
-      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62025TJ0477",
+      "category": "Marques",
+      "title": "Usage sérieux d’une marque de télécommunications : les cartes prépayées et bons de recharge caractérisent l’usage pour les services associés",
+      "court_reference": "Tribunal de l’Union européenne, T-257/25, ECLI:EU:T:2026:614, 30 septembre 2026",
+      "source": "EUR-Lex, texte intégral officiel de l’arrêt du Tribunal de l’Union européenne",
+      "source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:62025TJ0257",
       "publication_date": "2026-09-30",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "EUR-Lex, arrêt du Tribunal de l’Union européenne dans l’affaire T-477/25, 30 septembre 2026.",
-      "summary": "Le Tribunal rejette le recours de T-Head (Shanghai) Semiconductor contre une décision de l’EUIPO accueillant une opposition fondée sur des marques antérieures HEAD. Il retient la dominance de l’élément verbal head dans le signe demandé et confirme un risque de confusion au regard des similitudes visuelle et phonétique.",
-      "retrieval_note": "La page InfoCuria initialement fournie est une interface dynamique et ne permettait pas, à elle seule, de consulter le texte intégral. La recherche a été poursuivie par le numéro d’affaire, l’ECLI et le numéro CELEX. Le texte intégral officiel a ensuite été ouvert sur EUR-Lex, dans sa version HTML anglaise, et le dispositif a été effectivement consulté. La publication est datée du 30 septembre 2026, qui relève de la période comprise entre le 28 septembre et le 2 octobre 2026 inclus.",
+      "source_display_text": "EUR-Lex, texte intégral officiel de l’arrêt du Tribunal de l’Union européenne, 30 septembre 2026.",
+      "summary": "Le Tribunal annule partiellement une décision de déchéance de l’EUIPO. Les publicités, cartes prépayées, bons de recharge, factures et déclarations sous serment établissaient l’usage de la marque figurative e plus pour des services de télécommunications de la classe 38, indépendamment de la qualification des supports comme moyens de paiement.",
+      "retrieval_note": "L’URL InfoCuria fournie a été vérifiée. La recherche a ensuite été poursuivie par le numéro d’affaire T-257/25, l’ECLI ECLI:EU:T:2026:614 et le numéro CELEX 62025TJ0257. Le texte intégral officiel en version française a été ouvert et consulté, y compris les motifs et le dispositif. La publication est datée du 30 septembre 2026, soit dans la période comprise entre le 28 septembre 2026 et le 4 octobre 2026, dates incluses. ([eur-lex.europa.eu](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A62025TJ0257))",
       "timeline": [
         {
-          "date": "30 septembre 2026",
-          "event": "Le Tribunal de l’Union européenne, huitième chambre, rend son arrêt dans l’affaire T-477/25."
+          "date": "5 mars 1996",
+          "event": "Dépôt de la demande d’enregistrement de la marque de l’Union européenne figurative e plus par Telefónica Germany GmbH & Co. OHG."
+        },
+        {
+          "date": "18 février 2002",
+          "event": "Enregistrement de la marque contestée pour des produits et services relevant des classes 9, 37, 38 et 42."
+        },
+        {
+          "date": "10 novembre 2022",
+          "event": "ePlus Inc. introduit auprès de l’EUIPO une demande en déchéance pour défaut d’usage sérieux."
+        },
+        {
+          "date": "1er février 2024",
+          "event": "La division d’annulation prononce la déchéance de la marque pour l’ensemble des produits et services visés."
+        },
+        {
+          "date": "24 février 2025",
+          "event": "La première chambre de recours de l’EUIPO rejette le recours de Telefónica Germany dans l’affaire R 394/2024-1."
         },
         {
           "date": "30 septembre 2026",
-          "event": "Le Tribunal rejette le recours introduit par T-Head (Shanghai) Semiconductor Co. Ltd contre la décision de la chambre de recours de l’EUIPO."
-        },
-        {
-          "date": "30 septembre 2026",
-          "event": "Le Tribunal condamne T-Head (Shanghai) Semiconductor Co. Ltd aux dépens."
+          "event": "Le Tribunal annule la décision de la chambre de recours en tant qu’elle concerne les services de télécommunications de la classe 38."
         }
       ],
-      "introduction": "Par cet arrêt, le Tribunal de l’Union européenne se prononce sur une opposition dirigée contre une demande de marque de l’Union européenne figurative T-HEAD. Le contentieux oppose la demanderesse, T-Head (Shanghai) Semiconductor Co. Ltd, à l’EUIPO, Head Technology GmbH étant l’autre partie à la procédure devant la chambre de recours. Le Tribunal était appelé à vérifier si l’appréciation du risque de confusion entre le signe demandé et plusieurs marques antérieures HEAD était conforme à l’article 8, paragraphe 1, sous b), du règlement (UE) 2017/1001, ainsi qu’aux exigences de motivation résultant de l’article 94, paragraphe 1, du même règlement. Il confirme la décision contestée et rejette le recours dans son intégralité.",
-      "facts_and_procedure": "La demande de marque en cause porte sur un signe figuratif comportant l’élément verbal T-HEAD. L’opposition était fondée sur plusieurs droits antérieurs invoqués par Head Technology GmbH, comprenant notamment une marque nationale figurative, un enregistrement international figuratif ainsi que des marques nationales verbales HEAD. Le litige s’inscrit dans le cadre d’une comparaison entre une dénomination composée de la lettre t, d’un trait d’union et du terme head, d’une part, et des signes antérieurs centrés sur le terme HEAD, d’autre part. La chambre de recours de l’EUIPO avait statué sur l’opposition et T-Head (Shanghai) Semiconductor Co. Ltd a saisi le Tribunal d’un recours contre cette décision. Le recours mettait en cause l’application de l’article 8, paragraphe 1, sous b), du règlement 2017/1001 et l’obligation de motivation imposée à l’EUIPO.",
-      "parties_arguments": "La requérante contestait l’appréciation retenue au stade administratif quant au risque de confusion entre le signe demandé et les marques antérieures. Son recours soulevait également un grief tiré de l’article 94, paragraphe 1, du règlement 2017/1001, disposition qui impose à l’EUIPO de motiver ses décisions. Le débat portait en particulier sur la place respective des composantes du signe demandé, à savoir la lettre t, le trait d’union, l’élément verbal head et l’élément figuratif, dans l’impression d’ensemble produite auprès du public pertinent. Il portait également sur le niveau de similitude visuelle et phonétique entre les signes et, par voie de conséquence, sur l’existence d’un risque de confusion pour les produits et services concernés.",
-      "legal_question": "La question soumise au Tribunal était de savoir si la chambre de recours pouvait valablement conclure à l’existence d’un risque de confusion, au sens de l’article 8, paragraphe 1, sous b), du règlement 2017/1001, entre la marque figurative demandée T-HEAD et les marques antérieures HEAD. Cette question supposait d’apprécier l’impression d’ensemble produite par les signes, en tenant compte de leurs éléments distinctifs et dominants, puis d’évaluer leurs ressemblances visuelle et phonétique. Le Tribunal devait également vérifier si la décision de la chambre de recours satisfaisait à l’exigence de motivation prévue par l’article 94, paragraphe 1, du règlement 2017/1001.",
-      "reasoning": "Le Tribunal retient que l’élément verbal head constitue l’élément dominant de la marque demandée. Cette appréciation repose sur le constat que la lettre t, le trait d’union et l’élément figuratif n’exercent qu’une incidence limitée sur l’impression d’ensemble produite par le signe T-HEAD. La présence de head, élément commun avec les marques antérieures, revêt ainsi une importance déterminante dans la comparaison. Le Tribunal ne réduit pas l’analyse à la seule identité de cet élément verbal, mais l’inscrit dans l’examen global exigé en matière de risque de confusion. Il constate, au regard de la configuration respective des signes, une similitude visuelle supérieure à la moyenne. Il relève également une similitude phonétique au moins moyenne. Ces constatations conduisent à confirmer l’appréciation selon laquelle le public pertinent est susceptible de croire que les produits et services concernés proviennent de la même entreprise ou, le cas échéant, d’entreprises économiquement liées. Le Tribunal écarte donc le moyen tiré d’une violation de l’article 8, paragraphe 1, sous b), du règlement 2017/1001. Il examine également l’obligation de motivation consacrée par l’article 94, paragraphe 1, du règlement 2017/1001 et rejette le grief correspondant.",
-      "outcome": "Le Tribunal rejette le recours dans son intégralité. Il confirme ainsi la décision de la chambre de recours de l’EUIPO ayant retenu l’existence d’un risque de confusion entre la demande de marque figurative T-HEAD et les marques antérieures HEAD invoquées à l’appui de l’opposition. Le Tribunal juge que l’élément head domine le signe demandé et que les différences tenant à la lettre t, au trait d’union et à l’élément figuratif ne suffisent pas à neutraliser les similitudes constatées. La similitude visuelle, qualifiée de supérieure à la moyenne, et la similitude phonétique, reconnue comme au moins moyenne, justifient la confirmation du risque de confusion pour les produits et services concernés. T-Head (Shanghai) Semiconductor Co. Ltd est condamnée aux dépens.",
-      "practical_relevance": "L’arrêt rappelle l’importance décisive de l’identification des éléments dominants dans la comparaison des signes complexes. L’adjonction d’une lettre initiale, d’un trait d’union ou d’un habillage figuratif ne fait pas nécessairement obstacle à la reconnaissance d’une similitude pertinente lorsque l’élément verbal commun demeure prépondérant dans l’impression d’ensemble. Pour le dépôt et la défense des marques de l’Union européenne, cette décision confirme qu’une variation graphique ou typographique limitée autour d’une dénomination antérieure peut demeurer insuffisante pour écarter le risque de confusion. Elle souligne également que l’analyse doit porter conjointement sur les ressemblances visuelle et phonétique, sans isoler artificiellement les composantes secondaires du signe demandé. Enfin, un recours fondé sur un défaut de motivation ne prospère pas lorsque l’appréciation de la chambre de recours est suffisamment étayée au regard des critères pertinents du risque de confusion.",
+      "introduction": "Par cet arrêt, le Tribunal précise l’appréciation de la nature de l’usage sérieux d’une marque de l’Union européenne dans le secteur des télécommunications. Saisi d’un recours dirigé contre une décision ayant confirmé la déchéance de la marque figurative e plus, il juge que l’utilisation du signe sur des cartes prépayées et des bons de recharge, corroborée par des publicités, des factures et des déclarations sous serment, constitue un usage destiné à désigner l’origine de services de télécommunications. La qualification éventuelle de ces supports comme moyens de paiement est indifférente lorsqu’ils donnent accès aux services en cause.",
+      "facts_and_procedure": "La marque figurative e plus avait été enregistrée, notamment, pour des services de la classe 38 comprenant la téléphonie, la téléphonie mobile, l’utilisation d’un réseau de télécommunications, la transmission de messages et plusieurs services à valeur ajoutée. ePlus Inc. a sollicité la déchéance de cette marque sur le fondement de l’article 58, paragraphe 1, sous a), du règlement 2017/1001, au motif qu’elle n’aurait pas fait l’objet d’un usage sérieux. La période pertinente s’étendait du 10 novembre 2017 au 9 novembre 2022. Après que la division d’annulation eut prononcé la déchéance pour l’ensemble des produits et services, Telefónica Germany a formé un recours devant la première chambre de recours. Celle-ci l’a rejeté, estimant que les pièces produites ne démontraient pas l’usage du signe pour les produits et services enregistrés. Devant le Tribunal, la requérante a limité ses conclusions à l’annulation de cette décision en ce qu’elle concernait les services de télécommunications relevant de la classe 38.",
+      "parties_arguments": "Telefónica Germany soutenait que la marque avait continué à être employée au cours de la période pertinente dans le cadre d’offres commercialisées sous les marques ALDI TALK et Ortel Mobile. Elle invoquait un faisceau d’éléments constitué de déclarations sous serment, de factures, de bons de recharge, de cartes prépayées et de captures d’écran, afin d’établir que le signe désignait des services de téléphonie mobile. Elle contestait en particulier l’analyse assimilant les cartes et bons à de simples moyens de paiement, en faisant valoir qu’ils permettaient l’accès à des communications téléphoniques, à des données Internet et à l’envoi de messages. L’EUIPO et l’intervenante soutenaient, au contraire, que les éléments invoqués n’attestaient pas de services de télécommunications effectivement commercialisés sous la marque contestée pendant la période pertinente. ePlus Inc. ajoutait que le réseau E-Plus n’existait plus après 2016 et que les services concernés étaient alors proposés sous la marque O2.",
+      "legal_question": "La question posée au Tribunal était de savoir si les éléments produits établissaient la nature de l’usage sérieux de la marque figurative e plus pour les services de télécommunications de la classe 38, au sens de l’article 58, paragraphe 1, sous a), du règlement 2017/1001, alors même que le signe apparaissait notamment sur des cartes prépayées et des bons de recharge.",
+      "reasoning": "Le Tribunal rappelle que la preuve de l’usage doit porter sur le lieu, la durée, l’importance et la nature de l’usage, et que l’appréciation du caractère sérieux doit résulter d’un examen global de l’ensemble des circonstances propres à démontrer une exploitation commerciale réelle. Il relève que la chambre de recours avait exclusivement contesté la nature de l’usage, après avoir admis que la marque avait été utilisée dans la vie des affaires et sous une forme n’altérant pas son caractère distinctif. Les publicités relatives aux offres ALDI TALK et Ortel Mobile détaillaient des forfaits comprenant données Internet, minutes d’appel et messages SMS, tout en faisant apparaître le signe e.plus+ ou e plus. Les factures attestaient, en outre, de ventes de bons de recharge et de cartes prépayées portant ce signe. Pour le Tribunal, ces éléments démontrent que la marque était apposée non pour désigner des supports autonomes, mais exclusivement afin d’indiquer l’origine des services de télécommunications auxquels ils donnaient accès. La qualification des cartes comme moyens de paiement ne saurait donc modifier cette appréciation. Les déclarations sous serment de dirigeants de Telefónica Germany et d’Ortel Mobil GmbH, dont la fiabilité n’était pas contestée, confortaient l’existence d’une fourniture effective de services relevant de la classe 38. Le Tribunal constate également que certains éléments étaient substantiellement identiques à ceux déjà regardés comme probants dans une procédure antérieure. La chambre de recours ne pouvait les écarter en se fondant sur la seule référence à un rapport relatif à l’année 2016, ni déduire de la transition annoncée vers O2 la cessation de tout usage de la marque. Cette transition pouvait, au contraire, caractériser une coexistence de marques au sein d’un réseau commun.",
+      "outcome": "Le Tribunal accueille le premier moyen, tiré de la violation de l’article 58, paragraphe 1, sous a), et de l’article 58, paragraphe 2, du règlement 2017/1001. Il juge que la chambre de recours a commis une erreur d’appréciation en considérant que la nature de l’usage n’était pas démontrée pour les services de télécommunications de la classe 38. La décision de la première chambre de recours est, en conséquence, annulée dans cette seule mesure. Il n’est pas nécessaire d’examiner le moyen relatif au droit à une bonne administration. L’EUIPO supporte ses propres dépens ainsi que ceux de Telefónica Germany exposés devant le Tribunal. ePlus Inc. supporte ses propres dépens devant cette juridiction. Il appartiendra à la chambre de recours de statuer sur les frais de la procédure administrative à la lumière de l’arrêt.",
+      "practical_relevance": "L’arrêt confirme que l’usage sérieux doit être apprécié à la lumière de la fonction économique effective du signe dans son contexte de commercialisation. Lorsque des cartes SIM, ensembles de démarrage, bons ou recharges constituent le vecteur nécessaire d’accès à des services de télécommunications, leur vente sous une marque peut établir l’usage de celle-ci pour ces services, plutôt que pour de simples produits ou instruments de paiement. Il souligne également la valeur probatoire d’un ensemble cohérent de documents promotionnels, factures et déclarations sous serment. Enfin, une évolution de l’architecture de marque, y compris une transition vers une autre marque, ne permet pas à elle seule de conclure au non-usage de la marque antérieure lorsque les pièces établissent sa persistance dans l’offre de services concernée.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Marques internationales",
-      "title": "L’USPTO fait de Madrid e-Filing la voie de dépôt par défaut des demandes internationales de marque",
-      "court_reference": "Système de Madrid de l’OMPI",
-      "source": "Organisation Mondiale de la Propriété Intellectuelle, Système de Madrid",
-      "source_url": "https://www.wipo.int/en/web/madrid-system/w/news/2026/uspto-makes-wipo-madrid-e-filing-the-default-option-for-filing-international-trademark-applications",
-      "publication_date": "2026-10-01",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, Système de Madrid, 1 octobre 2026",
-      "summary": "L’USPTO a fait de Madrid e-Filing la plateforme par défaut pour les nouvelles demandes internationales fondées sur des demandes ou enregistrements américains. Le dispositif remplace TEASi et impose le règlement direct auprès de l’OMPI, en francs suisses, des taxes applicables.",
-      "retrieval_note": "L’URL directe de l’actualité a été ouverte et son texte intégral a été consulté. Le document PDF lié, intitulé « Madrid e-Filing User Guide for Applicants », a également été ouvert. Des versions linguistiques alternatives de l’actualité ont été repérées, notamment en portugais. Aucun numéro d’affaire, numéro de décision ni identifiant ECLI n’est applicable à cette actualité institutionnelle. Les contenus retenus sont publiés entre le 28 septembre 2026 et le 2 octobre 2026 inclus.",
-      "lead_label": "",
-      "paragraphs": [
-        "L’Office des brevets et des marques des États-Unis, l’USPTO, a retenu le service Madrid e-Filing de l’OMPI comme plateforme par défaut pour le dépôt des nouvelles demandes internationales de marque fondées sur une demande ou un enregistrement américain. Cette évolution se substitue au Trademark Electronic Application System International, ou TEASi, qui constituait jusqu’alors le canal électronique de dépôt international auprès de l’USPTO.",
-        "Le service Madrid e-Filing permet aux déposants d’effectuer leur demande en ligne, de communiquer directement avec leur office d’origine et de recevoir puis de traiter les notifications d’irrégularité émises par le Bureau international de l’OMPI. Son utilisation suppose la création d’un compte WIPO. L’OMPI indique que 436 demandes internationales avaient déjà été déposées au moyen de ce service par des déposants américains depuis son lancement initial, le 31 juillet 2026.",
-        "Depuis le 1er octobre 2026, les déposants américains présentant une demande internationale fondée sur une demande ou un enregistrement américain doivent acquitter directement auprès de l’OMPI les taxes correspondantes, libellées en francs suisses. Cette modalité de paiement accompagne le recours à la plateforme Madrid e-Filing."
-      ],
-      "highlight_paragraph": "Les déposants américains doivent désormais anticiper le paiement direct auprès de l’OMPI, en francs suisses, des taxes afférentes aux demandes internationales déposées sur la base d’un droit américain.",
-      "practical_relevance": "Les titulaires et conseils préparant une extension internationale sur le fondement d’une demande ou d’un enregistrement américain doivent intégrer Madrid e-Filing dans leur processus de dépôt, créer un compte WIPO et organiser le règlement direct des taxes auprès de l’OMPI en francs suisses.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Marques internationales",
-      "title": "L’OMPI annonce de nouveaux webinaires sur le Système de Madrid au quatrième trimestre 2026",
-      "court_reference": "Système de Madrid de l’OMPI",
-      "source": "Organisation Mondiale de la Propriété Intellectuelle (OMPI)",
-      "source_url": "https://www.wipo.int/en/web/madrid-system/w/news/2026/more-madrid-system-webinars-in-q4-2026-secure-your-free-spot-today",
+      "category": "Brevets, procédure électronique",
+      "title": "OEB : généralisation du dépôt et de la notification électroniques à compter du 1er avril 2027",
+      "court_reference": "",
+      "source": "Office européen des brevets, Notice dated 8 September 2026 concerning the mandatory electronic filing and notification of documents, OJ EPO 2026, A43",
+      "source_url": "https://www.epo.org/en/legal/official-journal/2026/09/a43",
       "publication_date": "2026-09-30",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle (OMPI), 30 septembre 2026",
-      "summary": "L’OMPI complète son programme de webinaires gratuits consacré au Système de Madrid pour le quatrième trimestre 2026. Les sessions traiteront notamment d’eMadrid, du paiement des taxes par les déposants américains, de la classification des produits et services, ainsi que de certaines inscriptions affectant le titulaire.",
-      "retrieval_note": "L’URL directe officielle a été ouverte et le texte intégral de l’actualité a été consulté. La page ne renvoie pas vers une pièce jointe PDF ni vers un document juridictionnel distinct. Aucun numéro d’affaire, numéro de décision ou ECLI n’est indiqué.",
+      "source_display_text": "Office européen des brevets, Journal officiel, 30 septembre 2026",
+      "summary": "L’OEB précise le régime du dépôt et de la notification électroniques obligatoire applicable à compter du 1er avril 2027. Le dépôt électronique devient la règle, sous exceptions limitées, tandis que les envois postaux peuvent imposer un redépôt. Les notifications transiteront principalement par la MyEPO Mailbox.",
+      "retrieval_note": "Le document intégral officiel a été directement consulté sur la page de l'OEB correspondant à l'article A43. Le texte comprend l'ensemble des dispositions et indications substantielles de la notice, notamment celles relatives au dépôt électronique obligatoire, à la notification électronique obligatoire, aux exceptions, aux conséquences du non-respect et aux voies de recours. La date de publication en ligne, le 30 septembre 2026, se situe dans la période comprise entre le 28 septembre et le 4 octobre 2026 inclus. Aucun numéro d'affaire, numéro de décision ou ECLI n'est indiqué pour ce document. ([epo.org](https://www.epo.org/en/legal/official-journal/2026/09/a43))",
+      "lead_label": "",
+      "paragraphs": [
+        "L’Office européen des brevets publie une notice relative au dépôt électronique obligatoire des documents et à leur notification électronique obligatoire. Les modifications pertinentes des règles 2, 114 et 125 CBE entreront en vigueur le 1er avril 2027. À cette date, la voie électronique deviendra le mode normal de dépôt auprès de l’OEB, dans le cadre des modalités et exceptions définies par la notice.",
+        "Le dépôt postal demeurera admis dans certaines circonstances. Il devra toutefois, en principe, être suivi d’un nouveau dépôt électronique dans les deux mois de l’invitation adressée par l’OEB. L’absence de redépôt peut, selon la nature du document en cause, conduire au rejet de la demande, à une perte de droits ou à la fiction de non-réception du document. Des dérogations sont notamment prévues pour certaines copies papier certifiées, les objets matériels, les documents déposés par des personnes non parties à la procédure et des situations particulières. Les observations de tiers devront, quant à elles, être déposées exclusivement par voie électronique.",
+        "La notification des documents sera en principe électronique, principalement par l’intermédiaire de la MyEPO Mailbox. La notification publique pourra être retenue lorsque le représentant ou la partie non représentée ne dispose pas d’une telle boîte aux lettres, sous réserve des exceptions prévues. La notice organise ainsi un basculement procédural qui impose d’assurer la disponibilité des accès électroniques et le suivi des invitations de l’Office."
+      ],
+      "highlight_paragraph": "Le maintien d’un dépôt postal ne dispense pas nécessairement d’un redépôt électronique : le défaut de régularisation dans le délai de deux mois suivant l’invitation de l’OEB est susceptible d’emporter des conséquences procédurales substantielles.",
+      "practical_relevance": "Les titulaires, demandeurs et mandataires devront adapter leurs processus de dépôt, de réception et d’archivage des communications de l’OEB avant l’entrée en vigueur du nouveau régime. Une vigilance particulière sera requise à l’égard des documents initialement transmis par voie postale et du suivi effectif de la MyEPO Mailbox.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets, outils procéduraux",
+      "title": "L’OEB introduit un panneau chronologique dans MyEPO",
+      "court_reference": "",
+      "source": "Office européen des brevets, OJ OEB 2026, A45, Notice concerning the introduction of a timeline panel in MyEPO",
+      "source_url": "https://www.epo.org/en/legal/official-journal/2026/09/a45",
+      "publication_date": "2026-09-30",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Office européen des brevets, OJ OEB 2026, A45, Notice concerning the introduction of a timeline panel in MyEPO, 30 septembre 2026",
+      "summary": "L’OEB met à disposition, à compter du 1er octobre 2026, un panneau chronologique dans MyEPO. Cet outil présente les principaux événements de la procédure, son état actuel et des indications sur les étapes à venir, sans produire d’effet contraignant sur les délais applicables.",
+      "retrieval_note": "L'URL directe officielle de l'OEB est accessible. Le texte intégral de la notice, y compris ses dispositions substantielles, a été effectivement consulté. La page officielle ne renvoie pas vers un PDF distinct. Aucun numéro d'affaire, numéro de décision ou ECLI n'est indiqué, ces références n'étant pas pertinentes pour cette notice. Une version allemande du sommaire officiel a également été repérée, sans modifier la qualification de la source primaire utilisée.",
+      "lead_label": "",
+      "paragraphs": [
+        "L’Office européen des brevets annonce l’introduction, à compter du 1er octobre 2026, d’un panneau chronologique au sein de MyEPO. Cette fonctionnalité standard est directement accessible dans le service, sans inscription ni activation spécifique. Elle vise à présenter, sous une forme chronologique, les principaux événements intervenant dans le traitement d’une demande de brevet européen.",
+        "Le panneau affiche également le stade procédural en cours, des informations de statut, la prochaine étape procédurale attendue ainsi que des dates indicatives. Ces dernières reposent sur les durées procédurales moyennes constatées dans le domaine technique concerné. À ce stade, l’outil couvre certains événements procéduraux essentiels jusqu’à l’achèvement de la procédure d’examen.",
+        "L’OEB précise que la couverture du panneau sera progressivement étendue à d’autres phases et étapes procédurales dans de futures versions de MyEPO. Les informations fournies ont un caractère indicatif et ne lient pas l’Office quant aux actes à accomplir ni aux délais applicables à une demande déterminée."
+      ],
+      "highlight_paragraph": "Les indications affichées dans le panneau chronologique sont expressément dépourvues d’effet contraignant. Elles ne sauraient se substituer au contrôle des communications de l’OEB, des actes de procédure et des délais applicables à chaque demande.",
+      "practical_relevance": "Le panneau chronologique offre aux utilisateurs de MyEPO un support de visualisation de l’avancement de l’examen et des étapes attendues. Son usage appelle toutefois une vigilance particulière : les informations de calendrier étant seulement indicatives, le suivi des délais doit continuer de reposer sur les notifications et données procédurales applicables au dossier concerné.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets, marques, plateformes et noms de domaine",
+      "title": "Techniques génomiques nouvelles, recherches de marques, algorithmes et extensions génériques de premier niveau",
+      "court_reference": "",
+      "source": "Dreyfus & Associés, « Newsletter, September 2026 »",
+      "source_url": "https://fr.linkedin.com/pulse/newsletter-september-2026-dreyfus-associes-zhile",
+      "publication_date": "2026-09-29",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Dreyfus & Associés, « Newsletter, September 2026 », 29 septembre 2026",
+      "summary": "La newsletter de Dreyfus & Associés examine les interactions entre autorisations réglementaires et droits de propriété intellectuelle pour les plantes NGT, la portée des recherches de marques, l’incidence des algorithmes sur le statut des plateformes et les mesures préventives liées au prochain round des gTLD.",
+      "retrieval_note": "L’URL directe a été ouverte. Le texte intégral de la newsletter, en anglais et en français, est accessible sur la page LinkedIn. Aucun lien vers un PDF, une pièce jointe ou une version intégrale distincte n’a été identifié sur cette page. La publication ne constitue pas une décision juridictionnelle et ne comporte donc pas de dispositif au sens procédural. L’accès est qualifié de COMPLET au regard du contenu intégral de l’actualité elle-même. ([fr.linkedin.com](https://fr.linkedin.com/pulse/newsletter-september-2026-dreyfus-associes-zhile))",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’Organisation Mondiale de la Propriété Intellectuelle annonce une nouvelle série de webinaires publics relatifs au Système de Madrid, programmés au cours du quatrième trimestre 2026. Ces sessions, accessibles gratuitement sur inscription, comportent un temps de questions-réponses en direct avec des experts du Système de Madrid. Les dates, horaires et langues applicables à chaque intervention sont précisés par l’OMPI, les horaires étant exprimés selon l’heure de Genève.",
-        "La programmation couvre plusieurs opérations pratiques liées à la gestion d’un portefeuille international de marques. Elle comprend notamment des présentations sur l’utilisation d’eMadrid, sur le paiement des taxes du Système de Madrid par les déposants américains auprès de l’United States Patent and Trademark Office, ainsi que sur la classification des produits et services dans les demandes internationales de marque.",
-        "D’autres sessions portent sur la modification des coordonnées du titulaire et sur le transfert de propriété, soit des inscriptions susceptibles d’affecter la titularité ou l’administration d’un enregistrement international. L’OMPI prévoit également des webinaires consacrés au fonctionnement général du Système de Madrid."
+        "La newsletter aborde quatre enjeux de propriété intellectuelle et de régulation numérique. S’agissant des techniques génomiques nouvelles, elle rappelle que l’autorisation réglementaire d’une plante NGT ne suffit pas à assurer sa liberté d’exploitation. La commercialisation peut en effet demeurer exposée à des droits de tiers, ce qui impose de distinguer l’évaluation réglementaire de l’analyse des droits de propriété intellectuelle susceptibles de couvrir la technologie, la variété ou l’exploitation envisagée.",
+        "En matière de marques, la publication souligne que la classification de Nice ne constitue pas une frontière juridique étanche pour la recherche d’antériorités. L’examen ne saurait donc être limité aux seules classes désignées lorsque les produits ou services considérés présentent une proximité pertinente. La newsletter met également en lumière le rôle des algorithmes de plateforme : le fait de classer, favoriser ou écarter activement des contenus est susceptible d’interroger le caractère purement neutre de l’intervention de l’opérateur dans l’appréciation de son statut juridique.",
+        "Enfin, à l’approche d’un nouveau round d’extensions génériques de premier niveau, la publication recommande une préparation fondée sur la surveillance du Reveal Day, le recours au Trademark Clearinghouse, l’examen des procédures d’objection et l’anticipation d’éventuelles procédures UDRP. Ces outils sont présentés comme des moyens de prévenir ou de traiter les atteintes potentielles aux signes distinctifs dans le système des noms de domaine."
       ],
-      "highlight_paragraph": "Les titulaires et mandataires peuvent notamment mobiliser ces sessions pour actualiser leur maîtrise des formalités dématérialisées, de la classification et des inscriptions relatives aux changements affectant un enregistrement international.",
-      "practical_relevance": "Cette programmation constitue une ressource opérationnelle gratuite pour les entreprises et leurs conseils qui déposent ou administrent des marques internationales. Les thèmes annoncés intéressent directement la préparation des demandes internationales, le règlement des taxes, l’utilisation des outils eMadrid et la mise à jour des informations relatives au titulaire ou à la propriété de l’enregistrement.",
+      "highlight_paragraph": "L’autorisation réglementaire d’une plante issue de techniques génomiques nouvelles ne garantit pas, à elle seule, la liberté d’exploitation : une analyse distincte des droits de tiers demeure nécessaire.",
+      "practical_relevance": "Les titulaires de droits sont invités à articuler les vérifications réglementaires avec une analyse de liberté d’exploitation, à calibrer les recherches de marques au-delà de la seule classification de Nice et à organiser, en amont du prochain round des gTLD, une stratégie de surveillance et de défense de leurs signes distinctifs.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
       "category": "Dessins et modèles",
-      "title": "Dix ans des DesignEuropa Awards : l’EUIPO souligne l’évolution du rôle du design",
-      "court_reference": "EUIPO",
-      "source": "EUIPO, « Ten years of DesignEuropa: how design keeps changing the way we live »",
+      "title": "Dix ans des DesignEuropa Awards : le design au service de la mise sur le marché",
+      "court_reference": "",
+      "source": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO)",
       "source_url": "https://www.euipo.europa.eu/nl/news/ten-years-of-designeuropa-how-design-keeps-changing-the-way-we-live",
       "publication_date": "2026-09-28",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "PARTIEL",
       "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "EUIPO, actualité institutionnelle du 28 septembre 2026",
-      "summary": "À l’occasion du dixième anniversaire des DesignEuropa Awards, l’EUIPO met en avant la place croissante du design dans la vie quotidienne. L’édition 2026 a réuni plus de 1 600 candidatures issues de 52 pays et distingué plusieurs créations, ainsi que Maria Gil et Philippe Starck.",
-      "retrieval_note": "L’URL française fournie renvoie une erreur d’accès 403. Une version linguistique néerlandaise officielle a été retrouvée et son contenu substantiel a été consulté dans les résultats indexés par le moteur de recherche. Aucune pièce jointe PDF, aucun numéro d’affaire, aucun numéro de décision et aucun ECLI n’ont été identifiés. Le texte intégral n’a toutefois pas pu être ouvert directement sur le site de l’EUIPO. La publication entre dans la période comprise entre le 28 septembre 2026 et le 2 octobre 2026, dates incluses.",
+      "source_display_text": "Office de l’Union européenne pour la propriété intellectuelle, actualité institutionnelle, 28 septembre 2026.",
+      "summary": "L’EUIPO marque le dixième anniversaire des DesignEuropa Awards, consacrés aux dessins et modèles protégés dans l’Union. L’édition 2026, qui a réuni plus de 1 600 candidatures issues de 52 pays, distingue notamment des solutions de culture modulaire, d’équipement sportif et d’accessibilité.",
+      "retrieval_note": "L’URL directe fournie renvoie une erreur d’accès 403. Une version linguistique alternative en néerlandais a été retrouvée et son contenu substantiel est accessible par indexation officielle, sans qu’une ouverture directe de la page ait été possible. Aucun document PDF, numéro d’affaire, numéro de décision ni ECLI n’a été identifié dans les recherches effectuées. En conséquence, l’accès est qualifié de PARTIEL et non de COMPLET. ([]())",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’EUIPO consacre une actualité au dixième anniversaire des DesignEuropa Awards, distinction consacrée au design et à son influence sur les usages quotidiens. Selon l’Office, l’édition 2026 a recueilli plus de 1 600 candidatures provenant de 52 pays, illustrant la participation internationale à ce rendez-vous consacré aux créations relevant du design.",
-        "L’actualité mentionne parmi les lauréats Carbon Less Future, WATERROWER | NOHRD et Showee Smart Wellness. Maria Gil s’est vu attribuer le Next Generation Design Award, tandis que Philippe Starck a reçu le Lifetime Achievement Award. Les catégories précises dans lesquelles les autres créations citées ont été distinguées ne sont pas précisées dans les éléments accessibles.",
-        "L’EUIPO indique enfin que la prochaine édition des DesignEuropa Awards se tiendra à Prague en 2027. Cette communication institutionnelle ne comporte pas d’élément relatif à une procédure, à une décision ou à l’interprétation d’une règle de droit des dessins et modèles."
+        "L’EUIPO revient sur les dix années des DesignEuropa Awards, institués en 2016 afin de distinguer des dessins et modèles remarquables protégés dans le cadre du système de l’Union européenne, ainsi que leurs créateurs et les entreprises qui les portent. L’Office souligne que les droits sur les dessins et modèles peuvent constituer le lien entre une création et sa mise sur le marché, en permettant de faire d’une création originale un actif autour duquel une activité économique peut se développer.",
+        "L’édition 2026 a enregistré plus de 1 600 candidatures provenant de 52 pays. Dans la catégorie consacrée aux entrepreneurs et aux petites entreprises, l’EUIPO a récompensé Carbon Less Future, société lettone, pour ses CLF Growth Containers, unités modulaires conçues pour cultiver localement des arbres dans des environnements contrôlés. Le prix de l’industrie a été attribué au StepTower de NOHRD, développé par la société allemande WATERROWER | NOHRD.",
+        "Le premier Public Choice Award a été remis à la société espagnole Showee Smart Wellness pour une douche intelligente destinée notamment aux personnes à mobilité réduite. L’actualité rappelle également que le Next Generation Design Award, créé en 2024, vise les jeunes créateurs émergents. La prochaine cérémonie des DesignEuropa Awards est annoncée à Prague en 2027."
       ],
-      "highlight_paragraph": "L’édition 2026 des DesignEuropa Awards a réuni plus de 1 600 candidatures provenant de 52 pays, selon l’EUIPO.",
-      "practical_relevance": "Cette actualité confirme la visibilité institutionnelle accordée par l’EUIPO aux DesignEuropa Awards et signale l’organisation de leur prochaine édition à Prague en 2027. Elle ne fournit toutefois aucun enseignement juridictionnel ou normatif sur le régime de protection des dessins et modèles.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Procédure des marques et dessins ou modèles de l’Union européenne",
-      "title": "EUIPO : prorogation des délais pour les parties établies en Ukraine",
-      "court_reference": "Décision nº EX-26-16 de l’EUIPO",
-      "source": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO)",
-      "source_url": "https://www.euipo.europa.eu/fr/law/communications-and-decisions-ed/official-journal",
-      "publication_date": "2026-10-01",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "PARTIEL",
-      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "Journal officiel de l’Office de l’Union européenne pour la propriété intellectuelle (EUIPO), 1 octobre 2026",
-      "summary": "Le Journal officiel de l’EUIPO publie la décision nº EX-26-16 du directeur exécutif, datée du 7 septembre 2026, relative à la prorogation des délais pour les parties ayant leur résidence ou leur siège social en Ukraine. Le dispositif de cette décision n’a pas pu être consulté.",
-      "retrieval_note": "La décision figure dans le Journal officiel de l’EUIPO publié le 1er octobre 2026, dans la plage temporelle demandée. La page officielle identifie la décision et comporte un lien vers sa pièce jointe PDF. Toutefois, le texte intégral du PDF n’a pas pu être ouvert par l’outil de consultation, l’accès direct ayant échoué. En conséquence, le dispositif et les dispositions de la décision n’ont pas été effectivement consultés. L’accès est donc qualifié de PARTIEL. ([euipo.europa.eu](https://www.euipo.europa.eu/fr/law/communications-and-decisions-ed/official-journal?utm_source=openai))",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "Le Journal officiel de l’Office de l’Union européenne pour la propriété intellectuelle publie la décision nº EX-26-16 du directeur exécutif de l’Office, datée du 7 septembre 2026. Cette décision porte, selon son intitulé officiel, sur la prorogation des délais applicables aux parties ayant leur résidence ou leur siège social en Ukraine.",
-        "La publication intervient dans la rubrique du Journal officiel consacrée aux communications et décisions du directeur exécutif de l’EUIPO. La page officielle identifie la décision et comporte un lien vers une pièce jointe PDF. Toutefois, le document joint n’a pas pu être ouvert lors de la consultation de la source.",
-        "Il n’est dès lors pas possible, sur la seule base des éléments effectivement accessibles, de préciser les délais concernés, la durée ou les modalités de la prorogation, sa période d’application, ni les éventuelles conditions auxquelles les parties intéressées seraient soumises. Ces éléments devront être vérifiés dans le texte de la décision nº EX-26-16 avant toute appréciation de ses effets procéduraux."
-      ],
-      "highlight_paragraph": "Le dispositif de la décision nº EX-26-16 n’ayant pas été accessible, les délais concernés, l’étendue de leur prorogation et ses conditions d’application ne sont pas précisés dans les éléments vérifiés.",
-      "practical_relevance": "Les titulaires, demandeurs et représentants concernés par des procédures devant l’EUIPO et ayant leur résidence ou leur siège social en Ukraine devront consulter le texte intégral de la décision nº EX-26-16 afin d’identifier les éventuels délais prorogés et les conditions précises de son application.",
+      "highlight_paragraph": "L’EUIPO met en avant la fonction économique des droits sur les dessins et modèles : ils peuvent accompagner le passage d’une création originale à sa commercialisation et soutenir le développement d’une activité autour de cet actif.",
+      "practical_relevance": "Cette actualité illustre l’intérêt pratique d’une protection par dessins et modèles pour valoriser des produits dont l’apparence participe à leur déploiement commercial. Elle met également en lumière la diversité des entreprises et des solutions susceptibles d’être reconnues dans le cadre des DesignEuropa Awards.",
       "illustration_page_url": "",
       "illustration_alt": ""
     }
   ],
   "briefs": [],
-  "generated_at": "2026-10-02T09:27:03.353Z",
+  "generated_at": "2026-10-04T21:09:41.209Z",
   "status": "generated",
-  "report_url": "/public/reports/veille-2026-10-03.docx",
-  "docx_url": "/public/reports/veille-2026-10-03.docx"
+  "report_url": "/public/reports/veille-2026-10-05.docx",
+  "docx_url": "/public/reports/veille-2026-10-05.docx"
 }
