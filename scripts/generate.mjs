@@ -765,7 +765,7 @@ const qualityReasons = (item) => {
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   if (item.type === "JURISPRUDENCE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1125] : [700, 950];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1200] : [700, 1000];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
