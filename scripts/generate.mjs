@@ -460,15 +460,61 @@ if (new Set(alertDecisionIds).size !== alertIds.size || invalidAlertDecisions.le
   throw new Error("Veille refusée avant rédaction: la traçabilité entre les alertes de Juliette et les sujets sélectionnés est incomplète ou contradictoire.");
 }
 
-const selectionByInstitution = new Map();
-for (const selected of selection.selected_items) {
-  let institution = selected.source.toLowerCase();
-  try { institution = new URL(selected.source_url).hostname.replace(/^www\./, ""); } catch {}
-  selectionByInstitution.set(institution, (selectionByInstitution.get(institution) || 0) + 1);
-}
-if ([...selectionByInstitution.values()].some((count) => count > 2)) {
-  throw new Error("Veille refusée avant rédaction: plus de deux sujets proviennent de la même institution.");
-}
+const institutionKey = (item) => {
+  const sourceUrl = item.resolution?.primary_source_url || item.source_url;
+  try {
+    return new URL(sourceUrl).hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return String(item.resolution?.primary_source_name || item.source || "").trim().toLowerCase();
+  }
+};
+
+const combinationsOf = (items, size) => {
+  const results = [];
+  const walk = (start, current) => {
+    if (current.length === size) {
+      results.push([...current]);
+      return;
+    }
+    for (let index = start; index <= items.length - (size - current.length); index += 1) {
+      current.push(items[index]);
+      walk(index + 1, current);
+      current.pop();
+    }
+  };
+  walk(0, []);
+  return results;
+};
+
+const chooseDiversifiedComposition = (items, jurisprudenceTarget, actualiteTarget) => {
+  const jurisprudences = items.filter((item) => item.type === "JURISPRUDENCE");
+  const actualites = items.filter((item) => item.type === "ACTUALITE");
+  if (jurisprudences.length < jurisprudenceTarget || actualites.length < actualiteTarget) return null;
+
+  let best = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+  for (const jurisprudenceSet of combinationsOf(jurisprudences, jurisprudenceTarget)) {
+    for (const actualiteSet of combinationsOf(actualites, actualiteTarget)) {
+      const combined = [...jurisprudenceSet, ...actualiteSet];
+      const institutionCounts = new Map();
+      for (const item of combined) {
+        const institution = institutionKey(item);
+        institutionCounts.set(institution, (institutionCounts.get(institution) || 0) + 1);
+      }
+      if ([...institutionCounts.values()].some((count) => count > 2)) continue;
+      const score = combined.reduce((total, item) => {
+        const completeBonus = item.resolution?.access_level === "COMPLET" ? 1000 : 0;
+        const verificationBonus = (item.resolution?.verified_facts?.length || 0) * 10;
+        return total + completeBonus + verificationBonus - items.indexOf(item);
+      }, 0);
+      if (score > bestScore) {
+        best = combined;
+        bestScore = score;
+      }
+    }
+  }
+  return best;
+};
 
 const resolverSchema = {
   type: "object",
@@ -531,12 +577,8 @@ for (const [index, selected] of selection.selected_items.entries()) {
   const resolvedSubstantive = resolvedSelections.filter(({ resolution: current }) =>
     current.access_level !== "MINIMAL" && current.verified_facts.length >= 4
   );
-  if (
-    resolvedSubstantive.length >= finalSubjectTarget
-    && resolvedSubstantive.filter((item) => item.type === "JURISPRUDENCE").length >= 1
-    && resolvedSubstantive.filter((item) => item.type === "ACTUALITE").length >= 4
-  ) {
-    console.log("Composition vérifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
+  if (chooseDiversifiedComposition(resolvedSubstantive, 1, 4)) {
+    console.log("Composition vérifiée et diversifiée atteinte: arrêt des résolutions supplémentaires afin de limiter le coût API.");
     break;
   }
 }
@@ -546,26 +588,17 @@ const verifiedSelections = resolvedSelections
   .sort((a, b) => Number(b.resolution.access_level === "COMPLET") - Number(a.resolution.access_level === "COMPLET"));
 const verifiedJurisprudences = verifiedSelections.filter((item) => item.type === "JURISPRUDENCE");
 const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
-let selectedJurisprudenceCount = Math.min(1, verifiedJurisprudences.length);
-let selectedActualiteCount = Math.min(verifiedActualites.length, finalSubjectTarget - selectedJurisprudenceCount);
-if (selectedJurisprudenceCount + selectedActualiteCount < finalSubjectTarget) {
-  selectedJurisprudenceCount += Math.min(
-    verifiedJurisprudences.length - selectedJurisprudenceCount,
-    finalSubjectTarget - selectedJurisprudenceCount - selectedActualiteCount
-  );
-}
-const substantiveSelections = [
-  ...verifiedJurisprudences.slice(0, selectedJurisprudenceCount),
-  ...verifiedActualites.slice(0, selectedActualiteCount)
-];
+const preferredSelections = chooseDiversifiedComposition(verifiedSelections, 1, 4);
+const fallbackSelections = preferredSelections ? null : chooseDiversifiedComposition(verifiedSelections, 2, 3);
+const substantiveSelections = preferredSelections || fallbackSelections || [];
+const selectedJurisprudenceCount = substantiveSelections.filter((item) => item.type === "JURISPRUDENCE").length;
+const selectedActualiteCount = substantiveSelections.filter((item) => item.type === "ACTUALITE").length;
 const minimalSelections = resolvedSelections.filter(({ resolution }) =>
   resolution.access_level === "MINIMAL" || resolution.verified_facts.length < 4
 ).slice(0, 2);
 
-const preferredComposition = selectedJurisprudenceCount === 1 && selectedActualiteCount === 4;
-const fallbackComposition = selectedJurisprudenceCount === 2 && selectedActualiteCount === 3 && verifiedActualites.length === 3;
-if (substantiveSelections.length < finalSubjectTarget || (!preferredComposition && !fallbackComposition)) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles. Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, ou deux jurisprudences et trois actualités lorsque la semaine ne fournit pas quatre actualités vérifiables.`);
+if (substantiveSelections.length < finalSubjectTarget) {
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles, mais aucune combinaison diversifiée de cinq sujets ne respecte le plafond de deux contenus par institution.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
