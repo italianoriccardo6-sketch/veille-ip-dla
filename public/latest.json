@@ -1,282 +1,318 @@
 {
-  "week": "Du 12 octobre au 15 octobre 2026",
-  "edition_date": "2026-10-16",
-  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 12 octobre au 15 octobre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. 3 sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.",
+  "week": "Du 12 octobre au 18 octobre 2026",
+  "edition_date": "2026-10-19",
+  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 12 octobre au 18 octobre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Un sujet a été initialement signalé par les alertes de Juliette, puis vérifié sur sa source primaire.",
   "source_coverage": [
     {
       "source_name": "EUIPO",
       "domain": "euipo.europa.eu",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source EUIPO a été analysée, notamment ses pages officielles consacrées aux actualités, décisions, jurisprudence récente, rapports de recherche et Journal officiel, avec un filtrage strict sur la période du 2026-10-12 au 2026-10-15 inclus. Aucun contenu substantiel vérifiable portant sur les marques ou les dessins et modèles n’a été identifié comme publié durant cette période. Le Journal officiel affiché par l’EUIPO indique une publication au 2026-10-01, hors période retenue ; aucun contenu antérieur n’a été utilisé pour compléter la sélection."
+      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 2026-10-12 et le 2026-10-18 inclus. Aucun contenu substantiel vérifiable portant sur les marques ou les dessins et modèles, et publié pendant cette seule période, n’a été identifié. Les publications visibles de l’EUIPO sont antérieures au 2026-10-12 ou ne constituent pas des décisions, textes, rapports ou actualités publiés durant la période demandée. Conformément à l’instruction de fraîcheur, aucune publication antérieure n’a été retenue. ([euipo.europa.eu](https://www.euipo.europa.eu/fr/law/communications-and-decisions-ed/official-journal?utm_source=openai))"
     },
     {
       "source_name": "OMPI",
       "domain": "wipo.int",
       "searched": true,
-      "candidate_count": 0,
-      "search_note": "La source OMPI a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. Les résultats repérés indiquent principalement des années ou des dates d’événement, mais aucune publication substantielle — décision, texte, rapport ou actualité — dont la date de publication exacte dans cette fenêtre soit vérifiable. Conformément à la consigne de fraîcheur, aucun contenu antérieur n’a été retenu."
+      "candidate_count": 3,
+      "search_note": "La source OMPI a été analysée pour la période strictement comprise entre le 2026-10-12 et le 2026-10-18 inclus. Trois contenus substantiels et pertinents au regard des thèmes international, brevets et marques ont été retenus. Aucun contenu antérieur n'a été utilisé."
     },
     {
       "source_name": "CJUE",
       "domain": "curia.europa.eu",
       "searched": true,
-      "candidate_count": 3,
-      "search_note": "Source CURIA analysée. La période strictement retenue est du 12 octobre 2026 au 15 octobre 2026 inclus. Trois arrêts substantiels en propriété intellectuelle publiés le 14 octobre 2026 ont été identifiés dans InfoCuria. Aucun contenu antérieur n’a été utilisé pour compléter la sélection."
+      "candidate_count": 0,
+      "search_note": "La source CURIA a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle dont la date de publication est directement et vérifiablement située dans cette période n’a pu être retenu. Le calendrier judiciaire mentionne des audiences et prononcés pendant cette semaine, mais il ne s’agit pas de contenus publiés au sens demandé. Le digest de jurisprudence publié en octobre porte sur des décisions de septembre 2026 et sa date exacte de publication dans la période exigée n’est pas vérifiable directement. Conformément à la consigne de fraîcheur, aucune publication antérieure n’a été utilisée pour compléter la sélection."
     },
     {
       "source_name": "Légifrance",
       "domain": "legifrance.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — loi, jurisprudence, rapport, texte réglementaire ou actualité — présentant une date de publication vérifiable dans cette période n’a été identifié. Les résultats trouvés correspondent à des versions de codes « en vigueur » au 12 ou 13 octobre 2026, et non à des publications intervenues pendant la période demandée ; ils sont donc exclus."
+      "search_note": "Légifrance a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — loi, jurisprudence, rapport ou actualité — présentant une date de publication vérifiable dans cet intervalle n’a été identifié. Les résultats trouvés renvoient à des contenus antérieurs ou à des versions de textes mises à jour avant ou en dehors de la période demandée ; ils sont donc exclus conformément aux critères de fraîcheur."
     },
     {
       "source_name": "Cour de cassation",
       "domain": "courdecassation.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — notamment aucune décision, publication ou actualité de jurisprudence — n’a pu être identifié avec une date de publication vérifiable dans cet intervalle. Les résultats repérés ne permettent pas d’établir une publication durant cette période et n’ont donc pas été retenus."
+      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus, en recherchant des contenus substantiels en propriété intellectuelle relevant de la jurisprudence. Aucun résultat correspondant à cette période n’a été identifié. Les décisions repérées des 7 octobre 2026 et 23 septembre 2026 ont été exclues, car antérieures à la période demandée."
     },
     {
       "source_name": "OEB",
       "domain": "epo.org",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source OEB a été analysée en limitant strictement la sélection aux contenus publiés du 2026-10-12 au 2026-10-15 inclus. Trois contenus substantiels et pertinents en matière de brevets et de propriété intellectuelle ont été identifiés. Aucun contenu antérieur à cette période n'a été utilisé pour compléter la sélection."
+      "search_note": "La source OEB a été analysée pour la période strictement limitée du 2026-10-12 au 2026-10-18 inclus. Trois contenus substantiels et directement liés aux brevets ou à la propriété intellectuelle ont été retenus. Aucun contenu antérieur n'a été utilisé pour compléter la sélection."
     },
     {
       "source_name": "CSPLA",
       "domain": "culture.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source CSPLA a été analysée sur culture.gouv.fr pour la période strictement comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. Aucun contenu substantiel en droit d’auteur ou en propriété intellectuelle publié pendant cette période n’a été identifié. Les résultats visibles étaient antérieurs à la période demandée, notamment une publication datée du 28 septembre 2026 ; ils ont donc été écartés conformément à la consigne de fraîcheur."
+      "search_note": "Source CSPLA analysée pour la période strictement comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus. Aucun contenu substantiel en droit d’auteur ou en propriété intellectuelle, avec une date vérifiable dans cette période, n’a été identifié. Les publications repérées antérieures au 12 octobre 2026 ont été exclues conformément à la consigne."
     },
     {
       "source_name": "Sénat",
       "domain": "senat.fr",
       "searched": true,
-      "candidate_count": 0,
-      "search_note": "La source Sénat a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — décision, texte, rapport ou actualité législative — n’a été identifié avec une date de publication vérifiable dans cette période. Les résultats antérieurs ou dépourvus de date de publication conforme ont été exclus."
+      "candidate_count": 1,
+      "search_note": "La source Sénat a été analysée pour la période strictement comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus. Un seul contenu substantiel et directement lié à la propriété intellectuelle a été identifié pendant cette période ; les contenus antérieurs ont été exclus."
     },
     {
       "source_name": "Dreyfus & Associés – Newsletter IP",
       "domain": "linkedin.com",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source de référence prioritaire a été analysée. La page « Newsletter, August 2026 » indique une publication le 1er septembre 2026, donc antérieure à la période exigée du 12 au 15 octobre 2026. Aucun contenu de la source, avec une date vérifiable comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus, n’a été identifié. Conformément à la consigne de fraîcheur, aucun contenu antérieur n’a été retenu."
+      "search_note": "La source LinkedIn de référence a été analysée, ainsi que les contenus LinkedIn accessibles de Dreyfus & Associés. Aucun contenu publié entre le 12 octobre 2026 et le 18 octobre 2026 inclus n’a pu être vérifié comme correspondant aux thèmes demandés. La publication de référence « Newsletter, August 2026 » est datée du 1er septembre 2026 et a donc été exclue conformément à la période imposée. Aucun contenu antérieur n’a été retenu pour compléter la sélection."
     }
   ],
   "scouting_coverage": {
     "google_alert_feeds": 30,
-    "google_alert_candidates": 7
+    "google_alert_candidates": 10
   },
   "alert_trace": [
     {
       "alert_id": "juliette-1",
-      "title": "Dysfonctionnement concernant le Registre européen des brevets (no de référence - EPO",
-      "url": "https://www.epo.org/fr/service-support/availability-online-services/dysfonctionnement-concernant-le-registre-europeen-12",
-      "publication_date": "2026-10-14T18:20:43Z",
+      "title": "En Chine, l&#39;essor du luxe d&#39;occasion bouscule les marques occidentales - France 24",
+      "url": "https://www.france24.com/fr/info-en-continu/20261018-en-chine-l-essor-du-luxe-d-occasion-bouscule-les-marques-occidentales",
+      "publication_date": "2026-10-18T18:08:10Z",
       "selected": true,
-      "reason": "Sujet institutionnel récent de l’OEB, directement utile pour les délais et la sécurité procédurale dans les procédures de brevet."
+      "reason": "Sujet récent consacré aux incidences du développement du marché de la seconde main sur les marques et aux contentieux associés."
     },
     {
       "alert_id": "juliette-2",
-      "title": "Conférence récapitulant la mise en œuvre des lois sur le droit d&#39;auteur et les droits voisins ...",
-      "url": "https://www.vietnam.vn/fr/hoi-nghi-tong-ket-thi-hanh-phap-luat-ve-quyen-tac-gia-quyen-lien-quan-huong-toi-xay-dung-luat-ban-quyen-tac-gia-doc-lap",
-      "publication_date": "2026-10-15T04:24:54Z",
+      "title": "Innovation et Recherche: Hausse de 60 % des brevets d&#39;invention d&#39;ici 2027 - La Presse de Tunisie",
+      "url": "https://www.lapresse.tn/2026/10/18/innovation-et-recherche-hausse-de-60-des-brevets-dinvention-dici-2027/",
+      "publication_date": "2026-10-18T11:32:31Z",
       "selected": true,
-      "reason": "Actualité récente portant sur la mise en œuvre du droit d’auteur et des droits voisins, malgré une source secondaire."
+      "reason": "Actualité de politique publique directement liée au développement des brevets et aux infrastructures nationales de propriété intellectuelle."
     },
     {
       "alert_id": "juliette-3",
-      "title": "Propriété intellectuelle : quand les créateurs béninois se font piller en ligne",
-      "url": "https://lanation.bj/numerique/propriete-intellectuelle-quand-les-createurs-beninois-se-font-piller-en-ligne",
-      "publication_date": "2026-10-14T10:41:04Z",
-      "selected": true,
-      "reason": "Sujet concret relatif à la contrefaçon en ligne et à la protection des créateurs, avec une dimension numérique identifiable."
+      "title": "Chine: le luxe d&#39;occasion bouscule les marques occidentales - 24 Heures",
+      "url": "https://www.24heures.ch/chine-le-luxe-doccasion-bouscule-les-marques-occidentales-803952891265",
+      "publication_date": "2026-10-18T08:06:03Z",
+      "selected": false,
+      "reason": "Doublon éditorial du sujet relatif au luxe d’occasion déjà détecté par l’alerte juliette-1."
     },
     {
       "alert_id": "juliette-4",
-      "title": "Proposition visant à promulguer une loi sur le droit d&#39;auteur pour protéger la valeur créative.",
-      "url": "https://www.vietnam.vn/fr/de-xuat-xay-dung-luat-ban-quyen-tac-gia-de-bao-ve-gia-tri-sang-tao",
-      "publication_date": "2026-10-15T12:08:40Z",
-      "selected": true,
-      "reason": "Piste pertinente sur une réforme législative du droit d’auteur, conservée pour sa portée normative potentielle."
+      "title": "EPO marks INPI Portugal&#39;s 50th anniversary",
+      "url": "https://www.epo.org/fr/news-events/news/epo-marks-inpi-portugals-50th-anniversary",
+      "publication_date": "2026-10-16T18:01:23Z",
+      "selected": false,
+      "reason": "Sujet provenant de l’OEB déjà représenté par deux contenus plus substantiels, dont une décision et un rapport de qualité."
     },
     {
       "alert_id": "juliette-5",
-      "title": "La « clé » du droit d&#39;auteur doit ouvrir la porte au « trésor » de la culture. - Vietnam.vn",
-      "url": "https://www.vietnam.vn/fr/chia-khoa-ban-quyen-phai-mo-duoc-kho-bau-van-hoa",
-      "publication_date": "2026-10-15T11:54:40Z",
+      "title": "En Chine, l&#39;essor du luxe d&#39;occasion bouscule les marques occidentales | La Gazette France",
+      "url": "https://www.lagazettefrance.fr/article/en-chine-l-essor-du-luxe-d-occasion-bouscule-les-marques-occidentales",
+      "publication_date": "2026-10-18T16:56:03Z",
       "selected": false,
-      "reason": "Sujet proche des alertes juliette-2 et juliette-4, sans apport suffisamment distinct pour la présélection."
+      "reason": "Doublon éditorial du sujet relatif au luxe d’occasion déjà retenu à partir de France 24."
     },
     {
       "alert_id": "juliette-6",
-      "title": "Améliorer le droit d&#39;auteur pour libérer les ressources créatives. - Vietnam.vn",
-      "url": "https://www.vietnam.vn/fr/hoan-thien-phap-luat-ban-quyen-khoi-thong-nguon-luc-sang-tao",
-      "publication_date": "2026-10-15T10:56:12Z",
-      "selected": false,
-      "reason": "Sujet redondant avec les autres comptes rendus vietnamiens relatifs à la réforme du droit d’auteur."
+      "title": "Néovacs fait le point sur la cession d&#39;une partie de sa propriété intellectuelle - Boursier.com",
+      "url": "https://www.boursier.com/actions/actualites/news/neovacs-fait-le-point-sur-la-cession-d-une-partie-de-sa-propriete-intellectuelle-996161.html",
+      "publication_date": "2026-10-18T14:45:41Z",
+      "selected": true,
+      "reason": "Actualité d’entreprise portant directement sur la cession d’actifs de propriété intellectuelle, sous réserve de la vérification du document primaire."
     },
     {
       "alert_id": "juliette-7",
-      "title": "Les films à succès prennent deux ans à réaliser, l&#39;IA peut le faire en un ou deux mois seulement",
-      "url": "https://www.vietnam.vn/fr/phim-dien-anh-bom-tan-2-nam-moi-xong-ai-lam-chi-1-2-thang-de-xuat-co-luat-ban-quyen-tac-gia-rieng",
-      "publication_date": "2026-10-15T05:55:32Z",
+      "title": "Principes directeurs pour la mise en œuvre du droit de la propriété intellectuelle",
+      "url": "https://www.vietnam.vn/fr/huong-dan-thi-hanh-phap-luat-so-huu-tri-tue-tu-xac-lap-khai-thac-den-bao-ve-quyen",
+      "publication_date": "2026-10-18T03:40:50Z",
       "selected": true,
-      "reason": "Sujet présentant un intérêt spécifique au regard des effets de l’intelligence artificielle sur la création audiovisuelle et le droit d’auteur."
+      "reason": "Évolution réglementaire récente portant sur l’établissement, l’exploitation et la protection des droits de propriété intellectuelle au Vietnam."
+    },
+    {
+      "alert_id": "juliette-8",
+      "title": "Franchiseur à Paris qui loge sa marque dans une société à Dubaï et fait payer ses ...",
+      "url": "https://kohenavocats.fr/2026/10/18/franchiseur-paris-marque-societe-dubai-redevances-france-155a-direction-effective-tva-contester-redressement/",
+      "publication_date": "2026-10-18T01:38:13Z",
+      "selected": false,
+      "reason": "Contenu principalement fiscal et commercial, dont la substance proprement liée au droit des marques apparaît insuffisante pour la présélection."
+    },
+    {
+      "alert_id": "juliette-9",
+      "title": "&quot;Aujourd&#39;hui, c&#39;est à qui aura fait la meilleure affaire&quot;: les jeunes Chinois délaissent les ... - BFM",
+      "url": "https://www.bfmtv.com/luxe/aujourd-hui-c-est-a-qui-aura-fait-la-meilleure-affaire-les-jeunes-chinois-delaissent-les-grandes-marques-de-luxe-et-se-ruent-sur-la-seconde-main_AD-202610180217.html",
+      "publication_date": "2026-10-18T15:40:47Z",
+      "selected": false,
+      "reason": "Doublon du sujet relatif au luxe d’occasion et source moins directement vérifiable que l’article retenu de France 24."
+    },
+    {
+      "alert_id": "juliette-10",
+      "title": "Exploiter la valeur du droit d&#39;auteur - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/khoi-thong-gia-tri-ban-quyen",
+      "publication_date": "2026-10-18T04:00:08Z",
+      "selected": false,
+      "reason": "Sujet relatif au droit d’auteur, mais moins substantiel et moins directement vérifiable que la proposition de loi du Sénat et l’initiative CLIP de l’OMPI."
     }
   ],
   "items": [
     {
       "type": "JURISPRUDENCE",
-      "category": "Marques de l’Union européenne",
-      "title": "Le Tribunal confirme l’irrecevabilité du recours devant l’EUIPO dans l’affaire FIND MY CAR",
-      "court_reference": "Tribunal de l’Union européenne, arrêt du 14 octobre 2026, T-451/25, ECLI:EU:T:2026:669",
-      "source": "Cour de justice de l’Union européenne, InfoCuria et EUR-Lex",
-      "source_url": "https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX:62025TJ0451",
-      "publication_date": "2026-10-14",
+      "category": "Brevets et profession de mandataire",
+      "title": "La Chambre disciplinaire de recours de l’OEB confirme l’avertissement infligé à un mandataire agréé pour le recours à un enquêteur privé",
+      "court_reference": "OEB, Chambre disciplinaire de recours, décision D 0001/25 du 12 octobre 2026, mise en ligne le 15 octobre 2026",
+      "source": "Office européen des brevets, Chambre de recours statuant en matière disciplinaire",
+      "source_url": "https://www.epo.org/boards-of-appeal/decisions/pdf/d250001eu1.pdf",
+      "publication_date": "2026-10-15",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
-      "source_access": "PARTIEL",
-      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "Cour de justice de l’Union européenne, InfoCuria et EUR-Lex, arrêt du Tribunal du 14 octobre 2026.",
-      "summary": "Le Tribunal rejette le recours introduit par Mega Pop contre une décision de la première chambre de recours de l’EUIPO relative à la marque FIND MY CAR. L’affaire précise le traitement du dépôt tardif du mémoire exposant les motifs du recours, d’une prorogation de délai liée à l’Ukraine et d’une demande de restitutio in integrum.",
-      "retrieval_note": "L’entrée officielle InfoCuria correspondant à l’affaire T-451/25, à l’ECLI:EU:T:2026:669 et à la date du 14 octobre 2026 est accessible. Le texte intégral et le dispositif ont été consultés dans une reproduction intégrale concordante, mais le document direct officiel EUR-Lex n’a pas pu être ouvert techniquement au cours de la vérification. En conséquence, le niveau d’accès est limité à PARTIEL, malgré la confirmation du texte intégral et du dispositif.",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Office européen des brevets, Chambre de recours statuant en matière disciplinaire, décision D 0001/25, 15 octobre 2026.",
+      "summary": "La Chambre disciplinaire de recours confirme l’avertissement prononcé contre un mandataire agréé ayant accepté qu’un enquêteur recueille discrètement, lors d’une conférence professionnelle, des informations confidentielles sur une consœur. L’intérêt à préserver des droits en justice ne justifiait pas l’atteinte à la dignité et à la réputation de la profession.",
+      "retrieval_note": "L'URL directe fournie a été vérifiée. La page officielle de la décision indique une mise en ligne le 15 octobre 2026, le numéro d'affaire D 0001/25 et l'ECLI ECLI:EP:BA:2026:D000125.20261012. Le PDF officiel de 51 pages a été ouvert et consulté, y compris son exposé des faits, ses motifs et son dispositif. Les versions linguistiques allemande et française de la page officielle ont également été vérifiées. La décision étant rédigée en anglais, aucune autre version intégrale n'est indiquée par l'OEB. Seuls des contenus publiés entre le 12 et le 18 octobre 2026 inclus ont été retenus. ([epo.org](https://www.epo.org/en/boards-of-appeal/decisions/d250001eu1))",
       "timeline": [
         {
-          "date": "2025-05-08",
-          "event": "La première chambre de recours de l’EUIPO adopte, dans l’affaire R 1259/2024-1, la décision attaquée devant le Tribunal."
+          "date": "18 au 22 mai 2019",
+          "event": "Les protagonistes participent à la conférence internationale de l’INTA, à Boston. L’incident à l’origine de la procédure disciplinaire intervient à cette occasion."
         },
         {
-          "date": "2026-10-14",
-          "event": "Le Tribunal de l’Union européenne rend son arrêt dans l’affaire T-451/25."
+          "date": "6 octobre 2021",
+          "event": "La commission disciplinaire de l’epi rejette la plainte dans l’affaire CD 02/2020."
         },
         {
-          "date": "2026-10-14",
-          "event": "Le Tribunal rejette le recours de Mega Pop podjetje za oglaševanje na prostem d.o.o. et la condamne aux dépens."
+          "date": "21 mars 2023",
+          "event": "Dans la décision D 55/21, la Chambre disciplinaire de recours annule cette décision et renvoie l’affaire devant la Chambre disciplinaire de l’OEB."
+        },
+        {
+          "date": "19 février 2025",
+          "event": "La Chambre disciplinaire de l’OEB retient un seul grief contre le mandataire et lui inflige un avertissement sur le fondement de l’article 4(a) RDR."
+        },
+        {
+          "date": "26 mars 2025",
+          "event": "Le mandataire forme recours contre cette décision et sollicite le rejet intégral de la plainte."
+        },
+        {
+          "date": "12 octobre 2026",
+          "event": "La Chambre disciplinaire de recours rejette le recours et maintient l’avertissement."
         }
       ],
-      "introduction": "L’arrêt T-451/25 s’inscrit dans le contentieux procédural des marques de l’Union européenne. Il oppose Mega Pop podjetje za oglaševanje na prostem d.o.o. à l’Office de l’Union européenne pour la propriété intellectuelle, Apple Inc. étant intervenante devant le Tribunal. Le litige porte sur la marque verbale FIND MY CAR, objet d’un enregistrement international désignant l’Union européenne. Il ne ressort pas des éléments vérifiés que le Tribunal ait été saisi d’un débat au fond relatif au caractère distinctif, à la disponibilité ou à la validité substantielle du signe. Le recours concerne la recevabilité d’une voie de recours devant la chambre de recours de l’EUIPO, appréciée au regard du délai applicable au dépôt du mémoire exposant les motifs du recours, d’une prorogation liée à la situation des parties établies en Ukraine et d’une demande de restitutio in integrum.",
-      "facts_and_procedure": "Mega Pop podjetje za oglaševanje na prostem d.o.o. a formé un recours contre une décision de la première chambre de recours de l’EUIPO du 8 mai 2025, enregistrée sous la référence R 1259/2024-1. Apple Inc. était partie intervenante dans le recours porté devant le Tribunal. Selon les éléments vérifiés, la difficulté procédurale trouve son origine dans le dépôt tardif du mémoire exposant les motifs du recours devant la chambre de recours. La requérante invoquait également une prorogation de délai applicable aux parties établies en Ukraine et avait présenté une demande de restitutio in integrum. L’arrêt ne permet pas, dans le périmètre des informations accessibles, de préciser la nature exacte de la procédure administrative antérieure, les produits ou services concernés, ni les circonstances matérielles ayant entouré l’expiration du délai. Le Tribunal a statué sur le recours le 14 octobre 2026 et l’a rejeté.",
-      "parties_arguments": "Les éléments vérifiés établissent que Mega Pop contestait les conséquences attachées au dépôt tardif de son mémoire exposant les motifs du recours devant la chambre de recours de l’EUIPO. Son argumentation se rattachait, d’une part, à l’application d’une prorogation de délai concernant les parties établies en Ukraine et, d’autre part, à une demande de restitutio in integrum. Il n’est pas précisé, dans les informations disponibles, quels faits particuliers étaient invoqués au soutien de cette demande, ni la formulation exacte des griefs adressés à la décision de la chambre de recours. Les arguments respectifs de l’EUIPO et d’Apple Inc. ne sont pas davantage détaillés. Il convient donc de limiter l’analyse à la question procédurale effectivement identifiée et à la solution prononcée.",
-      "legal_question": "Le Tribunal devait déterminer si la chambre de recours avait valablement traité comme tardif le mémoire exposant les motifs du recours de Mega Pop et, dans ce cadre, si la requérante pouvait utilement se prévaloir d’une prorogation de délai applicable aux parties établies en Ukraine ou obtenir une restitutio in integrum. La question ne portait donc pas sur le mérite matériel de la marque FIND MY CAR, mais sur les conditions de recevabilité et de régularisation d’un recours devant l’EUIPO.",
-      "reasoning": "D’après les faits vérifiés, le raisonnement du Tribunal a porté conjointement sur trois aspects : la tardiveté du mémoire exposant les motifs du recours, la portée de la prorogation de délai invoquée par la requérante et la demande de restitutio in integrum. Le Tribunal a rejeté le recours, ce qui confirme que les arguments soumis par Mega Pop ne permettaient pas de remettre en cause l’appréciation procédurale contestée. Les informations accessibles ne permettent toutefois pas de restituer le détail de l’interprétation retenue, d’identifier les dispositions précisément appliquées, ni de distinguer les motifs autonomes ou successifs ayant conduit au rejet. Il n’est donc pas possible d’attribuer au Tribunal une solution de principe plus étendue que celle qui résulte du dispositif et des éléments procéduraux confirmés. L’arrêt atteste néanmoins que l’invocation d’un régime de prorogation de délais et le recours à la restitutio in integrum ont été examinés dans le cadre du contrôle de la recevabilité du recours administratif.",
-      "outcome": "Le Tribunal rejette le recours introduit par Mega Pop podjetje za oglaševanje na prostem d.o.o. contre la décision de la première chambre de recours de l’EUIPO du 8 mai 2025. Apple Inc. était intervenante dans l’instance devant le Tribunal. Mega Pop podjetje za oglaševanje na prostem d.o.o. est condamnée aux dépens. L’arrêt maintient ainsi les effets de la décision attaquée en tant qu’elle concerne la recevabilité du recours devant la chambre de recours de l’EUIPO.",
-      "practical_relevance": "Cette décision appelle une vigilance particulière quant au respect du délai imparti pour produire le mémoire exposant les motifs d’un recours devant l’EUIPO. Elle montre également que l’invocation d’une prorogation de délai applicable à certaines parties établies en Ukraine et la présentation d’une demande de restitutio in integrum ne dispensent pas, par elles-mêmes, de satisfaire aux conditions procédurales requises. En pratique, les titulaires, demandeurs et leurs conseils doivent documenter sans délai toute difficulté susceptible d’affecter l’accomplissement d’un acte de procédure et apprécier précisément le régime de délais applicable. La portée exacte des conditions retenues par le Tribunal demeure toutefois à vérifier sur le texte officiel intégral, l’accès direct à celui-ci étant techniquement incomplet.",
+      "introduction": "La décision D 0001/25 précise les exigences déontologiques applicables aux mandataires agréés près l’OEB lorsqu’un différend professionnel les conduit à rechercher des éléments de preuve contre un autre membre de l’epi. La Chambre disciplinaire de recours juge que l’acceptation d’une démarche d’investigation dissimulée, organisée lors d’une conférence professionnelle et destinée à obtenir des informations confidentielles, méconnaît les règles de conduite professionnelle, même si le mandataire invoque la défense de ses intérêts légitimes dans un conflit associatif particulièrement grave.",
+      "facts_and_procedure": "Le litige s’inscrivait dans un conflit durable opposant les associés d’un cabinet de conseils en propriété industrielle établi dans un État partie à la CBE. Lors de la conférence de l’INTA de 2019, un tiers, présenté par le dossier comme enquêteur privé, a rencontré la plaignante et une autre associée. Il a ensuite transmis au requérant des comptes rendus contenant des informations recueillies au cours de ces échanges. La Chambre disciplinaire a estimé établi que ce tiers avait agi avec l’accord du requérant afin de rechercher des éléments relatifs à une obligation de non-concurrence. Elle a écarté les autres griefs dirigés contre le requérant et l’ensemble des griefs visant une autre mandataire, mais a considéré que cet unique comportement justifiait un avertissement. Le recours portait donc exclusivement sur la qualification disciplinaire de l’incident de l’INTA et sur le caractère approprié de la sanction.",
+      "parties_arguments": "Le requérant contestait l’appréciation des preuves et soutenait que les faits non établis devaient lui profiter. Il faisait valoir que le tiers n’était pas un enquêteur chargé de surveiller des personnes, qu’il s’était rendu à la conférence de sa propre initiative et qu’aucune mission ne lui avait été confiée. Selon lui, les rapports n’avaient pas été commandés et pouvaient relever d’une simple démarche destinée à nouer une relation d’affaires. Il invoquait, en outre, son droit à la protection juridictionnelle et la nécessité de préserver les intérêts du cabinet dans le contexte du conflit entre associés. Le président de l’epi concluait, pour sa part, à la confirmation de la décision attaquée.",
+      "legal_question": "La question soumise à la Chambre était de savoir si un mandataire agréé peut, au regard du RDR et du Code de conduite de l’epi, accepter qu’un tiers agisse discrètement afin d’obtenir et de lui transmettre des informations recueillies auprès d’un autre mandataire lors d’une conférence professionnelle, au motif que ces informations pourraient servir à la défense de ses intérêts dans un contentieux national.",
+      "reasoning": "La Chambre commence par confirmer sa compétence. Bien que le conflit ait eu une dimension nationale, les intéressés s’étaient présentés à la conférence comme mandataires européens et l’incident était intervenu dans l’exercice d’activités relevant de leur pratique professionnelle. Elle retient ensuite, à partir des échanges électroniques et des déclarations successives du requérant, que le tiers avait agi comme son intermédiaire dans le cadre d’une démarche d’investigation dissimulée. L’absence de rémunération ou l’existence alléguée d’une relation amicale ne sont pas déterminantes, dès lors que l’intervention était imputable au requérant.\n\nLa Chambre qualifie de confidentiels les échanges professionnels intervenus avec la plaignante et son associée. Elle admet qu’ils ne relevaient pas formellement du secret professionnel prévu par un droit national déterminé. Toutefois, la circonstance que l’information ne soit pas légalement protégée par une règle nationale expresse n’exclut pas sa confidentialité au regard des règles disciplinaires. Dans le cadre d’une conférence réunissant des professionnels de la propriété intellectuelle, les discussions entre participants portant sur une relation d’affaires potentielle ne peuvent être présumées librement communicables à un concurrent ou à un tiers lié à celui-ci.\n\nLe recours à un agent dissimulé pour collecter ces informations implique nécessairement des déclarations fausses ou, à tout le moins, trompeuses de la part de cet agent. La Chambre relève qu’une telle méthode peut être admise dans d’autres contextes, notamment pour établir une atteinte à des droits de propriété intellectuelle. Elle estime toutefois qu’il en va différemment lorsqu’elle est dirigée contre un confrère de l’epi. Le comportement méconnaît ainsi tant le principe de confiance et de confraternité entre membres que l’obligation d’exercer la profession d’une manière conforme à sa dignité. La présence d’un seul tiers ayant constaté le comportement suffit à caractériser l’atteinte à la réputation de la profession.\n\nLa Chambre refuse enfin de voir dans les règles disciplinaires une restriction illégitime au droit d’agir en justice. Elles n’empêchent pas l’exercice des voies de droit nationales, mais encadrent les modalités de collecte des preuves. Le grave conflit entre associés, la position défensive du requérant et le comportement reproché à la plaignante constituent des circonstances atténuantes. Ils ne rendaient cependant ni inévitable ni pleinement excusable la méthode employée.",
+      "outcome": "Le recours est rejeté. La Chambre confirme que les faits caractérisent un manquement aux obligations disciplinaires découlant notamment de l’article 1, paragraphes 1 et 2, RDR, lu avec les règles pertinentes du Code de conduite de l’epi. Elle maintient l’avertissement prononcé sur le fondement de l’article 4(a) RDR. La sanction est jugée proportionnée : elle présente un caractère symbolique et personnel, n’affecte pas l’exercice futur de la profession et s’inscrit dans un régime de confidentialité des procédures disciplinaires, la version publiée de la décision étant anonymisée.",
+      "practical_relevance": "Cette décision rappelle que les règles déontologiques des mandataires européens s’appliquent aux comportements déployés dans les manifestations professionnelles lorsqu’ils se rattachent à l’exercice de la profession. La défense d’intérêts légitimes dans un contentieux ou un différend entre associés ne dispense pas du respect des exigences de dignité, de confiance et de confraternité prévues par le RDR et le Code de conduite. En particulier, la recherche d’informations sur un confrère ne peut emprunter une voie dissimulée consistant à exploiter, par l’intermédiaire d’un tiers, des échanges professionnels confidentiels. La décision distingue utilement la possibilité de recourir, dans certaines hypothèses, à des investigations pour la protection de droits de propriété intellectuelle, de leur mise en œuvre contre un autre membre de l’epi dans un cadre susceptible d’altérer la réputation de la profession.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Système international des brevets",
-      "title": "L’OEB appelle à adapter le système des brevets aux enjeux de l’intelligence artificielle",
-      "court_reference": "Actualité institutionnelle de l’OEB, publiée le 12 octobre 2026",
-      "source": "Office européen des brevets, « EPO President discusses future of global IP system at AIPPI World Congress »",
-      "source_url": "https://www.epo.org/en/news-events/news/epo-president-discusses-future-global-ip-system-aippi-world-congress",
-      "publication_date": "2026-10-12",
+      "category": "Propriété intellectuelle et justice internationale",
+      "title": "Le Forum des juges de l’OMPI examine les enjeux contemporains de la propriété intellectuelle",
+      "court_reference": "",
+      "source": "Organisation Mondiale de la Propriété Intellectuelle, « WIPO Judges Forum Brings Together Judicial Experience to Address Today’s IP Challenges »",
+      "source_url": "https://www.wipo.int/en/web/judiciaries/w/news/2026/wipo-judges-forum-brings-together-judicial-experience",
+      "publication_date": "2026-10-15",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Office européen des brevets, 12 octobre 2026",
-      "summary": "À l’occasion du Congrès mondial de l’AIPPI, le président de l’OEB a présenté l’intelligence artificielle comme un test de résistance du système des brevets. L’Office souligne l’emploi croissant de l’IA dans ses procédures, sous réserve du maintien de l’expertise et de la responsabilité humaines.",
-      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’actualité a été effectivement consulté. La publication est datée du 12 octobre 2026, soit dans la période comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. La page expose l’intégralité du contenu rédactionnel accessible. Aucun numéro d’affaire, numéro de décision ou ECLI n’est applicable à cette actualité institutionnelle. La liste des actualités de l’OEB signale également un document PDF associé, mais le lien direct vers ce fichier n’a pas pu être résolu par l’interface consultée. Cette circonstance ne fait pas obstacle à la qualification COMPLET dès lors que le texte intégral de l’actualité a été consulté sur sa page officielle. ([epo.org](https://www.epo.org/en/news-events/news/epo-president-discusses-future-global-ip-system-aippi-world-congress))",
+      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, 15 octobre 2026",
+      "summary": "Le neuvième Forum des juges de l’OMPI a réuni à Genève et en ligne des magistrats de nombreuses juridictions autour des litiges de propriété intellectuelle liés notamment à l’intelligence artificielle, aux plateformes numériques et aux activités transfrontières.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’actualité a été effectivement consulté. La recherche a également permis de vérifier l’existence d’une page officielle consacrée au Forum 2026, d’une version française et d’un programme officiel publié le 14 octobre 2026. Aucun numéro d’affaire, numéro de décision ou ECLI n’est applicable à cette actualité. La publication est comprise dans la période de sélection du 12 au 18 octobre 2026 inclus. ([wipo.int](https://www.wipo.int/en/web/judiciaries/w/news/2026/wipo-judges-forum-brings-together-judicial-experience))",
       "lead_label": "Contexte",
       "paragraphs": [
-        "Lors d’une table ronde de haut niveau organisée le 7 octobre 2026 au Congrès mondial de l’AIPPI à Hambourg, António Campinos, président de l’Office européen des brevets, a échangé avec des représentants de l’Office allemand des brevets et des marques, de la Juridiction unifiée du brevet, de l’Organisation mondiale du commerce et du Centre de médiation et d’arbitrage en matière de brevets de la Juridiction unifiée du brevet. Les discussions portaient sur l’adaptation des institutions de propriété intellectuelle aux évolutions technologiques, économiques et géopolitiques.",
-        "S’agissant de l’intelligence artificielle, le président de l’OEB a estimé qu’elle constituait un test de résistance pour le système des brevets plutôt qu’un motif de refonte de celui-ci. L’Office relève notamment les interrogations relatives à la qualité d’inventeur, à l’appréciation de l’activité inventive, à la suffisance de la divulgation et à la prise en compte d’un état de la technique généré par l’intelligence artificielle.",
-        "L’OEB indique recourir à l’intelligence artificielle aux différentes étapes de la procédure de délivrance, notamment pour la classification, la recherche, la traduction automatique et les recherches juridiques. Il précise toutefois que l’expertise et la responsabilité humaines demeurent déterminantes pour les décisions de fond. António Campinos a également souligné que qualité et célérité doivent se renforcer mutuellement, l’Office annonçant des rapports de recherche standard délivrés en moins de six mois et un délai moyen de 36,3 mois entre le dépôt et la délivrance, inférieur à son objectif de 48 mois."
+        "Le neuvième Forum des juges de l’OMPI consacré à la propriété intellectuelle s’est tenu les 14 et 15 octobre 2026 au siège de l’Organisation à Genève, ainsi qu’en ligne. L’événement a enregistré plus de 970 inscriptions et réuni 167 juges en présentiel, issus notamment de cours suprêmes, de cours d’appel et de juridictions spécialisées en propriété intellectuelle.",
+        "Les travaux ont porté sur les difficultés soulevées, dans le règlement des litiges de propriété intellectuelle, par l’intelligence artificielle, les plateformes en ligne et les activités transfrontières. Trois des neuf séances ont été consacrées à l’intelligence artificielle, sous l’angle des créations assistées ou générées par celle-ci, de l’utilisation d’œuvres protégées pour l’entraînement des modèles et de son emploi dans les procédures judiciaires.",
+        "Le programme a également abordé les brevets relatifs aux logiciels et aux technologies numériques, l’utilisation de marques de tiers, la responsabilité des plateformes et des intermédiaires, les litiges transfrontières, les procédures spécialisées en propriété intellectuelle et le rôle des juridictions suprêmes. Le Forum constitue ainsi un espace d’échange d’expériences judiciaires sur des questions dont la dimension technique et internationale s’affirme."
       ],
-      "highlight_paragraph": "L’OEB confirme une intégration opérationnelle de l’intelligence artificielle dans la délivrance des brevets, tout en réaffirmant que les décisions de fond restent placées sous l’expertise et la responsabilité humaines.",
-      "practical_relevance": "Cette prise de position confirme que les outils d’intelligence artificielle sont appelés à soutenir davantage les procédures devant l’OEB, sans déplacement annoncé de la responsabilité décisionnelle. Les titulaires et demandeurs doivent suivre l’évolution des travaux relatifs aux critères de brevetabilité et aux exigences de divulgation applicables aux inventions impliquant l’intelligence artificielle.",
+      "highlight_paragraph": "L’attention accordée aux créations générées par l’intelligence artificielle, aux données d’entraînement protégées et à l’usage de ces outils dans les procédures judiciaires confirme la place centrale de ces questions dans les échanges judiciaires internationaux en matière de propriété intellectuelle.",
+      "practical_relevance": "Cette actualité invite les titulaires de droits et les opérateurs numériques à suivre l’évolution des approches judiciaires comparées concernant l’intelligence artificielle, la responsabilité des intermédiaires et les litiges transfrontières, domaines expressément traités lors du Forum.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Brevets et services numériques",
-      "title": "Résolution d’un dysfonctionnement du Registre européen des brevets",
-      "court_reference": "Information de disponibilité des services en ligne de l’OEB, publiée le 14 octobre 2026",
-      "source": "Office européen des brevets, « Dysfonctionnement concernant le Registre européen des brevets (no de référence : CS393907) : problème résolu »",
-      "source_url": "https://www.epo.org/fr/service-support/availability-online-services/dysfonctionnement-concernant-le-registre-europeen-12",
+      "category": "Droit d’auteur et gestion des droits",
+      "title": "L’OMPI étend l’initiative CLIP aux artistes visuels",
+      "court_reference": "",
+      "source": "Organisation Mondiale de la Propriété Intellectuelle, OMPI",
+      "source_url": "https://www.wipo.int/pressroom/en/articles/2026/article_0016.html",
       "publication_date": "2026-10-14",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, OMPI, 14 octobre 2026",
+      "summary": "L’OMPI étend son initiative gratuite CLIP aux arts visuels. Les nouveaux contenus visent notamment à informer les artistes sur la qualité d’auteur, la protection des œuvres, l’attribution, les licences et les modalités de diffusion ou de commercialisation de leurs créations.",
+      "retrieval_note": "La page officielle directement indiquée a été ouverte et son texte intégral a été consulté. Elle comporte le titre, la date de publication, la référence PR/2026/961, le contenu complet du communiqué ainsi que les informations institutionnelles correspondantes. Aucun dispositif ni aucune disposition normative ne sont applicables à cette actualité. L’accès est donc qualifié de COMPLET au regard du contenu publié. La publication entre dans la période retenue du 12 au 18 octobre 2026, dates incluses. ([wipo.int](https://www.wipo.int/pressroom/en/articles/2026/article_0016.html))",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "L’Organisation Mondiale de la Propriété Intellectuelle annonce l’extension de l’initiative Creators Learn Intellectual Property, dite CLIP, au-delà du secteur musical, afin d’y intégrer des contenus consacrés aux arts visuels. Lancée en 2023, cette initiative est accessible gratuitement en ligne dans sept langues principales. Elle est détenue et administrée par WIPO for Creators, consortium dirigé par l’OMPI et cofondé avec la Music Rights Awareness Foundation.",
+        "Les ressources nouvellement proposées s’adressent notamment aux peintres, sculpteurs, illustrateurs, photographes et muralistes. Elles abordent la qualité d’auteur, la protection des œuvres et les droits des créateurs, ainsi que l’attribution des œuvres et la concession de licences. Le dispositif traite également des modalités courantes selon lesquelles les œuvres peuvent être exposées, partagées ou commercialisées.",
+        "Cette extension traduit une démarche de sensibilisation aux mécanismes de propriété intellectuelle applicables aux pratiques des artistes visuels. Le communiqué ne précise toutefois ni le détail des modules proposés, ni les conditions concrètes d’utilisation des ressources au-delà de leur mise à disposition gratuite en ligne."
+      ],
+      "highlight_paragraph": "Les contenus CLIP dédiés aux arts visuels couvrent notamment l’attribution, la licence et la commercialisation des œuvres, sujets directement liés à l’exploitation des créations par les artistes.",
+      "practical_relevance": "Les professionnels accompagnant des artistes visuels peuvent identifier dans cette initiative une ressource d’information sur les notions de droit d’auteur et les modalités usuelles d’exploitation des œuvres. La source ne précise pas si ces contenus sont adaptés à un droit national déterminé ni s’ils se substituent à une analyse juridique individualisée.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets et qualité de l’examen",
+      "title": "L’OEB actualise son tableau de bord de la qualité au troisième trimestre 2026",
+      "court_reference": "",
+      "source": "Office européen des brevets (OEB)",
+      "source_url": "https://www.epo.org/en/news-events/news/quality-dashboard-quarterly-update-4",
+      "publication_date": "2026-10-13",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Office européen des brevets (OEB), 13 octobre 2026",
+      "summary": "L’OEB a intégré à son tableau de bord les résultats des audits de qualité du troisième trimestre 2026. Les indicateurs publiés font état de 93,1 % de recherches auditées sans constatation sur des critères essentiels et de 88,6 % de délivrances sans constatation susceptible d’affecter leur validité.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’actualité a été effectivement consulté. La page ne renvoie pas à un numéro d’affaire, à un numéro de décision ni à un ECLI. Le tableau de bord de la qualité, également consulté, constitue une page dynamique de données et non un document primaire distinct. Aucun PDF autonome ni version linguistique alternative directement exploitable n’a été identifié pour cette actualité. La date de publication est comprise entre le 12 et le 18 octobre 2026, dates incluses. ([epo.org](https://www.epo.org/en/news-events/news/quality-dashboard-quarterly-update-4))",
+      "lead_label": "",
+      "paragraphs": [
+        "L’Office européen des brevets a mis à jour son tableau de bord de la qualité afin d’y intégrer les résultats des audits conduits au troisième trimestre 2026. Lancé en mars 2024, cet outil présente périodiquement des indicateurs relatifs à la qualité des procédures de délivrance des brevets européens ainsi qu’à la satisfaction des utilisateurs.",
+        "Sur une moyenne glissante de vingt-quatre mois, 93,1 % des recherches auditées ne comportaient aucune constatation concernant la nouveauté, l’activité inventive ou l’ajout de matière. L’OEB indique également que 88,6 % des délivrances auditées ne comportaient aucune constatation susceptible d’affecter leur validité, notamment au regard de ces mêmes exigences appliquées aux revendications indépendantes.",
+        "Les constatations portant sur une appréciation incorrecte de la nouveauté ou de l’activité inventive au stade de la délivrance s’établissent à 6,3 %. L’OEB rapproche ce taux de celui de 9,5 % relevé dans son rapport qualité 2022. La publication ne précise pas les modalités détaillées des audits ni la ventilation des résultats par domaine technique ou par procédure."
+      ],
+      "highlight_paragraph": "Les indicateurs publiés distinguent la qualité de la recherche de celle de la délivrance et retiennent, pour cette dernière, les constatations susceptibles d’affecter la validité du brevet, en particulier au titre de la nouveauté, de l’activité inventive et de l’ajout de matière.",
+      "practical_relevance": "Cette mise à jour fournit aux déposants et à leurs conseils des données institutionnelles sur les résultats des audits de qualité de l’OEB. Elle permet de suivre l’évolution des indicateurs relatifs à l’examen de la brevetabilité et à la fiabilité des délivrances auditées.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Marques et marché de la seconde main",
+      "title": "En Chine, l’essor du luxe d’occasion confronte les marques occidentales à de nouveaux enjeux contentieux",
+      "court_reference": "",
+      "source": "Dépêche AFP reprise intégralement par Boursorama",
+      "source_url": "https://www.boursorama.com/bourse/actualites/en-chine-l-essor-du-luxe-d-occasion-bouscule-les-marques-occidentales-3e6644a45fc2a664752f8de3c0db45ff",
+      "publication_date": "2026-10-18",
       "discovered_via_juliette_alert": true,
       "juliette_alert_id": "juliette-1",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Office européen des brevets, information relative à la disponibilité des services en ligne, 14 octobre 2026",
-      "summary": "L’OEB informe que le dysfonctionnement affectant le Registre européen des brevets, référencé CS393907 et signalé le 8 octobre 2026, a été résolu le 14 octobre 2026 à 14 h 00 HEC. L’Office rappelle l’existence possible de garanties juridiques en cas d’indisponibilité de certains services en ligne.",
-      "retrieval_note": "La page officielle en français a été directement ouverte et son texte intégral a été consulté. Elle ne renvoie à aucune pièce jointe PDF et ne comporte ni numéro d’affaire juridictionnelle, ni numéro de décision, ni ECLI. Une version anglaise officielle publiée le 14 octobre 2026 a également été vérifiée. Les contenus publiés les 8 et 9 octobre 2026 ont été écartés conformément à la période de sélection imposée. ([epo.org](https://www.epo.org/fr/service-support/availability-online-services/dysfonctionnement-concernant-le-registre-europeen-12))",
+      "source_access": "PARTIEL",
+      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
+      "source_display_text": "Dépêche AFP reprise intégralement par Boursorama, 18 octobre 2026",
+      "summary": "La croissance du marché chinois du luxe de seconde main intervient dans un contexte de recul des dépenses de luxe personnel. L’action victorieuse de Louis Vuitton contre Molly Tea pour atteinte à sa marque illustre les tensions entourant la protection des signes distinctifs sur ce marché.",
+      "retrieval_note": "L’URL France 24 fournie a été recherchée directement, mais son accès a été refusé par le site. Aucune pièce jointe PDF, version linguistique alternative, référence d’affaire, numéro de décision ni ECLI n’a été identifié dans la période comprise entre le 12 octobre 2026 et le 18 octobre 2026 inclus. Le texte intégral de la dépêche AFP, comprenant son développement consacré au contentieux opposant Louis Vuitton à Molly Tea, a été consulté dans sa reprise publiée par Boursorama le 18 octobre 2026. L’accès est qualifié de PARTIEL, car la page éditoriale originale de France 24 n’a pas pu être ouverte et le document consulté constitue une reprise de la dépêche AFP.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’Office européen des brevets a annoncé la résolution du dysfonctionnement concernant le Registre européen des brevets, identifié sous la référence CS393907. Les problèmes signalés le 8 octobre 2026 étaient résolus à compter du 14 octobre 2026 à 14 h 00 HEC. L’Office présente ses excuses pour la gêne occasionnée et demande que cette référence soit mentionnée dans toute correspondance relative à l’incident.",
-        "L’information rappelle que l’indisponibilité de services de dépôt ou de paiement des taxes peut, selon le service concerné, la date et la durée de l’indisponibilité ainsi que la situation procédurale, ouvrir droit à certaines garanties juridiques. L’OEB renvoie à cet égard à la règle 134 CBE, à la règle 82quater.2 PCT, aux RCC, à la publication supplémentaire 3 du Journal officiel de l’OEB 2022 et au communiqué de l’OEB du 22 octobre 2020, publié au Journal officiel de l’OEB 2020 sous la référence A120.",
-        "Cette communication ne précise pas si le dysfonctionnement a affecté des opérations ou procédures déterminées. Elle confirme toutefois le rétablissement du Registre européen des brevets et rappelle le cadre susceptible de s’appliquer lorsqu’une indisponibilité technique affecte l’accomplissement d’actes auprès de l’Office."
+        "La dépêche AFP relève l’essor du marché chinois du luxe d’occasion, dans un contexte de recul des dépenses consacrées aux biens de luxe personnels en Chine. Cette évolution place les marques occidentales face à des enjeux renouvelés de valorisation et de protection de leurs actifs immatériels sur le marché chinois.",
+        "Louis Vuitton a obtenu gain de cause devant la justice chinoise contre la chaîne locale de thés au lait Molly Tea pour atteinte à sa marque. Selon l’article, le litige portait sur un logo floral jugé trop proche de celui de Louis Vuitton. La dépêche ne précise ni la juridiction saisie, ni la date de la décision, ni son numéro ou les motifs retenus par le juge.",
+        "L’action a suscité des réactions en Chine. Certains internautes et médias d’État ont soutenu que le motif contesté trouverait également ses racines dans l’art décoratif chinois traditionnel. LVMH a, pour sa part, défendu sa position en soulignant le caractère essentiel de sa propriété intellectuelle. L’article met ainsi en lumière la sensibilité des litiges de marques lorsque la revendication d’un signe distinctif se confronte à des références culturelles alléguées."
       ],
-      "highlight_paragraph": "Toute démarche adressée à l’OEB au titre de cet incident devrait mentionner la référence CS393907. L’éventuelle application de garanties juridiques dépendra notamment du service indisponible, de la durée de l’incident et de la situation procédurale concernée.",
-      "practical_relevance": "Les titulaires, demandeurs et mandataires concernés par une difficulté d’accès au Registre européen des brevets doivent conserver les éléments relatifs à l’incident et identifier précisément les actes éventuellement affectés. La référence CS393907 doit être indiquée dans les échanges avec l’OEB, l’application d’éventuelles garanties n’étant pas automatique.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Droit d’auteur et numérique",
-      "title": "Protection des créations béninoises face aux usages non autorisés en ligne",
-      "court_reference": "Article d’actualité consacré à la protection des créations en ligne et à la contrefaçon numérique",
-      "source": "La Nation",
-      "source_url": "https://lanation.bj/numerique/propriete-intellectuelle-quand-les-createurs-beninois-se-font-piller-en-ligne",
-      "publication_date": "2026-10-14",
-      "discovered_via_juliette_alert": true,
-      "juliette_alert_id": "juliette-3",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "La Nation, 14 octobre 2026",
-      "summary": "Un article de La Nation met en lumière les usages non autorisés d’œuvres de créateurs béninois sur les réseaux sociaux. Il rappelle la protection conférée dès la création, l’enjeu de la preuve numérique et la nécessité d’encadrer contractuellement l’exploitation des contenus par les marques.",
-      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’article a été consulté. Les recherches effectuées sur la page et par requête ciblée n’ont pas fait apparaître de pièce jointe PDF, de version linguistique alternative, de numéro d’affaire, de numéro de décision ni d’ECLI. La source respecte la période comprise entre le 12 octobre 2026 et le 15 octobre 2026 inclus. ([lanation.bj](https://lanation.bj/numerique/propriete-intellectuelle-quand-les-createurs-beninois-se-font-piller-en-ligne))",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "La Nation relève l’exposition des slameurs, graphistes et créateurs de contenus béninois à des reprises ou exploitations non autorisées de leurs œuvres par des marques ou des pages disposant d’une forte audience. Ces pratiques concernent notamment la diffusion en ligne de créations sans autorisation ni, le cas échéant, rémunération clairement identifiée.",
-        "L’article rappelle que la loi béninoise n° 2005-30 du 5 avril 2006 relative au droit d’auteur protège l’œuvre dès sa création, en se référant à son article 2. Il indique également que le Code du numérique, présenté comme la loi n° 2017-20, qualifie de contrefaçon la reproduction ou la diffusion non autorisée d’une œuvre de l’esprit sur les réseaux électroniques. L’effectivité de cette protection demeure cependant tributaire de la capacité des auteurs à établir leur paternité et les conditions de l’exploitation litigieuse.",
-        "À cet égard, la conservation des fichiers sources, des métadonnées et le recours à l’horodatage électronique sont présentés comme des instruments utiles de preuve. La source souligne aussi que certains partenariats avec des marques ne sont pas formalisés par un contrat écrit définissant le périmètre des droits concédés. Elle préconise notamment la numérisation des procédures de dépôt auprès du Bureau béninois du droit d’auteur, la diffusion de contrats types et une meilleure appropriation des mécanismes de preuve numérique."
-      ],
-      "highlight_paragraph": "La conservation des fichiers sources, des métadonnées et d’un horodatage électronique, combinée à un contrat écrit précisant les droits concédés et les modalités d’exploitation, constitue un levier central de sécurisation des créations diffusées en ligne.",
-      "practical_relevance": "Pour les créateurs comme pour les entreprises exploitant des contenus numériques au Bénin, cette actualité rappelle l’intérêt de documenter la date et la paternité de la création, puis de formaliser par écrit toute autorisation d’exploitation. Elle met également en évidence l’importance de définir précisément l’étendue des droits, les supports concernés et les conditions de diffusion en ligne.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Droit d’auteur et politiques publiques",
-      "title": "Vietnam : bilan du droit d’auteur en vue d’une loi autonome",
-      "court_reference": "Article de compte rendu d’une conférence consacrée à l’évolution du droit vietnamien d’auteur",
-      "source": "Cổng Thông tin điện tử Bộ Văn hóa, Thể thao và Du lịch du Vietnam",
-      "source_url": "https://bvhttdl.gov.vn/hoan-thien-hanh-lang-phap-ly-ban-quyen-tac-gia-truoc-thach-thuc-cong-nghe-ai-20260228171220317.htm",
-      "publication_date": "2026-10-15",
-      "discovered_via_juliette_alert": true,
-      "juliette_alert_id": "juliette-2",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Cổng Thông tin điện tử Bộ Văn hóa, Thể thao và Du lịch du Vietnam, 15 octobre 2026",
-      "summary": "Les autorités vietnamiennes ont dressé le bilan de l’application du droit d’auteur et des droits voisins, en identifiant notamment les difficultés liées aux œuvres collaboratives, à l’intelligence artificielle et aux exploitations transfrontalières. Cette consultation prépare l’étude d’une loi autonome sur le droit d’auteur.",
-      "retrieval_note": "L’URL Vietnam.vn fournie a renvoyé une erreur d’accès 403. Une version intégrale et officielle du compte rendu a été consultée sur le portail du ministère vietnamien de la Culture, des Sports et du Tourisme. Aucun PDF, aucune version linguistique alternative, aucun numéro d’affaire, numéro de décision ou ECLI pertinent n’a été identifié dans les recherches effectuées. La date de publication vérifiée est le 15 octobre 2026, comprise dans la période demandée du 12 au 15 octobre 2026 inclus.",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "À Hanoï, le Département de l’industrie culturelle et du droit d’auteur du ministère vietnamien de la Culture, des Sports et du Tourisme a organisé une conférence consacrée au bilan de la mise en œuvre de la législation relative au droit d’auteur et aux droits voisins. Le vice-ministre Hồ An Phong y a présenté les orientations de cette démarche, visant à apprécier l’effectivité du cadre applicable, à identifier les difficultés persistantes et à préparer ses évolutions.",
-        "L’évaluation a porté sur les dispositions de la loi vietnamienne sur la propriété intellectuelle ainsi que sur le décret n° 17 de 2023, modifié par le décret n° 134 de 2026, pour la période comprise entre le 1er janvier 2021 et le 30 juin 2026. Les difficultés relevées concernent notamment l’identification des titulaires et la détermination de l’étendue des droits sur les œuvres impliquant plusieurs personnes, les créations réalisées dans un cadre contractuel ou sur commande, ainsi que les œuvres financées sur fonds publics.",
-        "Les débats ont également souligné les incertitudes relatives aux conditions d’utilisation, de reproduction, de partage et d’entraînement des systèmes d’intelligence artificielle. L’exploitation des œuvres et la rémunération des droits dans des environnements multiplateformes et transfrontaliers figurent aussi parmi les enjeux recensés. La conférence constitue une étape préparatoire à l’étude d’un projet de loi autonome sur le droit d’auteur."
-      ],
-      "highlight_paragraph": "Les travaux préparatoires identifient expressément les conditions d’utilisation des œuvres pour l’entraînement des systèmes d’intelligence artificielle et la rémunération des droits dans les environnements transfrontaliers comme des questions appelant une évolution du cadre juridique.",
-      "practical_relevance": "Cette initiative confirme que le Vietnam examine une adaptation de son droit d’auteur aux usages de l’intelligence artificielle, aux chaînes de titularité complexes et aux exploitations numériques transfrontalières. Les titulaires de droits et exploitants concernés devront suivre les travaux législatifs annoncés, dont le contenu n’est pas précisé à ce stade.",
+      "highlight_paragraph": "L’obtention par Louis Vuitton d’une décision favorable contre Molly Tea confirme, au regard des seuls éléments rapportés, l’importance attachée à la défense des actifs de marque en Chine, y compris lorsque le signe contesté est présenté comme inspiré d’un patrimoine décoratif traditionnel.",
+      "practical_relevance": "Les titulaires de marques actifs sur le marché chinois du luxe et de la seconde main doivent appréhender la protection de leurs signes à la lumière des risques de proximité visuelle et des débats relatifs à l’origine culturelle alléguée de certains motifs. Les éléments procéduraux et les motifs précis de la décision ne sont toutefois pas précisés.",
       "illustration_page_url": "",
       "illustration_alt": ""
     }
   ],
   "briefs": [],
-  "generated_at": "2026-10-15T15:38:28.793Z",
+  "generated_at": "2026-10-18T20:25:21.852Z",
   "status": "generated",
-  "report_url": "/public/reports/veille-2026-10-16.docx",
-  "docx_url": "/public/reports/veille-2026-10-16.docx"
+  "report_url": "/public/reports/veille-2026-10-19.docx",
+  "docx_url": "/public/reports/veille-2026-10-19.docx"
 }
