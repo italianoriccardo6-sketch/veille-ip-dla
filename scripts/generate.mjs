@@ -794,11 +794,17 @@ const qualityReasons = (item) => {
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
   if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
   if (item.type === "ACTUALITE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [140, 330] : [140, 280];
+    // La longueur demandée dans le prompt reste la cible éditoriale. Le contrôle
+    // applique une petite tolérance afin de ne pas payer une réécriture complète
+    // pour quelques lignes supplémentaires dans une actualité par ailleurs valide.
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [140, 360] : [140, 330];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   if (item.type === "JURISPRUDENCE") {
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1200] : [700, 1000];
+    // Une fiche substantielle légèrement plus longue n'est pas incomplète. Le
+    // seuil supérieur est un garde-fou, tandis que la cible de 850 à 1 050 mots
+    // demeure explicitement imposée lors de la rédaction.
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1500] : [700, 1200];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
@@ -854,7 +860,7 @@ const finalCompositionIsValid = (jurisprudenceCount === 1 && actualiteCount === 
 if (items.length !== finalSubjectTarget || !finalCompositionIsValid) {
   throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, ou deux jurisprudences et trois actualités en cas de réserve hebdomadaire insuffisante.`);
 }
-const maximumEditorialWords = jurisprudenceCount === 2 ? 3300 : 2600;
+const maximumEditorialWords = jurisprudenceCount === 2 ? 4300 : 3200;
 if (totalEditorialWords < 1500 || totalEditorialWords > maximumEditorialWords) {
   throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 500 et ${maximumEditorialWords.toLocaleString("fr-FR")} mots selon la composition de la semaine.`);
 }
