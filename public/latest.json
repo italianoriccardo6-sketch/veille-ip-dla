@@ -1,270 +1,373 @@
 {
-  "week": "Du 26 octobre au 1 novembre 2026",
-  "edition_date": "2026-11-02",
-  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 26 octobre au 1 novembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Aucun des sujets retenus ne provient des alertes de Juliette.",
+  "week": "Du 2 novembre au 5 novembre 2026",
+  "edition_date": "2026-11-06",
+  "editorial_note": "Cette édition réunit zéro jurisprudences et cinq actualités publiées au cours de la semaine du 2 novembre au 5 novembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. 2 sujets ont été initialement signalés par les alertes de Juliette, puis vérifiés sur leur source primaire.",
   "source_coverage": [
     {
       "source_name": "EUIPO",
       "domain": "euipo.europa.eu",
       "searched": true,
-      "candidate_count": 2,
-      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 2026-10-26 et le 2026-11-01 inclus. Deux contenus substantiels et datés du 2026-10-27 ont été retenus. Aucun contenu antérieur n’a été utilisé pour compléter la sélection. Aucun résultat spécifiquement consacré aux marques n’a été identifié dans cette fenêtre, mais les contenus retenus concernent les dessins et modèles ainsi que la pratique générale de la propriété intellectuelle."
+      "candidate_count": 0,
+      "search_note": "La source EUIPO a été analysée pour la période strictement comprise entre le 2026-11-02 et le 2026-11-05, dates incluses, en ciblant les marques, les dessins et modèles ainsi que les décisions, textes, rapports et actualités. Aucun contenu substantiel présentant une date de publication vérifiable dans cet intervalle n’a été identifié. Les contenus antérieurs, notamment les pages publiées en octobre 2026 ou avant, ont été exclus conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "OMPI",
       "domain": "wipo.int",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source OMPI a été analysée exclusivement pour la période du 26 octobre au 1er novembre 2026 inclus. Trois contenus substantiels et datés ont été retenus, principalement sur la coopération internationale et les brevets. Aucun contenu antérieur à cette période n’a été utilisé pour compléter la sélection."
+      "search_note": "La source OMPI a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus. Trois contenus substantiels et datés, portant sur l’international, les brevets et les marques ou la propriété intellectuelle, ont été retenus. Aucun contenu antérieur à cette période n’a été utilisé."
     },
     {
       "source_name": "CJUE",
       "domain": "curia.europa.eu",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source CURIA a été analysée en ciblant exclusivement la période du 26 octobre 2026 au 1er novembre 2026 inclus et la matière de la propriété intellectuelle. Aucun contenu substantiel publié pendant cette période n’a été identifié. Les résultats antérieurs, notamment ceux des 7 et 22 octobre 2026, ont été écartés conformément à la consigne de fraîcheur."
+      "search_note": "La source CURIA a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus. Le site met en ligne, pour cette période, des éléments de calendrier judiciaire relatifs à des audiences et à des prononcés d’arrêts en propriété intellectuelle, notamment le 4 novembre 2026. Toutefois, aucun contenu publié pendant cette période n’a pu être vérifié comme constituant directement une décision, un texte, un rapport ou une actualité substantielle en propriété intellectuelle avec une URL directe propre au contenu. Conformément à la contrainte de fraîcheur, aucun contenu antérieur n’a été utilisé."
     },
     {
       "source_name": "Légifrance",
       "domain": "legifrance.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 26 octobre 2026 et le 1er novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle n’a pu être retenu avec une date de publication vérifiable dans cet intervalle. Les résultats identifiés correspondent notamment à des textes antérieurs ou à des pages indiquant seulement une date d’entrée en vigueur ou de consultation, ce qui ne permet pas de satisfaire le critère de publication. Conformément à la consigne de fraîcheur, aucune publication plus ancienne n’a été utilisée."
+      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — loi, décision de jurisprudence, rapport ou actualité — n’a pu être vérifié comme ayant été publié pendant cette période. Les résultats repérés étaient antérieurs à cette fenêtre et sont donc exclus conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "Cour de cassation",
       "domain": "courdecassation.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Cour de cassation a été analysée, en limitant la recherche au domaine courdecassation.fr et à la période du 26 octobre 2026 au 1er novembre 2026 inclus. Plusieurs contenus relatifs à la propriété intellectuelle ont été repérés, notamment en matière de droits voisins de la presse, de propriété littéraire et artistique et de marques. Toutefois, les résultats accessibles ne permettent pas de vérifier de manière certaine leur date de publication dans cette période précise ; ils ne sont donc pas retenus, conformément à l’exigence de fraîcheur et de vérifiabilité."
+      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — décision, texte, rapport ou actualité — avec une date de publication vérifiable dans cette période n’a été identifié. Les résultats relatifs à des décisions antérieures ou à de simples audiences/événements n’ont pas été retenus, conformément aux critères demandés."
     },
     {
       "source_name": "OEB",
       "domain": "epo.org",
       "searched": true,
-      "candidate_count": 2,
-      "search_note": "La source OEB a été analysée pour la période strictement comprise entre le 2026-10-26 et le 2026-11-01 inclus. Deux contenus substantiels en propriété intellectuelle, portant sur les brevets, ont été retenus sur la base de dates de publication vérifiables. Aucun contenu antérieur n'a été utilisé pour compléter la sélection."
+      "candidate_count": 3,
+      "search_note": "L’OEB a été analysé exclusivement pour la période du 2026-11-02 au 2026-11-05 inclus, en privilégiant les contenus relatifs aux brevets. Trois contenus substantiels ont été identifiés, tous publiés le 2026-11-02. Aucun contenu pertinent supplémentaire publié les 2026-11-03, 2026-11-04 ou 2026-11-05 n’a été retenu. Aucun contenu antérieur n’a été utilisé."
     },
     {
       "source_name": "CSPLA",
       "domain": "culture.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "Source CSPLA analysée sur culture.gouv.fr. Aucun contenu substantiel relatif au droit d’auteur ou à la propriété intellectuelle n’a été identifié comme publié entre le 26 octobre 2026 et le 1er novembre 2026 inclus. Les résultats trouvés étaient antérieurs à cette période et ont donc été exclus conformément à la consigne de fraîcheur."
+      "search_note": "La source CSPLA a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus. Aucun contenu substantiel portant sur le droit d’auteur et publié pendant cette période n’a été identifié. Les résultats trouvés concernaient des publications antérieures à la période demandée et ont donc été exclus."
     },
     {
       "source_name": "Sénat",
       "domain": "senat.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source Sénat (senat.fr) a été analysée pour la période strictement comprise entre le 26 octobre 2026 et le 1er novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle relevant de la législation, avec une date de publication vérifiable dans cette période, n’a été identifié. Les publications repérées sur des thèmes proches étaient antérieures à cette période et ont donc été exclues."
+      "search_note": "La source Sénat a été analysée pour la période strictement comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus, sur le thème de la législation en propriété intellectuelle. Aucun contenu substantiel — décision, texte, rapport ou actualité — publié pendant cette période n'a été identifié. Les résultats antérieurs, notamment ceux publiés en octobre 2026 ou avant, ont été exclus conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "Dreyfus & Associés – Newsletter IP",
       "domain": "linkedin.com",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source LinkedIn de référence a été analysée, ainsi que les publications LinkedIn accessibles de Dreyfus Law Firm. La page prioritaire « Newsletter, August 2026 » est datée du 2026-09-01 et est donc exclue. La newsletter suivante accessible est datée du 2026-09-29, également hors période. Les résultats LinkedIn repérés pour la période du 2026-10-26 au 2026-11-01 affichent seulement des indications relatives telles que « 2d », « 5d » ou « 1w », sans date calendaire directement vérifiable dans le contenu accessible. Afin de respecter l’exigence de fraîcheur et de ne rien inventer, aucun contenu n’est retenu."
+      "search_note": "La source LinkedIn a été analysée, y compris l’URL de référence prioritaire. Aucun contenu de la source n’a pu être retenu avec une date de publication vérifiable comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus et une URL directe LinkedIn vérifiable. Les résultats repérés sur des profils LinkedIn indiquent des publications relatives aux marques, noms de domaine et litiges numériques, mais leur date exacte et leur URL directe de publication ne sont pas suffisamment vérifiables dans les résultats accessibles. Conformément à la consigne de fraîcheur, aucun contenu antérieur — notamment la newsletter d’août 2026 — n’a été utilisé."
     }
   ],
   "scouting_coverage": {
     "google_alert_feeds": 30,
-    "google_alert_candidates": 5
+    "google_alert_candidates": 20
   },
   "alert_trace": [
     {
       "alert_id": "juliette-1",
-      "title": "La saisie- contrefaçon de brevet et de marque face au secret des affaires - Kohen Avocats",
-      "url": "https://kohenavocats.fr/2026/10/31/saisie-contrefacon-brevet-marque-secret-affaires-refere-retractation-sequestre/",
-      "publication_date": "2026-10-31T01:39:52Z",
+      "title": "Contrefaçon : la responsabilité personnelle du dirigeant peut-elle être engagée",
+      "url": "https://www.lemondedudroit.fr/pi-tic/278-propriete-intellectuelle-industrielle/106518-contrefacon-la-responsabilite-personnelle-du-dirigeant-peut-elle-etre-engagee.html",
+      "publication_date": "2026-11-05T09:06:03Z",
       "selected": true,
-      "reason": "Sujet récent et directement utile sur l’articulation entre saisie-contrefaçon, secret des affaires, référé-rétractation et séquestre."
+      "reason": "Sujet contentieux directement pertinent en matière de contrefaçon de marque et de responsabilité personnelle du dirigeant, sous réserve de vérification de la décision primaire."
     },
     {
       "alert_id": "juliette-2",
-      "title": "La responsabilité personnelle du dirigeant en contrefaçon de marque et de droit d&#39;auteur",
-      "url": "https://kohenavocats.fr/2026/10/31/responsabilite-personnelle-dirigeant-contrefacon-marque-droit-auteur-faute-separable-cour-de-cassation/",
-      "publication_date": "2026-11-01T11:22:34Z",
-      "selected": false,
-      "reason": "Sujet juridiquement intéressant, mais provenant du même éditeur que deux sujets retenus et moins prioritaire au regard de la diversité institutionnelle recherchée."
+      "title": "Renforcer l&#39;effectivité des droits voisins des éditeurs et des agences de presse - Sénat",
+      "url": "https://www.senat.fr/leg/ppl26-146.html",
+      "publication_date": "2026-11-05T05:56:20Z",
+      "selected": true,
+      "reason": "Proposition de loi sénatoriale directement accessible, portant sur l’effectivité des droits voisins des éditeurs et agences de presse."
     },
     {
       "alert_id": "juliette-3",
-      "title": "L&#39;action en revendication de propriété de brevet d&#39;invention : soustraction frauduleuse, délai ...",
-      "url": "https://kohenavocats.fr/2026/10/31/action-revendication-propriete-brevet-soustraction-prescription-contrefacon/",
-      "publication_date": "2026-10-31T08:50:34Z",
-      "selected": false,
-      "reason": "Sujet relatif aux brevets, mais redondant avec les contenus institutionnels retenus sur les brevets et insuffisamment documenté dans le résultat accessible."
+      "title": "La Cour suprême du Canada entendra une affaire en matière de brevets portant sur la ...",
+      "url": "https://www.nortonrosefulbright.com/fr-ca/centre-du-savoir/publications/2110a7f4/la-cour-supreme-du-canada-entendra-une-affaire-en-matiere-de-brevets-portant",
+      "publication_date": "2026-11-04T19:29:46Z",
+      "selected": true,
+      "reason": "Actualité contentieuse internationale en matière de brevets, présentant un intérêt prospectif sous réserve d’identification de l’affaire primaire."
     },
     {
       "alert_id": "juliette-4",
-      "title": "Yoplait : le retour d&#39;une marque française, version américaine - QDE",
-      "url": "https://www.lequotidiendesentreprises.fr/secteurs/alimentation/yoplait-le-retour-dune-marque-francaise-version-americaine/",
-      "publication_date": "2026-11-01T10:49:07Z",
+      "title": "EUIPO strengthens cooperation with the Portuguese IP community",
+      "url": "https://www.euipo.europa.eu/fr/news/euipo-strengthens-cooperation-with-the-portuguese-ip-community",
+      "publication_date": "2026-11-04T18:07:45Z",
       "selected": true,
-      "reason": "Actualité récente consacrée à l’évolution de l’exploitation d’une marque connue, apportant un éclairage complémentaire sur les stratégies de portefeuille de marques."
+      "reason": "Actualité institutionnelle de l’EUIPO relative à la coopération en matière de propriété intellectuelle et de marques."
     },
     {
       "alert_id": "juliette-5",
-      "title": "Le cybersquattage et le litige de nom de domaine : procédure Syreli devant l&#39;AFNIC, action ...",
-      "url": "https://kohenavocats.fr/2026/11/01/cybersquattage-litige-nom-de-domaine-syreli-afnic-transfert-contrefacon-marque/",
-      "publication_date": "2026-11-01T00:52:03Z",
+      "title": "Recettes, quiz, sondages : la stratégie de publicité redoutable des marques d&#39;alcool sur les ...",
+      "url": "https://www.leparisien.fr/societe/recettes-quiz-sondages-la-strategie-de-publicite-redoutable-des-marques-dalcool-sur-les-reseaux-sociaux-05-11-2026-25Y45WESA5GUBHE6TD7CI7OYSY.php",
+      "publication_date": "2026-11-05T13:23:08Z",
       "selected": true,
-      "reason": "Sujet récent et substantiel sur le cybersquattage, la procédure Syreli de l’AFNIC et l’articulation avec l’action en contrefaçon de marque."
+      "reason": "Sujet récent à l’intersection des marques, de la communication commerciale et des réseaux sociaux."
+    },
+    {
+      "alert_id": "juliette-6",
+      "title": "84 % des marques automobiles s&#39;autorisent à revendre ou partager les données du conducteur",
+      "url": "https://www.jechange.fr/assurance/auto/news/constructeurs-84-pourcent-partagent-revendent-donnees-conducteur-voiture-enregistre",
+      "publication_date": "2026-11-05T13:12:50Z",
+      "selected": false,
+      "reason": "Sujet principalement consacré à la commercialisation de données automobiles et insuffisamment rattaché à la propriété intellectuelle."
+    },
+    {
+      "alert_id": "juliette-7",
+      "title": "Les marques d&#39;alcool trop présentes sur les réseaux sociaux, dénonce Addictions France",
+      "url": "https://medias24.com/agence-presse/les-marques-dalcool-trop-presentes-sur-les-reseaux-sociaux-denonce-addictions-france/",
+      "publication_date": "2026-11-05T09:42:01Z",
+      "selected": false,
+      "reason": "Doublon thématique avec l’alerte juliette-5 et contenu moins directement exploitable juridiquement."
+    },
+    {
+      "alert_id": "juliette-8",
+      "title": "Maximiser la valeur de la propriété intellectuelle - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/phat-huy-gia-tri-tai-san-tri-tue",
+      "publication_date": "2026-11-05T05:51:00Z",
+      "selected": false,
+      "reason": "Actualité locale de valorisation de la propriété intellectuelle, dépourvue de substance juridique suffisamment caractérisée."
+    },
+    {
+      "alert_id": "juliette-9",
+      "title": "Amodei obtient le rejet de l&#39;action en contrefaçon directe du droit d&#39;auteur , avec ... - Unite.AI",
+      "url": "https://www.unite.ai/fr/amodei-wins-dismissal-of-direct-copyright-claim-with-leave-to-amend/",
+      "publication_date": "2026-11-05T02:43:54Z",
+      "selected": true,
+      "reason": "Actualité contentieuse portant directement sur le droit d’auteur et l’intelligence artificielle, sous réserve de vérification de la décision américaine."
+    },
+    {
+      "alert_id": "juliette-10",
+      "title": "Établissement de droits de propriété intellectuelle pour les spécialités locales. - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/xac-lap-quyen-so-huu-tri-tue-cho-dac-san-dia-phuong",
+      "publication_date": "2026-11-05T00:59:40Z",
+      "selected": false,
+      "reason": "Sujet de politique locale et de valorisation de spécialités, sans apport juridique suffisamment identifiable."
+    },
+    {
+      "alert_id": "juliette-11",
+      "title": "Lam Dong : Près de 200 marques participent à la méga vente de Da Lat - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/lam-dong-gan-200-nhan-hang-tham-gia-da-lat-mega-sale",
+      "publication_date": "2026-11-04T17:10:55Z",
+      "selected": false,
+      "reason": "Actualité commerciale dépourvue de portée juridique ou de contenu substantiel en droit des marques."
+    },
+    {
+      "alert_id": "juliette-12",
+      "title": "100 millions d&#39;euros de dettes : l&#39;une des plus vieilles marques de vélo est menacée - Frandroid",
+      "url": "https://www.frandroid.com/survoltes/velo-electrique/3310683_100-millions-deuros-de-dettes-lune-des-plus-vieilles-marques-de-velo-est-menacee",
+      "publication_date": "2026-11-04T16:50:15Z",
+      "selected": false,
+      "reason": "Information financière relative à une marque, sans question de propriété intellectuelle suffisamment documentée."
+    },
+    {
+      "alert_id": "juliette-13",
+      "title": "Une célèbre marque française de vêtements haut de gamme cesse ses activités - LaLibre.be",
+      "url": "https://www.lalibre.be/lifestyle/mode/2026/11/04/une-celebre-marque-francaise-de-vetements-haut-de-gamme-cesse-ses-activites-malgre-tous-nos-efforts-aucune-solution-na-pu-etre-trouvee-HWY5BH2ZRRBXJPLV26A2LZEOQA/",
+      "publication_date": "2026-11-04T16:33:59Z",
+      "selected": false,
+      "reason": "Actualité économique concernant une entreprise de mode, sans contenu juridique vérifiable en propriété intellectuelle."
+    },
+    {
+      "alert_id": "juliette-14",
+      "title": "En visant les marques chinoises, l&#39;Europe s&#39;apprête à pénaliser une marque qui n&#39;avait rien ...",
+      "url": "https://www.numerama.com/vroom/2367737-en-visant-les-marques-chinoises-leurope-sapprete-a-penaliser-une-marque-qui-navait-rien-demande.html",
+      "publication_date": "2026-11-04T14:51:45Z",
+      "selected": false,
+      "reason": "Sujet de politique industrielle et commerciale, dont le lien avec le droit des marques n’est pas suffisamment établi."
+    },
+    {
+      "alert_id": "juliette-15",
+      "title": "Kylian Mbappé lâché par trois sponsors chinois : comment les marques ont pris le pouvoir ...",
+      "url": "https://www.moustique.be/notre-epoque/2026/11/04/kylian-mbappe-lache-par-trois-sponsors-chinois-comment-les-marques-ont-pris-le-pouvoir-dans-le-sport-ZYQLYN7IUZCO7GD5JU3GCHVHL4/",
+      "publication_date": "2026-11-04T14:42:55Z",
+      "selected": false,
+      "reason": "Actualité de sponsoring et de relations commerciales, sans problématique de propriété intellectuelle suffisamment caractérisée."
+    },
+    {
+      "alert_id": "juliette-16",
+      "title": "Le conflit de marque Denza s&#39;intensifie, Worcas demande à BYD 9,5 billions de roupies",
+      "url": "https://voi.id/fr/berita/600201",
+      "publication_date": "2026-11-04T01:25:33Z",
+      "selected": false,
+      "reason": "Litige de marque étranger rapporté par une source secondaire, dont la vérifiabilité primaire est insuffisante."
+    },
+    {
+      "alert_id": "juliette-17",
+      "title": "Le ministre Vu Hai Quan : La modification de la loi sur la propriété intellectuelle vise à ... - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/bo-truong-vu-hai-quan-sua-doi-luat-so-huu-tri-tue-nham-don-gian-hoa-tthc-bao-dam-quyen-loi-cua-chu-the-sang-tao",
+      "publication_date": "2026-11-03T15:32:12Z",
+      "selected": false,
+      "reason": "Actualité législative vietnamienne rapportée par une source secondaire, moins directement exploitable que la proposition de loi sénatoriale sélectionnée."
+    },
+    {
+      "alert_id": "juliette-18",
+      "title": "De la ressource patrimoniale à l&#39;actif créatif - Le Courrier du VietNam",
+      "url": "https://lecourrier.vn/de-la-ressource-patrimoniale-a-lactif-creatif/1358828.html",
+      "publication_date": "2026-11-05T10:07:18Z",
+      "selected": false,
+      "reason": "Article général consacré à la valorisation des actifs créatifs, sans nouveauté juridique suffisamment précise."
+    },
+    {
+      "alert_id": "juliette-19",
+      "title": "De la ressource patrimoniale à l&#39;actif créatif - Vietnam+ (VietnamPlus)",
+      "url": "https://fr.vietnamplus.vn/de-la-ressource-patrimoniale-a-lactif-creatif-post270726.vnp",
+      "publication_date": "2026-11-05T08:54:13Z",
+      "selected": false,
+      "reason": "Doublon de l’alerte juliette-18, sans apport juridique distinct."
+    },
+    {
+      "alert_id": "juliette-20",
+      "title": "Lee passe officiellement dans le giron d&#39;Authentic - FashionNetwork France",
+      "url": "https://fr.fashionnetwork.com/news/Lee-passe-officiellement-dans-le-giron-d-authentic,1881654.html",
+      "publication_date": "2026-11-04T17:10:36Z",
+      "selected": false,
+      "reason": "Opération de cession de droits sur une marque, dépourvue de substance juridique suffisante pour la présélection."
     }
   ],
   "items": [
     {
-      "type": "JURISPRUDENCE",
-      "category": "Brevets",
-      "title": "Compositions de diols biosourcés destinées aux bouteilles en polyester : généralisation intermédiaire non divulguée et révocation du brevet",
-      "court_reference": "T 0463/25",
-      "source": "Office européen des brevets, Chambres de recours",
-      "source_url": "https://www.epo.org/boards-of-appeal/decisions/pdf/t250463eu1.pdf",
-      "publication_date": "2026-10-28",
+      "type": "ACTUALITE",
+      "category": "Brevets et transformation numérique",
+      "title": "L’OEB prépare la numérisation accrue des procédures et examine la décision G 1/25",
+      "court_reference": "OEB, SACEPO Working Party on Rules",
+      "source": "Office européen des brevets, actualité institutionnelle",
+      "source_url": "https://www.epo.org/en/news-events/news/sacepo-working-party-rules-turns-digital-filing-procedural-changes-and-decision-g",
+      "publication_date": "2026-11-02",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Office européen des brevets, Chambres de recours, 28 octobre 2026",
-      "summary": "La chambre 3.3.03 révoque le brevet européen n° 3 041 879 pour ajout de matière. La combinaison revendiquée, issue d’une restriction de la revendication initiale et d’une généralisation de l’exemple EG-001, n’était pas directement et sans ambiguïté divulguée. Plusieurs requêtes subsidiaires échouent également.",
-      "retrieval_note": "La page officielle française de la décision a d’abord été consultée afin de vérifier la date de mise en ligne, le numéro d’affaire, l’ECLI et l’existence d’un document intégral. Le lien vers la décision en anglais a ensuite été ouvert. Le PDF officiel de 35 pages a été effectivement consulté, notamment son exposé des faits, ses motifs et son dispositif final. La décision a été rendue le 27 octobre 2026 et mise en ligne le 28 octobre 2026, soit dans la période de sélection du 26 octobre 2026 au 1er novembre 2026 inclus. L’ECLI indiqué par l’OEB est ECLI:EP:BA:2026:T046325.20261027.",
-      "timeline": [
-        {
-          "date": "17 février 2025",
-          "event": "La division d’opposition transmet une décision interlocutoire maintenant le brevet européen n° 3 041 879 sous une forme modifiée."
-        },
-        {
-          "date": "9 octobre 2026",
-          "event": "Le titulaire informe la chambre qu’il ne participera pas à la procédure orale initialement prévue."
-        },
-        {
-          "date": "27 octobre 2026",
-          "event": "La chambre technique de recours 3.3.03 rend la décision T 0463/25, annule la décision attaquée et révoque le brevet."
-        },
-        {
-          "date": "28 octobre 2026",
-          "event": "La décision est mise en ligne par l’Office européen des brevets."
-        }
+      "source_display_text": "Office européen des brevets, actualité institutionnelle, 2 novembre 2026",
+      "summary": "Le groupe de travail Rules du SACEPO a examiné les projets de numérisation des procédures devant l’OEB, notamment en opposition, ainsi que leur calendrier envisagé. La réunion a également porté sur la validation, les pratiques communes en cours d’élaboration et la mise en œuvre de la décision G 1/25.",
+      "retrieval_note": "La page officielle directe de l’OEB a été ouverte et son texte intégral a été consulté. La publication est datée du 2 novembre 2026 et relève donc de la période retenue, du 2 novembre 2026 au 5 novembre 2026 inclus. Les recherches successives portant sur une pièce jointe PDF distincte, les versions linguistiques alternatives, un numéro d’affaire, un numéro de décision ou un ECLI n’ont pas permis d’identifier un autre document primaire pertinent publié dans cette période. La page officielle constitue le document primaire utilisé. ([epo.org](https://www.epo.org/en/news-events/news/sacepo-working-party-rules-turns-digital-filing-procedural-changes-and-decision-g))",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "Réuni le 22 octobre 2026, le groupe de travail Rules du SACEPO a examiné, avec les représentants des utilisateurs, plusieurs évolutions relatives à la numérisation des procédures, aux modifications réglementaires envisagées et à la jurisprudence récente de la Grande Chambre de recours. L’OEB a notamment présenté des propositions de modification du règlement d’exécution de la CBE destinées à simplifier et à numériser la procédure d’opposition.",
+        "Ces propositions prévoiraient le dépôt des actes d’opposition au moyen du formulaire OEB 2300, au titre de la règle 76 CBE. Elles permettraient également aux parties d’indiquer, conformément à la règle 83 CBE, le numéro de publication de documents de brevet déjà disponibles auprès de l’OEB. Les parties et mandataires pourraient, en outre, communiquer une adresse électronique en application de la règle 41(2) CBE. Sous réserve de leur adoption, l’obligation relative à cette adresse entrerait en vigueur le 1er avril 2027, tandis que les mesures relatives à l’opposition seraient applicables à compter du 1er octobre 2027.",
+        "L’OEB a aussi indiqué que le processus de délivrance devrait devenir intégralement numérique à compter du 1er avril 2027. Un premier ensemble de décisions d’application a été présenté, concernant notamment le dépôt électronique obligatoire, les notifications exclusivement électroniques via la boîte aux lettres MyEPO et le dépôt électronique des observations de tiers. Des procédures visant à limiter les incidences des interruptions des services en ligne sont également annoncées. La réunion a enfin porté sur la politique révisée de validation, l’accord avec l’Angola, les projets de pratiques communes sur les demandes divisionnaires et les divulgations sur Internet, ainsi que sur la décision G 1/25 relative à l’adaptation de la description. La publication mentionne également G 1/24 et la saisine pendante G 1/26."
       ],
-      "introduction": "Par la décision T 0463/25, la chambre technique de recours 3.3.03 applique avec rigueur l’article 123, paragraphe 2, CBE à une revendication portant sur une bouteille ou une préforme en polyester fabriquée à partir d’une composition de diols comprenant, pour partie, des diols biosourcés. Elle retient que la revendication maintenue par la division d’opposition procède d’une combinaison de caractéristiques qui ne ressortait pas directement et sans ambiguïté de la demande telle que déposée. La chambre qualifie l’amendement de généralisation intermédiaire non admissible de l’exemple EG-001 et, symétriquement, de restriction intermédiaire non divulguée de la revendication initiale. Faute de requête admissible et conforme à l’article 123, paragraphe 2, CBE, le brevet est révoqué.",
-      "facts_and_procedure": "Le litige concerne le brevet européen n° 3 041 879, intitulé « BIO-DERIVED ETHYLENE GLYCOL COMPOSITIONS FOR POLYESTER BOTTLES », dont versalis S.p.A. était titulaire. Les opposants étaient Avantium Knowledge Centre B.V., Hoffmann Eitle, D Young & Co LLP et Elkington and Fife LLP. La division d’opposition avait considéré que le brevet, maintenu sur le fondement d’un jeu de revendications déposé le 25 juillet 2023, satisfaisait aux exigences de la CBE. Elle avait notamment admis que la définition de la pluralité de diols constituant la composition servant à fabriquer la résine polyester ne procurait pas à l’homme du métier une information technique nouvelle. Hoffmann Eitle et Elkington and Fife LLP ont formé recours. Avantium Knowledge Centre B.V. et D Young & Co LLP étaient parties de droit à la procédure de recours. Dans sa réponse aux mémoires de recours, le titulaire a maintenu la requête principale et produit vingt-six requêtes subsidiaires. Après communication de son opinion provisoire défavorable, la chambre a annulé la procédure orale, le titulaire ayant déclaré qu’il n’y participerait pas.",
-      "parties_arguments": "Les requérantes soutenaient que la revendication 1 de la requête principale étendait l’objet du brevet au-delà du contenu de la demande telle que déposée. L’objection visait principalement le remplacement de la formulation ouverte « comprenant » par la formulation fermée « consistant en », appliquée à la pluralité de diols, ainsi que la combinaison de cette restriction avec la présence éventuelle de diols cycliques et le critère de transmission lumineuse à 275 nm. Le titulaire faisait valoir que cette modification constituait une simple limitation. Il invoquait, en particulier, les compositions EG-001 et EG-002 décrites dans la demande, ainsi qu’un passage relatif à des étapes de distillation, pour soutenir que la composition revendiquée était de préférence exempte de diols non 1,2. Il estimait donc que les caractéristiques retenues se déduisaient de la divulgation initiale. Les autres parties de droit n’ont présenté ni demandes ni observations sur le fond.",
-      "legal_question": "La chambre devait déterminer si une revendication de produit relative à une bouteille ou à une préforme en polyester pouvait, sans méconnaître l’article 123, paragraphe 2, CBE, limiter la pluralité de diols à l’éthylène glycol, à des diols relevant d’une formule générale déterminée et, éventuellement, à des diols cycliques, tout en conservant les autres caractéristiques revendiquées. La question impliquait d’apprécier si cette combinaison était directement et sans ambiguïté divulguée dans l’ensemble de la demande initiale, notamment à la lumière des exemples EG-001 et EG-002. La chambre devait aussi statuer sur la recevabilité de plusieurs requêtes subsidiaires au regard de l’article 12, paragraphe 4, du règlement de procédure des chambres de recours 2020.",
-      "reasoning": "La chambre rappelle le critère de la divulgation directe et non équivoque, apprécié objectivement à la date de dépôt au regard de l’ensemble de la demande et des connaissances générales de l’homme du métier. Une limitation n’échappe pas, par elle-même, au contrôle de l’article 123, paragraphe 2, CBE : elle peut introduire une information technique nouvelle. Elle admet que le critère relatif à l’absence substantielle de diols absorbant à 275 nm et la présence éventuelle de diols cycliques étaient liés dans la demande initiale. Toutefois, celle-ci ne divulguait pas explicitement une composition constituée exclusivement de l’éthylène glycol, des diols de la première formule et, facultativement, des diols cycliques de la seconde formule. Elle n’établissait pas davantage que la fraction biosourcée devait être dépourvue de tous autres diols. Au contraire, la demande envisageait la présence d’autres diols, sous réserve de conditions d’absorbance ou de transmission lumineuse. La composition EG-002 comportait des composés supplémentaires non identifiés. Quant à EG-001, seule composition explicitement susceptible de relever de la définition litigieuse en présence de diols cycliques, elle demeurait un exemple concret ne justifiant pas l’extension à la portée plus générale de la revendication. Le titulaire n’a pas démontré que cette généralisation ressortait directement et sans ambiguïté de la demande. La chambre conclut ainsi à une généralisation intermédiaire non admissible, ou, sous l’angle de la revendication initiale, à une restriction intermédiaire non divulguée. Les requêtes subsidiaires 1 à 5 et 10 ne corrigeaient pas cette insuffisance. Les requêtes 8, 9 et 11 à 20 échouaient pour le même motif, les caractéristiques de procédé ajoutées ne permettant pas d’inférer les caractéristiques structurelles manquantes de la composition. Enfin, les requêtes 1bis, 3bis, 4bis, 5bis, 6, 6bis, 7 et 7bis n’étaient pas admises, le titulaire n’ayant ni justifié leur présentation au stade du recours ni expliqué en quoi elles répondaient aux objections soulevées.",
-      "outcome": "La chambre annule la décision interlocutoire de la division d’opposition et révoque le brevet européen n° 3 041 879. La requête principale est rejetée pour violation de l’article 123, paragraphe 2, CBE. Les requêtes subsidiaires 1, 2, 3, 4, 5 et 10 sont jugées non conformes à cette même disposition. Les requêtes subsidiaires 8, 9 et 11 à 20 sont également rejetées pour ajout de matière. Les requêtes subsidiaires 1bis, 3bis, 4bis, 5bis, 6, 6bis, 7 et 7bis ne sont pas admises dans la procédure sur le fondement de l’article 12, paragraphe 4, du règlement de procédure des chambres de recours 2020.",
-      "practical_relevance": "La décision confirme que le passage d’une définition ouverte à une définition fermée ne peut être traité comme une simple limitation rédactionnelle. Lorsqu’une revendication sélectionne et combine des éléments issus de la revendication initiale, de passages descriptifs et d’exemples, le titulaire doit identifier une divulgation permettant d’établir, de manière directe et non équivoque, la combinaison revendiquée dans toute son étendue. Un exemple isolé ne fournit pas nécessairement un fondement à une généralisation, surtout lorsque les autres exemples comportent des constituants non caractérisés ou une composition différente. La décision souligne aussi l’importance procédurale d’expliquer, dès le mémoire en réponse et pour chaque requête subsidiaire, en quoi les modifications proposées surmontent l’objection soulevée. La seule indication de bases textuelles pour les caractéristiques ajoutées ne suffit pas à établir la conformité d’une combinaison amendée à l’article 123, paragraphe 2, CBE, ni à justifier l’admission de nouvelles requêtes au stade du recours.",
+      "highlight_paragraph": "Sous réserve de l’adoption des textes annoncés, les utilisateurs devront anticiper l’extension du dépôt et des communications électroniques devant l’OEB, en particulier l’obligation envisagée de fournir une adresse électronique dès le 1er avril 2027 et la numérisation de la procédure d’opposition à compter du 1er octobre 2027.",
+      "practical_relevance": "Les titulaires, opposants et mandataires européens sont invités à suivre l’adoption des modifications envisagées et à vérifier la préparation de leurs outils de dépôt, de réception des notifications MyEPO et de gestion des adresses électroniques. La présentation de G 1/25 appelle également une attention particulière aux conséquences pratiques de cette décision sur l’adaptation des descriptions.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Dessins et modèles",
-      "title": "Plus de 100 dessins ou modèles de l’Union européenne déposés au moyen des nouveaux formats numériques",
-      "court_reference": "",
-      "source": "Office de l’Union européenne pour la propriété intellectuelle, EUIPO",
-      "source_url": "https://www.euipo.europa.eu/en/news/100-eu-designs-filed-using-new-digital-formats-in-the-first-three-months-of-reform",
-      "publication_date": "2026-10-27",
+      "category": "Procédure des brevets et services numériques",
+      "title": "Procédure de délivrance entièrement numérique : l’OEB précise les garanties applicables aux utilisateurs",
+      "court_reference": "OEB, mesures de mise en œuvre de la procédure de délivrance entièrement numérique",
+      "source": "Office européen des brevets, actualité institutionnelle en français",
+      "source_url": "https://www.epo.org/fr/news-events/news/procedure-de-delivrance-des-brevets-entierement-numerique-mesures-de-mise-en",
+      "publication_date": "2026-11-02",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Office de l’Union européenne pour la propriété intellectuelle, EUIPO, 27 octobre 2026",
-      "summary": "Au cours des trois premiers mois d’application de la phase II de la réforme des dessins et modèles de l’Union européenne, l’EUIPO a enregistré plus de 100 dépôts recourant à des vidéos ou à des modèles numériques tridimensionnels comme représentations graphiques.",
-      "retrieval_note": "L’URL officielle directe a été recherchée en premier. Son ouverture directe a retourné une restriction d’accès technique, mais le contenu intégral de l’actualité, y compris sa note de bas de page, a été retrouvé et consulté dans l’index officiel de l’EUIPO. Aucune pièce jointe PDF, version linguistique alternative, référence d’affaire, numéro de décision ou ECLI n’a été identifié. La date de publication, le 27 octobre 2026, se situe dans la période demandée du 26 octobre 2026 au 1er novembre 2026 inclus. ([euipo.europa.eu](https://www.euipo.europa.eu/en/news/100-eu-designs-filed-using-new-digital-formats-in-the-first-three-months-of-reform?utm_source=openai))",
+      "source_display_text": "Office européen des brevets, actualité institutionnelle en français, 2 novembre 2026",
+      "summary": "L’OEB adapte le cadre applicable à la délivrance entièrement numérique des brevets. Une décision précisant l’application de la règle 134 CBE modifiée encadrera, à compter du 1er avril 2027, les indisponibilités des services en ligne et les empêchements dus à des événements exceptionnels.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’actualité a été consulté. Des versions linguistiques alternatives en anglais et en allemand ont également été retrouvées et vérifiées. La page ne renvoie pas, pour cette actualité, à un document PDF autonome constituant une version intégrale distincte. Les références juridiques liées, publiées antérieurement à la période du 2 au 5 novembre 2026, n’ont pas été utilisées pour compléter ou sélectionner le contenu retenu. Aucun numéro d’affaire ni ECLI n’est mentionné dans l’actualité consultée.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "La phase II de la réforme du droit des dessins et modèles de l’Union européenne, mise en œuvre le 1er juillet 2026, ouvre la possibilité de recourir à de nouveaux formats numériques de représentation. L’EUIPO indique avoir reçu, au cours des trois premiers mois d’application de cette évolution, plus de 100 dessins ou modèles de l’Union européenne déposés au moyen de vidéos ou de modèles numériques en trois dimensions.",
-        "Sur les 25 591 demandes de dessins ou modèles de l’Union européenne reçues durant cette période, 25 452 comportaient des images statiques traditionnelles. Les autres représentations graphiques recensées par l’Office comprenaient 103 vidéos et 36 modèles numériques tridimensionnels. L’EUIPO illustre cette utilisation au moyen de plusieurs demandes identifiées par des références EUD, sans apporter de précisions supplémentaires sur leur statut ou leur contenu.",
-        "L’Office précise être équipé pour recevoir et examiner ces nouveaux formats. Ces premières données témoignent d’un recours effectif, quoique encore minoritaire au regard du volume global des dépôts, aux possibilités de représentation introduites dans le cadre de la réforme."
+        "Dans le cadre de la dématérialisation intégrale de sa procédure de délivrance, l’Office européen des brevets annonce l’adaptation de son cadre juridique afin de préserver les utilisateurs confrontés à l’indisponibilité de ses services en ligne ou à des circonstances exceptionnelles. À compter du 1er avril 2027, les demandes de brevet et les autres documents devront être déposés par voie électronique, les autres interactions avec l’OEB devant s’effectuer au moyen des services en ligne concernés.",
+        "Une nouvelle décision et un nouveau communiqué précisent les modalités d’application de la règle 134 CBE modifiée. Celle-ci habilite le Président de l’OEB à définir les conditions dans lesquelles un moyen de communication électronique doit être regardé comme indisponible et celles permettant de considérer comme accompli en temps utile un acte réalisé après l’expiration d’un délai. La décision entrera en vigueur le 1er avril 2027 et s’appliquera à tout délai expirant à compter de cette date.",
+        "Un moyen de communication électronique sera considéré comme indisponible lorsque les utilisateurs ne peuvent y accéder ou l’utiliser pour des raisons imputables à l’OEB. Une maintenance programmée de moins de quatre heures ne devrait normalement pas relever de cette qualification lorsqu’elle a été annoncée au moins deux jours ouvrables à l’avance. Lorsqu’une partie ou son mandataire est empêché de respecter un délai en raison d’un événement exceptionnel, l’acte omis pourra être réputé accompli dans les délais s’il est exécuté au plus tard cinq jours après la cessation de l’empêchement. Les cyberattaques sont susceptibles d’être reconnues comme des événements exceptionnels, y compris lorsqu’elles n’affectent qu’un nombre limité de personnes ou d’entités."
       ],
-      "highlight_paragraph": "Les déposants peuvent désormais envisager, lorsque la nature du dessin ou modèle le justifie, une représentation par vidéo ou par modèle numérique tridimensionnel. L’EUIPO confirme disposer des capacités nécessaires à la réception et à l’examen de ces formats.",
-      "practical_relevance": "La communication de l’EUIPO confirme l’utilisation concrète des nouveaux formats de représentation dans les dépôts de dessins ou modèles de l’Union européenne. Elle invite à apprécier, au cas par cas, l’intérêt d’une vidéo ou d’un modèle numérique tridimensionnel au regard de la représentation du dessin ou modèle concerné.",
+      "highlight_paragraph": "À compter du 1er avril 2027, un acte empêché par un événement exceptionnel pourra être régularisé dans les cinq jours suivant la cessation de l’empêchement, sous réserve des conditions précisées par l’OEB.",
+      "practical_relevance": "Les déposants et mandataires devront organiser le suivi de leurs échéances dans un environnement exclusivement électronique. La qualification d’une indisponibilité imputable à l’OEB, ainsi que la possibilité de régulariser un acte après un événement exceptionnel, constituent des garanties procédurales à apprécier au regard des conditions et délais annoncés.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Brevets et intelligence artificielle",
-      "title": "L’OMPI actualise son étude sur l’intelligence artificielle et la qualité d’inventeur",
-      "court_reference": "SCP/38/5 CORR.",
-      "source": "Organisation Mondiale de la Propriété Intellectuelle, document SCP/38/5 CORR., « Artificial Intelligence (AI) and Inventorship (update of SCP/37/5) »",
-      "source_url": "https://www.wipo.int/edocs/mdocs/scp/en/scp_38/scp_38_5_corr.pdf",
-      "publication_date": "2026-10-28",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
+      "category": "Droit d’auteur et droits voisins",
+      "title": "Droits voisins de la presse : la commission mixte paritaire renforce l’accès à l’information et le rôle de l’Arcom",
+      "court_reference": "Sénat, proposition de loi n° 146, session 2026",
+      "source": "Sénat, proposition de loi n° 146, session 2026-2027, texte élaboré par la commission mixte paritaire",
+      "source_url": "https://www.senat.fr/leg/ppl26-146.pdf",
+      "publication_date": "2026-11-04",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-2",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, document SCP/38/5 CORR., 28 octobre 2026",
-      "summary": "L’OMPI met à jour son document de travail relatif à l’intelligence artificielle et à la qualité d’inventeur. Le texte présente les configurations possibles d’intervention de l’IA dans le processus inventif, les cadres juridiques applicables et l’état actualisé de l’affaire DABUS.",
-      "retrieval_note": "Le document PDF officiel a été directement ouvert et consulté. Il comporte 66 pages. Son texte intégral, son introduction, sa table des matières, ses sections substantielles et son annexe relative notamment aux cadres juridiques nationaux et régionaux ainsi qu’à l’affaire DABUS ont été effectivement vérifiés. Aucune version linguistique intégrale distincte n’a été identifiée pour ce document dans la période comprise entre le 26 octobre 2026 et le 1er novembre 2026 inclus. La présente vérification repose exclusivement sur des contenus publiés le 28 octobre 2026.",
+      "source_display_text": "Sénat, proposition de loi n° 146, session 2026-2027, texte élaboré par la commission mixte paritaire, 4 novembre 2026.",
+      "summary": "Le texte élaboré par la commission mixte paritaire accroît les obligations de transparence des services en ligne envers les éditeurs et agences de presse. Il confie à l’Arcom des pouvoirs de règlement des différends, d’injonction et de sanction afin de renforcer l’effectivité des droits voisins.",
+      "retrieval_note": "La page officielle du Sénat renvoie vers un document PDF direct de sept pages. Le PDF a été effectivement ouvert et consulté dans son intégralité, y compris son dispositif et l'ensemble des articles. Le document indique un enregistrement à la Présidence du Sénat le 4 novembre 2026. Aucun numéro de décision ni ECLI n'est applicable à ce document législatif. ([senat.fr](https://www.senat.fr/leg/ppl26-146.html))",
       "lead_label": "Contexte",
       "paragraphs": [
-        "Le document SCP/38/5 CORR., préparé pour la trente-huitième session du Comité permanent du droit des brevets de l’OMPI, actualise la section VI du document SCP/37/5 consacrée à l’affaire DABUS. Cette actualisation repose principalement sur les informations communiquées par les États membres et les offices régionaux de brevets, complétées par des sources publiques et des commentaires doctrinaux. Le corrigendum porte sur les modifications apportées au paragraphe 188 du document SCP/38/5.",
-        "Le Secrétariat examine les différentes modalités d’interaction entre l’être humain et l’intelligence artificielle dans le processus inventif. Sont notamment distinguées l’invention humaine, l’invention humaine assistée par intelligence artificielle, l’invention conjointe entre l’être humain et l’intelligence artificielle, l’invention conçue par l’intelligence artificielle avec assistance humaine et l’invention réalisée exclusivement par l’intelligence artificielle. Le document relève que cette dernière hypothèse demeure théorique à la date de sa rédaction.",
-        "La compilation couvre l’évolution historique de la qualité d’inventeur, le cadre juridique international, les approches nationales et régionales ainsi que les développements relatifs à DABUS. Elle offre ainsi un état des lieux documentaire des questions soulevées par l’attribution de la qualité d’inventeur lorsque des systèmes d’intelligence artificielle interviennent dans l’élaboration d’une invention."
+        "Le texte élaboré par la commission mixte paritaire de la proposition de loi visant à renforcer l’effectivité des droits voisins des éditeurs et des agences de presse modifie l’article L. 218-4 du code de la propriété intellectuelle et insère les articles L. 218-4-1 à L. 218-4-5. Il vise à encadrer plus étroitement la mise en œuvre du droit à rémunération des éditeurs et agences de presse par les services de communication au public en ligne.",
+        "Ces services devront communiquer aux bénéficiaires des informations relatives à l’utilisation des publications de presse ainsi qu’à l’évaluation et à la répartition de la rémunération due. Ces éléments devront être exhaustifs, fiables, objectifs et actualisés annuellement. En cas d’absence de transmission dans les trente jours ou d’insuffisance des informations fournies, les éditeurs et agences pourront saisir l’Autorité de régulation de la communication audiovisuelle et numérique. Celle-ci pourra adopter une décision motivée, adresser une injonction et, en cas d’inexécution, infliger une sanction pécuniaire pouvant atteindre 1 % du chiffre d’affaires mondial hors taxes du service concerné.",
+        "Le texte impose également une négociation de bonne foi sur le montant de la rémunération. Pendant cette négociation, le service en ligne ne pourra limiter la visibilité des publications de presse ni modifier leurs modalités d’affichage. À défaut d’accord trois mois après la demande de négociation, l’une des parties pourra saisir l’Arcom, appelée à déterminer le montant de la rémunération. L’Autorité se voit en outre reconnaître des pouvoirs de collecte d’informations et d’expertise, ainsi que la faculté de saisir l’Autorité de la concurrence."
       ],
-      "highlight_paragraph": "Le document maintient une distinction structurante entre l’assistance apportée par l’intelligence artificielle à une invention humaine et l’hypothèse, encore théorique selon l’OMPI, d’une invention réalisée exclusivement par une intelligence artificielle.",
-      "practical_relevance": "Cette mise à jour constitue une source de référence pour apprécier, dans une perspective comparative, les questions de désignation de l’inventeur soulevées par le recours à l’intelligence artificielle. Elle confirme l’importance de documenter l’intervention humaine dans le processus inventif lors de la préparation et du dépôt des demandes de brevet.",
+      "highlight_paragraph": "À défaut d’accord dans les trois mois suivant une demande de négociation, l’Arcom pourra être saisie afin de déterminer le montant de la rémunération due au titre des droits voisins.",
+      "practical_relevance": "Les éditeurs et agences de presse disposeraient d’un cadre renforcé pour obtenir les données nécessaires à l’évaluation de leur rémunération et pour faire trancher les désaccords persistants. Les services de communication au public en ligne devraient, pour leur part, sécuriser leurs processus de transmission d’informations, de négociation et de maintien de la visibilité des publications durant les discussions.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Brevets internationaux",
-      "title": "L’OMPI publie une étude comparative sur les conditions de dépôt de brevets à l’étranger",
-      "court_reference": "SCP/38/8 CORR.",
-      "source": "Organisation Mondiale de la Propriété Intellectuelle, Comité permanent du droit des brevets",
-      "source_url": "https://www.wipo.int/edocs/mdocs/scp/en/scp_38/scp_38_8_corr.pdf",
-      "publication_date": "2026-10-28",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
+      "category": "Marques, communication numérique et réglementation",
+      "title": "Publicité des marques d’alcool sur les réseaux sociaux : les pratiques promotionnelles mises en cause",
+      "court_reference": "Article de presse consacré aux pratiques publicitaires des marques d’alcool sur les réseaux sociaux",
+      "source": "Le Parisien",
+      "source_url": "https://www.leparisien.fr/societe/recettes-quiz-sondages-la-strategie-de-publicite-redoutable-des-marques-dalcool-sur-les-reseaux-sociaux-05-11-2026-25Y45WESA5GUBHE6TD7CI7OYSY.php",
+      "publication_date": "2026-11-05",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-5",
       "source_access": "COMPLET",
       "access_warning": "",
-      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, Comité permanent du droit des brevets, 28 octobre 2026",
-      "summary": "L’OMPI publie une étude comparative des restrictions et procédures nationales applicables au dépôt de demandes de brevet à l’étranger. Le document recense cinq modèles réglementaires, examine leurs critères de rattachement et analyse les difficultés pratiques qu’ils peuvent susciter dans les collaborations transfrontalières.",
-      "retrieval_note": "Le document primaire a été retrouvé et ouvert sous la forme de son PDF officiel direct, qui comporte 125 pages. Le texte intégral a été consulté, notamment les pages liminaires, le résumé exécutif, la structure comparative des conditions de dépôt à l'étranger, le cadre juridique international ainsi que les développements nationaux et régionaux. Le document est rédigé en anglais, porte la mention « ORIGINAL: ENGLISH » et indique la date du 28 octobre 2026. La page de présentation officielle et une version linguistique alternative ont également été vérifiées. La présente qualification repose exclusivement sur des contenus publiés entre le 26 octobre 2026 et le 1er novembre 2026 inclus.",
+      "source_display_text": "Le Parisien, 5 novembre 2026",
+      "summary": "Le Parisien rapporte les critiques d’Addictions France visant les campagnes numériques des marques d’alcool. L’association dénonce l’intensité des contenus sponsorisés, les formats interactifs et le recours aux influenceurs, estimant qu’une partie des publications excéderait le cadre réglementaire applicable.",
+      "retrieval_note": "L’URL directe a été ouverte et le texte intégral de l’article a été effectivement consulté, y compris son titre, sa date de publication, son auteur, ses développements substantiels et sa conclusion. Aucun document PDF, aucune version linguistique alternative, aucun numéro d’affaire, numéro de décision ou ECLI n’est mentionné ou nécessaire pour qualifier l’accès à cet article d’actualité. Les recherches complémentaires n’ont pas permis d’identifier, dans la période comprise entre le 2 novembre 2026 et le 5 novembre 2026 inclus, un document primaire distinct accessible correspondant au rapport cité par l’article. L’analyse est donc limitée aux faits rapportés par Le Parisien, sans extrapolation au contenu non consulté de ce rapport.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’étude SCP/38/8 CORR. examine les mécanismes de droit des brevets susceptibles de conditionner le dépôt d’une demande à l’étranger. Elle couvre notamment les exigences de dépôt national préalable, les autorisations de dépôt hors du territoire, les transmissions par un office désigné, les délais d’attente, ainsi que les restrictions liées au secret ou à la confidentialité. Fondée sur les informations communiquées par 47 États membres et deux offices régionaux, complétées, lorsque nécessaire, par des recherches du Secrétariat, elle conserve une approche descriptive et comparative, sans établir de hiérarchie entre les régimes recensés ni préconiser de solution normative.",
-        "Le document distingue cinq modèles de référence : l’examen préalable consécutif à un dépôt national, l’autorisation préalable, l’acheminement par un office désigné, la restriction résultant d’une mesure de secret et l’absence de condition de dépôt à l’étranger en droit des brevets. L’analyse porte également sur les critères de rattachement personnels, territoriaux et matériels, ainsi que sur les voies de dépôt nationales, régionales et internationales. Elle détaille les conséquences susceptibles de résulter du non-respect des exigences applicables et les modalités de protection des informations sensibles.",
-        "L’étude souligne les difficultés propres aux projets innovants menés dans un cadre transfrontalier, lorsque les inventeurs, employeurs, activités de recherche ou informations techniques présentent des liens avec plusieurs territoires. Les développements nationaux et régionaux, comprenant notamment la France, la Chine, l’Inde, le Japon, le Royaume-Uni et les États-Unis, mettent en évidence la diversité des conditions procédurales à identifier avant toute stratégie de dépôt international."
+        "Le Parisien rapporte qu’Addictions France sollicite l’interdiction de la publicité pour l’alcool sur les réseaux sociaux et, plus largement, sur Internet. L’association met notamment en cause des contenus payants, qualifiés d’interstitiels ou d’invasifs, insérés par les plateformes dans les fils d’actualité des internautes. Les campagnes concernées recourraient à des recettes de mixologie, des quiz, des sondages et des jeux-concours, formats susceptibles de favoriser l’immersion et l’interaction avec les utilisateurs.",
+        "L’article relève l’importance quantitative de certains dispositifs sur les plateformes de Meta. BrewDog aurait ainsi fait l’objet de 1 550 contenus observés en un an, contre 210 en moyenne pour les autres marques citées, tandis que Jägermeister et Gérard Bertrand totaliseraient respectivement 655 et 630 contenus. Sur 54 contenus attribués à Label 5, Bavaria 8.6 et Jägermeister, Addictions France aurait considéré que la moitié dépassait le cadre réglementaire.",
+        "Le recours aux influenceurs constitue également un point d’attention. Selon l’article, des publications présentent des situations de fête, d’amitié ou de loisirs dans lesquelles une marque d’alcool apparaît. L’alcool de sureau Saint-Germain aurait ainsi bénéficié de 87 publications réalisées par 35 influenceurs distincts. Le Parisien indique qu’Addictions France engage régulièrement des procédures contre des marques et des influenceurs associés à de telles campagnes. Il mentionne enfin que Heineken aurait été condamnée en 2025 à deux amendes de 50 000 euros par le tribunal correctionnel de Paris, l’affaire étant présentée comme pendante en appel."
       ],
-      "highlight_paragraph": "Dans les collaborations transfrontalières, l’identification préalable des rattachements personnels, territoriaux et matériels pertinents est déterminante afin de vérifier l’existence éventuelle d’une obligation de dépôt national, d’autorisation préalable ou de contrôle lié au secret.",
-      "practical_relevance": "Les entreprises et les conseils intervenant dans des programmes de recherche internationaux doivent intégrer, dès l’organisation des dépôts, l’examen des règles locales relatives aux formalités de dépôt à l’étranger. L’étude fournit un cadre comparatif utile pour cartographier les contraintes procédurales et articuler les dépôts nationaux, régionaux et internationaux.",
+      "highlight_paragraph": "Les annonceurs du secteur alcoolier doivent porter une attention particulière aux contenus sponsorisés et interactifs, ainsi qu’aux collaborations avec des influenceurs, dès lors que ces formats font l’objet d’une contestation récurrente au regard de leur conformité au cadre réglementaire.",
+      "practical_relevance": "Cette actualité confirme l’exposition particulière des campagnes numériques relatives à l’alcool, notamment lorsque leur diffusion, leur caractère promotionnel ou leurs mécanismes d’engagement sont renforcés par les plateformes et les influenceurs. Elle invite à documenter la conformité des créations, modalités de ciblage et partenariats avant leur diffusion.",
       "illustration_page_url": "",
       "illustration_alt": ""
     },
     {
       "type": "ACTUALITE",
-      "category": "Règlement des litiges en propriété intellectuelle",
-      "title": "La reconnaissance croissante de la médiation en propriété intellectuelle",
-      "court_reference": "",
-      "source": "EUIPO, « From awareness to practice: the growing recognition of IP mediation »",
-      "source_url": "https://www.euipo.europa.eu/en/news/from-awareness-to-practice-the-growing-recognition-of-ip-mediation",
-      "publication_date": "2026-10-27",
+      "category": "Propriété intellectuelle et assurance",
+      "title": "L’OMPI annonce un dialogue thématique sur la propriété intellectuelle et l’assurance",
+      "court_reference": "OMPI, dialogue thématique IP & SMEs sur la propriété intellectuelle et l’assurance",
+      "source": "Organisation Mondiale de la Propriété Intellectuelle (OMPI)",
+      "source_url": "https://www.wipo.int/es/web/business/w/news/2026/save-the-date-nov.-4-wipo-ip-smes-topical-dialogue-on-ip-insurance",
+      "publication_date": "2026-11-04",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
-      "source_access": "PARTIEL",
-      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "EUIPO, « From awareness to practice: the growing recognition of IP mediation », 27 octobre 2026",
-      "summary": "L’EUIPO relève une progression de la visibilité et de l’utilisation de sa médiation en propriété intellectuelle. Les données publiées soulignent une satisfaction élevée des participants, l’initiative spontanée de certaines demandes et le rôle déterminant des conseils spécialisés dans l’évaluation et la formalisation d’un accord.",
-      "retrieval_note": "La recherche de l’URL directe a abouti à une erreur d’accès HTTP 403. Le moteur de recherche expose le contenu substantiel de l’article et sa date de publication, mais le texte intégral n’a pas pu être ouvert directement sur le site officiel. Aucune pièce jointe PDF, version linguistique alternative, référence d’affaire, numéro de décision ni ECLI n’a été identifié dans les recherches effectuées. En conséquence, l’accès est qualifié de PARTIEL et non de COMPLET.",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle (OMPI), 4 novembre 2026",
+      "summary": "L’OMPI annonce son premier dialogue thématique WIPO IP & SMEs consacré à la propriété intellectuelle et à l’assurance. La rencontre examinera notamment la couverture des risques liés aux actifs incorporels, la gestion des risques de propriété intellectuelle, l’intelligence artificielle et le financement des entreprises innovantes.",
+      "retrieval_note": "Le texte intégral de l’actualité a été consulté sur la page officielle de l’OMPI. Aucune pièce jointe PDF, décision, affaire, ECLI ou disposition normative n’est mentionnée. La page comporte un champ de date de publication non renseigné dans son rendu accessible. Une version linguistique alternative en russe a également été consultée. Conformément à la consigne applicable aux actualités, aucun visuel n’est retenu.",
       "lead_label": "Contexte",
       "paragraphs": [
-        "L’EUIPO constate une reconnaissance accrue de la médiation dans les litiges de propriété intellectuelle auprès des représentants. Selon l’Office, 65 % des représentants interrogés en 2025 dans le cadre de son enquête de satisfaction, en matière de marques et de dessins ou modèles de l’Union européenne, connaissaient ses services de médiation. Entre janvier et août 2026, ces services ont recueilli un taux global de satisfaction de 94 % parmi leurs participants.",
-        "L’appropriation du dispositif semble également se traduire dans les pratiques. En 2026, 26 % des demandes adressées au Centre de médiation de l’EUIPO auraient été introduites spontanément, sans échange préalable avec l’Office sur le recours à la médiation. L’EUIPO rappelle, parallèlement, que près des deux tiers des procédures d’opposition relatives aux marques de l’Union européenne se concluent par une négociation directe entre représentants. Une simulation interactive de médiation, organisée avec l’ECTA lors de sa réunion annuelle de juin 2026, s’inscrit dans cette dynamique de diffusion.",
-        "L’Office souligne l’intérêt de l’assistance d’un avocat spécialisé en propriété intellectuelle au cours de la médiation. Celui-ci peut notamment orienter les échanges vers les intérêts économiques des clients, apprécier les risques attachés au différend et contribuer à la rédaction ainsi qu’à la mise en œuvre de l’accord transactionnel. Les représentants impliqués dans un litige pendant devant l’EUIPO sont invités à solliciter le Centre de médiation afin d’apprécier l’adéquation de cette voie amiable."
+        "L’Organisation Mondiale de la Propriété Intellectuelle annonce la tenue de son premier dialogue thématique WIPO IP & SMEs dédié aux rapports entre propriété intellectuelle et assurance. Organisé au siège de l’OMPI à Genève, l’événement pourra également être suivi en ligne. Il s’inscrit dans une série de discussions internationales consacrées aux enjeux émergents situés à l’intersection de la propriété intellectuelle et des entreprises.",
+        "Les travaux porteront sur les moyens de réduire l’écart de couverture affectant les risques attachés aux actifs incorporels et aux droits de propriété intellectuelle. L’OMPI prévoit la participation d’assureurs, d’entreprises, de professionnels de la propriété intellectuelle, de décideurs publics et d’universitaires. Les échanges aborderont les tendances de l’assurance des actifs incorporels, l’apport de la gestion de la propriété intellectuelle à l’identification et à la réduction des risques, ainsi que les risques et usages de l’intelligence artificielle dans l’évaluation de ces risques.",
+        "Le programme doit également examiner le rôle de l’assurance dans l’investissement, le financement et la croissance des entreprises dont l’activité dépend fortement de la propriété intellectuelle. Les informations relatives au programme détaillé, aux intervenants, à l’inscription et aux modalités de participation ne sont pas encore précisées par l’OMPI."
       ],
-      "highlight_paragraph": "L’intervention d’un conseil spécialisé est présentée comme un facteur utile pour évaluer les risques, structurer la négociation autour des intérêts économiques des parties et assurer la rédaction ainsi que l’exécution de l’accord transactionnel.",
-      "practical_relevance": "Cette communication invite les praticiens confrontés à un litige pendant devant l’EUIPO à envisager la médiation dès l’identification des options de règlement amiable et à en apprécier l’adéquation avec le Centre de médiation. Elle met en évidence la valeur ajoutée du conseil en propriété intellectuelle dans la préparation, la conduite et la sécurisation juridique d’un accord.",
+      "highlight_paragraph": "L’initiative met en lumière l’enjeu de l’assurabilité des risques de propriété intellectuelle et des actifs incorporels, ainsi que l’incidence de leur gestion sur l’accès au financement des entreprises qui en dépendent.",
+      "practical_relevance": "Les titulaires de droits et les entreprises à forte intensité de propriété intellectuelle pourront suivre les travaux annoncés afin d’identifier les évolutions envisagées en matière de couverture assurantielle, d’évaluation des risques et de financement fondé sur les actifs incorporels.",
       "illustration_page_url": "",
       "illustration_alt": ""
     }
   ],
   "briefs": [],
-  "generated_at": "2026-11-01T21:55:37.929Z",
+  "generated_at": "2026-11-05T14:41:15.429Z",
   "status": "generated",
-  "report_url": "/public/reports/veille-2026-11-02.docx",
-  "docx_url": "/public/reports/veille-2026-11-02.docx"
+  "report_url": "/public/reports/veille-2026-11-06.docx",
+  "docx_url": "/public/reports/veille-2026-11-06.docx"
 }
