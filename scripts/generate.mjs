@@ -486,7 +486,7 @@ const combinationsOf = (items, size) => {
   return results;
 };
 
-const chooseDiversifiedComposition = (items, jurisprudenceTarget, actualiteTarget) => {
+const chooseDiversifiedComposition = (items, jurisprudenceTarget, actualiteTarget, maximumPerInstitution = 2) => {
   const jurisprudences = items.filter((item) => item.type === "JURISPRUDENCE");
   const actualites = items.filter((item) => item.type === "ACTUALITE");
   if (jurisprudences.length < jurisprudenceTarget || actualites.length < actualiteTarget) return null;
@@ -501,8 +501,9 @@ const chooseDiversifiedComposition = (items, jurisprudenceTarget, actualiteTarge
         const institution = institutionKey(item);
         institutionCounts.set(institution, (institutionCounts.get(institution) || 0) + 1);
       }
-      if ([...institutionCounts.values()].some((count) => count > 2)) continue;
-      const score = combined.reduce((total, item) => {
+      if ([...institutionCounts.values()].some((count) => count > maximumPerInstitution)) continue;
+      const institutionDiversityBonus = institutionCounts.size * 100;
+      const score = institutionDiversityBonus + combined.reduce((total, item) => {
         const completeBonus = item.resolution?.access_level === "COMPLET" ? 1000 : 0;
         const verificationBonus = (item.resolution?.verified_facts?.length || 0) * 10;
         return total + completeBonus + verificationBonus - items.indexOf(item);
@@ -590,7 +591,30 @@ const verifiedJurisprudences = verifiedSelections.filter((item) => item.type ===
 const verifiedActualites = verifiedSelections.filter((item) => item.type === "ACTUALITE");
 const preferredSelections = chooseDiversifiedComposition(verifiedSelections, 1, 4);
 const fallbackSelections = preferredSelections ? null : chooseDiversifiedComposition(verifiedSelections, 2, 3);
-const substantiveSelections = preferredSelections || fallbackSelections || [];
+const relaxedPreferredSelections = preferredSelections || fallbackSelections
+  ? null
+  : chooseDiversifiedComposition(verifiedSelections, 1, 4, 3);
+const relaxedFallbackSelections = preferredSelections || fallbackSelections || relaxedPreferredSelections
+  ? null
+  : chooseDiversifiedComposition(verifiedSelections, 2, 3, 3);
+const newsOnlySelections = preferredSelections || fallbackSelections || relaxedPreferredSelections || relaxedFallbackSelections
+  ? null
+  : chooseDiversifiedComposition(verifiedSelections, 0, 5, 3);
+const ultimateCurrentWeekSelections = preferredSelections || fallbackSelections || relaxedPreferredSelections || relaxedFallbackSelections || newsOnlySelections
+  ? null
+  : chooseDiversifiedComposition(verifiedSelections, 0, 5, 5);
+const substantiveSelections = preferredSelections
+  || fallbackSelections
+  || relaxedPreferredSelections
+  || relaxedFallbackSelections
+  || newsOnlySelections
+  || ultimateCurrentWeekSelections
+  || [];
+if (newsOnlySelections || ultimateCurrentWeekSelections) {
+  console.warn("Aucune jurisprudence de la semaine n’est suffisamment vérifiable: édition exceptionnellement composée de cinq actualités fraîches.");
+} else if (relaxedPreferredSelections || relaxedFallbackSelections) {
+  console.warn("Diversité institutionnelle assouplie à trois sujets au maximum pour garantir une édition complète limitée à la semaine en cours.");
+}
 const selectedJurisprudenceCount = substantiveSelections.filter((item) => item.type === "JURISPRUDENCE").length;
 const selectedActualiteCount = substantiveSelections.filter((item) => item.type === "ACTUALITE").length;
 const minimalSelections = resolvedSelections.filter(({ resolution }) =>
@@ -598,7 +622,7 @@ const minimalSelections = resolvedSelections.filter(({ resolution }) =>
 ).slice(0, 2);
 
 if (substantiveSelections.length < finalSubjectTarget) {
-  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles, mais aucune combinaison diversifiée de cinq sujets ne respecte le plafond de deux contenus par institution.`);
+  throw new Error(`Veille refusée avant rédaction approfondie: ${verifiedJurisprudences.length} jurisprudence(s) et ${verifiedActualites.length} actualité(s) suffisamment substantielles, sans combinaison de cinq sujets frais et vérifiables.`);
 }
 
 const requiredText = { type: "string", minLength: 20 };
@@ -856,13 +880,15 @@ const actualiteCount = items.filter((item) => item.type === "ACTUALITE").length;
 const totalEditorialWords = items.reduce((total, item) => total + contentWordCount(item), 0);
 const editorialCategories = new Set(items.map((item) => item.category.trim().toLowerCase()));
 const finalCompositionIsValid = (jurisprudenceCount === 1 && actualiteCount === 4)
-  || (jurisprudenceCount === 2 && actualiteCount === 3);
+  || (jurisprudenceCount === 2 && actualiteCount === 3)
+  || (jurisprudenceCount === 0 && actualiteCount === 5);
 if (items.length !== finalSubjectTarget || !finalCompositionIsValid) {
-  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, ou deux jurisprudences et trois actualités en cas de réserve hebdomadaire insuffisante.`);
+  throw new Error(`Veille refusée: composition finale insuffisante de ${jurisprudenceCount} jurisprudence(s) et ${actualiteCount} actualité(s). Cinq sujets frais sont requis, avec une jurisprudence et quatre actualités en priorité, deux jurisprudences et trois actualités en second choix, ou cinq actualités lorsque la semaine ne fournit aucune jurisprudence suffisamment vérifiable.`);
 }
+const minimumEditorialWords = jurisprudenceCount === 0 ? 900 : 1500;
 const maximumEditorialWords = jurisprudenceCount === 2 ? 4300 : 3200;
-if (totalEditorialWords < 1500 || totalEditorialWords > maximumEditorialWords) {
-  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre 1 500 et ${maximumEditorialWords.toLocaleString("fr-FR")} mots selon la composition de la semaine.`);
+if (totalEditorialWords < minimumEditorialWords || totalEditorialWords > maximumEditorialWords) {
+  throw new Error(`Veille refusée: longueur éditoriale totale de ${totalEditorialWords} mots, attendue entre ${minimumEditorialWords.toLocaleString("fr-FR")} et ${maximumEditorialWords.toLocaleString("fr-FR")} mots selon la composition de la semaine.`);
 }
 if (editorialCategories.size < 4) {
   throw new Error(`Veille refusée: seulement ${editorialCategories.size} catégories éditoriales distinctes, quatre au minimum sont requises.`);
