@@ -1,2 +1,2 @@
-triggered_at=2026-11-19T23:00:00+01:00
-reason=retry-current-week-after-network-fix
+triggered_at=2026-11-19T23:15:00+01:00
+reason=retry-after-partial-source-quality-fix
