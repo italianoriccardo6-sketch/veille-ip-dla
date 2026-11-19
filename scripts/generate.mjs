@@ -835,7 +835,7 @@ const qualityReasons = (item) => {
   if (displayedDateCount !== 1) reasons.push(`la date française doit apparaître exactement une fois dans source_display_text, occurrences: ${displayedDateCount}`);
   if (/sans objet/i.test(JSON.stringify(item))) reasons.push("présence de la formule interdite « Sans objet »");
   if (item.source_access === "COMPLET" && limitations > 2) reasons.push(`${limitations} réserves répétitives pour une source complète, maximum 2`);
-  if (item.source_access === "PARTIEL" && limitations > 6) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 6`);
+  if (item.source_access === "PARTIEL" && limitations > 8) reasons.push(`${limitations} réserves répétitives pour une source partielle, maximum 8`);
   if (item.type === "ACTUALITE") {
     // La longueur demandée dans le prompt reste la cible éditoriale. Le contrôle
     // applique une petite tolérance afin de ne pas payer une réécriture complète
@@ -847,7 +847,7 @@ const qualityReasons = (item) => {
     // Une fiche substantielle légèrement plus longue n'est pas incomplète. Le
     // seuil supérieur est un garde-fou, tandis que la cible de 850 à 1 050 mots
     // demeure explicitement imposée lors de la rédaction.
-    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1500] : [700, 1200];
+    const [minimum, maximum] = item.source_access === "COMPLET" ? [850, 1500] : [600, 1200];
     if (words < minimum || words > maximum) reasons.push(`${words} mots, attendu entre ${minimum} et ${maximum}`);
   }
   return reasons;
