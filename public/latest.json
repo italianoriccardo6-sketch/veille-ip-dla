@@ -1,298 +1,450 @@
 {
-  "week": "Du 9 novembre au 15 novembre 2026",
-  "edition_date": "2026-11-16",
-  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 9 novembre au 15 novembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Aucun des sujets retenus ne provient des alertes de Juliette.",
+  "week": "Du 16 novembre au 19 novembre 2026",
+  "edition_date": "2026-11-20",
+  "editorial_note": "Cette édition réunit une jurisprudence et quatre actualités publiées au cours de la semaine du 16 novembre au 19 novembre 2026. Les cinq sujets ont été retenus après vérification de leur source primaire et représentent 5 catégories éditoriales distinctes. Un sujet a été initialement signalé par les alertes de Juliette, puis vérifié sur sa source primaire.",
   "source_coverage": [
     {
       "source_name": "EUIPO",
       "domain": "euipo.europa.eu",
       "searched": true,
-      "candidate_count": 1,
-      "search_note": "Source EUIPO analysée pour la période strictement comprise entre le 2026-11-09 et le 2026-11-15 inclus. Une actualité substantielle directement liée aux dessins et modèles a été identifiée. Aucun contenu substantiel portant spécifiquement sur les marques n’a été retenu durant cette période."
+      "candidate_count": 2,
+      "search_note": "La source EUIPO a été analysée en limitant strictement la recherche aux contenus publiés du 16 novembre 2026 au 19 novembre 2026 inclus. Deux contenus substantiels et directement liés aux thèmes des marques, dessins et modèles ou à leur protection ont été identifiés. Aucun contenu antérieur n'a été retenu."
     },
     {
       "source_name": "OMPI",
       "domain": "wipo.int",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source OMPI a été analysée pour la période strictement comprise entre le 2026-11-09 et le 2026-11-15 inclus. Trois contenus substantiels et datés ont été retenus, portant principalement sur l’international, les brevets et les enjeux transversaux de propriété intellectuelle. Aucun contenu spécifiquement consacré aux marques n’a été identifié dans cette fenêtre de publication."
+      "search_note": "La source OMPI a été analysée en limitant strictement la sélection aux contenus publiés du 16 au 19 novembre 2026 inclus. Trois documents substantiels et vérifiables ont été retenus, principalement sur les brevets et la coopération internationale. Aucun contenu suffisamment substantiel consacré spécifiquement aux marques n'a été identifié dans cette fenêtre sans recourir à une publication antérieure."
     },
     {
       "source_name": "CJUE",
       "domain": "curia.europa.eu",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source CURIA a été analysée exclusivement pour la période du 9 au 15 novembre 2026 inclus. Trois contenus substantiels en propriété intellectuelle ont été retenus, chacun avec une date de publication vérifiable dans InfoCuria. Aucun contenu antérieur n’a été utilisé pour compléter la sélection."
+      "search_note": "La source Curia/InfoCuria a été analysée pour la période strictement comprise entre le 16 novembre 2026 et le 19 novembre 2026 inclus. Trois arrêts substantiels en propriété intellectuelle ont été identifiés, tous rendus le 18 novembre 2026 par le Tribunal, principalement en matière de marques. Aucun contenu antérieur à cette période n’a été retenu. Les 16, 17 et 19 novembre 2026 n’ont pas fait apparaître, dans les résultats consultés, de décision publiée pertinente supplémentaire en propriété intellectuelle."
     },
     {
       "source_name": "Légifrance",
       "domain": "legifrance.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "Source Légifrance analysée pour la période strictement comprise entre le 9 novembre 2026 et le 15 novembre 2026 inclus. Les résultats retrouvés concernent principalement des versions en vigueur ou des contenus antérieurs, sans publication substantielle en propriété intellectuelle dont la date de publication dans cette période soit vérifiable. Conformément à la consigne de fraîcheur, aucun contenu antérieur n'a été retenu."
+      "search_note": "La source Légifrance a été analysée pour la période strictement comprise entre le 16 novembre 2026 et le 19 novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — loi, décision, rapport ou actualité — n'a pu être identifié avec une date de publication vérifiable dans cette période. Les résultats affichant seulement une date d'entrée en vigueur ou une date de consultation n'ont pas été retenus, conformément aux critères de fraîcheur."
     },
     {
       "source_name": "Cour de cassation",
       "domain": "courdecassation.fr",
       "searched": true,
-      "candidate_count": 2,
-      "search_note": "La source Cour de cassation a été analysée pour la période strictement comprise entre le 9 novembre 2026 et le 15 novembre 2026 inclus. Deux décisions substantielles en propriété intellectuelle publiées le 12 novembre 2026 ont été retenues. Aucun contenu antérieur ou postérieur n’a été utilisé."
+      "candidate_count": 0,
+      "search_note": "Source analysée pour la période du 16 au 19 novembre 2026 inclus, avec un ciblage de la jurisprudence substantielle en propriété intellectuelle. Aucun contenu publié par la Cour de cassation pendant cette période n’a été identifié dans les résultats consultés. Les résultats trouvés étaient antérieurs à la période imposée et ont donc été exclus."
     },
     {
       "source_name": "OEB",
       "domain": "epo.org",
       "searched": true,
       "candidate_count": 3,
-      "search_note": "La source OEB a été analysée pour la période strictement comprise entre le 2026-11-09 et le 2026-11-15, dates incluses. Trois contenus substantiels et directement liés aux brevets ont été retenus. Aucun contenu antérieur n'a été utilisé pour compléter la sélection."
+      "search_note": "La source OEB a été analysée pour la période strictement comprise entre le 2026-11-16 et le 2026-11-19, dates incluses. Trois contenus substantiels liés aux brevets et à la propriété intellectuelle ont été retenus. Aucun contenu antérieur n'a été utilisé pour compléter la sélection."
     },
     {
       "source_name": "CSPLA",
       "domain": "culture.gouv.fr",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "Source CSPLA analysée sur culture.gouv.fr. Aucun contenu substantiel en droit d’auteur publié entre le 9 novembre 2026 et le 15 novembre 2026 inclus n’a été identifié. Les résultats repérés étaient antérieurs à cette période et ont donc été exclus conformément à la consigne de fraîcheur."
+      "search_note": "La source CSPLA a été analysée, notamment ses pages « Missions du CSPLA », « Actualités du CSPLA » et « Travaux et publications du CSPLA ». Aucun contenu substantiel consacré au droit d’auteur, avec une date de publication comprise entre le 16 novembre 2026 et le 19 novembre 2026 inclus, n’a été identifié. Les publications trouvées sont antérieures à cette période et ont donc été exclues conformément à la consigne de fraîcheur."
     },
     {
       "source_name": "Sénat",
       "domain": "senat.fr",
       "searched": true,
-      "candidate_count": 0,
-      "search_note": "La source Sénat (senat.fr) a été analysée pour la période strictement comprise entre le 9 novembre 2026 et le 15 novembre 2026 inclus. Aucun contenu substantiel en propriété intellectuelle — décision, texte, rapport ou actualité — n’a pu être vérifié comme ayant été publié durant cette période. Les résultats pertinents repérés étaient antérieurs à cette fenêtre, notamment le 4 novembre 2026, et ont donc été exclus conformément à la consigne de fraîcheur."
+      "candidate_count": 1,
+      "search_note": "La source Sénat a été analysée pour la période strictement comprise entre le 16 novembre 2026 et le 19 novembre 2026 inclus. Un seul contenu substantiel en propriété intellectuelle a été identifié et retenu : les droits voisins des éditeurs et agences de presse. Aucun autre résultat pertinent, avec une date de publication vérifiable dans cette période, n’a été confirmé."
     },
     {
       "source_name": "Dreyfus & Associés – Newsletter IP",
       "domain": "linkedin.com",
       "searched": true,
       "candidate_count": 0,
-      "search_note": "La source LinkedIn prioritaire a été analysée, ainsi que les résultats LinkedIn associés à Dreyfus & Associés. Aucun contenu de cette source présentant une date de publication vérifiable comprise entre le 2026-11-09 et le 2026-11-15 inclus n’a été identifié. La publication de référence « Newsletter, August 2026 » est antérieure à la période demandée et a donc été exclue. Conformément à l’instruction de fraîcheur, aucune publication plus ancienne n’a été retenue."
+      "search_note": "La source LinkedIn de Dreyfus & Associés a été analysée, y compris l’URL prioritaire. Aucun contenu vérifiable publié entre le 16 novembre 2026 et le 19 novembre 2026 inclus n’a été identifié. L’URL prioritaire renvoie à une publication datée du 1er septembre 2026, donc exclue conformément à la période imposée. Aucun contenu antérieur n’a été retenu pour compléter la sélection."
     }
   ],
   "scouting_coverage": {
     "google_alert_feeds": 30,
-    "google_alert_candidates": 9
+    "google_alert_candidates": 28
   },
   "alert_trace": [
     {
       "alert_id": "juliette-1",
-      "title": "Ghost Bikes racheté par Bike Tree (Dutech) : la marque survit, pas l&#39;usine - Volto Velo",
-      "url": "https://www.volto-velo.com/ghost-bikes-rachat-bike-tree-dutech/",
-      "publication_date": "2026-11-15T18:29:13Z",
+      "title": "Propriété intellectuelle : les dépôts mondiaux de brevets atteignent un record de 3,9 millions ...",
+      "url": "https://2m.ma/fr/news/Propri%C3%A9t%C3%A9-intellectuelle-les-d%C3%A9p%C3%B4ts-mondiaux-de-brevets-atteignent-20261118",
+      "publication_date": "2026-11-18T17:06:10Z",
       "selected": false,
-      "reason": "Sujet économique et industriel rapporté par une source secondaire, sans document primaire fourni ni analyse juridique suffisamment substantielle."
+      "reason": "Doublon secondaire de la publication de l’OMPI retenue via sa source primaire."
     },
     {
       "alert_id": "juliette-2",
-      "title": "Marques commerciales: le dépôt ne suffit pas à préserver ses droits | Challenge.ma",
-      "url": "https://www.challenge.ma/marques-commerciales-le-depot-ne-suffit-pas-a-preserver-ses-droits-326574/",
-      "publication_date": "2026-11-15T11:05:01Z",
-      "selected": false,
-      "reason": "Article de presse consacré à une présentation générale du droit des marques, sans source primaire ni apport juridique suffisamment vérifiable."
+      "title": "Indicateurs mondiaux relatifs à la propriété intellectuelle de l&#39;OMPI - WIPO",
+      "url": "https://www.wipo.int/pressroom/fr/articles/2026/article_0017.html",
+      "publication_date": "2026-11-18T13:22:10Z",
+      "selected": true,
+      "reason": "Source primaire de l’OMPI, publication récente et données internationales substantielles sur les dépôts de propriété intellectuelle."
     },
     {
       "alert_id": "juliette-3",
-      "title": "Ghost Bikes racheté : la marque survit, pas ses 53 salariés - Cleanrider",
-      "url": "https://www.cleanrider.com/actus/ghost-bikes-rachat-bike-tree-dutech-netcycle/",
-      "publication_date": "2026-11-15T06:08:03Z",
+      "title": "Black Friday et protection de marque - BrandShelter",
+      "url": "https://www.brandshelter.com/fr/blog/black-friday-protection-de-marque/",
+      "publication_date": "2026-11-19T12:14:17Z",
       "selected": false,
-      "reason": "Doublon du sujet Ghost Bikes signalé par l’alerte juliette-1, provenant également d’une source secondaire."
+      "reason": "Article de pratique commerciale sans apport juridique suffisamment substantiel."
     },
     {
       "alert_id": "juliette-4",
-      "title": "Cérémonie d&#39;ouverture du Festival d&#39;hiver de Bac Ha 2026 : Célébrer l&#39;identité, valoriser les marques",
-      "url": "https://www.vietnam.vn/fr/khai-mac-festival-mua-dong-bac-ha-2026-ton-vinh-ban-sac-nang-tam-thuong-hieu",
-      "publication_date": "2026-11-15T04:26:45Z",
+      "title": "Les dépôts mondiaux de demandes de brevet atteignent un niveau record en 2025, la Chine en tête",
+      "url": "http://french.peopledaily.com.cn/International/n3/2026/1119/c31356-20520742.html",
+      "publication_date": "2026-11-19T01:17:52Z",
       "selected": false,
-      "reason": "Information institutionnelle étrangère relative à la valorisation de marques, insuffisamment documentée et dépourvue de source primaire exploitable."
+      "reason": "Reprise journalistique d’informations de l’OMPI, moins pertinente que la source primaire."
     },
     {
       "alert_id": "juliette-5",
-      "title": "Artisanat : 24 produits tunisiens bientôt protégés par la propriété intellectuelle",
-      "url": "https://espacemanager.com/artisanat-24-produits-tunisiens-bientot-proteges-par-la-propriete-intellectuelle/",
-      "publication_date": "2026-11-15T18:10:01Z",
+      "title": "Les dépôts mondiaux de demandes de brevet atteignent un niveau record en 2025, la ... - Xinhua",
+      "url": "http://french.xinhuanet.com/20261119/ef12ff7cbaed444fae27678dea513465/c.html",
+      "publication_date": "2026-11-19T01:14:48Z",
       "selected": false,
-      "reason": "Doublon des alertes juliette-6 et juliette-7, avec une présentation journalistique ne permettant pas de vérifier précisément les mesures de protection annoncées."
+      "reason": "Reprise journalistique d’informations de l’OMPI, moins pertinente que la source primaire."
     },
     {
       "alert_id": "juliette-6",
-      "title": "Artisanat : 24 produits tunisiens bientôt protégés par la propriété intellectuelle",
-      "url": "https://africanmanager.com/artisanat-24-produits-tunisiens-bientot-proteges-par-la-propriete-intellectuelle/",
-      "publication_date": "2026-11-15T08:02:01Z",
+      "title": "La Syrie participe aux travaux de l&#39;OMPI à Genève",
+      "url": "https://sana.sy/fr/syria-and-the-world/2342678/",
+      "publication_date": "2026-11-19T10:27:14Z",
       "selected": false,
-      "reason": "Doublon des alertes juliette-5 et juliette-7, sans document primaire directement accessible."
+      "reason": "Information institutionnelle et diplomatique sans contenu juridique substantiel."
     },
     {
       "alert_id": "juliette-7",
-      "title": "Artisanat : 24 produits tunisiens bientôt protégés par la propriété intellectuelle (ministre du tourisme)",
-      "url": "https://www.tap.info.tn/fr/Portail-%C3%A0-la-Une-FR-top/20803981-artisanat-24",
-      "publication_date": "2026-11-15T07:22:06Z",
+      "title": "&quot;Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://www.lalibre.be/dernieres-depeches/2026/11/19/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-detre-adoptee-definitivement-BTQQI54QBRBFDOEBQ5QIYDUXME/",
+      "publication_date": "2026-11-19T08:37:59Z",
       "selected": false,
-      "reason": "Bien que provenant d’une agence de presse, le sujet demeure insuffisamment documenté quant au contenu juridique précis des protections annoncées."
+      "reason": "Sujet redondant avec la proposition de loi publiée par le Sénat, source primaire retenue."
     },
     {
       "alert_id": "juliette-8",
-      "title": "Droits voisins : les députés veulent obliger les géants du numérique à mieux rémunérer la presse",
-      "url": "https://www.ojim.fr/droits-voisins-les-deputes-veulent-obliger-les-geants-du-numerique-a-mieux-remunerer-la-presse/",
-      "publication_date": "2026-11-15T05:39:46Z",
-      "selected": true,
-      "reason": "Sujet récent et directement lié aux droits voisins et à la rémunération des éditeurs de presse par les plateformes numériques, sous réserve d’une vérification sur le texte parlementaire primaire."
+      "title": "Le nombre de demandes de brevets dans le monde a atteint un niveau record. - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/so-don-dang-ky-sang-che-toan-cau-dat-muc-cao-ky-luc",
+      "publication_date": "2026-11-19T06:10:53Z",
+      "selected": false,
+      "reason": "Reprise secondaire d’informations de l’OMPI."
     },
     {
       "alert_id": "juliette-9",
-      "title": "Nom commercial micro-entreprise : deux auto-entrepreneurs sous le même nom, que faire",
-      "url": "https://kohenavocats.fr/2026/11/14/nom-commercial-micro-entreprise-deux-auto-entrepreneurs-meme-nom/",
-      "publication_date": "2026-11-14T07:10:32Z",
+      "title": "Winston Taylor advances global IP build with heavyweight three partner Paris team",
+      "url": "https://www.winstontaylor.com/insights/winston-taylor-advances-global-ip-build-with-heavyweight-three-partner-paris-team",
+      "publication_date": "2026-11-18T17:07:20Z",
       "selected": false,
-      "reason": "Article pratique consacré à un risque de confusion entre noms commerciaux, sans décision ni source primaire identifiée et avec une portée juridique limitée."
+      "reason": "Annonce de recrutement ou de développement d’un cabinet, sans nouveauté normative ou jurisprudentielle."
+    },
+    {
+      "alert_id": "juliette-10",
+      "title": "Droits voisins : une loi pour mieux rémunérer la presse face aux plateformes numériques - Stratégies",
+      "url": "https://www.strategies.fr/actualites/medias/LQ6939462C/droits-voisins-une-loi-pour-mieux-remunerer-la-presse-face-aux-plateformes-numeriques.html",
+      "publication_date": "2026-11-19T09:08:12Z",
+      "selected": false,
+      "reason": "Commentaire journalistique redondant avec le texte législatif du Sénat."
+    },
+    {
+      "alert_id": "juliette-11",
+      "title": "Automobile : le marché de l&#39;occasion, l&#39;autre victime des marques chinoises - Les Echos",
+      "url": "https://www.lesechos.fr/idees-debats/editos-analyses/automobile-le-marche-de-loccasion-lautre-victime-des-marques-chinoises-2263425",
+      "publication_date": "2026-11-19T08:07:56Z",
+      "selected": false,
+      "reason": "Sujet principalement économique et automobile, sans contenu juridique vérifiable suffisant."
+    },
+    {
+      "alert_id": "juliette-12",
+      "title": "&#39;Droits voisins&#39; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://information.tv5monde.com/economie/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-detre-adoptee-definitivement-2846300",
+      "publication_date": "2026-11-19T07:15:06Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-13",
+      "title": "&quot; Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la ... - Sud Radio",
+      "url": "https://www.sudradio.fr/societe/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-detre-adoptee-definitivement",
+      "publication_date": "2026-11-19T07:11:16Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-14",
+      "title": "&quot; Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://fr.finance.yahoo.com/actualites/droits-voisins-nouvelle-loi-mieux-065920181.html",
+      "publication_date": "2026-11-19T07:05:51Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-15",
+      "title": "&quot; Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://www.france24.com/fr/info-en-continu/20261119-droits-voisins-une-nouvelle-loi-pour-mieux-r%C3%A9tribuer-la-presse-en-passe-d-%C3%AAtre-adopt%C3%A9e-d%C3%A9finitivement",
+      "publication_date": "2026-11-19T07:05:34Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-16",
+      "title": "&quot;Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://www.laprovence.com/article/france-monde/14112742089432/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-detre-adoptee-definitivement",
+      "publication_date": "2026-11-19T07:04:28Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-17",
+      "title": "&quot; Droits voisins&quot; : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://www.notretemps.com/depeches/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-d-etre-adoptee-definitivement-141513",
+      "publication_date": "2026-11-19T00:06:05Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-18",
+      "title": "Droits voisins : une loi pour contraindre les plateformes à mieux rémunérer la presse",
+      "url": "https://www.ouest-france.fr/high-tech/numerique/droits-voisins-une-loi-pour-contraindre-les-plateformes-a-mieux-remunerer-la-presse-01ff86b4-e3a1-11f1-9a72-32f9104dab1b",
+      "publication_date": "2026-11-18T23:39:05Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-19",
+      "title": "« Droits voisins » : une nouvelle loi pour mieux rétribuer la presse en passe d&#39;être adoptée ...",
+      "url": "https://www.mediapart.fr/journal/fil-dactualites/191126/droits-voisins-une-nouvelle-loi-pour-mieux-retribuer-la-presse-en-passe-d-etre-adoptee-definitive",
+      "publication_date": "2026-11-18T23:09:49Z",
+      "selected": false,
+      "reason": "Reprise secondaire redondante concernant la proposition de loi sur les droits voisins."
+    },
+    {
+      "alert_id": "juliette-20",
+      "title": "YouTube s&#39;impose comme le relais de visibilité des marques high-tech et d&#39;électroménager ...",
+      "url": "https://itrnews.com/articles/211693/youtube-simpose-comme-le-relais-de-visibilite-des-marques-high-tech-et-delectromenager-dans-les-reponses-des-ia.html",
+      "publication_date": "2026-11-18T20:59:18Z",
+      "selected": false,
+      "reason": "Article prospectif dépourvu de contenu juridique suffisamment vérifiable."
+    },
+    {
+      "alert_id": "juliette-21",
+      "title": "Atelier pour sensibiliser les jeunes à la propriété intellectuelle - MAXImini.com",
+      "url": "https://www.maximini.com/barbade/atelier-pour-sensibiliser-les-jeunes-a-la-propriete-intellectuelle-52329",
+      "publication_date": "2026-11-18T20:06:56Z",
+      "selected": false,
+      "reason": "Information pédagogique générale, sans portée juridique substantielle."
+    },
+    {
+      "alert_id": "juliette-22",
+      "title": "Liban : nouveau système numérique pour la propriété intellectuelle - Daily Beirut",
+      "url": "https://dailybeirut.com/fr/actualites-liban/liban-lance-systeme-numerique-enregistrement-propriete-intellectuelle-soutien-ca/",
+      "publication_date": "2026-11-18T17:28:59Z",
+      "selected": false,
+      "reason": "Information secondaire insuffisamment vérifiable et extérieure au périmètre français ou européen prioritaire."
+    },
+    {
+      "alert_id": "juliette-23",
+      "title": "La nouvelle Fiat Pandina conçue pour empêcher les Chinois de récupérer sa marque ...",
+      "url": "https://www.caradisiac.com/la-nouvelle-fiat-pandina-concue-pour-empecher-les-chinois-de-recuperer-sa-marque-autobianchi-coute-une-petite-fortune-225138.htm",
+      "publication_date": "2026-11-18T14:27:49Z",
+      "selected": false,
+      "reason": "Article automobile présentant un intérêt juridique trop indirect."
+    },
+    {
+      "alert_id": "juliette-24",
+      "title": "Économie circulaire – Deux marques locales inaugurent un showroom-atelier commun",
+      "url": "https://www.petitesaffiches.fr/actualites,069/economie,045/economie-circulaire-deux-marques,47625.html",
+      "publication_date": "2026-11-18T14:00:55Z",
+      "selected": false,
+      "reason": "Actualité économique locale sans contenu de propriété intellectuelle suffisamment substantiel."
+    },
+    {
+      "alert_id": "juliette-25",
+      "title": "Économie circulaire – Deux marques locales inaugurent un showroom-atelier commun",
+      "url": "https://www.petitesaffiches.fr/actualites,069/finance,043/actualites,069/economie,045/economie-circulaire-deux-marques,47625.html",
+      "publication_date": "2026-11-18T08:01:21Z",
+      "selected": false,
+      "reason": "Doublon du résultat juliette-24 et contenu sans portée juridique suffisante."
+    },
+    {
+      "alert_id": "juliette-26",
+      "title": "Winston Taylor renforce sa pratique PI avec l&#39;arrivée d&#39;une équipe de trois associés",
+      "url": "https://www.lemondedudroit.fr/nominations/106671-winston-taylor-renforce-sa-pratique-pi-avec-larrivee-dune-equipe-de-trois-associes.html",
+      "publication_date": "2026-11-19T00:19:47Z",
+      "selected": false,
+      "reason": "Annonce de mouvement de cabinet sans apport juridique substantiel."
+    },
+    {
+      "alert_id": "juliette-27",
+      "title": "Protéger les droits d&#39;auteur et libérer les ressources créatives. - Vietnam.vn",
+      "url": "https://www.vietnam.vn/fr/bao-ve-quyen-tac-gia-khoi-thong-nguon-luc-sang-tao",
+      "publication_date": "2026-11-18T17:28:50Z",
+      "selected": false,
+      "reason": "Information générale et internationale sans source primaire suffisamment identifiable."
+    },
+    {
+      "alert_id": "juliette-28",
+      "title": "les spécialistes de l&#39;affaire des disparus de Mourmelon analysent la série télévisée - ACG Avocats",
+      "url": "https://www.acg-avocat.com/presse/une-histoire-centree-sur-les-familles-les-specialistes-de-affaire-des-disparus-de-mourmelon-analysent-la-serie-televisee-les-disparus-des-argonnes.html",
+      "publication_date": "2026-11-18T15:44:57Z",
+      "selected": false,
+      "reason": "Référence incidente à la propriété intellectuelle, sans sujet juridique autonome."
     }
   ],
   "items": [
     {
       "type": "JURISPRUDENCE",
-      "category": "Indications géographiques",
-      "title": "Indication géographique industrielle et artisanale : contrôle du cahier des charges et délimitation de la zone géographique",
-      "court_reference": "Cour de cassation, chambre commerciale, financière et économique, pourvoi n° 24-19.897",
-      "source": "Cour de cassation, chambre commerciale, financière et économique, formation de section, arrêt du 12 novembre 2026, pourvoi n° 24-19.897",
-      "source_url": "https://www.courdecassation.fr/decision/6af5611f6c2e17781288f104",
-      "publication_date": "2026-11-12",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Cour de cassation, chambre commerciale, financière et économique, arrêt du 12 novembre 2026.",
-      "summary": "La Cour de cassation précise l’étendue du contrôle juridictionnel de l’homologation d’un cahier des charges d’IGPIA. Elle admet qu’une zone géographique excède le toponyme protégé, sous réserve d’un lien démontré avec les caractéristiques du produit, et encadre les exigences procédurales applicables aux modifications du cahier des charges.",
-      "retrieval_note": "La page officielle de la Cour de cassation est une interface dynamique nécessitant JavaScript et n'a pas pu être rendue directement par l'outil. L'identification officielle de la décision, son ECLI, son sommaire, son texte intégral et son dispositif ont toutefois été vérifiés à partir de la page officielle indexée et d'une reproduction intégrale du texte de la Cour de cassation. La recherche a été limitée aux contenus publiés entre le 9 novembre 2026 et le 15 novembre 2026 inclus. Aucun contenu antérieur n'a été utilisé pour compléter la sélection.",
-      "timeline": [
-        {
-          "date": "2022",
-          "event": "Le directeur général de l’INPI rend la décision n° 2022-132 relative au cahier des charges de l’indication géographique protégeant le produit industriel ou artisanal « Couteau [Localité 1] »."
-        },
-        {
-          "date": "2024-07-11",
-          "event": "La cour d’appel d’Aix-en-Provence annule la décision du directeur général de l’INPI."
-        },
-        {
-          "date": "2026-11-12",
-          "event": "La chambre commerciale, financière et économique de la Cour de cassation, réunie en formation de section, prononce une cassation partielle et renvoie l’affaire devant la cour d’appel d’Aix-en-Provence autrement composée."
-        }
-      ],
-      "introduction": "Par cet arrêt publié au Bulletin, la Cour de cassation apporte des précisions structurantes sur le régime des indications géographiques protégeant les produits industriels et artisanaux, dites IGPIA. Saisie d’un recours dirigé contre une décision d’homologation du cahier des charges de l’indication géographique « Couteau [Localité 1] », elle définit l’office de la cour d’appel dans le contrôle de cette homologation. La décision intéresse plus particulièrement l’examen du lien entre le produit et la zone géographique retenue, l’articulation entre cette zone et le toponyme composant la dénomination protégée, ainsi que les conditions dans lesquelles une modification du cahier des charges impose le renouvellement de certaines formalités de consultation.",
-      "facts_and_procedure": "Le litige concernait le cahier des charges d’une indication géographique destinée à protéger le produit industriel ou artisanal dénommé « Couteau [Localité 1] ». Par la décision n° 2022-132, le directeur général de l’INPI avait homologué ce cahier des charges. Cette décision a fait l’objet d’un recours devant la cour d’appel d’Aix-en-Provence. Par arrêt du 11 juillet 2024, celle-ci a annulé la décision de l’INPI. Elle a notamment apprécié de manière critique l’inclusion d’un territoire distinct de la localité éponyme dans la zone géographique de l’indication, ainsi que certaines stipulations relatives aux caractéristiques du produit. Elle a également retenu que les modifications apportées au cahier des charges auraient dû conduire à une nouvelle enquête publique et à une nouvelle consultation. Un pourvoi a été formé contre cet arrêt.",
-      "parties_arguments": "Les moyens examinés par la Cour de cassation portaient, d’une part, sur la possibilité d’intégrer dans la zone géographique des lieux dont le nom ne figure pas dans la dénomination de l’indication géographique et, d’autre part, sur la nécessité de reprendre les formalités de consultation après modification du cahier des charges. Il était soutenu que l’appréciation du lien géographique devait résulter de l’ensemble du dossier d’homologation et prendre en considération la contribution historique et technique des opérateurs établis dans le territoire inclus. Les griefs visaient également l’analyse par la cour d’appel du risque de confusion allégué pour les consommateurs et l’interprétation de la définition des formes admises pour le couteau concerné.",
-      "legal_question": "La Cour devait déterminer si, saisie d’un recours contre une décision de l’INPI relative à l’homologation d’un cahier des charges d’IGPIA, la cour d’appel doit contrôler concrètement l’existence du lien entre les opérations de production ou de transformation, la zone géographique et les caractéristiques attribuées au produit. Elle devait également préciser si la zone ainsi définie peut dépasser le périmètre suggéré par le toponyme de l’indication, ainsi que les conditions justifiant le renouvellement d’une enquête publique et d’une consultation en cas de modification du cahier des charges.",
-      "reasoning": "La Cour de cassation affirme d’abord qu’il appartient à la cour d’appel de vérifier que les opérations de production ou de transformation ainsi que le périmètre de la zone géographique permettent d’attribuer essentiellement au produit une qualité, une réputation ou d’autres caractéristiques liées à cette zone. Ce contrôle ne se réduit donc pas à une confrontation formelle entre la dénomination de l’indication et les limites territoriales figurant dans le cahier des charges. La zone géographique d’une IGPIA peut être plus étendue que le toponyme inclus dans le nom de l’indication, à la condition que le lien requis soit caractérisé. La Cour souligne que cette appréciation doit porter sur l’ensemble des éléments du dossier de demande d’homologation. En l’espèce, la cour d’appel aurait dû rechercher si les couteliers thiernois avaient contribué activement au développement du couteau concerné, à l’accroissement de sa notoriété, à l’amélioration de ses procédés de fabrication, ainsi qu’à la conservation et à la transmission du savoir-faire associé. Faute d’une telle recherche, sa décision ne pouvait légalement justifier l’annulation de l’homologation sur ce point.\n\nLa Cour écarte ensuite comme inopérants les motifs fondés sur un risque de confusion pour les consommateurs. L’homologation du cahier des charges a notamment pour objet de protéger les opérateurs et les consommateurs contre l’utilisation commerciale par des tiers de la dénomination protégée, son usurpation, son imitation ou son évocation. Le risque invoqué ne pouvait dès lors, en lui-même, fonder l’annulation de la décision de l’INPI. La Cour retient par ailleurs une dénaturation du cahier des charges. La cour d’appel avait estimé que la notion de ligne du couteau n’était pas suffisamment définie. Or les pages 5 et 6 du cahier des charges décrivaient les formes autorisées et la forme yatagan du couteau de table. Enfin, la Cour rappelle que le renouvellement de l’enquête publique et de la consultation n’est exigé, lors de la modification du cahier des charges, que lorsque cette modification porte sur les éléments substantiels limitativement visés par les textes applicables. La cour d’appel ne pouvait donc exiger systématiquement de nouvelles formalités sans constater que les modifications intervenues relevaient de cette catégorie.",
-      "outcome": "La Cour de cassation casse et annule l’arrêt du 11 juillet 2024, mais seulement en ce qu’il annule la décision n° 2022-132 du directeur général de l’INPI, ainsi qu’en ses dispositions relatives aux dépens et à l’article 700 du code de procédure civile. L’affaire et les parties sont renvoyées devant la cour d’appel d’Aix-en-Provence autrement composée. Plusieurs parties sont condamnées in solidum aux dépens. La cassation est partielle, de sorte qu’elle est strictement circonscrite aux chefs expressément atteints par les erreurs de droit et de qualification relevées.",
-      "practical_relevance": "L’arrêt confirme que l’homologation d’un cahier des charges d’IGPIA suppose une démonstration substantielle du lien entre le produit, ses caractéristiques et la zone géographique retenue. Pour autant, ce lien ne se confond pas avec une stricte identité entre le territoire couvert et le toponyme de l’indication. Les porteurs de projets d’IGPIA et les opérateurs susceptibles de contester une homologation doivent donc documenter avec précision l’apport des savoir-faire, des pratiques de fabrication, de la réputation et de l’histoire économique des territoires inclus dans la zone. La décision souligne également l’importance de verser au dossier d’homologation des éléments permettant d’établir la contribution effective des opérateurs locaux au développement et à la notoriété du produit.\n\nSur le plan contentieux, l’arrêt impose au juge du recours un examen global du dossier et proscrit une appréciation abstraite ou exclusivement toponymique de la zone géographique. Il invite aussi à une lecture attentive et complète du cahier des charges avant de retenir une imprécision technique ou une insuffisance de définition. Enfin, la solution relative aux modifications du cahier des charges limite l’exigence de renouvellement des consultations aux seules modifications portant sur les éléments substantiels prévus par les textes applicables. Elle contribue ainsi à distinguer les adaptations qui affectent les éléments essentiels de l’IGPIA de celles qui ne justifient pas, à elles seules, la reprise intégrale de la procédure d’homologation.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Brevets et financement de l’innovation",
-      "title": "L’OMPI annonce le lancement d’un rapport sur le brevetage des start-up et spin-out de deep science",
-      "court_reference": "OMPI, WIPO Technology SPARK report",
-      "source": "Organisation Mondiale de la Propriété Intellectuelle, « Join us on November 26, 2026, for the launch of the WIPO Technology SPARK report on Patenting in Deep Science Startups and Spinouts »",
-      "source_url": "https://www.wipo.int/en/web/patent-analytics/w/news/2026/launch-of-the-wipo-technology-spark-report-on-patenting-in-deep-science-startups-and-spinouts",
-      "publication_date": "2026-11-12",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Organisation Mondiale de la Propriété Intellectuelle, actualité relative au lancement du rapport WIPO Technology SPARK, 12 novembre 2026.",
-      "summary": "L’OMPI annonce le lancement prochain d’un rapport consacré à l’usage des brevets par les start-up et spin-out de deep science. Fondée sur le rapprochement de données de capital-risque et de données mondiales de brevets, l’étude examine les pratiques selon les territoires, secteurs et stades de développement.",
-      "retrieval_note": "Le texte intégral de la page officielle de l’OMPI a été ouvert et consulté. Il annonce le lancement en ligne du rapport le 26 novembre 2026, de 14 h 00 à 14 h 45, heure de Genève. La page ne contient pas de lien direct vers le rapport intégral ni vers un fichier PDF publié dans la période comprise entre le 9 et le 15 novembre 2026. L’accès est donc complet pour l’actualité annoncée, mais non pour le rapport lui-même, qui n’était pas encore accessible comme document publié à la date de la recherche.",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "L’Organisation Mondiale de la Propriété Intellectuelle annonce la présentation en ligne, le 26 novembre 2026, du rapport WIPO Technology SPARK intitulé Patenting in Deep Science Startups and Spinouts. Selon l’OMPI, cette étude porte sur l’utilisation des brevets par les start-up de deep science afin de protéger leurs innovations, d’attirer des investissements et de se développer sur les marchés internationaux.",
-        "Le rapport rapproche les entreprises financées par capital-risque recensées dans le Dealroom,WIPO Deep Science Startup Tracker de données mondiales relatives aux brevets. L’analyse annoncée examine les écarts d’activité de brevetage entre pays, groupes de revenus, secteurs d’activité et stades de développement des entreprises concernées.",
-        "L’OMPI indique également que le rapport abordera les stratégies de brevetage propres aux différents secteurs de la deep science, ainsi que les différences nationales concernant l’adoption des brevets, le transfert de technologie et le recours au système du Traité de coopération en matière de brevets. L’annonce ne précise ni les résultats de l’étude ni les recommandations qui pourraient en être tirées."
-      ],
-      "highlight_paragraph": "Le rapprochement annoncé entre données de financement en capital-risque et données mondiales de brevets vise à éclairer, selon les pays, secteurs et phases de développement, la place du portefeuille de brevets dans la trajectoire de croissance des entreprises de deep science.",
-      "practical_relevance": "Pour les acteurs accompagnant des start-up, spin-out et investisseurs en deep science, la publication annoncée présente un intérêt pratique en ce qu’elle doit documenter les usages comparés des brevets, y compris du système PCT, et leur articulation avec le financement et l’internationalisation. À ce stade, l’annonce ne permet pas d’identifier les conclusions opérationnelles du rapport.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Brevets",
-      "title": "L’OEB adapte sa pratique à la décision G 1/25 sur l’interprétation des revendications et la description",
-      "court_reference": "OEB, mise à jour de la pratique consécutive à G 1/25",
-      "source": "Office européen des brevets, Notice dated 10 November 2026 concerning claim interpretation and adaptation of the description following decision G 1/25",
-      "source_url": "https://www.epo.org/en/legal/official-journal/notice-10-november-2026",
-      "publication_date": "2026-11-10",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Office européen des brevets, Notice dated 10 November 2026 concerning claim interpretation and adaptation of the description following decision G 1/25, 10 novembre 2026",
-      "summary": "L’OEB précise les conséquences de G 1/25 sur l’interprétation des revendications et l’adaptation de la description. Une divergence avec la description ne justifie une modification que si elle entraîne la méconnaissance d’une exigence de la CBE.",
-      "retrieval_note": "L’URL directe de l’actualité a été ouverte. Le texte intégral de la notice officielle a ensuite été consulté, y compris ses dispositions relatives à l’interprétation des revendications, à l’identification des incohérences et à l’adaptation de la description. La page officielle de la décision G 1/25 a également été ouverte, ainsi que le PDF intégral de la décision, dont le dispositif a été vérifié. Le numéro d’affaire G 1/25 et l’ECLI ECLI:EP:BA:2026:G000125.20260903 ont été contrôlés. La notice consultée est une version mise à disposition avant sa publication au Journal officiel, l’OEB précisant que seule la version ultérieurement publiée au Journal officiel fait foi.",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "Par une notice consécutive à la décision G 1/25, l’Office européen des brevets précise sa pratique en matière d’interprétation des revendications et d’adaptation de la description. Les revendications doivent être lues à la lumière de la description et des dessins, suivant une approche unitaire ou holistique. Ces éléments peuvent éclairer le sens que l’homme du métier attribue au libellé de la revendication, sans toutefois permettre d’y introduire une limitation ou une extension qui ne trouverait aucun fondement dans ce libellé.",
-        "L’OEB distingue cette interprétation contextuelle de l’importation automatique de caractéristiques issues de la description. La seule présence d’un enseignement technique, d’une déclaration ou d’un mode de réalisation comportant des caractéristiques additionnelles ne suffit pas à les faire entrer dans le champ de la revendication. De même, le fait que des exemples, modes de réalisation ou autres éléments de la description se situent hors du champ revendiqué ne caractérise pas, à lui seul, une incohérence nécessitant une adaptation.",
-        "Une incohérence est retenue lorsqu’une indication de la description ou des dessins suggère une compréhension de la revendication incompatible avec son sens apparent et que cette incompatibilité ne peut être aisément levée par l’interprétation de la revendication à la lumière de ces éléments. Sa suppression n’est requise que lorsqu’elle conduit au non-respect d’une exigence de la CBE, notamment au titre des articles 52 à 57, 76, paragraphe 1, 83, 84, 123, paragraphes 2 et 3, ou des motifs d’opposition correspondants prévus à l’article 100. Les formulations de la description proches du style des revendications ne doivent donc pas être systématiquement supprimées ou modifiées. Les Directives relatives à l’examen pratiqué à l’OEB, dans leur version 2027, doivent être révisées en conséquence."
-      ],
-      "highlight_paragraph": "L’adaptation de la description ne se justifie plus par la seule existence d’éléments non couverts par les revendications. Elle suppose une incohérence non résoluble par interprétation et ayant pour effet de méconnaître une exigence de la CBE.",
-      "practical_relevance": "Lors de la préparation des réponses aux notifications et de la finalisation des textes de brevet, les titulaires et demandeurs devront apprécier concrètement si une divergence alléguée affecte la conformité à la CBE. La présence de variantes ou de modes de réalisation non revendiqués ne commande pas, par elle-même, leur suppression ni leur reformulation.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Brevets et biotechnologies végétales",
-      "title": "L’OEB publie un nouveau rapport sur la pratique du brevetage des inventions relatives aux plantes",
-      "court_reference": "OEB, rapport sur la pratique de l’examen en biotechnologie végétale",
-      "source": "Office européen des brevets, « New report on plant biotech patenting practice », accompagné du rapport « EPO practice on plant- and animal-related inventions: status report (CA/PL 19/26) »",
-      "source_url": "https://link.epo.org/ac-document/CA/PL%2019/26%20-%20En.pdf",
-      "publication_date": "2026-11-13",
-      "discovered_via_juliette_alert": false,
-      "juliette_alert_id": "",
-      "source_access": "COMPLET",
-      "access_warning": "",
-      "source_display_text": "Office européen des brevets, rapport CA/PL 19/26, 13 novembre 2026.",
-      "summary": "L’OEB publie son septième rapport depuis 2020 sur l’application de l’exclusion de brevetabilité des plantes et animaux obtenus exclusivement par des procédés essentiellement biologiques. Le document précise notamment les exigences applicables aux revendications couvrant des produits obtenus par un procédé technique.",
-      "retrieval_note": "L’actualité officielle de l’OEB, publiée le 13 novembre 2026, a été consultée dans son intégralité. Le lien direct vers le rapport CA/PL 19/26 a ensuite été ouvert sous la forme d’un PDF officiel de 15 pages. Le rapport porte la date du 26 octobre 2026, tandis que l’actualité qui en rend compte est publiée dans la période comprise entre le 9 et le 15 novembre 2026. Le texte intégral du rapport, sa recommandation et l’ensemble de ses dispositions ont été effectivement consultés. Aucun numéro d’affaire, numéro de décision ou ECLI n’est indiqué pour ce document.",
-      "lead_label": "Contexte",
-      "paragraphs": [
-        "L’Office européen des brevets a rendu public un rapport relatif à sa pratique d’examen des inventions concernant les plantes et les animaux. Présenté au Comité sur le droit des brevets, le document CA/PL 19/26 constitue le septième rapport établi depuis 2020 sur l’application de l’exception prévue à l’article 53 b) et à la règle 28(2) de la Convention sur le brevet européen, à la suite de l’avis G 3/19 de la Grande Chambre de recours.",
-        "Le rapport rappelle que les plantes et animaux obtenus exclusivement par un procédé essentiellement biologique sont exclus de la brevetabilité lorsque la demande a été déposée à compter du 1er juillet 2017 et ne revendique pas valablement une priorité antérieure. Les produits obtenus au moyen d’un procédé technique demeurent, en principe, brevetables sous réserve des autres conditions applicables. Toutefois, lorsque la caractéristique technique revendiquée est également susceptible de résulter d’un procédé essentiellement biologique, la revendication doit comporter une exclusion limitant son objet au produit obtenu techniquement.",
-        "L’OEB indique qu’environ 35 procédures d’examen relevant de ce cadre demeurent pendantes, dont près de 23 relatives à des plantes conventionnelles et 12 à des plantes mutantes obtenues par voie technique. À la fin du mois d’août 2026, environ 9 805 demandes européennes publiées depuis 1982 concernaient des plantes génétiquement modifiées, tandis qu’environ 1 378 demandes publiées depuis 1985 portaient sur des plantes conventionnelles et la sélection végétale. Le rapport fait également état de la prolongation, pour dix ans, de l’arrangement administratif entre l’OEB et l’Office communautaire des variétés végétales."
-      ],
-      "highlight_paragraph": "Lorsque la caractéristique technique revendiquée peut également résulter d’un procédé essentiellement biologique, l’OEB exige une exclusion dans la revendication afin de circonscrire l’objet revendiqué aux produits obtenus techniquement.",
-      "practical_relevance": "Les déposants doivent apprécier avec précision l’origine du produit végétal ou animal revendiqué et vérifier que le libellé des revendications exclut explicitement les produits obtenus exclusivement par des procédés essentiellement biologiques lorsqu’un tel recouvrement est possible. Cette exigence revêt une importance particulière pour les demandes déposées sans priorité valable antérieure au 1er juillet 2017.",
-      "illustration_page_url": "",
-      "illustration_alt": ""
-    },
-    {
-      "type": "ACTUALITE",
-      "category": "Dessins et modèles",
-      "title": "Ouverture des candidatures aux DesignEuropa Awards 2027 à Prague",
-      "court_reference": "EUIPO, DesignEuropa Awards 2027",
-      "source": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO)",
-      "source_url": "https://www.euipo.europa.eu/en/news/applications-open-for-the-designeuropa-awards-2027-in-prague",
-      "publication_date": "2026-11-11",
+      "category": "Marques de l’Union européenne",
+      "title": "Tribunal de l’Union européenne, Monster Computer Technology / EUIPO, MONSTER GAME",
+      "court_reference": "Tribunal de l’Union européenne, 18 novembre 2026, T-329/25, ECLI:EU:T:2026:768",
+      "source": "Cour de justice de l’Union européenne, Curia, arrêt du Tribunal du 18 novembre 2026, T-329/25, ECLI:EU:T:2026:768",
+      "source_url": "https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:62025TJ0329",
+      "publication_date": "2026-11-18",
       "discovered_via_juliette_alert": false,
       "juliette_alert_id": "",
       "source_access": "PARTIEL",
       "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
-      "source_display_text": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO), 11 novembre 2026.",
-      "summary": "L’EUIPO annonce l’ouverture des candidatures et nominations aux DesignEuropa Awards 2027, dont la cérémonie est prévue à Prague en septembre 2027. Les dossiers doivent être déposés avant le 14 février 2027. Une catégorie International Award est créée pour les titulaires établis hors de l’Union européenne.",
-      "retrieval_note": "L’URL directe de l’actualité a été recherchée en premier lieu, mais son ouverture a renvoyé une erreur 403. Le texte substantiel de l’actualité demeure accessible dans l’index officiel de l’EUIPO. Les recherches complémentaires n’ont pas permis d’identifier, pour cette actualité, une pièce jointe PDF, une version linguistique alternative accessible, un numéro d’affaire, un numéro de décision ou un ECLI. L’accès au texte intégral officiel n’étant pas directement confirmé, le niveau PARTIEL est retenu. ([]())",
-      "lead_label": "",
-      "paragraphs": [
-        "L’Office de l’Union européenne pour la propriété intellectuelle annonce l’ouverture des candidatures et des nominations aux DesignEuropa Awards 2027. La cérémonie doit se tenir à Prague en septembre 2027, en collaboration avec l’Office de la propriété industrielle de la République tchèque. Les candidatures et nominations peuvent être soumises jusqu’au 14 février 2027.",
-        "L’édition 2027 comprend cinq catégories ouvertes aux candidatures ou nominations : entrepreneurs et petites entreprises, industrie, international, design de nouvelle génération et réalisation d’une carrière. L’EUIPO annonce la création d’un International Award, destiné aux entreprises et designers établis en dehors de l’Union européenne lorsque leurs créations bénéficient d’une protection au niveau de l’Union. Un prix du public doit en outre être attribué après l’annonce des finalistes.",
-        "La participation est gratuite et ouverte aux personnes, entités ou institutions de toute nationalité détenant un dessin ou modèle de l’Union européenne valide. L’évaluation des dossiers doit être assurée par un jury indépendant et professionnel."
+      "source_display_text": "Cour de justice de l’Union européenne, Curia, arrêt du Tribunal, 18 novembre 2026.",
+      "summary": "Le Tribunal a rendu, dans l’affaire T-329/25, un arrêt opposant Monster Computer Technology à l’EUIPO au sujet de MONSTER GAME. Les informations officiellement vérifiées établissent l’identification de l’affaire, sa date, sa chambre et sa langue de procédure, sans permettre de confirmer le raisonnement ni le dispositif.",
+      "retrieval_note": "La fiche officielle Curia confirme le type de document, la date du 18 novembre 2026, l’affaire T-329/25, l’intitulé Monster Computer Technology v EUIPO, le thème MONSTER GAME et l’ECLI:EU:T:2026:768. La consultation directe du texte intégral officiel et de son dispositif n’a toutefois pas pu être techniquement confirmée. Les résultats accessibles renvoient principalement à une interface dynamique ou à des reproductions secondaires du texte. En conséquence, le niveau d’accès est limité à PARTIEL et aucune analyse juridique complète n’est rédigée.",
+      "timeline": [
+        {
+          "date": "2026-11-18",
+          "event": "Le Tribunal de l’Union européenne rend l’arrêt T-329/25, identifié par l’ECLI:EU:T:2026:768."
+        },
+        {
+          "date": "2026-11-18",
+          "event": "L’arrêt est répertorié comme opposant Monster Computer Technology à l’Office de l’Union européenne pour la propriété intellectuelle."
+        },
+        {
+          "date": "2026-11-18",
+          "event": "La fiche officielle de l’affaire rattache le litige au thème MONSTER GAME et indique l’examen de l’affaire par la sixième chambre du Tribunal, dans une procédure de langue allemande."
+        }
       ],
-      "highlight_paragraph": "Les titulaires établis hors de l’Union européenne peuvent désormais être distingués dans la catégorie International Award, sous réserve que leurs créations soient protégées au niveau de l’Union européenne. La date limite de dépôt des candidatures et nominations est fixée au 14 février 2027.",
-      "practical_relevance": "Les titulaires d’un dessin ou modèle de l’Union européenne valide, y compris ceux établis hors de l’Union, peuvent examiner leur éligibilité et préparer un dossier de candidature ou de nomination avant l’échéance annoncée. Cette initiative offre également une possibilité de valorisation institutionnelle des créations protégées.",
+      "introduction": "L’arrêt T-329/25 s’inscrit dans le contentieux des marques de l’Union européenne. Les éléments officiellement accessibles permettent d’identifier avec certitude une décision du Tribunal de l’Union européenne opposant Monster Computer Technology à l’Office de l’Union européenne pour la propriété intellectuelle, ci-après l’EUIPO, et se rapportant à MONSTER GAME. La décision est identifiée par l’ECLI:EU:T:2026:768. La fiche officielle disponible indique également que l’affaire a été examinée par la sixième chambre du Tribunal et que la langue de procédure était l’allemand. Ces données établissent le cadre institutionnel et matériel minimal du litige. Elles ne permettent toutefois pas de reconstituer le contenu de la décision, les prétentions formulées par les parties, les moyens invoqués, le contrôle effectivement exercé par le Tribunal ou le sens du dispositif.",
+      "facts_and_procedure": "Les faits à l’origine du litige ne sont pas précisés dans les éléments vérifiés. Il est seulement établi que Monster Computer Technology était partie à une affaire dirigée contre l’EUIPO dans le domaine des marques de l’Union européenne et que l’intitulé ou le thème de l’affaire comporte MONSTER GAME. Il n’est pas possible, sur cette seule base, de déterminer la nature exacte du signe concerné, les produits ou services visés, l’existence éventuelle d’une demande d’enregistrement, d’une opposition, d’une procédure en nullité ou d’une déchéance, ni l’identité d’éventuelles autres parties intéressées. La procédure antérieure devant l’EUIPO n’est pas davantage détaillée. En particulier, l’existence, la date, la teneur et l’auteur d’une décision administrative préalable ne sont pas confirmés. Il est uniquement vérifié que le Tribunal a statué dans l’affaire T-329/25 et que la procédure relevait de sa sixième chambre.",
+      "parties_arguments": "Les arguments de Monster Computer Technology ne sont pas précisés par les informations accessibles. Il n’est dès lors pas possible d’indiquer si le recours mettait en cause l’appréciation d’un risque de confusion, du caractère distinctif, de la similitude des signes ou des produits et services, de l’usage d’une marque, d’un motif absolu ou relatif de refus, ou encore d’une question procédurale. De même, la position défendue par l’EUIPO n’est pas vérifiée. Aucune conclusion de l’Office, aucune réponse à des moyens déterminés et aucune référence à une norme précise du droit des marques de l’Union européenne ne peuvent être attribuées aux parties sans consultation confirmée du texte intégral de l’arrêt. Toute présentation plus détaillée des thèses en présence excéderait les données disponibles.",
+      "legal_question": "La question de droit effectivement soumise au Tribunal n’est pas précisée. Le seul rattachement vérifié de l’affaire au contentieux des marques de l’Union européenne et au thème MONSTER GAME ne permet pas d’identifier la règle dont l’interprétation ou l’application était discutée. Il n’est notamment pas établi que le Tribunal ait été saisi d’une question portant sur l’enregistrabilité d’un signe, sur l’appréciation d’un motif de refus, sur la validité d’une marque enregistrée, sur une opposition ou sur les conditions de recevabilité du recours. La présente fiche ne peut donc formuler qu’un constat de périmètre : le litige relevait du droit des marques de l’Union européenne, sans que son objet juridique précis soit confirmé.",
+      "reasoning": "Le raisonnement du Tribunal n’est pas accessible de manière suffisamment complète pour être analysé. Les éléments vérifiés ne reproduisent ni les motifs de l’arrêt ni les dispositions du droit de l’Union appliquées. Ils ne permettent pas davantage de savoir si le Tribunal a confirmé, annulé ou réformé une décision de l’EUIPO, ni de déterminer l’intensité de son contrôle sur les appréciations administratives en cause. La composition en sixième chambre et la langue allemande de la procédure constituent des indications de contexte juridictionnel, mais ne renseignent pas le cheminement intellectuel suivi par la formation de jugement. Il serait donc impropre de déduire du seul intitulé MONSTER GAME une analyse relative aux signes, aux produits et services, au public pertinent ou à une comparaison des marques. Une analyse motivée demeure subordonnée à l’accès vérifié au texte intégral officiel.",
+      "outcome": "La solution retenue par le Tribunal n’est pas précisée dans les informations vérifiées. Le dispositif de l’arrêt n’a pas pu être confirmé lors de la consultation de la source primaire identifiée. Il n’est donc pas possible d’indiquer si le recours a été accueilli, rejeté, déclaré irrecevable ou partiellement admis, ni d’établir le sort des dépens. Seuls sont établis l’existence d’un arrêt du Tribunal dans l’affaire T-329/25, son identification ECLI:EU:T:2026:768, l’implication de Monster Computer Technology et de l’EUIPO, ainsi que son rattachement au domaine des marques de l’Union européenne.",
+      "practical_relevance": "La portée pratique immédiatement vérifiable est limitée à l’identification d’une décision récente du Tribunal relevant du contentieux des marques de l’Union européenne et associée à MONSTER GAME. Cette identification justifie une surveillance de la publication ou de l’accessibilité complète de l’arrêt, notamment afin de vérifier son dispositif, l’objet précis du recours et les motifs susceptibles de présenter un intérêt pour la pratique. En l’état, aucune conséquence opérationnelle ne peut être déduite avec rigueur pour les titulaires de marques, les déposants ou les praticiens. Toute exploitation doctrinale ou contentieuse de cette décision doit être précédée d’une vérification du texte intégral officiel.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets, technologies émergentes et statistiques internationales",
+      "title": "Publication des Indicateurs mondiaux relatifs à la propriété intellectuelle 2026 de l’OMPI",
+      "court_reference": "",
+      "source": "World Intellectual Property Indicators 2026, Organisation Mondiale de la Propriété Intellectuelle",
+      "source_url": "https://www.wipo.int/web-publications/world-intellectual-property-indicators-2026/en/index.html",
+      "publication_date": "2026-11-18",
+      "discovered_via_juliette_alert": true,
+      "juliette_alert_id": "juliette-2",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "World Intellectual Property Indicators 2026, Organisation Mondiale de la Propriété Intellectuelle, 18 novembre 2026.",
+      "summary": "L’OMPI publie son rapport annuel World Intellectual Property Indicators 2026, fondé sur les statistiques de 2025 communiquées par les offices nationaux et régionaux ainsi que par l’Organisation. La publication couvre notamment les brevets, marques, dessins et modèles, obtentions végétales et indications géographiques.",
+      "retrieval_note": "L’URL directe du communiqué officiel publié le 18 novembre 2026 a été ouverte. Le lien vers la publication officielle a ensuite été suivi. La version intégrale en ligne, comprenant l’avant-propos, les chiffres clés, les statistiques relatives aux brevets, aux marques et aux dessins et modèles, les obtentions végétales, les indications géographiques, la description des données, le glossaire et les annexes, a été consultée. Le PDF officiel a été identifié à l’adresse https://www.wipo.int/web-publications/world-intellectual-property-indicators-2026/assets/111054/941%20WIPI%202026%20-%20Unlinked%20Statistics_150dpi.pdf, mais son téléchargement automatisé a échoué en raison de sa taille. Cette difficulté n’empêche pas l’accès au texte intégral officiel en HTML, effectivement consulté. La publication ne comporte pas de dispositif juridictionnel ni de dispositions normatives à vérifier. ([wipo.int](https://www.wipo.int/pressroom/fr/articles/2026/article_0017.html))",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "L’Organisation Mondiale de la Propriété Intellectuelle publie World Intellectual Property Indicators 2026, rapport statistique annuel fondé sur les données relatives à l’année 2025 recueillies auprès des offices nationaux et régionaux de propriété intellectuelle ainsi que de l’Organisation elle-même. La publication présente un panorama international des activités de dépôt et d’enregistrement relevant de la propriété intellectuelle.",
+        "Le rapport comporte des développements statistiques consacrés aux brevets, aux marques et aux dessins et modèles. Il traite également des obtentions végétales et des indications géographiques. La version intégrale en ligne comprend, outre ces analyses, une présentation des données, un glossaire et des annexes, de nature à préciser le périmètre et les notions mobilisées dans les indicateurs publiés.",
+        "Ce document constitue une source statistique institutionnelle permettant d’appréhender les évolutions internationales observées dans les principaux titres de propriété intellectuelle. Il ne s’agit pas d’un instrument normatif ni d’une décision juridictionnelle, mais d’une publication de référence reposant sur les données communiquées par les offices compétents."
+      ],
+      "highlight_paragraph": "Le rapport fournit un cadre statistique institutionnel couvrant plusieurs droits de propriété intellectuelle, à partir des données de 2025 recueillies auprès des offices nationaux et régionaux et de l’OMPI.",
+      "practical_relevance": "Pour les praticiens, cette publication offre une base documentaire officielle pour contextualiser, dans une perspective internationale, les données relatives aux brevets, marques, dessins et modèles, obtentions végétales et indications géographiques. La description méthodologique, le glossaire et les annexes doivent être pris en considération lors de toute exploitation comparative des indicateurs.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets, qualité et transformation numérique",
+      "title": "L’OEB et la FICPI renforcent leur dialogue sur la qualité des brevets et la transformation numérique",
+      "court_reference": "",
+      "source": "Office européen des brevets (OEB)",
+      "source_url": "https://www.epo.org/en/news-events/news/epo-and-ficpi-strengthen-dialogue-patent-quality-and-digital-transformation",
+      "publication_date": "2026-11-16",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Office européen des brevets (OEB), 16 novembre 2026",
+      "summary": "Lors de leur réunion bilatérale annuelle à Munich, l’OEB et la FICPI ont examiné la qualité, la prévisibilité et l’accessibilité du système européen des brevets. Les échanges ont porté sur G 1/25, les inventions relatives aux anticorps et la modernisation des services numériques de l’Office.",
+      "retrieval_note": "L’URL directe officielle a été ouverte et le texte intégral de l’actualité a été consulté. La version française a également été vérifiée, mais indique que la page n’existe pas actuellement en français. Aucune pièce jointe PDF distincte ni référence d’affaire, numéro de décision ou ECLI propre à cette actualité n’a été identifiée. Le contenu relève d’une actualité institutionnelle et ne comporte donc pas de dispositif au sens juridictionnel. ([epo.org](https://www.epo.org/en/news-events/news/epo-and-ficpi-strengthen-dialogue-patent-quality-and-digital-transformation))",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "L’Office européen des brevets et la Fédération internationale des conseils en propriété intellectuelle (FICPI) se sont réunis à Munich le 6 novembre 2026, dans le cadre de leur réunion bilatérale annuelle. Cette rencontre a permis d’examiner les évolutions récentes du système européen des brevets ainsi que les difficultés pratiques rencontrées par les professionnels. Les discussions ont principalement porté sur la qualité, la prévisibilité et l’accessibilité de ce système.",
+        "La mise en œuvre de la décision G 1/25 de la Grande Chambre de recours, relative à l’adaptation de la description, a constitué l’un des sujets centraux. La FICPI a également soulevé des questions concernant l’examen des inventions portant sur des anticorps, notamment les définitions structurelles et fonctionnelles des revendications ainsi que l’appréciation de l’activité inventive. L’actualité ne précise pas les positions respectives arrêtées sur ces différents points.",
+        "Les échanges ont, en outre, porté sur les services numériques de l’OEB, y compris les améliorations apportées à MyEPO, le dépôt au format DOCX, les documents modifiables et l’utilisation responsable de l’intelligence artificielle. L’Office a aussi présenté son système de validation, son soutien aux écosystèmes locaux d’innovation dans les États de validation, ainsi que les travaux de l’Observatoire des brevets et des technologies et de l’initiative « Scenarios for the Future »."
+      ],
+      "highlight_paragraph": "La mise en œuvre de G 1/25 et les questions relatives aux revendications d’anticorps confirment que les praticiens doivent suivre les évolutions opérationnelles de l’examen à l’OEB, en particulier quant à l’adaptation de la description et à la caractérisation des objets revendiqués.",
+      "practical_relevance": "Cette réunion met en lumière des sujets directement pertinents pour la préparation et le suivi des demandes de brevet européen : conformité de la description, rédaction des revendications relatives aux anticorps et utilisation des outils numériques de l’OEB. Aucune modification procédurale précise ni échéance de mise en œuvre n’est toutefois annoncée dans l’actualité.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Brevets et transferts transfrontières",
+      "title": "L’OEB rejoint l’initiative de l’OMPI relative à la Global IP Assignment Platform",
+      "court_reference": "",
+      "source": "Office européen des brevets (OEB)",
+      "source_url": "https://www.epo.org/en/news-events/news/epo-joins-wipos-global-ip-assignment-platform-initiative",
+      "publication_date": "2026-11-17",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "COMPLET",
+      "access_warning": "",
+      "source_display_text": "Office européen des brevets (OEB), 17 novembre 2026",
+      "summary": "L’OEB annonce son adhésion à l’initiative de l’OMPI relative à la Global IP Assignment Platform, destinée à simplifier les transferts transfrontières de propriété de brevets. Les deux organisations coopéreront au développement d’une solution technique commune, dont une présentation est prévue lors de la réunion IP5 de juin 2027.",
+      "retrieval_note": "L'URL directe de l'actualité a été ouverte et le texte intégral de la page officielle a été effectivement consulté. La publication est datée du 17 novembre 2026, soit dans la période comprise entre le 16 et le 19 novembre 2026 inclus. Aucun renvoi vers une pièce jointe PDF, une décision, un numéro d'affaire, un numéro de décision ou un identifiant ECLI n'a été identifié sur la page consultée. La nature du document étant celle d'une actualité institutionnelle, aucun dispositif juridictionnel n'est applicable. ([epo.org](https://www.epo.org/en/news-events/news/epo-joins-wipos-global-ip-assignment-platform-initiative))",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "L’Office européen des brevets annonce rejoindre l’initiative de l’Organisation Mondiale de la Propriété Intellectuelle relative à la Global IP Assignment Platform, ou GIPAP. Cette initiative a pour objet de simplifier le transfert transfrontière de la propriété des brevets.",
+        "L’OEB et l’OMPI indiquent qu’ils coopéreront afin d’accélérer le développement de la GIPAP. L’Office contribuera à l’élaboration d’une solution technique commune en mettant à disposition son expertise et ses technologies.",
+        "La présentation de cette solution technique commune est annoncée à l’occasion de la réunion annuelle de l’IP5, prévue en juin 2027. L’actualité de l’OEB ne précise ni les fonctionnalités de la future plateforme, ni son calendrier de déploiement, ni les modalités selon lesquelles les titulaires de brevets ou leurs représentants pourront y recourir."
+      ],
+      "highlight_paragraph": "L’adhésion de l’OEB à l’initiative GIPAP confirme l’engagement d’une coopération institutionnelle et technique avec l’OMPI en vue de faciliter les transferts transfrontières de propriété de brevets.",
+      "practical_relevance": "Les titulaires de portefeuilles internationaux et leurs conseils pourront suivre les travaux conduits par l’OEB et l’OMPI, la future solution commune étant expressément orientée vers la simplification des transferts transfrontières de propriété de brevets. Les conditions opérationnelles d’utilisation de la plateforme ne sont toutefois pas encore précisées.",
+      "illustration_page_url": "",
+      "illustration_alt": ""
+    },
+    {
+      "type": "ACTUALITE",
+      "category": "Marques, dessins et modèles, données de propriété intellectuelle",
+      "title": "L’EUIPO lance son IP Data & Intelligence Hub",
+      "court_reference": "",
+      "source": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO)",
+      "source_url": "https://www.euipo.europa.eu/de/news/euipo-launches-ip-data-and-intelligence-hub",
+      "publication_date": "2026-11-17",
+      "discovered_via_juliette_alert": false,
+      "juliette_alert_id": "",
+      "source_access": "PARTIEL",
+      "access_warning": "Attention : les informations présentées dans cette section doivent être vérifiées, l’accès à la source étant incomplet, limité ou restreint.",
+      "source_display_text": "Office de l’Union européenne pour la propriété intellectuelle (EUIPO), 17 novembre 2026",
+      "summary": "L’EUIPO annonce le lancement de l’IP Data & Intelligence Hub, nouveau point d’accès central à ses données, statistiques et publications. Sa première version comporte des indicateurs essentiels, un tableau de bord interactif et un espace de publications, tandis que l’ancien espace statistique demeure temporairement accessible.",
+      "retrieval_note": "L’URL fournie dans la fiche comporte un domaine erroné (« europa.eu.eu »). La recherche a conduit vers la page officielle correspondante de l’EUIPO, à l’adresse indiquée ci-dessus. L’ouverture directe de cette page a toutefois échoué en raison d’un refus d’accès HTTP 403. Le contenu officiel indexé permet de vérifier plusieurs éléments substantiels de l’actualité, mais le texte intégral n’a pas pu être consulté directement. Aucune pièce jointe PDF, version linguistique intégrale accessible, numéro d’affaire, numéro de décision ou identifiant ECLI n’a été trouvé dans le périmètre temporel compris entre le 16 novembre 2026 et le 19 novembre 2026. En conséquence, le niveau COMPLET ne peut pas être retenu.",
+      "lead_label": "Contexte",
+      "paragraphs": [
+        "L’Office de l’Union européenne pour la propriété intellectuelle a annoncé le lancement de l’IP Data & Intelligence Hub, conçu comme un point d’accès central aux données, statistiques et publications de l’Office. Cette initiative vise à réunir, dans un même environnement, les informations relatives à l’activité de l’EUIPO en matière de propriété intellectuelle.",
+        "La première version du Hub comprend une section dédiée aux principaux indicateurs, un tableau de bord interactif ainsi qu’un espace consacré aux publications. Le tableau de bord permet d’explorer les données selon différentes périodes, pays, catégories de droits de propriété intellectuelle et indicateurs. Les informations peuvent notamment être ventilées par classes, principaux demandeurs et représentants.",
+        "L’EUIPO précise que son ancien espace statistique demeurera accessible pendant une période transitoire. Le lancement est présenté comme une première étape, appelée à être enrichie par de nouveaux jeux de données et fonctionnalités."
+      ],
+      "highlight_paragraph": "Le maintien temporaire de l’ancien espace statistique est de nature à faciliter la transition vers le nouveau Hub, dont les fonctionnalités et jeux de données doivent être progressivement complétés.",
+      "practical_relevance": "Le Hub offre aux titulaires, conseils et représentants un accès centralisé aux données et publications de l’EUIPO, avec des possibilités d’analyse par territoire, droit concerné, classe, demandeur ou représentant. Ces informations peuvent contribuer au suivi statistique des dépôts et à la consultation des publications de l’Office.",
       "illustration_page_url": "",
       "illustration_alt": ""
     }
   ],
   "briefs": [],
-  "generated_at": "2026-11-15T22:44:16.588Z",
+  "generated_at": "2026-11-19T12:45:43.011Z",
   "status": "generated",
-  "report_url": "/public/reports/veille-2026-11-16.docx",
-  "docx_url": "/public/reports/veille-2026-11-16.docx"
+  "report_url": "/public/reports/veille-2026-11-20.docx",
+  "docx_url": "/public/reports/veille-2026-11-20.docx"
 }
