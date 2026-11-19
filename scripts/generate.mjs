@@ -38,20 +38,33 @@ const isCurrentWeekPublication = (value) => {
 
 const callOpenAI = async (body, label) => {
   const maxAttempts = 5;
-  let response;
-  let raw;
   let incompleteRetries = 0;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    response = await fetch(responsesEndpoint, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(body)
-    });
-    raw = await response.json();
+    let response;
+    let raw;
+    try {
+      response = await fetch(responsesEndpoint, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(180000)
+      });
+      const responseText = await response.text();
+      raw = JSON.parse(responseText);
+    } catch (error) {
+      if (attempt === maxAttempts) {
+        throw new Error(`${label}: erreur réseau persistante après ${maxAttempts} tentatives (${error.message})`);
+      }
+      const delayMs = Math.min(5000 * (2 ** (attempt - 1)), 30000);
+      console.warn(`${label}: incident réseau temporaire (${error.code || error.cause?.code || error.name || "erreur inconnue"}), nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+      continue;
+    }
+
     if (response.ok) {
       if (raw.status === "incomplete") {
         if (raw.incomplete_details?.reason === "max_output_tokens" && incompleteRetries < 1) {
@@ -72,14 +85,20 @@ const callOpenAI = async (body, label) => {
       usageByModel[body.model].output_tokens += raw.usage?.output_tokens || 0;
       return raw;
     }
+
     const errorCode = raw?.error?.code;
-    if (response.status !== 429 || errorCode !== "rate_limit_exceeded" || attempt === maxAttempts) {
+    const isRateLimit = response.status === 429 && errorCode === "rate_limit_exceeded";
+    const isTransientServerError = [408, 425, 500, 502, 503, 504].includes(response.status);
+    if ((!isRateLimit && !isTransientServerError) || attempt === maxAttempts) {
       throw new Error(`${label}: ${JSON.stringify(raw)}`);
     }
+
     const message = raw?.error?.message || "";
     const suggestedSeconds = Number(message.match(/try again in ([0-9.]+)s/i)?.[1] || 0);
-    const delayMs = Math.max(Math.ceil(suggestedSeconds * 1000) + 2000, 10000 * (2 ** (attempt - 1)));
-    console.warn(`${label}: limite OpenAI, nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
+    const delayMs = isRateLimit
+      ? Math.max(Math.ceil(suggestedSeconds * 1000) + 2000, 10000 * (2 ** (attempt - 1)))
+      : Math.min(5000 * (2 ** (attempt - 1)), 30000);
+    console.warn(`${label}: réponse temporaire HTTP ${response.status}, nouvel essai ${attempt + 1}/${maxAttempts} dans ${Math.ceil(delayMs / 1000)} s.`);
     await new Promise((resolve) => setTimeout(resolve, delayMs));
   }
   throw new Error(`${label}: échec inattendu`);
