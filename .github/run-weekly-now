@@ -1,2 +1,2 @@
-triggered_at=2026-11-19T23:15:00+01:00
-reason=retry-after-partial-source-quality-fix
+triggered_at=2026-11-19T23:30:00+01:00
+reason=retry-after-deterministic-news-reference-fix
